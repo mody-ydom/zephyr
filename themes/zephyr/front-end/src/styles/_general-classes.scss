@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     @include paddingX(size(22));
     @include x-large-screen {
         max-width: size(1124);
-        @include paddingX(size($grid-gutter-width));
+        @include paddingX(size(76));
     }
 }
 
