@@ -1,0 +1,25 @@
+@import "variables";
+
+@font-face {
+    font-family: $proxima-nove;
+    src: url('./fonts/FontsFree-Net-Proxima-Nova-Sbold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $proxima-nove;
+    src: url('./fonts/ProximaNova-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $proxima-nove;
+    src: url('./fonts/ProximaNova-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

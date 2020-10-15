@@ -1,0 +1,55 @@
+// media screen sizes
+$xx-small-screen-max-width: 399.98px;
+$x-small-screen-max-width: 575.98px;
+$small-screen-max-width: 767.98px;
+$medium-screen-max-width: 899.98px;
+$large-screen-max-width: 1023.98px;
+
+
+$x-small-screen-min-width: 400px;
+$small-screen-min-width: 576px;
+$medium-screen-min-width: 768px;
+$large-screen-min-width: 900px;
+$x-large-screen-min-width: 1024px;
+
+
+// color
+
+//
+$zephyr-black: var(--zephyr-black);
+$zephyr-white: var(--zephyr-white);
+$zephyr-orange: var(--zephyr-orange);
+$zephyr-yellow: var(--zephyr-yellow);
+$zephyr-pink: var(--zephyr-pink);
+$zephyr-blue-light: var(--zephyr-blue-light);
+$zephyr-blue: var(--zephyr-blue);
+$zephyr-dark-blue: var(--zephyr-dark-blue);
+$zephyr-salmon: var(--zephyr-salmon);
+$zephyr-ruby: var(--zephyr-ruby);
+$zephyr-green-light: var(--zephyr-green-light);
+$zephyr-green: var(--zephyr-green);
+
+// fonts
+$proxima-nove: 'proxima-nova';
+
+
+//override bootstrap variables
+$grid-gutter-width: 76px;
+$container-max-widths: (
+        'xs': 560px,
+        'sm': 570px,
+        'md': 760px,
+        'lg': 890px,
+        'xl': (1124/1280)*100%,
+);
+$grid-breakpoints: (
+        'xxs': 0,
+        'xs': $x-small-screen-min-width,
+        'sm': $small-screen-min-width,
+        'md': $medium-screen-min-width,
+        'lg': $large-screen-min-width,
+        'xl': $x-large-screen-min-width,
+);
+
+
+

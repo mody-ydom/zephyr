@@ -1,0 +1,166 @@
+.quform {
+    width: 100%;
+    
+    .quform-label-text {
+        color: $zephyr-black;
+        font-family: $proxima-nove;
+        font-size: size(18);
+        font-weight: 600;
+        line-height: size(30);
+        display: block;
+        margin-bottom: size(13);
+    }
+    
+    .quform-description-above {
+        font-size: size(14);
+        font-weight: 400;
+        margin-bottom: size(5);
+        margin-top: size(-13);
+    }
+    
+    
+    .quform-element .quform-input-text input,
+    .quform-element .quform-input-select select,
+    .quform-element .quform-input-email input {
+        width: 100%;
+        min-height: size(53);
+        @include paddingX(size(12));
+        border: 1px solid #9899a2;
+        outline: none;
+        color: $zephyr-black;
+        font-family: $proxima-nove;
+        font-size: size(18);
+        font-weight: 600;
+        padding: 0;
+        padding-left: size(8);
+        padding-right: size(8);
+        border-radius: 0;
+        
+        &::placeholder {
+            color: $zephyr-black;
+            font-family: $proxima-nove;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 30px;
+        }
+    }
+    
+    .quform-element textarea {
+        resize: none;
+        
+        &::-webkit-resizer {
+            display: none;
+            pointer-events: none;
+        }
+    }
+    
+    .quform-inner.quform-inner-file {
+        display: flex;
+        align-items: center;
+        margin-bottom: size(24);
+    }
+    
+    .quform-upload-button {
+        position: relative;
+        cursor: pointer;
+        width: fit-content;
+        color: #ffffff;
+        float: none;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.52px;
+        text-transform: uppercase;
+        background-color: #0178da;
+        padding: size(12) size(33);
+        max-height: 34px;
+        display: flex;
+        align-items: center;
+        transition: background-color 400ms;
+        
+        &:hover {
+            background-color: #2edfe8;
+        }
+        
+        input {
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    
+    .quform-inner.quform-inner-file .quform-error.quform-cf {
+        order: 1;
+        margin-left: 25px;
+    }
+    
+    //.quform-input.quform-input-file{
+    //    flex-grow: 1;
+    //}
+    .quform-element-tree {
+        display: none;
+    }
+    
+    button[type=submit] {
+        width: fit-content;
+        color: $zephyr-white;
+        font-family: $proxima-nove;
+        font-size: size(29);
+        font-weight: 400;
+        line-height: 40px;
+        padding: size(8) size(80);
+        background-image: linear-gradient(-83deg, #2edfe8 16%, #0080ff 100%);
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        width: 337px;
+        margin-top: size(12);
+        transition: background-image 400ms;
+        
+        &:hover {
+            background-image: linear-gradient(-83deg, #0080ff 16%, #2edfe8 100%);
+        }
+    }
+    
+}
+
+.quform-element-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#newsletter-model .quform .quform-element-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include max-small-screen {
+        flex-direction: column;
+    }
+}
+
+#newsletter-model .quform .quform-element {
+    padding: 0;
+    margin: 0;
+}
+
+#newsletter-model .quform .quform-spacer {
+    padding: 0;
+    margin: 0;
+}
+
+#newsletter-model button.quform-submit {
+    margin: 0 !important;
+    height: 5.3rem;
+    padding: 0 !important;
+    min-width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

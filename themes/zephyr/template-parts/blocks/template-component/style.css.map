@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "file": "../template-parts/blocks/template-component/style.css",
+    "sources": [
+        "webpack:///style.scss"
+    ],
+    "sourcesContent": [
+        "section.template-component{background-color:red;height:100vh}\n"
+    ],
+    "mappings": "AAAA;;",
+    "sourceRoot": ""
+}

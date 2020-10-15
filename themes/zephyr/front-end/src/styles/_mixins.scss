@@ -1,0 +1,154 @@
+@import "variables";
+
+@mixin paddingX($l, $r:$l) {
+    padding-right: $r;
+    padding-left: $l;
+}
+
+@mixin paddingY($t, $b:$t) {
+    padding-top: $t;
+    padding-bottom: $b;
+}
+
+@mixin marginX($l, $r:$l) {
+    margin-right: $r;
+    margin-left: $l;
+}
+
+@mixin marginY($t, $b:$t) {
+    margin-top: $t;
+    margin-bottom: $b;
+}
+
+@mixin square($value) {
+    width: $value;
+    height: $value;
+}
+
+@mixin ie() {
+    body.ie & {
+        @content;
+    }
+}
+
+//region media query
+
+//region {only} media
+
+@mixin xx-small-screen() {
+    @media screen and (max-width: $xx-small-screen-max-width) {
+        @content;
+    }
+}
+
+@mixin x-small-screen() {
+    @media screen and (min-width: $x-small-screen-min-width) and (max-width: $x-small-screen-max-width) {
+        @content;
+    }
+}
+
+@mixin small-screen() {
+    @media screen and (min-width: $small-screen-min-width) and (max-width: $small-screen-max-width) {
+        @content;
+    }
+}
+
+@mixin medium-screen() {
+    @media screen and (min-width: $medium-screen-min-width) and (max-width: $medium-screen-max-width) {
+        @content;
+    }
+}
+
+@mixin large-screen() {
+    @media screen and (min-width: $large-screen-min-width) and (max-width: $large-screen-max-width) {
+        @content;
+    }
+}
+
+@mixin x-large-screen() {
+    @media screen and (min-width: $x-large-screen-min-width) {
+        @content;
+    }
+}
+
+//endregion {only} media
+
+//region {max} media
+
+
+@mixin max-x-small-screen() {
+    @media screen and (max-width: $x-small-screen-max-width) {
+        @content;
+    }
+}
+
+@mixin max-small-screen() {
+    @media screen and (max-width: $small-screen-max-width) {
+        @content;
+    }
+}
+
+@mixin max-medium-screen() {
+    @media screen and (max-width: $medium-screen-max-width) {
+        @content;
+    }
+}
+
+@mixin max-medium-screen() {
+    @media screen and (max-width: $medium-screen-max-width) {
+        @content;
+    }
+}
+
+@mixin max-large-screen() {
+    @media screen and (max-width: $large-screen-max-width) {
+        @content;
+    }
+}
+
+//endregion {max} media
+
+//region {min} media
+
+@mixin min-x-small-screen() {
+    @media screen and (min-width: $x-small-screen-min-width) {
+        @content;
+    }
+}
+
+@mixin min-small-screen() {
+    @media screen and (min-width: $small-screen-min-width) {
+        @content;
+    }
+}
+
+@mixin min-medium-screen() {
+    @media screen and (min-width: $medium-screen-min-width) {
+        @content;
+    }
+}
+
+@mixin min-large-screen() {
+    @media screen and (min-width: $large-screen-min-width) {
+        @content;
+    }
+}
+
+
+//endregion {min} media
+
+//endregion media query
+
+@mixin change-gutter($gutter-size) {
+    @include marginX(-$gutter-size/2);
+    > div {
+        @include paddingX($gutter-size/2);
+    }
+}
+
+$base-size: 10;
+//Function to convert px value into rem
+//You can replace rem with any other value you want (rem is most preferred value for web)
+@function size($target, $context: $base-size) {
+    @return ($target / $context) * 1rem;
+}
