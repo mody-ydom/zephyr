@@ -1,22 +1,34 @@
 import './index.html';
 
 export default (container = document) => {
-  console.log('22');
-  const title = document.querySelectorAll('.guide-list .title');
-  title.addEventListener('click', (e) => {
-    console.log('ee');
-    if (podcastBody.style.height) {
-      podcastBody.style.height = null;
-      podcastBody.classList.remove('active');
-      title.querySelector('.arrow').classList.remove('active');
-      card.classList.remove('active');
-    }
-    else {
-      podcastBody.classList.add('active');
-      podcastBody.style.height = podcastBody.scrollHeight + 'px';
-      title.querySelector('.arrow').classList.add('active');
-      card.classList.add('active');
-    }
-  });
+  const guideComponent = container.querySelector('.component-growth-guide');
+  if (!guideComponent) return;
+  const guideContainer = guideComponent.querySelector('.guide-container');
+  const guideCards = Array.from(guideContainer.children);
 
+  const prepareGuideCards = (card) => {
+    const title = card.querySelector('.title');
+    const icons = card.querySelector('.icons');
+    const guideBody = title.nextElementSibling;
+    
+    console.log(card);
+    title.addEventListener('click', (e) => {
+      
+      if (guideBody.style.height) {
+        guideBody.style.height = null;
+        guideBody.classList.remove('active');
+        icons.classList.remove('active');
+        card.classList.remove('active');
+      }
+      else {
+        guideBody.classList.add('active');
+        guideBody.style.height = guideBody.scrollHeight + 'px';
+        icons.classList.add('active');
+        card.classList.add('active');
+      }
+    });
+  };
+  
+  guideCards.forEach(prepareGuideCards);
+  
 };
