@@ -16,10 +16,10 @@ $x-large-screen-min-width: 1024px;
 // color
 
 //
-$zephyr-black: var(--zephyr-black);
 $zephyr-white: var(--zephyr-white);
-$zephyr-orange: var(--zephyr-orange);
-$zephyr-yellow: var(--zephyr-yellow);
+$zephyr-black: var(--zephyr-black);
+$zephyr-gray: var(--zephyr-gray);
+$zephyr-green: var(--zephyr-green);
 $zephyr-pink: var(--zephyr-pink);
 $zephyr-blue-light: var(--zephyr-blue-light);
 $zephyr-blue: var(--zephyr-blue);
@@ -27,10 +27,11 @@ $zephyr-dark-blue: var(--zephyr-dark-blue);
 $zephyr-salmon: var(--zephyr-salmon);
 $zephyr-ruby: var(--zephyr-ruby);
 $zephyr-green-light: var(--zephyr-green-light);
-$zephyr-green: var(--zephyr-green);
 
 // fonts
-$proxima-nove: 'proxima-nova';
+$Sailec: 'Sailec';
+$Canela: 'Canela';
+$Freight: 'Freight Text Pro Book';
 
 
 //override bootstrap variables
