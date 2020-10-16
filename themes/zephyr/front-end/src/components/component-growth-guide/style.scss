@@ -2,7 +2,110 @@
 @import "src/styles/mixins";
 
 section.component-growth-guide {
-    .growth-guide {
     
+    .growth-guide {
+        .growth-guide-content {
+            .left-content {
+                max-width: size(336);
+                border: 1px solid #c6c6c6;
+                @include paddingX(size(42), size(22));
+                @include paddingY(size(44), size(27));
+                
+                ol {
+                    counter-reset: item;
+                    list-style: decimal;
+                    
+                    > li {
+                        counter-increment: item;
+                        
+                        ol {
+                            li {
+                                display: block;
+                                position: relative;
+                                
+                                &:before {
+                                    content: counters(item, ".") " ";
+                                    position: absolute;
+                                    right: calc(100% + 4px);
+                                }
+                            }
+                        }
+                    }
+                    
+                    ::marker {
+                        color: $zephyr-gray;
+                        font-size: size(15);
+                        font-weight: 600;
+                    }
+                    
+                    .guide {
+                        &:not(:last-child) {
+                            margin-bottom: size(10);
+                        }
+                        
+                        
+                        .title {
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            
+                            .paragraph-1 {
+                                font-weight: 600;
+                                letter-spacing: size(0.27);
+                            }
+                            
+                            .icons {
+                                position: relative;
+                                width: size(8);
+                                height: size(8);
+                                
+                                .icon {
+                                    font-size: size(15);
+                                    font-weight: 600;
+                                    cursor: pointer;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    
+                                    &.minus {
+                                        opacity: 0;
+                                        z-index: -1;
+                                    }
+                                    
+                                    &.plus {
+                                        opacity: 1;
+                                        z-index: 2;
+                                    }
+                                }
+                                
+                                &.active {
+                                    .icon {
+                                        &.plus {
+                                            opacity: 0;
+                                            z-index: -1;
+                                        }
+                                        
+                                        &.minus {
+                                            opacity: 1;
+                                            z-index: 2;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .guide-content {
+                            width: 100%;
+                            //overflow: hidden;
+                            transition: all 400ms ease-in-out;
+                            border-top-color: #f2f2f2;
+                            
+                        }
+                    }
+                }
+            }
+        }
     }
 }

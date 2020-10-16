@@ -66,7 +66,7 @@ button {
     border: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul {
+h1, h2, h3, h4, h5, h6, p, ul,ol {
     margin: 0;
     padding: 0;
 }
@@ -335,9 +335,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
     @include x-large-screen {
         line-height: size(26);
         font-size: size(15);
-        
     }
 }
+
+.list-link
 
 // header and footer links
 .small-link {
