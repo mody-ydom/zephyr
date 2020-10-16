@@ -238,3 +238,53 @@ h1, h2, h3, h4, h5, h6, p, ul {
     line-height: 30px;
     font-weight: 600;
 }
+
+.paragraph, .wysiwyg-block p,
+.wysiwyg-block li {
+    color: $zephyr-black;
+    font-size: size(18);
+    font-weight: 400;
+    line-height: size(30);
+}
+
+// read more with arrow
+
+.read-more {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    
+    span {
+        font-size: size(14);
+        font-weight: 600;
+        text-transform: uppercase;
+        display: inline-block;
+        color: var(--zephyr-dark);
+        margin-right: 12px;
+        @include min-large-screen {
+            font-size: size(15);
+        }
+    }
+}
+
+.line-overflow,
+.word-overflow {
+    overflow: hidden;
+    vertical-align: top;
+}
+
+[class ^="iv-st"], [class *= " iv-st"] {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.iv-st-from-top, .iv-st-from-bottom, .iv-st-from-left, .iv-st-from-right, .word-up, .line-up, .real-line-up {
+}
+
+[smooth-scroll-container] {
+    //width: auto;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
