@@ -28,6 +28,7 @@ Scrollbar.use(DisableScrollPlugin);
 export default () => {
   gsap.registerPlugin(ScrollTrigger);
   const scrollContainer = document.querySelector('[smooth-scroll-container]');
+  if (!scrollContainer) return;
   ScrollTrigger.defaults({
     scroller: scrollContainer,
   });

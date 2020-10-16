@@ -66,7 +66,7 @@ button {
     border: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul {
+h1, h2, h3, h4, h5, h6, p, ul,ol {
     margin: 0;
     padding: 0;
 }
@@ -251,17 +251,14 @@ h1, h2, h3, h4, h5, h6, p, ul {
 }
 
 .headline-6, .cta, .wysiwyg-block h6 {
-    color: $zephyr-white;
+    color: $zephyr-gray;
     font-family: $Sailec;
     font-size: size(14);
     font-weight: 500;
-    font-style: normal;
     letter-spacing: size(0.44);
     line-height: size(24);
-    text-align: center;
-    text-transform: uppercase;
     
-    &.bold {
+    &.normal {
         font-weight: 400;
     }
 }
@@ -338,9 +335,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
     @include x-large-screen {
         line-height: size(26);
         font-size: size(15);
-        
     }
 }
+
+.list-link
 
 // header and footer links
 .small-link {
