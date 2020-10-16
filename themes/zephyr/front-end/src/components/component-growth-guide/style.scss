@@ -12,37 +12,11 @@ section.component-growth-guide {
                 @include paddingY(size(44), size(27));
                 
                 ol {
-                    counter-reset: item;
-                    list-style: decimal;
-                    
-                    > li {
-                        counter-increment: item;
-                        
-                        ol {
-                            li {
-                                display: block;
-                                position: relative;
-                                
-                                &:before {
-                                    content: counters(item, ".") " ";
-                                    position: absolute;
-                                    right: calc(100% + 4px);
-                                }
-                            }
-                        }
-                    }
-                    
-                    ::marker {
-                        color: $zephyr-gray;
-                        font-size: size(15);
-                        font-weight: 600;
-                    }
                     
                     .guide {
                         &:not(:last-child) {
                             margin-bottom: size(10);
                         }
-                        
                         
                         .title {
                             cursor: pointer;
@@ -68,7 +42,7 @@ section.component-growth-guide {
                                     right: 0;
                                     top: 50%;
                                     transform: translateY(-50%);
-                                    
+                                    transition: opacity 400ms;
                                     &.minus {
                                         opacity: 0;
                                         z-index: -1;
@@ -98,10 +72,13 @@ section.component-growth-guide {
                         
                         .guide-content {
                             width: 100%;
-                            //overflow: hidden;
+                            height: 0;
+                            overflow: hidden;
+                            margin-left: size(-17);
                             transition: all 400ms ease-in-out;
-                            border-top-color: #f2f2f2;
+                            &.active{
                             
+                            }
                         }
                     }
                 }

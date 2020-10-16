@@ -23,7 +23,7 @@
 }
 
 html {
-    font-family: Tahoma , sans-serif;
+    font-family: Tahoma, sans-serif;
     font-size: 10px;
     direction: ltr !important;
     width: 100%;
@@ -66,7 +66,7 @@ button {
     border: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul,ol {
+h1, h2, h3, h4, h5, h6, p, ul, ol {
     margin: 0;
     padding: 0;
 }
@@ -338,7 +338,60 @@ h1, h2, h3, h4, h5, h6, p, ul,ol {
     }
 }
 
-.list-link
+ol {
+    counter-reset: item;
+    list-style: decimal;
+    
+    ::marker {
+        color: $zephyr-gray;
+        font-size: size(15);
+        font-weight: 600;
+    }
+    
+    > li {
+        opacity: 0.85;
+        transition: opacity 400ms;
+        
+        &.active {
+            opacity: 1;
+        }
+        
+        h3 {
+            @extend .headline-6;
+            font-weight: 600;
+            font-size: size(15);
+            letter-spacing: size(0.27);
+        }
+        
+        > ol {
+    
+            > li {
+                color: #3d3d3d;
+                font-family: "Acumin Pro";
+                font-size: size(13);
+                letter-spacing: size(0.22);
+                line-height: size(24);
+                font-weight: 400;
+                font-style: normal;
+                cursor: pointer;
+                &.active {
+                    font-family: "Freight Text Pro Book";
+                    font-weight: 700;
+                    font-style: italic;
+                }
+                
+                display: block;
+                position: relative;
+                counter-increment: item;
+    
+                &:before {
+                    content: counters(item, ".") " ";
+                    margin-right: size(13);
+                }
+            }
+        }
+    }
+}
 
 // header and footer links
 .small-link {
