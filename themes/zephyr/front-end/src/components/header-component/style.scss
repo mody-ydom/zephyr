@@ -1,0 +1,92 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+header {
+    .header-content {
+        background: #1bd760;
+        display: flex;
+        align-items: center;
+        @include paddingY(20);
+        
+        .burger-and-cross {
+            min-width: size(28);
+            height: size(20);
+            position: relative;
+            
+            .menu {
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                transition: all 400ms ease-in-out;
+                
+                span {
+                    display: block;
+                    width: 100%;
+                    height: size(2);
+                    background: $zephyr-gray;
+                }
+                
+                &.active {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
+            
+            .cross {
+                pointer-events: none;
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: all 400ms ease-in-out;
+                z-index: 2;
+    
+                &.active {
+                    opacity: 1;
+                    pointer-events: visible;
+                }
+            }
+            
+        }
+        
+        .logo {
+            margin: 0 auto;
+            z-index: 2;
+        }
+        
+        .links {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: $zephyr-gray;
+            transition: all 400ms ease-in-out;
+            
+            .small-link {
+                color: #fefefd;
+                
+                &:not(:last-child) {
+                    margin-bottom: size(30);
+                }
+            }
+            
+            &.active {
+                right: 0;
+            }
+            
+        }
+    }
+    
+    
+}
