@@ -3,7 +3,7 @@
     
     .quform-label-text {
         color: $zephyr-black;
-        font-family: $proxima-nove;
+        font-family: $Sailec;
         font-size: size(18);
         font-weight: 600;
         line-height: size(30);
@@ -28,7 +28,7 @@
         border: 1px solid #9899a2;
         outline: none;
         color: $zephyr-black;
-        font-family: $proxima-nove;
+        font-family: $Sailec;
         font-size: size(18);
         font-weight: 600;
         padding: 0;
@@ -38,7 +38,7 @@
         
         &::placeholder {
             color: $zephyr-black;
-            font-family: $proxima-nove;
+            font-family: $Sailec;
             font-size: 18px;
             font-weight: 600;
             line-height: 30px;
@@ -108,7 +108,7 @@
     button[type=submit] {
         width: fit-content;
         color: $zephyr-white;
-        font-family: $proxima-nove;
+        font-family: $Sailec;
         font-size: size(29);
         font-weight: 400;
         line-height: 40px;

@@ -23,7 +23,7 @@
 }
 
 html {
-    font-family: $proxima-nove, sans-serif;
+    font-family: $Sailec, sans-serif;
     font-size: 10px;
     direction: ltr !important;
     width: 100%;
@@ -261,7 +261,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     text-align: center;
     text-transform: uppercase;
     
-    &.bold {
+    &.normal {
         font-weight: 400;
     }
 }
