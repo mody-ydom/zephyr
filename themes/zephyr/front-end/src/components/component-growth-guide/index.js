@@ -1,5 +1,5 @@
 import './index.html';
-
+import {gsap} from 'gsap';
 export default (container = document) => {
   const guideComponent = container.querySelector('.component-growth-guide');
   if (!guideComponent) return;
@@ -18,7 +18,6 @@ export default (container = document) => {
         guideBody.style.height = null;
         guideBody.classList.remove('active');
         icons.classList.remove('active');
-        card.classList.remove('active');
       }
       else {
         guideBody.classList.add('active');

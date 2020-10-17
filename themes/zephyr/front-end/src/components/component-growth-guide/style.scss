@@ -8,11 +8,11 @@ section.component-growth-guide {
             .left-content {
                 max-width: size(336);
                 border: 1px solid #c6c6c6;
-                @include paddingX(size(42), size(22));
-                @include paddingY(size(44), size(27));
+                @include paddingY(size(44),size(27));
                 
-                ol {
-                    
+                .guide-container {
+                    @include paddingX(size(42), size(22));
+                    padding-bottom: size(24);
                     .guide {
                         &:not(:last-child) {
                             margin-bottom: size(10);
@@ -79,6 +79,38 @@ section.component-growth-guide {
                             &.active{
                             
                             }
+                        }
+                    }
+                }
+                .search-input{
+                    @include marginX(size(25),size(18));
+                    border-top: 1px solid #c6c6c6;
+                    padding-top: size(22);
+                    .input-wrapper{
+                        position: relative;
+                        input{
+                            width: 100%;
+                            min-height: size(42);
+                            background: #f6f6f6;
+                            border: 0;
+                            color: #252525;
+                            font-family: $Freight;
+                            font-size: size(16);
+                            font-weight: 400;
+                            font-style: italic;
+                            letter-spacing: size(0.27);
+                            line-height: size(24);
+                            padding-left: size(16);
+                            @include paddingX(size(16),size(51));
+                            &::placeholder{
+                                opacity: 0.85;
+                            }
+                        }
+                        svg{
+                            position: absolute;
+                            top: 50%;
+                            right: size(48);
+                            transform: translateY(-50%);
                         }
                     }
                 }
