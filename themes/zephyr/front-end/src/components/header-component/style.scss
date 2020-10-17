@@ -2,11 +2,14 @@
 @import "src/styles/mixins";
 
 header {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    
     .header-content {
-        background: #1bd760;
         display: flex;
         align-items: center;
-        @include paddingY(20);
+        @include paddingY(size(35));
         @include min-medium-screen {
             justify-content: space-between;
         }
@@ -114,8 +117,6 @@ header {
                 right: 0;
                 background: none;
                 .small-link {
-                    color: $zephyr-gray;
-                    
                     &:not(:last-child) {
                         margin-bottom: 0;
                         margin-right: size(62);
