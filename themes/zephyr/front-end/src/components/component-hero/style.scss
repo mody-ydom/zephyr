@@ -40,5 +40,19 @@ section.component-hero {
         @include min-medium-screen {
             display: block;
         }
+        svg{
+            .dot{
+                animation: dot 1s ease-in-out infinite alternate ;
+                transform: translateY(0);
+            }
+            @keyframes  dot{
+                0%{
+                    transform: translateY(0);
+                }
+                100%{
+                    transform: translateY(18px);
+                }
+            }
+        }
     }
 }
