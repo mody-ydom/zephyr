@@ -263,6 +263,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     }
 }
 
+// in footer
 .headline-7{
     color: $zephyr-gray;
     font-family: $Freight;
@@ -344,7 +345,7 @@ ol {
         }
         
         > ol {
-    
+            
             > li {
                 color: #3d3d3d;
                 font-family: "Acumin Pro";
@@ -354,6 +355,7 @@ ol {
                 font-weight: 400;
                 font-style: normal;
                 cursor: pointer;
+                
                 &.active {
                     font-family: "Freight Text Pro Book";
                     font-weight: 700;
@@ -363,7 +365,7 @@ ol {
                 display: block;
                 position: relative;
                 counter-increment: item;
-    
+                
                 &:before {
                     content: counters(item, ".") " ";
                     margin-right: size(13);
@@ -373,7 +375,7 @@ ol {
     }
 }
 
-// header and footer links
+// header links
 .small-link {
     color: $zephyr-gray;
     font-family: $Sailec;
@@ -390,34 +392,52 @@ ol {
     
 }
 
+
 .small-text {
     color: $zephyr-black;
     font-size: size(14);
     font-weight: 400;
     line-height: size(24);
     
+    
     &.has-blue {
         color: $zephyr-blue;
     }
 }
 
-// read more with arrow
 
-.read-more {
-    display: flex;
-    align-items: center;
+.btn {
+    color: $zephyr-gray;
+    font-family: $Canela;
+    font-size: size(12);
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: size(0.38);
+    line-height: size(24);
+    text-align: center;
     width: fit-content;
-    
-    span {
-        font-size: size(14);
-        font-weight: 600;
-        text-transform: uppercase;
-        display: inline-block;
-        color: var(--zephyr-dark);
-        margin-right: 12px;
-        @include min-large-screen {
-            font-size: size(15);
-        }
+    border: 1px solid #4b4b4b;
+    background-color: #ffffff;
+    padding: size(14) size(55);
+}
+
+svg {
+    path {
+        transition: all 400ms ease-in-out;
+    }
+}
+
+.show {
+    display: block;
+    @include x-large-screen {
+        display: none;
+    }
+}
+
+.hide {
+    display: none;
+    @include x-large-screen {
+        display: block;
     }
 }
 

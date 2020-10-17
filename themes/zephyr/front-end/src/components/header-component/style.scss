@@ -7,29 +7,24 @@ header {
         display: flex;
         align-items: center;
         @include paddingY(20);
+        @include min-medium-screen {
+            justify-content: space-between;
+        }
         
         .burger-and-cross {
             min-width: size(28);
             height: size(20);
             position: relative;
             
+            
+            @include min-medium-screen {
+                display: none;
+            }
+            
             .menu {
-                width: 100%;
-                height: 100%;
                 z-index: 2;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
                 cursor: pointer;
                 transition: all 400ms ease-in-out;
-                
-                span {
-                    display: block;
-                    width: 100%;
-                    height: size(2);
-                    background: $zephyr-gray;
-                }
                 
                 &.active {
                     opacity: 0;
@@ -46,10 +41,29 @@ header {
                 transform: translate(-50%, -50%);
                 transition: all 400ms ease-in-out;
                 z-index: 2;
-    
+                
+                svg {
+                    z-index: 2;
+                    
+                    line {
+                        transition: all 400ms ease-in-out;
+                    }
+                    
+                }
+                
                 &.active {
                     opacity: 1;
                     pointer-events: visible;
+                    
+                    svg {
+                        z-index: 2;
+                        
+                        line {
+                            transition: all 400ms ease-in-out;
+                            stroke: $zephyr-white;
+                        }
+                        
+                    }
                 }
             }
             
@@ -58,11 +72,14 @@ header {
         .logo {
             margin: 0 auto;
             z-index: 2;
+            @include min-medium-screen {
+                margin: 0;
+            }
         }
         
         .links {
             width: 100%;
-            height: 100%;
+            height: 100vh;
             position: fixed;
             top: 0;
             right: 100%;
@@ -81,12 +98,30 @@ header {
                 }
             }
             
+            &.white {
+                background: $zephyr-white;
+            }
+            
             &.active {
                 right: 0;
             }
             
+            @include min-medium-screen {
+                width: auto;
+                height: auto;
+                flex-direction: row;
+                position: relative;
+                right: 0;
+                background: none;
+                .small-link {
+                    color: $zephyr-gray;
+                    
+                    &:not(:last-child) {
+                        margin-bottom: 0;
+                        margin-right: size(62);
+                    }
+                }
+            }
         }
     }
-    
-    
 }
