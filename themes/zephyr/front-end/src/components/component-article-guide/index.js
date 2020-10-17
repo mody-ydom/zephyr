@@ -2,12 +2,12 @@ import './index.html';
 import {gsap} from 'gsap';
 
 export default (container = document) => {
-  const guideComponent = container.querySelector('.component-article-guide');
-  if (!guideComponent) return;
-  const guideTitle = document.querySelectorAll('.article-container .title');
-
+  const articleComponent = container.querySelector('.component-article-guide');
+  if (!articleComponent) return;
+  const articleTitle = document.querySelectorAll('.article-container .title');
   
-  guideTitle.forEach((title) => {
+  
+  articleTitle.forEach((title) => {
     title.addEventListener('click', (e) => {
       let nextSib = title.nextElementSibling;
       
@@ -17,7 +17,7 @@ export default (container = document) => {
         title.parentElement.classList.remove('active');
       }
       else {
-        gsap.to(Array.from(guideTitle).map(elem => {
+        gsap.to(Array.from(articleTitle).map(elem => {
           const e = elem.nextElementSibling;
           e.classList.remove('active');
           e.parentElement.classList.remove('active');
