@@ -268,20 +268,16 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 
 // in footer
 .headline-7{
-    color: $zephyr-gray;
+    color: $zephyr-green;
     font-family: $Freight;
-    font-size: size(18);
-    font-weight: 400;
-    font-style: italic;
-    line-height: normal;
-    letter-spacing: size(0.16);
-    @include x-large-screen{
-        font-size: size(24);
-        line-height: size(66);
-    }
+    font-size: size(12);
+    font-weight: 500;
+    //font-style: italic;
+    letter-spacing: size(0.6);
+    line-height: size(36);
+    text-transform: uppercase;
 }
 
-// in footer
 
 
 
