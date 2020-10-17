@@ -8,11 +8,12 @@ section.component-growth-guide {
             .left-content {
                 max-width: size(336);
                 border: 1px solid #c6c6c6;
-                @include paddingY(size(44),size(27));
+                @include paddingY(size(44), size(27));
                 
                 .guide-container {
                     @include paddingX(size(42), size(22));
                     padding-bottom: size(24);
+                    
                     .guide {
                         &:not(:last-child) {
                             margin-bottom: size(10);
@@ -43,6 +44,7 @@ section.component-growth-guide {
                                     top: 50%;
                                     transform: translateY(-50%);
                                     transition: opacity 400ms;
+                                    
                                     &.minus {
                                         opacity: 0;
                                         z-index: -1;
@@ -76,19 +78,23 @@ section.component-growth-guide {
                             overflow: hidden;
                             margin-left: size(-17);
                             transition: all 400ms ease-in-out;
-                            &.active{
+                            
+                            &.active {
                             
                             }
                         }
                     }
                 }
-                .search-input{
-                    @include marginX(size(25),size(18));
+                
+                .search-input {
+                    @include marginX(size(25), size(18));
                     border-top: 1px solid #c6c6c6;
                     padding-top: size(22);
-                    .input-wrapper{
+                    
+                    .input-wrapper {
                         position: relative;
-                        input{
+                        
+                        input {
                             width: 100%;
                             min-height: size(42);
                             background: #f6f6f6;
@@ -101,16 +107,57 @@ section.component-growth-guide {
                             letter-spacing: size(0.27);
                             line-height: size(24);
                             padding-left: size(16);
-                            @include paddingX(size(16),size(51));
-                            &::placeholder{
+                            @include paddingX(size(16), size(51));
+                            
+                            &::placeholder {
                                 opacity: 0.85;
                             }
                         }
-                        svg{
+                        
+                        svg {
                             position: absolute;
                             top: 50%;
                             right: size(48);
                             transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+            
+            .right-content {
+                .headline-7 {
+                    span {
+                        font-size: size(12);
+                        letter-spacing: size(0.09);
+                    }
+                }
+                
+                ul {
+                    list-style: disc;
+                    
+                    li {
+                        line-height: size(24);
+                        font-weight: 500;
+                        font-style: italic;
+                    }
+                }
+                
+                .paragraphs {
+                    .paragraph-1 {
+                        span {
+                            background-color: rgba(107, 227, 168, 0.6);
+                        }
+                    }
+                }
+                
+                .written-by {
+                    max-width: size(293);
+                    justify-content: space-between;
+                    .paragraph-1 {
+                        span {
+                            font-family: $Sailec;
+                            font-weight: 500;
+                            letter-spacing: size(0.17);
                         }
                     }
                 }
