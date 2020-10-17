@@ -541,12 +541,12 @@ ol {
         top: 0;
         width: 0;
         height: 100%;
-        background: #5fe099;
+        background: $zephyr-green;
         transition: width 400ms;
         z-index: -1;
     }
     &:hover {
-        border-color: #5fe099;
+        border-color: $zephyr-green;
         &::before {
             width: 100%;
         }
@@ -555,7 +555,7 @@ ol {
         border: 0;
         &::before{
             width: 100%;
-            background: #5fe099;
+            background: $zephyr-green;
         }
         &:hover{
             &::before{
