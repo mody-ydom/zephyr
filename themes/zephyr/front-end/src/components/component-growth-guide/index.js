@@ -1,33 +1,37 @@
 import './index.html';
 import {gsap} from 'gsap';
+
 export default (container = document) => {
   const guideComponent = container.querySelector('.component-growth-guide');
   if (!guideComponent) return;
-  const guideContainer = guideComponent.querySelector('.guide-container');
-  const guideCards = Array.from(guideContainer.children);
+  const guideTitle = document.querySelectorAll('.guide-container .title');
 
-  const prepareGuideCards = (card) => {
-    const title = card.querySelector('.title');
-    const icons = card.querySelector('.icons');
-    const guideBody = title.nextElementSibling;
-    
-    console.log(card);
+  
+  guideTitle.forEach((title) => {
     title.addEventListener('click', (e) => {
+      let nextSib = title.nextElementSibling;
       
-      if (guideBody.style.height) {
-        guideBody.style.height = null;
-        guideBody.classList.remove('active');
-        icons.classList.remove('active');
+      if (nextSib.classList.contains('active')) {
+        gsap.to(nextSib, {height: 0});
+        nextSib.classList.remove('active');
+        title.parentElement.classList.remove('active');
       }
       else {
-        guideBody.classList.add('active');
-        guideBody.style.height = guideBody.scrollHeight + 'px';
-        icons.classList.add('active');
-        card.classList.add('active');
+        gsap.to(Array.from(guideTitle).map(elem => {
+          const e = elem.nextElementSibling;
+          e.classList.remove('active');
+          e.parentElement.classList.remove('active');
+          return e;
+        }), {height: 0});
+        gsap.to(nextSib, {height: 'auto'});
+        // setTimeout(function () {
+        //   scrollbar.scrollIntoView(title, {
+        //     offsetTop: 80,
+        //   });
+        // }, 400);
+        nextSib.classList.add('active');
+        title.parentElement.classList.add('active');
       }
     });
-  };
-  
-  guideCards.forEach(prepareGuideCards);
-  
+  });
 };

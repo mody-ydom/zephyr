@@ -334,13 +334,8 @@ ol {
     }
     
     > li {
-        opacity: 0.85;
-        transition: opacity 400ms;
-        
-        &.active {
-            opacity: 1;
-        }
-        
+        counter-increment: item;
+    
         h3 {
             @extend .headline-6;
             font-weight: 600;
@@ -352,7 +347,7 @@ ol {
             
             > li {
                 color: #3d3d3d;
-                font-family: "Acumin Pro";
+                font-family: $Acumin;
                 font-size: size(12);
                 letter-spacing: size(0.22);
                 line-height: size(24);
@@ -361,14 +356,12 @@ ol {
                 cursor: pointer;
                 
                 &.active {
-                    font-family: "Freight Text Pro Book";
+                    font-family: $Freight;
                     font-weight: 700;
                     font-style: italic;
                 }
-                
                 display: block;
                 position: relative;
-                counter-increment: item;
                 
                 &:before {
                     content: counters(item, ".") " ";
