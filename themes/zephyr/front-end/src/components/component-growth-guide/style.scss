@@ -19,6 +19,9 @@ section.component-growth-guide {
                             margin-bottom: size(10);
                         }
                         
+                        opacity: 0.85;
+                        transition: opacity 400ms;
+                        
                         .title {
                             cursor: pointer;
                             display: flex;
@@ -55,18 +58,22 @@ section.component-growth-guide {
                                         z-index: 2;
                                     }
                                 }
-                                
-                                &.active {
-                                    .icon {
-                                        &.plus {
-                                            opacity: 0;
-                                            z-index: -1;
-                                        }
-                                        
-                                        &.minus {
-                                            opacity: 1;
-                                            z-index: 2;
-                                        }
+                            }
+                        }
+                        
+                        &.active {
+                            opacity: 1;
+                            
+                            .icons {
+                                .icon {
+                                    &.plus {
+                                        opacity: 0;
+                                        z-index: -1;
+                                    }
+                                    
+                                    &.minus {
+                                        opacity: 1;
+                                        z-index: 2;
                                     }
                                 }
                             }
@@ -134,11 +141,26 @@ section.component-growth-guide {
                 
                 ul {
                     list-style: disc;
+                    padding-left: size(25);
                     
                     li {
                         line-height: size(24);
                         font-weight: 500;
                         font-style: italic;
+                    }
+                }
+                
+                .image-wrapper {
+                    @include marginY(size(33), size(48));
+                    padding-top: 68.95%;
+                    position: relative;
+                    height: 0;
+                    
+                    img {
+                        position: absolute;
+                        top: 0;
+                        height: 100%;
+                        object-fit: cover;
                     }
                 }
                 
@@ -153,6 +175,8 @@ section.component-growth-guide {
                 .written-by {
                     max-width: size(293);
                     justify-content: space-between;
+                    margin-top: size(35);
+                    
                     .paragraph-1 {
                         span {
                             font-family: $Sailec;
@@ -160,6 +184,11 @@ section.component-growth-guide {
                             letter-spacing: size(0.17);
                         }
                     }
+                }
+                
+                .next-chapter {
+                    display: block;
+                    margin-top: size(150);
                 }
             }
         }
