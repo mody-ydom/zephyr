@@ -1,0 +1,105 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-our-team {
+    @include marginY(105);
+    @include min-medium-screen{
+        @include marginY(size(111),size(200));
+    }
+    .our-team {
+        .our-team-title {
+            margin-bottom: size(94);
+        }
+        
+        .our-team-content {
+            .team-person {
+                margin-bottom: size(25);
+                max-width: size(232);
+                @include min-medium-screen{
+                    margin-bottom: size(62);
+                }
+                .image-wrapper {
+                    position: relative;
+                    margin-bottom: size(15);
+                    padding-top: 107%;
+                    height: 0;
+                    @include min-medium-screen{
+                        margin-bottom: size(30);
+                    }
+                    img {
+                        position: absolute;
+                        top: 0;
+                        height: 100%;
+                        transition: transform 400ms;
+                        width: 100%;
+                        @include min-medium-screen{
+                            margin-left: size(22);
+                        }
+                        &:hover {
+                            transform: translate(-10px, -10px) scale(1.1);
+                        }
+                    }
+                    
+                    &.milky-circle {
+                        background: url('./../../html/images/milky-circle.png') no-repeat left 58%;
+                    }
+                    
+                    &.oval {
+                        background: url('./../../html/images/oval.png') no-repeat top left;
+                        background-size: contain;
+                        @include min-medium-screen{
+                            background-size: auto;
+                        }
+                    }
+                    
+                    &.red-circle {
+                        background: url('./../../html/images/red-circle.png') no-repeat right 67%;
+                    }
+                    
+                    &.green-circle {
+                        background: url('./../../html/images/green-circle.png') no-repeat 20% 35%;
+                    }
+                    
+                    &.big-green-circle {
+                        background: url('./../../html/images/big-green-cricle.png') no-repeat right 40%;
+                    }
+                }
+                
+                .name, .title-job {
+                    color: $zephyr-gray;
+                }
+                
+                .name {
+                    font-family: $Canela;
+                    font-size: size(18);
+                    font-weight: 300;
+                    letter-spacing: size(0.28);
+                    margin-bottom: size(7);
+                    @include x-large-screen {
+                        font-size: size(27);
+                        margin-bottom: size(10);
+                    }
+                }
+                
+                .title-job {
+                    color: #252525;
+                    font-family: $Sailec;
+                    font-size: size(11);
+                    font-weight: 400;
+                    letter-spacing: size(0.08);
+                    line-height: size(25);
+                    @include x-large-screen {
+                        font-size: size(16);
+                    }
+                }
+            }
+            .load-more{
+                display: flex;
+                margin: 0 auto;
+                @include min-medium-screen{
+                    display: none;
+                }
+            }
+        }
+    }
+}

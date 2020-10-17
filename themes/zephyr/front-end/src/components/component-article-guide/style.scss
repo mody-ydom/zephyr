@@ -1,0 +1,69 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-article-guide {
+    .article-guide {
+        .article-guide-content {
+            .left-content {
+                max-width: size(310);
+                border: 1px solid #c6c6c6;
+                @include paddingY(size(27), size(33));
+                
+                .headline-6 {
+                    font-size: size(24);
+                    letter-spacing: size(0.4);
+                    font-family: $Acumin;
+                    text-transform: none;
+                    @include paddingX(size(26));
+                    margin-bottom: size(40);
+                }
+                
+                .article-container {
+                    @include paddingX(size(30));
+                    padding-bottom: size(24);
+                    counter-reset: unset;
+                    list-style: none;
+                    
+                    > li {
+                        > ol {
+                            margin-left: 0 !important;
+                            
+                            > li {
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                
+            }
+            
+            .right-content {
+                .headline-8 {
+                    span {
+                        font-size: size(12);
+                        letter-spacing: size(0.09);
+                    }
+                }
+                
+                ul {
+                    list-style: disc;
+                    padding-left: size(25);
+                    
+                    li {
+                        line-height: size(24);
+                        font-weight: 500;
+                        font-style: italic;
+                    }
+                }
+                
+                .next-chapter {
+                    display: block;
+                    margin-top: size(150);
+                }
+            }
+        }
+    }
+}
