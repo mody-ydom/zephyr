@@ -1,0 +1,44 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    @include paddingY(size(50));
+    
+    .hero-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+    }
+    
+    .content {
+        .headline-1 {
+            @include marginY(size(18), size(29));
+        }
+    }
+    
+    .down {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: size(35);
+        cursor: pointer;
+        display: none;
+        @include min-medium-screen {
+            display: block;
+        }
+    }
+}
