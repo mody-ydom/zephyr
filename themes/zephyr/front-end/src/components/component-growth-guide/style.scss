@@ -2,7 +2,10 @@
 @import "src/styles/mixins";
 
 section.component-growth-guide {
-    
+    @include marginY(size(200),size(108));
+    @include min-medium-screen{
+        @include marginY(size(119),size(98));
+    }
     .growth-guide {
         .growth-guide-content {
             .left-content {
