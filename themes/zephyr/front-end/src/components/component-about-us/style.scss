@@ -1,0 +1,30 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-about-us {
+    @include marginY(size(120),size(100));
+    @include min-medium-screen{
+        @include marginY(size(131),size(103));
+    }
+    .about-us{
+        .about-us-title{
+            margin-bottom: size(115);
+        }
+        .about-us-content{
+            .about-logo{
+                margin-bottom: size(77);
+                .image-wrapper{
+                    padding-bottom: size(20);
+                    border-bottom: 1px solid #979797;
+                    margin-bottom: size(17);
+                    display: flex;
+                    min-height: size(87);
+                    align-items: center;
+                    img{
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
