@@ -7,8 +7,8 @@
     --zephyr-white: #ffffff;
     --zephyr-gray: #252525;
     --zephyr-green: #5fe099;
-    --zephyr-pink: #ff4286;
-    --zephyr-blue-light: #2fc9d7;
+    --zephyr-gray-light:  #fefefd;
+    --zephyr-blue-light: #fefefd;
     --zephyr-blue: #4381cf;
     --zephyr-dark-blue: #1b1c30;
     --zephyr-salmon: #f67f6f;
@@ -27,22 +27,6 @@ html {
     font-size: 10px;
     direction: ltr !important;
     width: 100%;
-    overflow: hidden;
-    //@include max-xxx-large-screen{
-    //    font-size: 8px;
-    //}
-    //@include max-xx-large-screen{
-    //    font-size: 7px;
-    //}
-    //@include max-x-large-screen{
-    //    font-size: 7px;
-    //}
-    //@include max-large-screen{
-    //    font-size: 9px;
-    //}
-    //@include max-medium-screen{
-    //    font-size: 9px;
-    //}
 }
 
 a {
@@ -66,7 +50,7 @@ button {
     border: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol {
+h1, h2, h3, h4, h5, h6, p, ul, ol  ,form{
     margin: 0;
     padding: 0;
 }
@@ -187,7 +171,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     letter-spacing: size(0.58);
     line-height: size(37.8);
     text-align: center;
-
+    
     @include x-large-screen {
         font-size: size(72);
         letter-spacing: size(0.44);
@@ -261,25 +245,22 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     line-height: size(24);
     text-transform: uppercase;
     text-align: center;
+    
     &.normal {
         font-weight: 400;
     }
 }
 
 // in footer
-.headline-7{
+.headline-7 {
     color: $zephyr-green;
     font-family: $Freight;
     font-size: size(12);
     font-weight: 500;
-    //font-style: italic;
     letter-spacing: size(0.6);
     line-height: size(36);
     text-transform: uppercase;
 }
-
-
-
 
 
 .paragraph, .wysiwyg-block, p, .wysiwyg-block {
@@ -290,7 +271,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     font-style: normal;
     letter-spacing: size(0.5);
     line-height: size(24);
-    text-align: center;
     
     @include x-large-screen {
         font-size: size(18);
@@ -311,12 +291,12 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     
     &.small-fz {
         font-size: size(14);
+        @include x-large-screen {
+            line-height: size(24);
+            font-size: size(15);
+        }
     }
     
-    @include x-large-screen {
-        line-height: size(26);
-        font-size: size(15);
-    }
 }
 
 ol {
@@ -331,7 +311,7 @@ ol {
     
     > li {
         counter-increment: item;
-    
+        
         h3 {
             @extend .headline-6;
             font-weight: 600;
@@ -356,6 +336,7 @@ ol {
                     font-weight: 700;
                     font-style: italic;
                 }
+                
                 display: block;
                 position: relative;
                 
@@ -385,6 +366,22 @@ ol {
     
 }
 
+// in contact us
+.title {
+    color: $zephyr-gray;
+    font-family: $Canela;
+    font-size: size(24);
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: size(0.44);
+    line-height: size(32);
+    @include x-large-screen {
+        font-size: size(36);
+        line-height: size(42);
+        letter-spacing: size(0.47);
+    
+    }
+}
 
 .small-text {
     color: $zephyr-black;
@@ -395,6 +392,32 @@ ol {
     
     &.has-blue {
         color: $zephyr-blue;
+    }
+}
+
+
+input ,textarea {
+    padding: 0;
+    background: none;
+    border: none;
+    color: #d1d1d1;
+    font-family: $Freight;
+    font-size: size(14);
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: size(0.44);
+    line-height: size(21);
+    text-align: left;
+    
+    &::placeholder {
+        color: #d1d1d1;
+        font-family: $Freight;
+        font-size: size(14);
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: size(0.44);
+        line-height: size(21);
+        text-align: left;
     }
 }
 

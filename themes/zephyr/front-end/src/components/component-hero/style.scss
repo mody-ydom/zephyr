@@ -28,6 +28,7 @@ section.component-hero {
         .headline-1 {
             @include marginY(size(18), size(29));
         }
+        
     }
     
     .down {
