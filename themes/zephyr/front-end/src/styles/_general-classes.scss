@@ -277,6 +277,19 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
         line-height: size(66);
     }
 }
+.headline-8{
+    color: $zephyr-gray;
+    font-family: $Freight;
+    font-size: size(18);
+    font-weight: 400;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: size(0.16);
+    @include x-large-screen{
+        font-size: size(24);
+        line-height: size(66);
+    }
+}
 
 // in footer
 
@@ -363,6 +376,123 @@ ol {
                     content: counters(item, ".") " ";
                     margin-right: size(13);
                 }
+            }
+        }
+    }
+}
+
+.search-input {
+    @include marginX(size(25), size(18));
+    border-top: 1px solid #c6c6c6;
+    padding-top: size(22);
+    
+    .input-wrapper {
+        position: relative;
+        
+        input {
+            width: 100%;
+            min-height: size(42);
+            background: #f6f6f6;
+            border: 0;
+            color: #252525;
+            font-family: $Freight;
+            font-size: size(16);
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: size(0.27);
+            line-height: size(24);
+            padding-left: size(16);
+            @include paddingX(size(16), size(51));
+            
+            &::placeholder {
+                opacity: 0.85;
+            }
+        }
+        
+        svg {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            right: size(48);
+            transform: translateY(-50%);
+        }
+    }
+}
+.article-container,.guide-container{
+    .guide {
+        &:not(:last-child) {
+            margin-bottom: size(10);
+        }
+        
+        opacity: 0.85;
+        transition: opacity 400ms;
+        
+        .title {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            .paragraph-1 {
+                font-weight: 600;
+                letter-spacing: size(0.27);
+            }
+            
+            .icons {
+                position: relative;
+                width: size(8);
+                height: size(8);
+                
+                .icon {
+                    font-size: size(15);
+                    font-weight: 600;
+                    cursor: pointer;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    transition: opacity 400ms;
+                    
+                    &.minus {
+                        opacity: 0;
+                        z-index: -1;
+                    }
+                    
+                    &.plus {
+                        opacity: 1;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+        
+        &.active {
+            opacity: 1;
+            
+            .icons {
+                .icon {
+                    &.plus {
+                        opacity: 0;
+                        z-index: -1;
+                    }
+                    
+                    &.minus {
+                        opacity: 1;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+        
+        .guide-content {
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            margin-left: size(-17);
+            transition: all 400ms ease-in-out;
+            
+            &.active {
+            
             }
         }
     }
