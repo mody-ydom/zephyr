@@ -186,6 +186,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     font-style: normal;
     letter-spacing: size(0.58);
     line-height: size(37.8);
+    text-align: center;
+
     @include x-large-screen {
         font-size: size(72);
         letter-spacing: size(0.44);
@@ -251,13 +253,14 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 }
 
 .headline-6, .cta, .wysiwyg-block h6 {
-    color: $zephyr-gray;
+    color: $zephyr-white;
     font-family: $Sailec;
     font-size: size(14);
     font-weight: 500;
     letter-spacing: size(0.44);
     line-height: size(24);
-    
+    text-transform: uppercase;
+    text-align: center;
     &.normal {
         font-weight: 400;
     }
@@ -291,6 +294,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
     font-style: normal;
     letter-spacing: size(0.5);
     line-height: size(24);
+    text-align: center;
     
     @include x-large-screen {
         font-size: size(18);
