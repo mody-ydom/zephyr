@@ -1,0 +1,152 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-contact-us {
+    margin-top: 52px;
+    
+    .contact-us-model {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include x-large-screen {
+            width: size(986);
+            margin: 0 auto;
+            flex-direction: row-reverse;
+            align-items: flex-start;
+            border: 1px solid #000000;
+        }
+        
+        .data {
+            background: $zephyr-gray;
+            padding: size(54) size(27) size(35);
+            width: 100%;
+            margin-bottom: size(70);
+            @include x-large-screen {
+                margin-bottom: 0;
+                padding: size(60) size(56) size(60) size(48);
+            }
+            
+            .title {
+                color: $zephyr-gray-light;
+                margin-bottom: size(52);
+                
+            }
+            
+            form {
+                max-width: size(276);
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+                
+                @include x-large-screen {
+                    max-width: size(310);
+                }
+                
+                input, textarea {
+                    width: 100%;
+                    //min-height: size(42);
+                    @include paddingX(size(16));
+                    padding: size(14) size(16) size(16);
+                    border: 1px solid #c7c7c7;
+                    margin-bottom: size(15);
+                }
+                
+                textarea {
+                    min-height: size(162);
+                    resize: none;
+                    margin-bottom: size(34);
+                    
+                    @include x-large-screen{
+                        margin-bottom: size(63);
+                    }
+                    
+                    &::-webkit-scrollbar {
+                        width: 3px;
+                        border-radius: 20px;
+                    }
+                    
+                    &::-webkit-scrollbar-track {
+                        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                    }
+                    
+                    &::-webkit-scrollbar-thumb {
+                        background-color: #c7c7c7;
+                        outline: 1px solid slategrey;
+                    }
+                }
+            }
+            
+            .btn {
+                display: block;
+                margin: auto;
+                border: none;
+                @include x-large-screen{
+                    border: 1px solid #4b4b4b;
+                }
+            }
+        }
+        
+        .content {
+            @include x-large-screen {
+                @include paddingY(size(60));
+                @include paddingX(size(63), size(68));
+            }
+            
+            .title {
+                max-width: size(252);
+                margin: 0 auto;
+                @include min-medium-screen {
+                    max-width: 100%;
+                }
+                @include x-large-screen {
+                    text-align: left;
+                    max-width: size(400);
+                    margin: 0;
+                }
+            }
+            
+            > .paragraph-1 {
+                max-width: size(262);
+                @include marginY(size(24), size(41));
+                @include min-medium-screen {
+                    max-width: 100%;
+                }
+                @include x-large-screen {
+                    text-align: left;
+                    max-width: size(880);
+                }
+            }
+            
+            .contact-info {
+                max-width: size(202);
+                margin: 0 auto;
+                
+                @include x-large-screen {
+                    max-width: size(282);
+                    text-align: left;
+                    margin: 0;
+                }
+                
+                .icon-and-info {
+                    display: flex;
+                    align-items: center;
+                    
+                    &:not(:last-child) {
+                        margin-bottom: size(29);
+                        @include x-large-screen {
+                            margin-bottom: size(24);
+                        }
+                    }
+                    
+                    .paragraph-1 {
+                        margin-left: size(40);
+                        @include x-large-screen {
+                            line-height: size(21);
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
