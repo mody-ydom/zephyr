@@ -1,9 +1,13 @@
 @import "src/styles/variables";
 @import "src/styles/mixins";
-
+div[smooth-scroll-container]{
+    overflow: visible !important;
+}
 section.component-our-team {
-    margin-top: size(111);
-    
+    @include marginY(105);
+    @include min-medium-screen{
+        @include marginY(size(111),size(200));
+    }
     .our-team {
         .our-team-title {
             margin-bottom: size(94);
@@ -89,6 +93,13 @@ section.component-our-team {
                     @include x-large-screen {
                         font-size: size(16);
                     }
+                }
+            }
+            .load-more{
+                display: flex;
+                margin: 0 auto;
+                @include min-medium-screen{
+                    display: none;
                 }
             }
         }
