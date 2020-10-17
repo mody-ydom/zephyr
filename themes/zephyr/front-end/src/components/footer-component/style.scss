@@ -1,0 +1,165 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+footer {
+    background-color: #1f1f1f;
+    @include paddingY(size(64), size(88));
+    @include x-large-screen {
+        @include paddingY(size(67), size(143));
+    }
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        @include x-large-screen {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        // logo and copy
+        .logo-and-copy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: size(60);
+            @include x-large-screen {
+                align-items: flex-start;
+                margin-bottom: 0;
+                
+            }
+            
+            .paragraph {
+                text-align: center;
+                margin-top: size(24);
+                display: block;
+                @include x-large-screen {
+                    font-size: size(14);
+                    line-height: size(24);
+                    max-width: size(202);
+                    text-align: left;
+                }
+            }
+        }
+        
+        // links
+        .links {
+            @include x-large-screen {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+            
+            .title-and-link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+             
+                @include x-large-screen {
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    
+                }
+                
+                // title
+                .headline-7 {
+                    margin-bottom: size(25);
+                }
+                
+                // link
+                .link {
+                    @include x-large-screen {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    
+                    .paragraph {
+                        line-height: size(32);
+                        transition: all 400ms ease-in-out;
+                        @include x-large-screen {
+                            line-height: size(24);
+                            &:not(:last-child){
+                                margin-bottom: size(12);
+                            }
+                        }
+                        &:hover{
+                            color: $zephyr-green;
+                        }
+                    }
+                }
+                
+                &.navigation {
+                    display: none;
+                    @include x-large-screen {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    
+                }
+                
+                &.newsletter {
+                    input {
+                        min-width: size(240);
+                        background: none;
+                        border: none;
+                        color: #d1d1d1;
+                        font-family: $Freight;
+                        font-size: size(14);
+                        font-weight: 400;
+                        font-style: normal;
+                        letter-spacing: size(0.44);
+                        line-height: size(21);
+                        text-align: left;
+                        padding: 0 0 size(12) 0;
+                        border-bottom: 1px solid #fefefd;
+                        margin-bottom: 20px;
+                        
+                        &::placeholder {
+                            color: #d1d1d1;
+                            font-family: $Freight;
+                            font-size: size(14);
+                            font-weight: 400;
+                            font-style: normal;
+                            letter-spacing: size(0.44);
+                            line-height: size(21);
+                            text-align: left;
+                        }
+                    }
+                }
+                
+                &.social {
+                    @include marginY(size(44), size(53));
+                    @include x-large-screen {
+                        margin: 0;
+                    }
+                    
+                    .icons {
+                        .icon {
+                            &:not(:last-child) {
+                                margin-right: size(38);
+                            }
+                            
+                            &:hover {
+                                svg {
+                                    path {
+                                        fill: $zephyr-green;
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+                
+                &.legal {
+                    .link {
+                        max-width: size(332);
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                    }
+                }
+            }
+        }
+        
+    }
+}

@@ -22,22 +22,9 @@ header {
             }
             
             .menu {
-                width: 100%;
-                height: 100%;
                 z-index: 2;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
                 cursor: pointer;
                 transition: all 400ms ease-in-out;
-                
-                span {
-                    display: block;
-                    width: 100%;
-                    height: size(2);
-                    background: $zephyr-gray;
-                }
                 
                 &.active {
                     opacity: 0;
@@ -57,11 +44,26 @@ header {
                 
                 svg {
                     z-index: 2;
+                    
+                    line {
+                        transition: all 400ms ease-in-out;
+                    }
+                    
                 }
                 
                 &.active {
                     opacity: 1;
                     pointer-events: visible;
+                    
+                    svg {
+                        z-index: 2;
+                        
+                        line {
+                            transition: all 400ms ease-in-out;
+                            stroke: $zephyr-white;
+                        }
+                        
+                    }
                 }
             }
             
@@ -113,6 +115,7 @@ header {
                 background: none;
                 .small-link {
                     color: $zephyr-gray;
+                    
                     &:not(:last-child) {
                         margin-bottom: 0;
                         margin-right: size(62);
