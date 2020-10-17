@@ -1,8 +1,6 @@
 @import "src/styles/variables";
 @import "src/styles/mixins";
-div[smooth-scroll-container]{
-    overflow: visible !important;
-}
+
 section.component-our-team {
     @include marginY(105);
     @include min-medium-screen{
