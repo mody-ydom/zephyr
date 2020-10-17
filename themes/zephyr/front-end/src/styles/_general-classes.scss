@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "fonts";
 
 :root {
     /* Colors: */
@@ -281,7 +282,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 }
 .headline-8{
     color: $zephyr-gray;
-    font-family: $Freight;
+    font-family: $Acumin;
     font-size: size(18);
     font-weight: 400;
     font-style: italic;
