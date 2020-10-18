@@ -5,8 +5,10 @@ section.component-hero {
     height: 100vh;
     position: relative;
     display: flex;
-    align-items: center;
-    @include paddingY(size(50));
+    @include paddingY(size(182) , size(180));
+    @include min-small-screen{
+        @include paddingY(size(250) , size(212));
+    }
     
     .hero-image {
         position: absolute;
@@ -27,7 +29,6 @@ section.component-hero {
     .content {
         .headline-6 {
             color: $zephyr-white;
-            font-weight: 400;
         }
         
         .headline-1 {

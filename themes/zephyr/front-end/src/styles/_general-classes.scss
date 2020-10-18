@@ -94,13 +94,15 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 }
 
 .gutter {
-    &--30{
+    &--30 {
         @include change-gutter(30px)
     }
-    &--50{
+    
+    &--50 {
         @include change-gutter(50px)
     }
-    &--85{
+    
+    &--85 {
         @include change-gutter(85px)
     }
 }
@@ -179,6 +181,12 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     line-height: size(37.8);
     text-align: center;
     
+    @include min-small-screen {
+        font-size: size(35);
+    }
+    @include min-medium-screen {
+        font-size: size(45);
+    }
     @include x-large-screen {
         font-size: size(72);
         letter-spacing: size(0.44);

@@ -10,7 +10,6 @@ header {
         display: flex;
         align-items: center;
         @include paddingY(size(35));
-        background: black;
         @include min-small-screen {
             justify-content: space-between;
         }
@@ -44,7 +43,7 @@ header {
                 left: 50%;
                 transform: translate(-50%, -50%);
                 transition: all 400ms ease-in-out;
-                z-index: 2;
+                z-index: 11;
                 cursor: pointer;
                 
                 svg {
@@ -77,7 +76,7 @@ header {
         
         .logo {
             margin: 0 auto;
-            z-index: 2;
+            z-index: 11;
             @include min-small-screen {
                 margin: 0;
             }
@@ -99,7 +98,7 @@ header {
             background: $zephyr-gray;
             transition: all 400ms ease-in-out;
             padding-top: size(131);
-            
+            z-index: 10;
             .small-link {
                 color: $zephyr-gray-light;
                 overflow: hidden;
