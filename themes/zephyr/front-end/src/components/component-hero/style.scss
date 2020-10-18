@@ -25,6 +25,9 @@ section.component-hero {
     }
     
     .content {
+        .headline-6{
+            color: $zephyr-white;
+        }
         .headline-1 {
             @include marginY(size(18), size(29));
         }

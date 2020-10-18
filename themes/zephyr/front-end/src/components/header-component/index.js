@@ -11,16 +11,16 @@ export default (container = document) => {
   console.log(burgerMenu);
   console.log(crossMenu);
   console.log(links);
+  
+  burgerMenu.addEventListener('click', function () {
+    burgerMenu.classList.add('active');
+    crossMenu.classList.add('active');
+    links.classList.add('active');
+  });
 
-  // burgerMenu.addEventListener('click', function () {
-  //   burgerMenu.classList.add('active');
-  //   crossMenu.classList.add('active');
-  //   links.classList.add('active');
-  // });
-
-  // crossMenu.addEventListener('click', function () {
-  //   crossMenu.classList.remove('active');
-  //   burgerMenu.classList.add('active');
-  //   links.classList.remove('active');
-  // });
+  crossMenu.addEventListener('click', function () {
+    crossMenu.classList.remove('active');
+    burgerMenu.classList.add('active');
+    links.classList.remove('active');
+  });
 };
