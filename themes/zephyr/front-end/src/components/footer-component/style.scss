@@ -3,7 +3,7 @@
 
 footer {
     background-color: #1f1f1f;
-    @include paddingY(size(64), size(88));
+    @include paddingY(size(64), size(80));
     @include x-large-screen {
         @include paddingY(size(67), size(143));
     }
@@ -23,7 +23,7 @@ footer {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: size(60);
+            margin-bottom: size(45);
             @include x-large-screen {
                 align-items: flex-start;
                 margin-bottom: 0;
@@ -31,8 +31,10 @@ footer {
             }
             
             .paragraph {
+                max-width: size(260);
+                color: $zephyr-gray-light;
                 text-align: center;
-                margin-top: size(24);
+                margin-top: size(20);
                 display: block;
                 @include x-large-screen {
                     font-size: size(14);
@@ -45,34 +47,41 @@ footer {
         
         // links
         .links {
-            @include x-large-screen {
+            @include min-small-screen {
                 display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            @include x-large-screen {
                 flex-direction: row-reverse;
                 min-width: size(790);
-                justify-content: space-between;
+                flex-wrap: nowrap;
             }
             
             .title-and-link {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                
+                @include min-small-screen {
+                    flex-basis: 30%;
+                }
                 @include x-large-screen {
-                    justify-content: flex-start;
+                    flex-basis: auto;
                     align-items: flex-start;
-                    
                 }
                 
-                // title
                 .headline-7 {
-                    margin-bottom: size(25);
+                    margin-bottom: size(12);
                 }
                 
                 // link
                 .link {
-                    @include x-large-screen {
+                    @include min-small-screen {
                         display: flex;
                         flex-direction: column;
+                        align-items: center;
+                    }
+                    @include x-large-screen {
                         align-items: flex-start;
                     }
                     
@@ -80,11 +89,11 @@ footer {
                         line-height: size(32);
                         transition: all 400ms ease-in-out;
                         overflow: hidden;
-    
+                        
                         @include x-large-screen {
                             line-height: size(24);
                             &:not(:last-child) {
-                                margin-bottom: size(12);
+                                margin-bottom: size(10);
                             }
                         }
                         
@@ -108,19 +117,33 @@ footer {
                             }
                         }
                     }
-                    
                 }
                 
                 &.navigation {
                     display: none;
-                    @include x-large-screen {
+                    @include min-small-screen {
+                        order: -5;
                         display: flex;
                         flex-direction: column;
+                    }
+                    @include x-large-screen {
+                        order: 0;
                     }
                     
                 }
                 
                 &.newsletter {
+                    @include min-small-screen {
+                        margin: 0 auto size(40);
+                        order: -6;
+                        flex-basis: 100%;
+                    }
+                    @include x-large-screen {
+                        margin: 0;
+                        order: 0;
+                        flex-basis: auto;
+                    }
+                    
                     input {
                         min-width: size(240);
                         padding: 0 0 size(12) 0;
@@ -132,12 +155,18 @@ footer {
                         min-width: size(156);
                         border: 1px solid #4b4b4b;
                     }
+                    
                 }
                 
                 &.social {
-                    @include marginY(size(44), size(53));
+                    @include marginY(size(45), size(60));
+                    @include min-small-screen {
+                        margin: 0;
+                        order: -3;
+                    }
                     @include x-large-screen {
                         margin: 0;
+                        order: 0;
                     }
                     
                     .icons {
@@ -154,12 +183,35 @@ footer {
                                 }
                             }
                             
+                            @include min-small-screen {
+                                display: none;
+                            }
                         }
                     }
+                    
+                    .mobile {
+                        @include min-small-screen {
+                            display: none;
+                        }
+                    }
+                    
+                    .desktop {
+                        display: none;
+                        @include min-small-screen {
+                            display: block;
+                        }
+                    }
+                    
                 }
                 
                 &.legal {
                     max-width: 320px;
+                    @include min-small-screen {
+                        order: -4;
+                    }
+                    @include x-large-screen {
+                        order: 0;
+                    }
                     
                     .link {
                         display: flex;
@@ -169,6 +221,5 @@ footer {
                 }
             }
         }
-        
     }
 }
