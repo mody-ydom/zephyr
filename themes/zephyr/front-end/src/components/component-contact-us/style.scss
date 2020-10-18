@@ -9,7 +9,7 @@ section.component-contact-us {
         flex-direction: column;
         align-items: center;
         @include x-large-screen {
-            width: size(986);
+            width: size(990);
             margin: 0 auto;
             flex-direction: row-reverse;
             align-items: flex-start;
@@ -23,8 +23,11 @@ section.component-contact-us {
             margin-bottom: size(70);
             @include x-large-screen {
                 margin-bottom: 0;
-                padding: size(60) size(56) size(60) size(48);
+                padding: size(60) size(42) size(60) size(47);
+                max-width: size(408);
+                border: 1px solid #000000;
             }
+            
             
             .title {
                 color: $zephyr-gray-light;
@@ -56,13 +59,13 @@ section.component-contact-us {
                     resize: none;
                     margin-bottom: size(34);
                     
-                    @include x-large-screen{
+                    @include x-large-screen {
                         margin-bottom: size(63);
                     }
                     
                     &::-webkit-scrollbar {
                         width: 3px;
-                        border-radius: 20px;
+                        border-radius: 50px;
                     }
                     
                     &::-webkit-scrollbar-track {
@@ -80,9 +83,17 @@ section.component-contact-us {
                 display: block;
                 margin: auto;
                 border: none;
-                @include x-large-screen{
+                min-width: size(152);
+                background-color: $zephyr-white;
+                display: flex;
+                @include x-large-screen {
                     border: 1px solid #4b4b4b;
+                    min-width: size(189);
                 }
+            }
+            
+            .arrow {
+                display: none;
             }
         }
         
@@ -90,6 +101,7 @@ section.component-contact-us {
             @include x-large-screen {
                 @include paddingY(size(60));
                 @include paddingX(size(63), size(68));
+                flex-grow: 1;
             }
             
             .title {
@@ -113,7 +125,8 @@ section.component-contact-us {
                 }
                 @include x-large-screen {
                     text-align: left;
-                    max-width: size(880);
+                    max-width: size(407);
+                    opacity: 0.85;
                 }
             }
             
@@ -145,8 +158,62 @@ section.component-contact-us {
                         }
                     }
                 }
+                
             }
         }
         
+        // in-about-page
+        
+        &.in-about-page {
+            @include x-large-screen {
+                .data {
+                    position: relative;
+                    
+                    .arrow {
+                        display: block;
+                        position: absolute;
+                        top: size(90);
+                        right: 99%;
+                    }
+                    
+                }
+                .contact-info-in-about-page {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    
+                    .icon-and-info {
+                        display: flex;
+                        
+                        &:last-child {
+                            margin-top: size(38);
+                        }
+                        
+                        .info {
+                            margin-left: size(18);
+                            
+                            .text {
+                                color: $zephyr-gray;
+                                font-family: $Sailec;
+                                font-size: size(15);
+                                font-weight: 500;
+                                font-style: normal;
+                                letter-spacing: size(0.17);
+                                line-height: size(25);
+                            }
+                            
+                            .paragraph-1 {
+                                opacity: 0.85;
+                            }
+                        }
+                        
+                        &.location {
+                            max-width: size(256);
+                        }
+                    }
+                }
+            }
+            
+        }
     }
 }
