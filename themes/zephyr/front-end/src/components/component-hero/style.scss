@@ -25,13 +25,25 @@ section.component-hero {
     }
     
     .content {
-        .headline-6{
+        .headline-6 {
             color: $zephyr-white;
-        }
-        .headline-1 {
-            @include marginY(size(18), size(29));
+            font-weight: 400;
         }
         
+        .headline-1 {
+            color: $zephyr-gray-light;
+            @include marginY(size(18), size(25));
+            @include min-medium-screen {
+                color: $zephyr-white;
+                @include marginY(size(18), size(22));
+            }
+        }
+        .paragraph{
+            @include min-medium-screen {
+            max-width: size(700);
+                margin: 0 auto;
+            }
+        }
     }
     
     .down {
@@ -40,16 +52,21 @@ section.component-hero {
         transform: translateX(-50%);
         bottom: size(35);
         cursor: pointer;
-        svg{
-            .dot{
-                animation: dot 1s ease-in-out infinite alternate ;
+        display: none;
+        @include min-small-screen{
+            display: block;
+        }
+        svg {
+            .dot {
+                animation: dot 1s ease-in-out infinite alternate;
                 transform: translateY(0);
             }
-            @keyframes  dot{
-                0%{
+            
+            @keyframes dot {
+                0% {
                     transform: translateY(0);
                 }
-                100%{
+                100% {
                     transform: translateY(18px);
                 }
             }
