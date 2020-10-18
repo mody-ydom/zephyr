@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol  ,form{
     @include paddingX(size(22));
     @include x-large-screen {
         max-width: size(1124);
-        @include paddingX(size(76));
+        //@include paddingX(size(76));
     }
 }
 
@@ -330,6 +330,7 @@ ol {
         
         h3 {
             @extend .headline-6;
+            font-family: $Freight;
             font-weight: 600;
             text-transform: none;
             font-size: size(15);
@@ -574,6 +575,7 @@ input ,textarea {
     padding: size(7) size(20) size(5);
     position: relative;
     transition: color 400ms;
+    z-index: 5;
     &::before {
         content: '';
         position: absolute;
@@ -595,9 +597,10 @@ input ,textarea {
         border: 0;
         &::before{
             width: 100%;
-            background: $zephyr-green;
+            background: $zephyr-white;
         }
         &:hover{
+            color: $zephyr-white;
             &::before{
                 width: 0;
             }
