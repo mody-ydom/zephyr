@@ -2,46 +2,103 @@
 @import "src/styles/mixins";
 
 section.component-growth-guide {
-    @include marginY(size(200),size(108));
-    @include min-medium-screen{
-        @include marginY(size(119),size(98));
+    @include marginY(size(200), size(108));
+    @include min-medium-screen {
+        @include marginY(size(119), size(98));
     }
+    
     .growth-guide {
+        .growth-guide-title {
+            margin-bottom: size(300);
+            @include min-medium-screen{
+                margin-bottom: size(69);
+            }
+            .headline-6{
+                margin-bottom: size(18);
+            }
+            .headline-2 {
+                @include min-medium-screen{
+                    margin: 0 auto;
+                    max-width: 77%;
+                }
+            }
+        }
+        
         .growth-guide-content {
+            max-width: size(1051);
+            margin: 0 auto;
+            .row{
+                @include min-medium-screen{
+                    @include change-gutter(40px);
+                }
+                @include change-gutter(100px)
+            }
             .left-content {
                 max-width: size(336);
                 border: 1px solid #c6c6c6;
                 @include paddingY(size(44), size(27));
-                
+                display: none;
+                @include min-medium-screen{
+                    display: block;
+                }
                 .guide-container {
                     @include paddingX(size(42), size(22));
                     padding-bottom: size(24);
-    
+                    
                 }
                 
             }
             
             .right-content {
+                @include min-medium-screen{
+                    padding-top: size(38);
+                }
                 .headline-8 {
+                    color: #808080;
+                    @include marginY(size(15),size(73));
+                    @include min-medium-screen{
+                        margin-top: 0;
+                        margin-bottom: size(21);
+                    }
                     span {
                         font-size: size(12);
+                        font-family: $Sailec;
                         letter-spacing: size(0.09);
+                        margin-right: size(10);
                     }
                 }
                 
                 ul {
-                    list-style: disc;
-                    padding-left: size(25);
+                    list-style: none;
+                    @include min-medium-screen{
+                        padding-left: size(5);
+                    }
+                    margin-bottom: size(43);
                     
                     li {
                         line-height: size(24);
                         font-weight: 500;
                         font-style: italic;
+                        position: relative;
+                        padding-left: size(12);
+                        &:not(:last-child){
+                            margin-bottom: size(11);
+                        }
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: size(6);
+                            height: size(6);
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background: #454545;
+                            border-radius: 50%;
+                        }
                     }
                 }
                 
                 .image-wrapper {
-                    @include marginY(size(33), size(48));
                     padding-top: 68.95%;
                     position: relative;
                     height: 0;
@@ -54,32 +111,119 @@ section.component-growth-guide {
                     }
                 }
                 
-                .paragraphs {
+                .paragraphs-1 {
+                    margin-bottom: size(38);
+                    @include min-medium-screen{
+                        margin-bottom: size(28);
+                    }
                     .paragraph-1 {
+                        &:not(:last-child){
+                            @include min-medium-screen{
+                                margin-bottom: size(19);
+                            }
+                        }
                         span {
+                            padding: size(4);
                             background-color: rgba(107, 227, 168, 0.6);
                         }
                     }
                 }
                 
+                .paragraphs-2 {
+                    margin-top: size(50);
+                    .paragraph-1{
+                        &:not(:last-child){
+                            @include min-medium-screen{
+                                margin-bottom: size(19);
+                            }
+                        }
+                    }
+                }
+                
                 .written-by {
-                    max-width: size(293);
-                    justify-content: space-between;
-                    margin-top: size(35);
-                    
+                    max-width: size(260);
+                    justify-content: center;
+                    flex-direction: column;
+                    @include marginX(auto);
+                    margin-top: size(62);
+                    @include min-medium-screen{
+                        margin-top: size(50);
+                        flex-direction: row;
+                        justify-content: space-between;
+                        @include marginX(0);
+                    }
+                    img{
+                        margin-bottom: size(12);
+                        @include min-medium-screen{
+                            margin-bottom: 0;
+                        }
+                    }
                     .paragraph-1 {
+                        text-align: center;
+                        @include min-medium-screen{
+                            text-align: left;
+                        }
                         span {
                             font-family: $Sailec;
                             font-weight: 500;
                             letter-spacing: size(0.17);
+                            display: block;
+                            margin-top: size(7);
+                            @include min-medium-screen{
+                                display: inline;
+                                margin-top: 0;
+                            }
                         }
                     }
                 }
                 
                 .next-chapter {
                     display: block;
-                    margin-top: size(150);
+                    margin-top: size(87);
+                    text-align: right;
+                    @include min-medium-screen{
+                        margin-top: size(150);
+                        text-align: left;
+                    }
+                    .headline-3{
+                        span{
+                            margin-left: size(30);
+                            @include min-medium-screen{
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                    .headline-8 {
+                        margin-bottom: 0;
+                    }
                 }
+                
+                .mobile-select{
+                    position: relative;
+                    display: block;
+                    margin-top: size(74);
+                    @include min-medium-screen{
+                        display: none;
+                    }
+                    .arrow-select{
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: size(15);
+                    }
+                    select{
+                        background: $zephyr-white;
+                        border: 1px solid #C6C6C6;
+                        @include paddingY(size(8));
+                        @include paddingX(size(10),size(30));
+                        letter-spacing: size(0.27);
+                        font-family: $Freight;
+                        width: 100%;
+                        text-transform: none;
+                        appearance:none;
+                    }
+                }
+                
             }
         }
     }

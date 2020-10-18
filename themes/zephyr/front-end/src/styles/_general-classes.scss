@@ -88,8 +88,12 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 }
 
 .container {
+    padding-right: size(21);
+    padding-left: size(21);
     @include x-large-screen {
         max-width: size(1200);
+        padding-right: size(38);
+        padding-left: size(38);
     }
 }
 
@@ -269,7 +273,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 
 .headline-8 {
     color: $zephyr-gray;
-    font-family: $Sailec;
+    font-family: $Freight;
     font-size: size(18);
     font-weight: 400;
     font-style: italic;
@@ -324,6 +328,7 @@ ol {
         color: $zephyr-gray;
         font-size: size(15);
         font-weight: 600;
+        font-family: $Freight;
     }
     
     > li {
@@ -342,26 +347,29 @@ ol {
             
             > li {
                 color: #3d3d3d;
-                font-family: $Sailec;
-                font-size: size(12);
+                font-family: $Freight;
+                font-size: size(13);
                 letter-spacing: size(0.22);
                 line-height: size(24);
                 font-weight: 400;
-                font-style: normal;
+                font-style: italic;
                 cursor: pointer;
-                
+                &:not(:last-child){
+                    margin-bottom: size(8);
+                }
                 &.active {
-                    font-family: $Freight;
                     font-weight: 700;
-                    font-style: italic;
+                    font-style: normal;
                 }
                 
                 display: block;
                 position: relative;
+                padding-left: size(39);
                 
                 &:before {
                     content: counters(item, ".") " ";
-                    margin-right: size(13);
+                    position: absolute;
+                    right: calc(100% - 17px);
                 }
             }
         }
@@ -381,7 +389,7 @@ ol {
             min-height: size(42);
             background: #f6f6f6;
             border: 0;
-            color: #252525;
+            color: $zephyr-gray;
             font-family: $Freight;
             font-size: size(16);
             font-weight: 400;
@@ -389,10 +397,14 @@ ol {
             letter-spacing: size(0.27);
             line-height: size(24);
             padding-left: size(16);
-            @include paddingX(size(16), size(51));
+            @include paddingX(size(16), size(68));
             
             &::placeholder {
                 opacity: 0.85;
+                color: $zephyr-gray;
+                font-style: italic;
+                font-size: size(16);
+                font-family: $Freight;
             }
         }
         
@@ -409,7 +421,7 @@ ol {
 .article-container, .guide-container {
     .guide {
         &:not(:last-child) {
-            margin-bottom: size(10);
+            margin-bottom: size(12);
         }
         
         opacity: 0.85;
@@ -456,7 +468,10 @@ ol {
         
         &.active {
             opacity: 1;
-            
+            margin-bottom: size(22);
+            .guide-content{
+                margin-top: size(10);
+            }
             .icons {
                 .icon {
                     &.plus {
@@ -476,8 +491,8 @@ ol {
             width: 100%;
             height: 0;
             overflow: hidden;
-            margin-left: size(-17);
-            
+            transition: margin-top 400ms ease;
+            padding-right: size(15);
             &.active {
             
             }
