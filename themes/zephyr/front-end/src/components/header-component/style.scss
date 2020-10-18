@@ -10,7 +10,6 @@ header {
         display: flex;
         align-items: center;
         @include paddingY(size(35));
-        background: black;
         @include min-small-screen {
             justify-content: space-between;
         }
