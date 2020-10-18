@@ -330,6 +330,7 @@ ol {
         
         h3 {
             @extend .headline-6;
+            font-family: $Freight;
             font-weight: 600;
             text-transform: none;
             font-size: size(15);
@@ -596,9 +597,10 @@ input ,textarea {
         border: 0;
         &::before{
             width: 100%;
-            background: $zephyr-green;
+            background: $zephyr-white;
         }
         &:hover{
+            color: $zephyr-white;
             &::before{
                 width: 0;
             }
