@@ -629,14 +629,14 @@ svg {
     }
 }
 
-.show {
+.mobile-only {
     display: block;
     @include x-large-screen {
         display: none;
     }
 }
 
-.hide {
+.desktop-only {
     display: none;
     @include x-large-screen {
         display: block;
