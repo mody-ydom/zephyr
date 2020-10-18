@@ -424,7 +424,7 @@ ol {
             margin-bottom: size(12);
         }
         
-        opacity: 0.85;
+        opacity: 0.85 !important;
         transition: opacity 400ms;
         
         .title {
@@ -467,7 +467,7 @@ ol {
         }
         
         &.active {
-            opacity: 1;
+            opacity: 1 !important;
             margin-bottom: size(22);
             .guide-content{
                 margin-top: size(10);

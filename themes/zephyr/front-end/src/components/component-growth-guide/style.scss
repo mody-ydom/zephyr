@@ -17,21 +17,23 @@ section.component-growth-guide {
                 margin-bottom: size(18);
             }
             .headline-2 {
+                text-transform: capitalize;
                 @include min-medium-screen{
                     margin: 0 auto;
                     max-width: 77%;
+                    text-transform: none;
                 }
             }
         }
         
         .growth-guide-content {
-            max-width: size(1051);
+            max-width: size(990);
             margin: 0 auto;
             .row{
-                @include min-medium-screen{
-                    @include change-gutter(40px);
+                @include change-gutter(50px);
+                @include x-large-screen{
+                    @include change-gutter(100px)
                 }
-                @include change-gutter(100px)
             }
             .left-content {
                 max-width: size(336);
@@ -50,13 +52,16 @@ section.component-growth-guide {
             }
             
             .right-content {
-                @include min-medium-screen{
+                @include x-large-screen{
                     padding-top: size(38);
                 }
                 .headline-8 {
                     color: #808080;
                     @include marginY(size(15),size(73));
                     @include min-medium-screen{
+                        margin-bottom: size(30);
+                    }
+                    @include x-large-screen{
                         margin-top: 0;
                         margin-bottom: size(21);
                     }
@@ -76,13 +81,17 @@ section.component-growth-guide {
                     margin-bottom: size(43);
                     
                     li {
-                        line-height: size(24);
-                        font-weight: 500;
                         font-style: italic;
                         position: relative;
                         padding-left: size(12);
+                        letter-spacing: size(0.5);
+                        font-family: $Freight;
+                        text-transform: none;
                         &:not(:last-child){
-                            margin-bottom: size(11);
+                            margin-bottom: size(5);
+                            @include min-medium-screen{
+                                margin-bottom: size(11);
+                            }
                         }
                         &::before {
                             content: '';
@@ -182,6 +191,9 @@ section.component-growth-guide {
                     margin-top: size(87);
                     text-align: right;
                     @include min-medium-screen{
+                        margin-top: size(40);
+                    }
+                    @include x-large-screen{
                         margin-top: size(150);
                         text-align: left;
                     }
@@ -194,7 +206,13 @@ section.component-growth-guide {
                         }
                     }
                     .headline-8 {
+                        max-width: 80%;
+                        margin-left: auto;
                         margin-bottom: 0;
+                        @include min-medium-screen{
+                            max-width: 100%;
+                            margin-left: 0;
+                        }
                     }
                 }
                 
