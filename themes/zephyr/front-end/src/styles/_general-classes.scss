@@ -113,7 +113,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     text-align: center;
 }
 
-
 // Zephyr general classes
 //$color-names: "black", "dark-blue", "light-blue", "dark-yellow", "light-yellow", "dark-gray", "light-gray";
 //$colors: $black, $dark-blue, $light-blue, $dark-yellow, $light-yellow, $dark-gray, $light-gray;
@@ -258,7 +257,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     }
 }
 
-// in footer
 .headline-7 {
     color: $zephyr-green;
     font-family: $Freight;
@@ -268,7 +266,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     line-height: size(36);
     text-transform: uppercase;
 }
-
 
 .headline-8 {
     color: $zephyr-gray;
@@ -284,9 +281,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     }
 }
 
-// in footer
-
-
 .paragraph, .wysiwyg-block, p, .wysiwyg-block {
     color: $zephyr-white;
     font-family: $Freight;
@@ -301,7 +295,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
         line-height: size(28);
     }
 }
-
 
 .paragraph-1 {
     color: $zephyr-gray;
@@ -484,7 +477,6 @@ ol {
             height: 0;
             overflow: hidden;
             margin-left: size(-17);
-            transition: all 400ms ease-in-out;
             
             &.active {
             
@@ -511,7 +503,7 @@ ol {
 }
 
 // in contact us
-.title {
+.title-contact {
     color: $zephyr-gray;
     font-family: $Canela;
     font-size: size(24);
@@ -539,7 +531,6 @@ ol {
     }
 }
 
-
 input, textarea {
     padding: 0;
     background: none;
@@ -564,7 +555,6 @@ input, textarea {
         text-align: left;
     }
 }
-
 
 .btn {
     color: $zephyr-gray;
