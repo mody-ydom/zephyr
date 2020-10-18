@@ -40,10 +40,6 @@ section.component-hero {
         transform: translateX(-50%);
         bottom: size(35);
         cursor: pointer;
-        display: none;
-        @include min-medium-screen {
-            display: block;
-        }
         svg{
             .dot{
                 animation: dot 1s ease-in-out infinite alternate ;
