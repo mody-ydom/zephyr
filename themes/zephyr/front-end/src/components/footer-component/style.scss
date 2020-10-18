@@ -48,6 +48,8 @@ footer {
             @include x-large-screen {
                 display: flex;
                 flex-direction: row-reverse;
+                min-width: size(790);
+                justify-content: space-between;
             }
             
             .title-and-link {
@@ -84,28 +86,28 @@ footer {
                             }
                         }
                         
-                        &:hover {
-                            color: $zephyr-green;
-                        }
                     }
-    
+                    
                     a {
                         overflow: hidden;
+                        
                         span {
                             position: relative;
-                            //display: inline-block;
-                            transition: transform 0.3s;
+                            transition: transform 0.3s ease-in-out;
                             display: block;
-                            &:before{
+                            
+                            &:before {
                                 position: absolute;
                                 top: 100%;
                                 content: attr(data-hover);
-                                transform: translate3d(0,0,0);
+                                transform: translate3d(0, 0, 0);
                             }
                         }
-                        &:hover{
-                            span{
+                        
+                        &:hover {
+                            span {
                                 transform: translateY(-100%);
+                                color: $zephyr-green;
                             }
                         }
                     }
@@ -126,6 +128,11 @@ footer {
                         padding: 0 0 size(12) 0;
                         border-bottom: 1px solid #fefefd;
                         margin-bottom: 20px;
+                    }
+                    
+                    .btn {
+                        min-width: size(156);
+                        border: 1px solid #4b4b4b;
                     }
                 }
                 
@@ -154,8 +161,8 @@ footer {
                 }
                 
                 &.legal {
+                    max-width: 320px;
                     .link {
-                        max-width: size(332);
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-around;

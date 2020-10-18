@@ -14,7 +14,7 @@ header {
             justify-content: space-between;
         }
         
-        .burger-and-cross {
+        .menu-and-cross {
             min-width: size(28);
             height: size(20);
             position: relative;
@@ -54,6 +54,7 @@ header {
                     
                 }
                 
+                
                 &.active {
                     opacity: 1;
                     pointer-events: visible;
@@ -78,6 +79,10 @@ header {
             @include min-medium-screen {
                 margin: 0;
             }
+            
+            &.light {
+                display: none;
+            }
         }
         
         .links {
@@ -92,18 +97,38 @@ header {
             justify-content: center;
             background: $zephyr-gray;
             transition: all 400ms ease-in-out;
+    
+        
             
             .small-link {
-                color: #fefefd;
-                
+                color: $zephyr-gray-light;
+                overflow: hidden;
+    
+                span {
+                    position: relative;
+                    transition: transform 0.3s ease-in-out;
+                    display: block;
+        
+                    &:before {
+                        position: absolute;
+                        top: 100%;
+                        content: attr(data-hover);
+                        transform: translate3d(0, 0, 0);
+                    }
+                }
+    
+                &:hover {
+                    span {
+                        transform: translateY(-100%);
+                        color: $zephyr-green;
+
+                    }
+                }
                 &:not(:last-child) {
                     margin-bottom: size(30);
                 }
             }
             
-            &.white {
-                background: $zephyr-white;
-            }
             
             &.active {
                 right: 0;
@@ -120,6 +145,64 @@ header {
                     &:not(:last-child) {
                         margin-bottom: 0;
                         margin-right: size(62);
+                    }
+                }
+            }
+        }
+        
+        
+        &.white {
+            .menu-and-cross {
+                .menu {
+                    svg {
+                        line {
+                            stroke: $zephyr-gray;
+                        }
+                    }
+                }
+                
+                .cross {
+                    &.active {
+                        svg {
+                            line {
+                                transition: all 400ms ease-in-out;
+                                stroke: $zephyr-gray;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .logo {
+                &.dark {
+                    display: none;
+                }
+                
+                &.light {
+                    display: block;
+                }
+                
+                @include min-medium-screen {
+                    &.dark {
+                        display: block;
+                    }
+                    &.light {
+                        display: none;
+                    }
+                }
+            }
+            
+            .links {
+                background: $zephyr-white;
+                
+                .small-link {
+                    color: $zephyr-gray;
+                }
+                
+                @include min-medium-screen {
+                    background: none;
+                    .small-link {
+                        color: $zephyr-gray-light;
                     }
                 }
             }
