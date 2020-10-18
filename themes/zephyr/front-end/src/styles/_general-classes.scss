@@ -8,7 +8,7 @@
     --zephyr-white: #ffffff;
     --zephyr-gray: #252525;
     --zephyr-green: #5fe099;
-    --zephyr-gray-light:  #fefefd;
+    --zephyr-gray-light: #fefefd;
     --zephyr-blue: #4381cf;
     --zephyr-dark-blue: #1b1c30;
     --zephyr-salmon: #f67f6f;
@@ -48,7 +48,7 @@ button {
     border: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol  ,form{
+h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     margin: 0;
     padding: 0;
 }
@@ -88,10 +88,20 @@ h1, h2, h3, h4, h5, h6, p, ul, ol  ,form{
 }
 
 .container {
-    @include paddingX(size(22));
     @include x-large-screen {
-        max-width: size(1124);
-        //@include paddingX(size(76));
+        max-width: size(1200);
+    }
+}
+
+.gutter {
+    &--30{
+        @include change-gutter(30px)
+    }
+    &--50{
+        @include change-gutter(50px)
+    }
+    &--85{
+        @include change-gutter(85px)
     }
 }
 
@@ -513,7 +523,7 @@ ol {
         font-size: size(36);
         line-height: size(42);
         letter-spacing: size(0.47);
-    
+        
     }
 }
 
@@ -530,7 +540,7 @@ ol {
 }
 
 
-input ,textarea {
+input, textarea {
     padding: 0;
     background: none;
     border: none;
@@ -574,6 +584,7 @@ input ,textarea {
     position: relative;
     transition: color 400ms;
     z-index: 5;
+    
     &::before {
         content: '';
         position: absolute;
@@ -585,21 +596,27 @@ input ,textarea {
         transition: width 400ms;
         z-index: -1;
     }
+    
     &:hover {
         border-color: $zephyr-green;
+        
         &::before {
             width: 100%;
         }
     }
-    &.has-bg{
+    
+    &.has-bg {
         border: 0;
-        &::before{
+        
+        &::before {
             width: 100%;
             background: $zephyr-white;
         }
-        &:hover{
+        
+        &:hover {
             color: $zephyr-white;
-            &::before{
+            
+            &::before {
                 width: 0;
             }
         }

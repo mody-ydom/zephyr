@@ -79,17 +79,14 @@ footer {
                     .paragraph {
                         line-height: size(32);
                         transition: all 400ms ease-in-out;
+                        overflow: hidden;
+    
                         @include x-large-screen {
                             line-height: size(24);
                             &:not(:last-child) {
                                 margin-bottom: size(12);
                             }
                         }
-                        
-                    }
-                    
-                    a {
-                        overflow: hidden;
                         
                         span {
                             position: relative;
@@ -111,6 +108,7 @@ footer {
                             }
                         }
                     }
+                    
                 }
                 
                 &.navigation {
@@ -162,6 +160,7 @@ footer {
                 
                 &.legal {
                     max-width: 320px;
+                    
                     .link {
                         display: flex;
                         flex-wrap: wrap;
