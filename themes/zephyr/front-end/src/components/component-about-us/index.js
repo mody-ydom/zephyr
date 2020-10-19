@@ -3,31 +3,11 @@ import Swiper, {Pagination} from 'swiper';
 import 'swiper/swiper.scss';
 
 export default (container = document) => {
+  let aboutUs = container.querySelector('.component-about-us');
+  if (!aboutUs) return;
   Swiper.use([Pagination]);
   let swiper= Swiper;
   let init = false;
-  swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    slidesPerColumn: 1,
-    slidesPerColumnFill: "row",
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      576:{
-        slidesPerView:2,
-        slidesPerColumn:1,
-        spaceBetween: 40,
-      },
-      1024: {
-        slidesPerView: 3,
-        slidesPerColumn: 2,
-        spaceBetween: 76
-      },
-    }
-  });
   
   function swiperMode() {
     let mobile = window.matchMedia('(min-width: 0px) and (max-width: 767px)');
@@ -38,7 +18,7 @@ export default (container = document) => {
     if(mobile.matches) {
       if (!init) {
         init = true;
-        swiper = new Swiper('.swiper-container', {
+        swiper = new Swiper('.our-journey-content', {
           slidesPerView: 1,
           slidesPerColumn: 1,
           slidesPerColumnFill: "row",

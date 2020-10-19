@@ -1,0 +1,11 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-home-swiper {
+    @include marginY(size(260),size(218));
+    .home-swiper{
+        .left-side{
+        
+        }
+    }
+}

@@ -8,6 +8,7 @@ section.component-our-journey {
     }
     .our-journey{
         .our-journey-title{
+            margin-bottom: size(107);
             .headline-6{
                 margin-bottom: size(32);
                 @include x-large-screen{
@@ -18,11 +19,14 @@ section.component-our-journey {
         .our-journey-content{
             .journey-box{
                 @include paddingX(size(30));
-                @include paddingY(size(30),size(59));
+                @include paddingY(size(30));
+                min-height: size(335);
+                //margin-bottom: size(44);
                 .headline-6{
                     font-size: size(13);
                     font-weight: 400;
                     letter-spacing: size(0.5);
+                    margin-bottom: size(45);
                 }
                 .headline-7{
                     color: $zephyr-gray;
@@ -30,6 +34,10 @@ section.component-our-journey {
                     letter-spacing: size(0.17);
                     text-transform: none;
                     line-height: size(25);
+                    margin-bottom: size(25);
+                }
+                svg{
+                    margin-bottom: size(16);
                 }
                 &.milky{
                     background: #cce7dc;
