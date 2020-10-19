@@ -10,8 +10,7 @@ header {
         display: flex;
         align-items: center;
         @include paddingY(size(35));
-        background: aquamarine;
-        @include min-medium-screen {
+        @include min-small-screen {
             justify-content: space-between;
         }
         
@@ -21,7 +20,7 @@ header {
             position: relative;
             
             
-            @include min-medium-screen {
+            @include min-small-screen {
                 display: none;
             }
             
@@ -44,7 +43,8 @@ header {
                 left: 50%;
                 transform: translate(-50%, -50%);
                 transition: all 400ms ease-in-out;
-                z-index: 2;
+                z-index: 11;
+                cursor: pointer;
                 
                 svg {
                     z-index: 2;
@@ -76,8 +76,8 @@ header {
         
         .logo {
             margin: 0 auto;
-            z-index: 2;
-            @include min-medium-screen {
+            z-index: 11;
+            @include min-small-screen {
                 margin: 0;
             }
             
@@ -95,21 +95,23 @@ header {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             background: $zephyr-gray;
             transition: all 400ms ease-in-out;
-    
-        
-            
+            padding-top: size(131);
+            z-index: 10;
             .small-link {
                 color: $zephyr-gray-light;
                 overflow: hidden;
-    
+                
+                &:not(:last-child) {
+                    margin-bottom: size(20);
+                }
+                
                 span {
                     position: relative;
                     transition: transform 0.3s ease-in-out;
                     display: block;
-        
+                    
                     &:before {
                         position: absolute;
                         top: 100%;
@@ -117,17 +119,27 @@ header {
                         transform: translate3d(0, 0, 0);
                     }
                 }
-    
+                
                 &:hover {
                     span {
                         transform: translateY(-100%);
                         color: $zephyr-green;
-
+                        
                     }
                 }
-                &:not(:last-child) {
-                    margin-bottom: size(30);
+                @include min-medium-screen{
+                    font-size: size(14);
+                    &:not(:last-child) {
+                        margin-right: size(40);
+                    }
                 }
+                @include x-large-screen {
+                        &:not(:last-child) {
+                            margin-right: size(62) !important;
+                    }
+                }
+    
+    
             }
             
             
@@ -135,20 +147,24 @@ header {
                 right: 0;
             }
             
-            @include min-medium-screen {
+            @include min-small-screen {
                 width: auto;
                 height: auto;
                 flex-direction: row;
                 position: relative;
                 right: 0;
                 background: none;
+                padding-top: 0;
                 .small-link {
+                    font-size: size(12);
+                    
                     &:not(:last-child) {
                         margin-bottom: 0;
-                        margin-right: size(62);
+                        margin-right: size(20);
                     }
                 }
             }
+            
         }
         
         
@@ -183,7 +199,7 @@ header {
                     display: none;
                 }
                 
-                @include min-medium-screen {
+                @include min-small-screen {
                     &.dark {
                         display: block;
                     }
@@ -200,7 +216,7 @@ header {
                     color: $zephyr-gray;
                 }
                 
-                @include min-medium-screen {
+                @include min-small-screen {
                     background: none;
                     .small-link {
                         color: $zephyr-gray-light;

@@ -5,8 +5,10 @@ section.component-hero {
     height: 100vh;
     position: relative;
     display: flex;
-    align-items: center;
-    @include paddingY(size(50));
+    @include paddingY(size(182) , size(180));
+    @include min-small-screen{
+        @include paddingY(size(250) , size(212));
+    }
     
     .hero-image {
         position: absolute;
@@ -25,13 +27,24 @@ section.component-hero {
     }
     
     .content {
-        .headline-6{
+        .headline-6 {
             color: $zephyr-white;
         }
-        .headline-1 {
-            @include marginY(size(18), size(29));
-        }
         
+        .headline-1 {
+            color: $zephyr-gray-light;
+            @include marginY(size(18), size(25));
+            @include min-medium-screen {
+                color: $zephyr-white;
+                @include marginY(size(18), size(22));
+            }
+        }
+        .paragraph{
+            @include min-medium-screen {
+            max-width: size(700);
+                margin: 0 auto;
+            }
+        }
     }
     
     .down {
@@ -41,19 +54,20 @@ section.component-hero {
         bottom: size(35);
         cursor: pointer;
         display: none;
-        @include min-medium-screen {
+        @include min-small-screen{
             display: block;
         }
-        svg{
-            .dot{
-                animation: dot 1s ease-in-out infinite alternate ;
+        svg {
+            .dot {
+                animation: dot 1s ease-in-out infinite alternate;
                 transform: translateY(0);
             }
-            @keyframes  dot{
-                0%{
+            
+            @keyframes dot {
+                0% {
                     transform: translateY(0);
                 }
-                100%{
+                100% {
                     transform: translateY(18px);
                 }
             }

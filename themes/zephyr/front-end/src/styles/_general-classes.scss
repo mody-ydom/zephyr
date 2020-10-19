@@ -88,19 +88,25 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 }
 
 .container {
+    padding-right: size(21);
+    padding-left: size(21);
     @include x-large-screen {
         max-width: size(1200);
+        padding-right: size(38);
+        padding-left: size(38);
     }
 }
 
 .gutter {
-    &--30{
+    &--30 {
         @include change-gutter(30px)
     }
-    &--50{
+    
+    &--50 {
         @include change-gutter(50px)
     }
-    &--85{
+    
+    &--85 {
         @include change-gutter(85px)
     }
 }
@@ -112,7 +118,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 .center {
     text-align: center;
 }
-
 
 // Zephyr general classes
 //$color-names: "black", "dark-blue", "light-blue", "dark-yellow", "light-yellow", "dark-gray", "light-gray";
@@ -180,6 +185,12 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     line-height: size(37.8);
     text-align: center;
     
+    @include min-small-screen {
+        font-size: size(35);
+    }
+    @include min-medium-screen {
+        font-size: size(45);
+    }
     @include x-large-screen {
         font-size: size(72);
         letter-spacing: size(0.44);
@@ -195,6 +206,10 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     font-style: normal;
     letter-spacing: size(0.58);
     line-height: size(37.8);
+    @include min-medium-screen{
+        font-size: size(37);
+        line-height: size(47.8);
+    }
     @include x-large-screen {
         font-size: size(45);
         letter-spacing: size(0.44);
@@ -258,10 +273,9 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     }
 }
 
-// in footer
 .headline-7 {
     color: $zephyr-green;
-    font-family: $Freight;
+    font-family: $Sailec;
     font-size: size(12);
     font-weight: 500;
     letter-spacing: size(0.6);
@@ -269,10 +283,9 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     text-transform: uppercase;
 }
 
-
 .headline-8 {
     color: $zephyr-gray;
-    font-family: $Sailec;
+    font-family: $Freight;
     font-size: size(18);
     font-weight: 400;
     font-style: italic;
@@ -283,9 +296,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
         line-height: size(66);
     }
 }
-
-// in footer
-
 
 .paragraph, .wysiwyg-block, p, .wysiwyg-block {
     color: $zephyr-white;
@@ -301,7 +311,6 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
         line-height: size(28);
     }
 }
-
 
 .paragraph-1 {
     color: $zephyr-gray;
@@ -331,6 +340,7 @@ ol {
         color: $zephyr-gray;
         font-size: size(15);
         font-weight: 600;
+        font-family: $Freight;
     }
     
     > li {
@@ -349,26 +359,29 @@ ol {
             
             > li {
                 color: #3d3d3d;
-                font-family: $Sailec;
-                font-size: size(12);
+                font-family: $Freight;
+                font-size: size(13);
                 letter-spacing: size(0.22);
                 line-height: size(24);
                 font-weight: 400;
-                font-style: normal;
+                font-style: italic;
                 cursor: pointer;
-                
+                &:not(:last-child){
+                    margin-bottom: size(8);
+                }
                 &.active {
-                    font-family: $Freight;
                     font-weight: 700;
-                    font-style: italic;
+                    font-style: normal;
                 }
                 
                 display: block;
                 position: relative;
+                padding-left: size(39);
                 
                 &:before {
                     content: counters(item, ".") " ";
-                    margin-right: size(13);
+                    position: absolute;
+                    right: calc(100% - 17px);
                 }
             }
         }
@@ -388,7 +401,7 @@ ol {
             min-height: size(42);
             background: #f6f6f6;
             border: 0;
-            color: #252525;
+            color: $zephyr-gray;
             font-family: $Freight;
             font-size: size(16);
             font-weight: 400;
@@ -396,10 +409,14 @@ ol {
             letter-spacing: size(0.27);
             line-height: size(24);
             padding-left: size(16);
-            @include paddingX(size(16), size(51));
+            @include paddingX(size(16), size(68));
             
             &::placeholder {
                 opacity: 0.85;
+                color: $zephyr-gray;
+                font-style: italic;
+                font-size: size(16);
+                font-family: $Freight;
             }
         }
         
@@ -416,10 +433,10 @@ ol {
 .article-container, .guide-container {
     .guide {
         &:not(:last-child) {
-            margin-bottom: size(10);
+            margin-bottom: size(12);
         }
         
-        opacity: 0.85;
+        opacity: 0.85 !important;
         transition: opacity 400ms;
         
         .title {
@@ -462,8 +479,11 @@ ol {
         }
         
         &.active {
-            opacity: 1;
-            
+            opacity: 1 !important;
+            margin-bottom: size(22);
+            .guide-content{
+                margin-top: size(10);
+            }
             .icons {
                 .icon {
                     &.plus {
@@ -483,9 +503,8 @@ ol {
             width: 100%;
             height: 0;
             overflow: hidden;
-            margin-left: size(-17);
-            transition: all 400ms ease-in-out;
-            
+            transition: margin-top 400ms ease;
+            padding-right: size(15);
             &.active {
             
             }
@@ -511,7 +530,7 @@ ol {
 }
 
 // in contact us
-.title {
+.title-contact {
     color: $zephyr-gray;
     font-family: $Canela;
     font-size: size(24);
@@ -523,7 +542,6 @@ ol {
         font-size: size(36);
         line-height: size(42);
         letter-spacing: size(0.47);
-        
     }
 }
 
@@ -538,7 +556,6 @@ ol {
         color: $zephyr-blue;
     }
 }
-
 
 input, textarea {
     padding: 0;
@@ -564,7 +581,6 @@ input, textarea {
         text-align: left;
     }
 }
-
 
 .btn {
     color: $zephyr-gray;
@@ -629,16 +645,16 @@ svg {
     }
 }
 
-.show {
+.mobile-only {
     display: block;
-    @include x-large-screen {
+    @include min-small-screen {
         display: none;
     }
 }
 
-.hide {
+.desktop-only {
     display: none;
-    @include x-large-screen {
+    @include min-small-screen {
         display: block;
     }
 }
