@@ -2,26 +2,38 @@
 @import "src/styles/mixins";
 
 section.component-about-us {
-    @include marginY(size(120), size(100));
+    @include marginY(size(120), size(130));
     @include min-medium-screen {
-        @include marginY(size(131), size(103));
+        @include marginY(size(131), size(163));
     }
     
     .about-us {
         .about-us-title {
-            margin-bottom: size(115);
+            margin-bottom: size(125);
+            @include x-large-screen{
+                margin-bottom: size(115);
+            }
+            .headline-6,.headline-2{
+                margin-bottom: size(32);
+                @include x-large-screen{
+                    margin-bottom: size(22);
+                }
+            }
+            .paragraph-1{
+                max-width: size(935);
+                @include marginX(auto);
+            }
         }
         
         .about-us-content {
+            margin-bottom: size(185);
             .about-logo {
-                margin-bottom: size(77);
-                
                 .image-wrapper {
                     padding-bottom: size(20);
                     border-bottom: 1px solid #979797;
                     margin-bottom: size(17);
                     display: flex;
-                    min-height: size(87);
+                    min-height: size(89);
                     align-items: center;
                     
                     img {
@@ -45,15 +57,18 @@ section.component-about-us {
             }
             
             .image-1 {
-                margin-bottom: size(86);
-                @include min-medium-screen {
+                margin-bottom: size(80);
+                @include min-medium-screen{
+                    margin-bottom: size(86);
+                }
+                @include x-large-screen {
                     margin-bottom: size(102);
                 }
             }
             .same-image{
                 .image-wrapper {
                     padding-top: 48.97%;
-                    margin-bottom: size(18);
+                    margin-bottom: size(22);
                     @include min-medium-screen {
                         margin-bottom: size(28);
                     }
@@ -62,11 +77,15 @@ section.component-about-us {
             .image {
                 .paragraph-1 {
                     @include min-medium-screen {
-                        padding-left: size(17);
+                        padding-left: size(12);
                     }
                 }
             }
-            
+            .row{
+                @include min-medium-screen{
+                    @include change-gutter(62px);
+                }
+            }
             .row-image {
                 margin-bottom: size(24);
                 @include min-medium-screen {
@@ -80,9 +99,17 @@ section.component-about-us {
                         margin-bottom: size(18);
                     }
                 }
+                &.image-2{
+                    .paragraph-1{
+                        display: none;
+                        @include min-medium-screen{
+                            display: block;
+                        }
+                    }
+                }
             }
             .image-4{
-                margin-top: size(45);
+                margin-top: size(49);
                 @include min-medium-screen{
                     margin-top: size(87);
                 }
