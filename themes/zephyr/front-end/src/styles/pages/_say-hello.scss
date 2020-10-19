@@ -7,7 +7,7 @@
                 @include x-large-screen {
                     font-size: size(60);
                     line-height: size(72);
-                    @include marginY(size(30))
+                    @include marginY(size(30) , size(0))
                 }
             }
         }
@@ -15,5 +15,10 @@
         .down {
             display: none;
         }
+    }
+    
+    section.component-contact-us {
+        position: relative;
+        margin-top: size(-243);
     }
 }

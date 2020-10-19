@@ -2,9 +2,6 @@
 @import "src/styles/mixins";
 
 section.component-contact-us {
-    margin-top: 52px;
-    padding-bottom: 250px;
-    
     .contact-us-model {
         display: flex;
         flex-direction: column;
@@ -17,7 +14,6 @@ section.component-contact-us {
         @include x-large-screen {
             max-width: size(990);
             margin: 0 auto;
-            
         }
         
         .data {
@@ -106,6 +102,7 @@ section.component-contact-us {
         }
         
         .content {
+            background: $zephyr-white;
             @include min-small-screen {
                 flex-basis: 50%;
                 padding: size(50) size(20);
