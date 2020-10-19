@@ -175,6 +175,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     
 }
 
+// used
 .headline-1, .wysiwyg-block h1 {
     color: $zephyr-white;
     font-family: $Canela;
@@ -206,7 +207,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     font-style: normal;
     letter-spacing: size(0.58);
     line-height: size(37.8);
-    @include min-medium-screen{
+    @include min-medium-screen {
         font-size: size(37);
         line-height: size(47.8);
     }
@@ -258,6 +259,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     }
 }
 
+// used
 .headline-6, .wysiwyg-block h6 {
     color: $zephyr-gray;
     font-family: $Sailec;
@@ -273,6 +275,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     }
 }
 
+// used
 .headline-7 {
     color: $zephyr-green;
     font-family: $Sailec;
@@ -297,6 +300,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     }
 }
 
+// used
 .paragraph, .wysiwyg-block, p, .wysiwyg-block {
     color: $zephyr-white;
     font-family: $Freight;
@@ -312,6 +316,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     }
 }
 
+// used
 .paragraph-1 {
     color: $zephyr-gray;
     font-family: $Freight;
@@ -366,9 +371,11 @@ ol {
                 font-weight: 400;
                 font-style: italic;
                 cursor: pointer;
-                &:not(:last-child){
+                
+                &:not(:last-child) {
                     margin-bottom: size(8);
                 }
+                
                 &.active {
                     font-weight: 700;
                     font-style: normal;
@@ -481,9 +488,11 @@ ol {
         &.active {
             opacity: 1 !important;
             margin-bottom: size(22);
-            .guide-content{
+            
+            .guide-content {
                 margin-top: size(10);
             }
+            
             .icons {
                 .icon {
                     &.plus {
@@ -505,6 +514,7 @@ ol {
             overflow: hidden;
             transition: margin-top 400ms ease;
             padding-right: size(15);
+            
             &.active {
             
             }
@@ -646,7 +656,7 @@ svg {
 }
 
 .mobile-only {
-    display: block;
+    display: flex;
     @include min-small-screen {
         display: none;
     }
@@ -655,7 +665,7 @@ svg {
 .desktop-only {
     display: none;
     @include min-small-screen {
-        display: block;
+        display: flex;
     }
 }
 
