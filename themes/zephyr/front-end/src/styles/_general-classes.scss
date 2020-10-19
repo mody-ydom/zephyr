@@ -206,6 +206,10 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     font-style: normal;
     letter-spacing: size(0.58);
     line-height: size(37.8);
+    @include min-medium-screen{
+        font-size: size(37);
+        line-height: size(47.8);
+    }
     @include x-large-screen {
         font-size: size(45);
         letter-spacing: size(0.44);
