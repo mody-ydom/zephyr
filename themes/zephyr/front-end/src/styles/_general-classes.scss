@@ -538,7 +538,6 @@ ol {
         font-size: size(36);
         line-height: size(42);
         letter-spacing: size(0.47);
-        
     }
 }
 
@@ -644,14 +643,14 @@ svg {
 
 .mobile-only {
     display: block;
-    @include x-large-screen {
+    @include min-small-screen {
         display: none;
     }
 }
 
 .desktop-only {
     display: none;
-    @include x-large-screen {
+    @include min-small-screen {
         display: block;
     }
 }

@@ -3,35 +3,46 @@
 
 section.component-contact-us {
     margin-top: 52px;
+    padding-bottom: 250px;
     
     .contact-us-model {
         display: flex;
         flex-direction: column;
         align-items: center;
-        @include x-large-screen {
-            width: size(990);
-            margin: 0 auto;
+        @include min-small-screen {
             flex-direction: row-reverse;
             align-items: flex-start;
-            border: 1px solid #000000;
+            border: 1px solid $zephyr-black;
+        }
+        @include x-large-screen {
+            max-width: size(990);
+            margin: 0 auto;
+            
         }
         
         .data {
             background: $zephyr-gray;
             padding: size(54) size(27) size(35);
             width: 100%;
-            margin-bottom: size(70);
-            @include x-large-screen {
+            margin-bottom: size(60);
+            @include min-small-screen {
+                flex-basis: 50%;
                 margin-bottom: 0;
-                padding: size(60) size(42) size(60) size(47);
-                max-width: size(408);
-                border: 1px solid #000000;
+                padding: size(50) size(20);
+                border: 1px solid $zephyr-black;
+            }
+            @include min-medium-screen {
+                flex-basis: 45%;
+            }
+            @include x-large-screen {
+                padding: size(61) size(58) size(61) size(41);
+                flex-basis: 41%;
             }
             
             
-            .title {
+            .title-contact {
                 color: $zephyr-gray-light;
-                margin-bottom: size(52);
+                margin-bottom: size(50);
                 
             }
             
@@ -47,9 +58,8 @@ section.component-contact-us {
                 
                 input, textarea {
                     width: 100%;
-                    //min-height: size(42);
+                    min-height: size(42);
                     @include paddingX(size(16));
-                    padding: size(14) size(16) size(16);
                     border: 1px solid #c7c7c7;
                     margin-bottom: size(15);
                 }
@@ -58,11 +68,10 @@ section.component-contact-us {
                     min-height: size(162);
                     resize: none;
                     margin-bottom: size(34);
-                    
+                    padding-top: size(10);
                     @include x-large-screen {
                         margin-bottom: size(63);
                     }
-                    
                     &::-webkit-scrollbar {
                         width: 2px;
                         border-radius: 50px;
@@ -80,7 +89,6 @@ section.component-contact-us {
             }
             
             .btn {
-                display: block;
                 margin: auto;
                 border: none;
                 min-width: size(152);
@@ -98,33 +106,47 @@ section.component-contact-us {
         }
         
         .content {
-            @include x-large-screen {
-                @include paddingY(size(60));
-                @include paddingX(size(63), size(68));
+            @include min-small-screen {
+                flex-basis: 50%;
+                padding: size(50) size(20);
+            }
+            @include min-medium-screen {
                 flex-grow: 1;
+                padding: size(50) size(35);
+            }
+            @include x-large-screen {
+                padding: size(60) size(63) size(60) size(68);
+
             }
             
-            .title {
+            .title-contact {
                 max-width: size(252);
                 margin: 0 auto;
+                text-align: center;
+                @include min-small-screen {
+                    text-align: left;
+                    margin: 0;
+                }
                 @include min-medium-screen {
-                    max-width: 100%;
+                    max-width: size(270);
                 }
                 @include x-large-screen {
-                    text-align: left;
                     max-width: size(400);
-                    margin: 0;
                 }
             }
             
             > .paragraph-1 {
                 max-width: size(262);
-                @include marginY(size(24), size(41));
+                @include marginY(size(15), size(32));
+                @include min-small-screen {
+                    text-align: left;
+                    max-width: 230px;
+                }
                 @include min-medium-screen {
-                    max-width: 100%;
+                    max-width: size(320);
                 }
                 @include x-large-screen {
-                    text-align: left;
+                    @include marginY(size(18), size(32));
                     max-width: size(407);
                     opacity: 0.85;
                 }
@@ -134,10 +156,13 @@ section.component-contact-us {
                 max-width: size(202);
                 margin: 0 auto;
                 
-                @include x-large-screen {
-                    max-width: size(282);
+                @include min-small-screen {
                     text-align: left;
                     margin: 0;
+                }
+                @include x-large-screen {
+                    max-width: size(282);
+                    
                 }
                 
                 .icon-and-info {
@@ -145,17 +170,26 @@ section.component-contact-us {
                     align-items: center;
                     
                     &:not(:last-child) {
-                        margin-bottom: size(29);
+                        margin-bottom: size(21);
                         @include x-large-screen {
                             margin-bottom: size(24);
                         }
                     }
                     
                     .paragraph-1 {
-                        margin-left: size(40);
-                        @include x-large-screen {
+                        margin-left: size(36);
+                        @include min-small-screen {
                             line-height: size(21);
+                            margin-left: size(21);
                         }
+                        @include x-large-screen {
+                            opacity: 0.85;
+                        }
+                        
+                    }
+                    
+                    svg {
+                        flex-shrink: 0;
                     }
                 }
                 
