@@ -28,12 +28,7 @@ section.component-our-journey {
                     letter-spacing: size(0.5);
                     margin-bottom: size(45);
                 }
-                .headline-7{
-                    color: $zephyr-gray;
-                    font-size: size(15);
-                    letter-spacing: size(0.17);
-                    text-transform: none;
-                    line-height: size(25);
+                .small-headline{
                     margin-bottom: size(25);
                 }
                 svg{

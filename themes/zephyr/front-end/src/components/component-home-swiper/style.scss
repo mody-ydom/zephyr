@@ -2,10 +2,28 @@
 @import "src/styles/mixins";
 
 section.component-home-swiper {
-    @include marginY(size(260),size(218));
-    .home-swiper{
-        .left-side{
-        
+    @include marginY(size(260), size(218));
+    
+    .home-swiper {
+        .left-side {
+            .sub-title {
+                font-family: $Canela;
+                font-size: size(30);
+                line-height: size(42);
+                font-weight: 300;
+                letter-spacing: size(0.5);
+            }
+            .categories{
+                .content{
+                    .headline-7{
+                        color: var(--zephyr-gray);
+                        font-size: 1.5rem;
+                        letter-spacing: 0.017rem;
+                        text-transform: none;
+                        line-height: 2.5rem;
+                    }
+                }
+            }
         }
     }
 }

@@ -12,6 +12,8 @@ export default (container = document) => {
     slidesPerColumn: 1,
     slidesPerColumnFill: "row",
     spaceBetween: 30,
+    noSwiping: true,
+    allowTouchMove: false,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,

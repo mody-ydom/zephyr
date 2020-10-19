@@ -300,6 +300,15 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     }
 }
 
+.small-headline{
+    font-family: $Sailec;
+    color: $zephyr-gray;
+    font-size: size(15);
+    font-weight: 500;
+    letter-spacing: size(0.17);
+    line-height: size(25);
+}
+
 // used
 .paragraph, .wysiwyg-block, p, .wysiwyg-block {
     color: $zephyr-white;

@@ -26,18 +26,46 @@ section.component-about-us {
         }
         
         .about-us-content {
-            margin-bottom: size(185);
+            margin-bottom: size(110);
+            @include x-large-screen{
+                margin-bottom: size(185);
+            }
             .about-logo {
                 .image-wrapper {
-                    padding-bottom: size(20);
+                    padding-bottom: size(30);
                     border-bottom: 1px solid #979797;
                     margin-bottom: size(17);
                     display: flex;
                     min-height: size(89);
                     align-items: center;
-                    
+                    @include x-large-screen{
+                        padding-bottom: size(20);
+                    }
                     img {
                         margin: 0 auto;
+                    }
+                }
+            }
+            .swiper-pagination-bullet{
+                position: absolute;
+                bottom: 0;
+                width: size(20);
+                height: size(20);
+                z-index: 99;
+                border: 1px solid $zephyr-black;
+                border-radius: 50%;
+                &.swiper-pagination-bullet-active{
+                    border: 1px solid #88e8b9;
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        width: 50%;
+                        height: 50%;
+                        background: #6be3a8;
+                        border-radius: 50%;
                     }
                 }
             }
