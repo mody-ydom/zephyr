@@ -1,0 +1,46 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-our-journey {
+    @include marginY(size(130),size(92));
+    @include min-medium-screen{
+        @include marginY(size(164),size(297));
+    }
+    .our-journey{
+        .our-journey-title{
+            .headline-6{
+                margin-bottom: size(32);
+                @include x-large-screen{
+                    margin-bottom: size(17);
+                }
+            }
+        }
+        .our-journey-content{
+            .journey-box{
+                @include paddingX(size(30));
+                @include paddingY(size(30),size(59));
+                .headline-6{
+                    font-size: size(13);
+                    font-weight: 400;
+                    letter-spacing: size(0.5);
+                }
+                .headline-7{
+                    color: $zephyr-gray;
+                    font-size: size(15);
+                    letter-spacing: size(0.17);
+                    text-transform: none;
+                    line-height: size(25);
+                }
+                &.milky{
+                    background: #cce7dc;
+                }
+                &.orange{
+                    background: rgba(255, 155, 120, 0.8);;
+                }
+                &.green{
+                    background: rgba(107, 227, 168, 0.8);;
+                }
+            }
+        }
+    }
+}
