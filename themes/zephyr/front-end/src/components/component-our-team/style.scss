@@ -2,9 +2,9 @@
 @import "src/styles/mixins";
 
 section.component-our-team {
-    @include marginY(105px);
+    @include marginY(size(105));
     @include min-medium-screen{
-        @include marginY(size(111),size(200));
+        @include marginY(size(111),size(99));
     }
     .our-team {
         .our-team-title {

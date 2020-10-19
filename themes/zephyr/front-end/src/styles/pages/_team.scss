@@ -1,0 +1,27 @@
+
+.team-page-wrapper {
+    
+    section.component-hero {
+        .content {
+            .headline-1 {
+                max-width: size(220);
+                @include min-x-small-screen{
+                    max-width: 100%;
+                }
+                @include x-large-screen {
+                    font-size: size(60);
+                    line-height: size(72);
+                    @include marginY(size(25) ,size(26))
+                }
+            }
+            
+            .paragraph {
+                @include x-large-screen{
+                    max-width: size(910);
+                }
+            }
+        }
+        
+        
+    }
+}
