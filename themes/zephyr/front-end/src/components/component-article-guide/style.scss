@@ -2,13 +2,44 @@
 @import "src/styles/mixins";
 
 section.component-article-guide {
+    @include marginY(size(120), size(120));
+    @include x-large-screen{
+        margin-bottom: size(569);
+    }
     .article-guide {
+        .article-guide-title {
+            margin-bottom: size(79);
+            
+            .headline-6 {
+                margin-bottom: size(21);
+            }
+            
+            .headline-2 {
+                max-width: size(910);
+                @include marginX(auto);
+                @include x-large-screen {
+                    font-size: size(56);
+                }
+            }
+        }
+        
         .article-guide-content {
+            max-width: size(968);
+            margin: 0 auto;
+            .row{
+                @include change-gutter(40px);
+                @include x-large-screen{
+                    @include change-gutter(129px);
+                }
+            }
             .left-content {
                 max-width: size(310);
                 border: 1px solid #c6c6c6;
                 @include paddingY(size(27), size(33));
-                
+                display: none;
+                @include min-medium-screen{
+                    display: block;
+                }
                 .headline-6 {
                     font-size: size(24);
                     letter-spacing: size(0.4);
@@ -23,6 +54,23 @@ section.component-article-guide {
                     padding-bottom: size(24);
                     counter-reset: unset;
                     list-style: none;
+                    
+                    .guide {
+                        &:not(:last-child) {
+                            margin-bottom: size(7);
+                        }
+                        
+                        .guide-content {
+                            li {
+                                font-style: normal;
+                                padding-left: 0;
+                                
+                                &:not(:last-child) {
+                                    margin-bottom: size(4);
+                                }
+                            }
+                        }
+                    }
                     
                     > li {
                         > ol {
@@ -41,10 +89,26 @@ section.component-article-guide {
             }
             
             .right-content {
+                @include x-large-screen{
+                    padding-top: size(75);
+                }
                 .headline-8 {
+                    font-family: $Sailec;
+                    margin-bottom: size(23);
+                    color: #454545;
+                    font-style: normal;
+                    @include x-large-screen{
+                        font-size: size(21);
+                        &.normal-line{
+                            line-height: normal;
+                            margin-bottom: 4.2rem;
+                        }
+                    }
+                    
                     span {
                         font-size: size(12);
                         letter-spacing: size(0.09);
+                        margin-right: size(7);
                     }
                 }
                 
@@ -59,9 +123,22 @@ section.component-article-guide {
                     }
                 }
                 
+                .search-input {
+                    @include marginX(0);
+                }
+                
                 .next-chapter {
                     display: block;
-                    margin-top: size(150);
+                    margin-top: size(91);
+                    
+                    .headline-8 {
+                        color: #454545;
+                        margin-bottom: 0;
+                        margin-top: size(15);
+                        @include x-large-screen{
+                            margin-top: 0;
+                        }
+                    }
                 }
             }
         }
