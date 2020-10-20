@@ -4,7 +4,7 @@
 section.component-our-journey {
     @include marginY(size(130),size(92));
     @include min-medium-screen{
-        @include marginY(size(164),size(297));
+        @include marginY(size(164),size(253));
     }
     .our-journey{
         .our-journey-title{
@@ -17,11 +17,24 @@ section.component-our-journey {
             }
         }
         .our-journey-content{
+            .row{
+                @include max-large-screen{
+                    margin: 0;
+                    > .col-xl-4{
+                        padding: 0;
+                    }
+                }
+            }
+            .swiper-wrapper{
+                @include x-large-screen{
+                    width: auto;
+                }
+            }
             .journey-box{
                 @include paddingX(size(30));
                 @include paddingY(size(30));
                 min-height: size(335);
-                //margin-bottom: size(44);
+                margin-bottom: size(44);
                 .headline-6{
                     font-size: size(13);
                     font-weight: 400;
@@ -29,7 +42,15 @@ section.component-our-journey {
                     margin-bottom: size(45);
                 }
                 .small-headline{
-                    margin-bottom: size(25);
+                    margin-bottom: size(10);
+                }
+                .paragraph-1{
+                    max-width: size(265);
+                    @include marginX(auto);
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
                 }
                 svg{
                     margin-bottom: size(16);
