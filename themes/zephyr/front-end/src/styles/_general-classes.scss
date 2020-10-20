@@ -143,15 +143,19 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 .swiper-wrapper {
     height: auto !important;
     @include x-large-screen{
-        width: auto;
+        width: auto !important;
     }
 }
 .row-swiper{
     @include max-large-screen{
-        margin: 0;
+        margin: 0 !important;
+        flex-wrap: nowrap !important;
         > .col-xl-4{
-            padding: 0;
+            padding: 0 !important;
         }
+    }
+    @include x-large-screen{
+        flex-wrap: wrap !important;
     }
 }
 

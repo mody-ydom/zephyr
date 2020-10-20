@@ -30,19 +30,6 @@ section.component-about-us {
             @include x-large-screen{
                 margin-bottom: size(98);
             }
-            .row{
-                @include max-large-screen{
-                    margin: 0;
-                    > .col-xl-4{
-                        padding: 0;
-                    }
-                }
-            }
-            .swiper-wrapper{
-                @include x-large-screen{
-                    width: auto;
-                }
-            }
             .about-logo {
                 @include x-large-screen{
                     margin-bottom: size(87);
