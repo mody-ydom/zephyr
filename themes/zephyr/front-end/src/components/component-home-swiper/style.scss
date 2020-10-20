@@ -2,59 +2,218 @@
 @import "src/styles/mixins";
 
 section.component-home-swiper {
-    //@include marginY(size(260), size(218));
-    @include marginY(size(50));
-    @include paddingY(size(50));
-    .home-swiper {
-        .left-side {
-            background: $zephyr-milky;
-            @include paddingY(size(77),size(30));
-            @include paddingX(size(50));
-            max-width: 60.8%;
-            .headline-6{
-                margin-bottom: size(16);
-            }
-            .sub-title {
-                font-family: $Canela;
-                font-size: size(30);
-                line-height: size(42);
-                font-weight: 300;
-                letter-spacing: size(0.5);
-                margin-bottom: size(58);
-            }
-            .row{
-                @include change-gutter(42px);
-            }
-            .categories{
-                display: flex;
-                margin-bottom: size(52);
-                svg{
-                    flex-shrink: 0;
-                    margin-right: size(14);
+    @include marginY(size(100), size(185));
+    @include x-large-screen {
+        @include marginY(size(260), size(218));
+        
+    }
+    .home-swiper-container {
+        .home-swiper {
+            .left-side {
+                background: $zephyr-milky;
+                @include paddingY(size(47), size(55));
+                @include paddingX(size(25));
+                @include min-medium-screen {
+                    @include paddingX(size(50));
+                    @include paddingY(size(50), size(20));
                 }
-                .content{
-                    .headline-7{
-                        color: var(--zephyr-gray);
-                        font-size: 1.5rem;
-                        letter-spacing: 0.017rem;
-                        text-transform: none;
-                        line-height: 2.5rem;
+                @include x-large-screen {
+                    @include paddingY(size(77), size(0));
+                    max-width: 60.8%;
+                }
+                
+                .left-side-title {
+                    margin-bottom: size(30);
+                    text-align: center;
+                    @include min-medium-screen {
+                        text-align: left;
+                    }
+                    @include x-large-screen {
+                        margin-bottom: size(58);
+                    }
+                    
+                    .headline-6 {
+                        margin-bottom: size(9);
+                        @include max-x-small-screen {
+                            font-size: size(11);
+                            font-weight: 500;
+                        }
+                        @include min-medium-screen {
+                            margin-bottom: size(16);
+                        }
+                    }
+                    
+                    .sub-title {
+                        font-family: $Canela;
+                        font-size: size(21);
+                        line-height: size(29.4);
+                        font-weight: 300;
+                        letter-spacing: size(0.5);
+                        @include min-medium-screen {
+                            font-size: size(30);
+                            line-height: size(42);
+                            padding-right: size(25);
+                        }
+                    }
+                }
+                
+                .row {
+                    @include change-gutter(42px);
+                }
+                
+                .categories {
+                    display: flex;
+                    margin-bottom: size(30);
+                    @include x-large-screen {
+                        margin-bottom: size(52);
+                    }
+                    
+                    svg {
+                        flex-shrink: 0;
+                        margin-right: size(14);
+                        width: size(30);
+                        @include min-medium-screen {
+                            width: auto;
+                        }
+                    }
+                    
+                    .category-wrapper {
+                        overflow: hidden;
+                        
+                        .category-title {
+                            margin-bottom: size(2);
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            cursor: pointer;
+                            @include min-medium-screen {
+                                margin-bottom: size(12);
+                            }
+                            @include x-large-screen {
+                                cursor: auto;
+                            }
+                            
+                            .small-headline {
+                                font-size: size(13);
+                                @include min-small-screen {
+                                    font-size: size(15);
+                                }
+                            }
+                            
+                            .icons {
+                                position: relative;
+                                width: size(8);
+                                height: size(8);
+                                display: block;
+                                @include min-medium-screen {
+                                    display: none;
+                                }
+                                
+                                .icon {
+                                    font-size: size(15);
+                                    font-weight: 600;
+                                    cursor: pointer;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    transition: opacity 400ms;
+                                    
+                                    &.minus {
+                                        opacity: 0;
+                                        z-index: -1;
+                                    }
+                                    
+                                    &.plus {
+                                        opacity: 1;
+                                        z-index: 2;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        &.active {
+                            .icons {
+                                .icon {
+                                    &.plus {
+                                        opacity: 0;
+                                        z-index: -1;
+                                    }
+                                    
+                                    &.minus {
+                                        opacity: 1;
+                                        z-index: 2;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .category-content {
+                            height: 0;
+                            
+                            .paragraph-1 {
+                                @include max-x-small-screen {
+                                    font-size: size(13);
+                                    letter-spacing: size(0.3);
+                                    line-height: size(20.15);
+                                }
+                            }
+                            
+                            @include min-medium-screen {
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .right-side {
+                position: relative;
+                width: 100%;
+                display: none;
+                @include x-large-screen {
+                    display: block;
+                }
+                
+                .image-wrapper {
+                    position: relative;
+                    padding-top: 152.23%;
+                    height: 0;
+                    
+                    img {
+                        position: absolute;
+                        top: 0;
+                        object-fit: cover;
+                        height: 100%;
                     }
                 }
             }
         }
-        .right-side{
-            position: relative;
-            width: 100%;
-            .image-wrapper{
+        
+        .swiper-pagination {
+            position: absolute;
+            bottom: size(40);
+            left: 50%;
+            z-index: 99;
+            transform: translateX(-50%);
+            @include min-medium-screen {
                 position: relative;
-                padding-top: 148.23%;
-                height: 0;
-                img{
-                    position: absolute;
-                    top: 0;
-                    object-fit: cover;
-                    height: 100%;
+                left: 0;
+                bottom: 0;
+                transform: translate(0);
+                margin-top: size(30);
+            }
+            @include x-large-screen {
+                margin-top: size(62);
+            }
+            
+            .swiper-pagination-bullet {
+                width: size(8.26);
+                height: size(8.26);
+                
+                &:before {
+                    width: 32%;
+                    height: 32%;
                 }
             }
         }
