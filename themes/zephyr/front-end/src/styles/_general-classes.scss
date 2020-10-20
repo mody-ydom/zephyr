@@ -231,6 +231,9 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     }
 }
 
+
+// used
+
 .headline-4, .wysiwyg-block h4 {
     color: $zephyr-gray;
     font-family: $Canela;
@@ -238,26 +241,29 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     font-weight: 300;
     font-style: normal;
     letter-spacing: size(0.33);
-    line-height: size(29.4);
+    line-height: size(30);
     @include x-large-screen {
-        font-size: size(32);
+        font-size: size(33);
         line-height: size(45);
     }
 }
 
+
+// used
 .headline-5, .wysiwyg-block h5 {
     color: $zephyr-green;
     font-family: $Sailec;
     font-size: size(14);
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
     letter-spacing: size(0.1);
     line-height: size(36);
-    @include x-large-screen {
-        font-size: size(18);
-        letter-spacing: size(0.3);
+    @include min-medium-screen {
+        font-size: size(17);
+        letter-spacing: size(0.4);
     }
 }
+
 
 // used
 .headline-6, .wysiwyg-block h6 {
