@@ -14,4 +14,5 @@ export component_logo from './component-logo';
 export component_increase from './component-increase';
 export component_grid_images from './component-grid-images';
 export component_cards from './component-cards';
+export component_success_stories from './component-success-stories';
 export component_our_testimonials from './component-our-testimonials';
