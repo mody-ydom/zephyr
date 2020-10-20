@@ -1,0 +1,62 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-home-swiper {
+    //@include marginY(size(260), size(218));
+    @include marginY(size(50));
+    @include paddingY(size(50));
+    .home-swiper {
+        .left-side {
+            background: $zephyr-milky;
+            @include paddingY(size(77),size(30));
+            @include paddingX(size(50));
+            max-width: 60.8%;
+            .headline-6{
+                margin-bottom: size(16);
+            }
+            .sub-title {
+                font-family: $Canela;
+                font-size: size(30);
+                line-height: size(42);
+                font-weight: 300;
+                letter-spacing: size(0.5);
+                margin-bottom: size(58);
+            }
+            .row{
+                @include change-gutter(42px);
+            }
+            .categories{
+                display: flex;
+                margin-bottom: size(52);
+                svg{
+                    flex-shrink: 0;
+                    margin-right: size(14);
+                }
+                .content{
+                    .headline-7{
+                        color: var(--zephyr-gray);
+                        font-size: 1.5rem;
+                        letter-spacing: 0.017rem;
+                        text-transform: none;
+                        line-height: 2.5rem;
+                    }
+                }
+            }
+        }
+        .right-side{
+            position: relative;
+            width: 100%;
+            .image-wrapper{
+                position: relative;
+                padding-top: 148.23%;
+                height: 0;
+                img{
+                    position: absolute;
+                    top: 0;
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

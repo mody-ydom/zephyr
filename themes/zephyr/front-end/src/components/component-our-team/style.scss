@@ -3,8 +3,8 @@
 
 section.component-our-team {
     @include marginY(size(105));
-    @include min-medium-screen{
-        @include marginY(size(111),size(99));
+    @include x-large-screen{
+        @include marginY(size(111),size(200));
     }
     .our-team {
         .our-team-title {

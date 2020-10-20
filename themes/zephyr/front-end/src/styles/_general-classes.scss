@@ -13,7 +13,7 @@
     --zephyr-dark-blue: #1b1c30;
     --zephyr-salmon: #f67f6f;
     --zephyr-ruby: #f65257;
-    --zephyr-green-light: #8cf7b7;
+    --zephyr-milky: #cce7dc;
     --zephyr-dark: #097dde;
 }
 
@@ -304,6 +304,15 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
         font-size: size(24);
         line-height: size(66);
     }
+}
+
+.small-headline{
+    font-family: $Sailec;
+    color: $zephyr-gray;
+    font-size: size(15);
+    font-weight: 500;
+    letter-spacing: size(0.17);
+    line-height: size(25);
 }
 
 // used

@@ -9,7 +9,7 @@ section.component-about-us {
     
     .about-us {
         .about-us-title {
-            margin-bottom: size(125);
+            margin-bottom: size(115);
             @include x-large-screen{
                 margin-bottom: size(115);
             }
@@ -26,18 +26,79 @@ section.component-about-us {
         }
         
         .about-us-content {
-            margin-bottom: size(185);
+            margin-bottom: size(110);
+            @include x-large-screen{
+                margin-bottom: size(98);
+            }
+            .row{
+                @include max-large-screen{
+                    margin: 0;
+                    > .col-xl-4{
+                        padding: 0;
+                    }
+                }
+            }
+            .swiper-wrapper{
+                @include x-large-screen{
+                    width: auto;
+                }
+            }
             .about-logo {
+                @include x-large-screen{
+                    margin-bottom: size(87);
+                }
                 .image-wrapper {
-                    padding-bottom: size(20);
-                    border-bottom: 1px solid #979797;
-                    margin-bottom: size(17);
+                    margin-bottom: size(11);
                     display: flex;
                     min-height: size(89);
                     align-items: center;
-                    
                     img {
                         margin: 0 auto;
+                    }
+                }
+                .paragraph-1{
+                    line-break: anywhere;
+                    border-top: 1px solid #979797;
+                    padding-top: size(17);
+                }
+            }
+            .swiper-pagination{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: size(61);
+                @include x-large-screen{
+                    margin-top: 0;
+                }
+                .swiper-pagination-bullet{
+                    position: relative;
+                    width: size(20);
+                    height: size(20);
+                    z-index: 99;
+                    border: 1px solid var(--zephyr-black);
+                    border-radius: 50%;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    margin: 0 size(5);
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 56%;
+                        height: 56%;
+                        background: #6be3a8;
+                        border-radius: 50%;
+                        transition: opacity 400ms;
+                        opacity: 0;
+                    }
+    
+                    &.swiper-pagination-bullet-active{
+                        border: 1px solid #88e8b9;
+                        &:before{
+                            opacity: 1;
+                        }
                     }
                 }
             }
@@ -76,22 +137,24 @@ section.component-about-us {
             }
             .image {
                 .paragraph-1 {
-                    @include min-medium-screen {
-                        padding-left: size(12);
+                    @include x-large-screen {
+                        @include paddingX(size(12),size(44));
                     }
                 }
             }
             .row{
+                @include min-small-screen{
+                    @include change-gutter(42px);
+                }
                 @include min-medium-screen{
                     @include change-gutter(62px);
                 }
             }
-            .row-image {
+            .row-images {
                 margin-bottom: size(24);
                 @include min-medium-screen {
                     margin-bottom: 0;
                 }
-                
                 .image-wrapper {
                     margin-bottom: size(22);
                     padding-top: 71.69%;
@@ -102,7 +165,7 @@ section.component-about-us {
                 &.image-2{
                     .paragraph-1{
                         display: none;
-                        @include min-medium-screen{
+                        @include min-small-screen{
                             display: block;
                         }
                     }
@@ -110,6 +173,12 @@ section.component-about-us {
             }
             .image-4{
                 margin-top: size(49);
+                .image-wrapper{
+                    padding-top: 60.97%;
+                    @include min-medium-screen{
+                        padding-top: 48.97%;
+                    }
+                }
                 @include min-medium-screen{
                     margin-top: size(87);
                 }
