@@ -165,7 +165,7 @@
 	
 	add_filter( 'block_categories', 'my_plugin_block_categories' );
 	function register_acf_block_types() {
-		$developing = false;
+		$developing = true;
 		acf_register_block_type( array(
 			                         'name'            => 'component-customer-hero',
 			                         'title'           => __( 'Success Stories Hero' ),
