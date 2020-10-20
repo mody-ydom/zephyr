@@ -2,5 +2,152 @@
 @import "src/styles/mixins";
 
 section.component-our-testimonials {
-
+    @include marginY(size(167), size(127));
+    @include min-medium-screen {
+        @include marginY(size(152), size(209));
+    }
+    
+    .circle-shape-1 {
+        position: absolute;
+        z-index: -1;
+        bottom: 29%;
+        left: size(-100);
+        width: size(250);
+        height: size(191);
+        
+        img {
+            width: 100%;
+        }
+        
+        @include min-medium-screen {
+            width: 43%;
+            height: auto;
+            left: -12%;
+            top: 0;
+        }
+    }
+    
+    .circle-shape-2 {
+        position: absolute;
+        z-index: -1;
+        right: size(-40);
+        top: 0;
+        width: size(197);
+        height: size(201);
+        
+        img {
+            width: 100%;
+        }
+        
+        @include min-medium-screen {
+            top: size(9);
+            left: 42%;
+            width: 25.4%;
+            height: auto;
+        }
+    }
+    
+    .circle-shape-1, .circle-shape-2 {
+        @include min-medium-screen {
+            display: none;
+        }
+        @include x-large-screen {
+            display: block;
+        }
+    }
+    
+    .testimonials-wrapper {
+        position: relative;
+        padding-top: size(27);
+    }
+    
+    .testimonials {
+        max-width: size(1016);
+        @include marginX(auto);
+        
+        .testimonial {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            @include min-medium-screen {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+            }
+            
+            .testimonials-description {
+                background: $zephyr-white;
+                border: 1px solid #c6c6c6;
+                @include paddingY(size(36));
+                @include paddingX(size(29));
+                margin-bottom: size(44);
+                @include min-medium-screen {
+                    max-width: 75.7%;
+                    @include paddingY(size(47));
+                    @include paddingX(size(47), size(60));
+                    margin-bottom: 0;
+                }
+                
+                .des-p {
+                    font-family: $Canela;
+                    color: $zephyr-gray;
+                    font-weight: 300;
+                    font-size: size(21);
+                    line-height: size(29.4);
+                    letter-spacing: size(0.25);
+                    @include min-medium-screen {
+                        font-size: size(24);
+                        line-height: size(35);
+                    }
+                }
+            }
+            
+            .image-content {
+                flex-shrink: 0;
+                
+                img {
+                    @include marginX(auto);
+                    margin-bottom: size(17);
+                }
+                
+                .name {
+                    color: #595959;
+                    font-family: $Sailec;
+                    font-size: size(14);
+                    font-weight: 400;
+                    font-style: normal;
+                    letter-spacing: size(0.18);
+                    line-height: size(20);
+                    margin-bottom: size(12);
+                    @include min-medium-screen {
+                        font-size: size(16);
+                    }
+                }
+                
+                .job-title {
+                    color: #595959;
+                    font-family: $Sailec;
+                    font-size: size(11);
+                    font-weight: 400;
+                    font-style: normal;
+                    letter-spacing: size(0.13);
+                    line-height: size(20);
+                    text-transform: uppercase;
+                    @include min-medium-screen {
+                        font-size: size(12);
+                    }
+                }
+            }
+        }
+        
+        .swiper-pagination {
+            margin-top: size(26);
+            @include min-small-screen {
+                margin-top: size(40);
+            }
+            @include x-large-screen {
+                margin-top: size(87);
+            }
+        }
+    }
 }
