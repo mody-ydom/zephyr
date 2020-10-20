@@ -13,3 +13,4 @@ export component_case_studies from './component-case-studies';
 export component_logo from './component-logo';
 export component_grid_images from './component-grid-images';
 export component_cards from './component-cards';
+export component_success_stories from './component-success-stories';
