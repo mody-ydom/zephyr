@@ -6,3 +6,5 @@ helper_files/
 
 themes/zephyr/assets
 plugins/advanced-custom-fields-pro/
+
+themes/zephyr/acf-json/.DS_Store
