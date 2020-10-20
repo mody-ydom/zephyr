@@ -41,6 +41,7 @@ ul {
 }
 
 img {
+    width: 100%;
     display: block;
 }
 
@@ -98,6 +99,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 }
 
 .gutter {
+    
     &--30 {
         @include change-gutter(30px)
     }

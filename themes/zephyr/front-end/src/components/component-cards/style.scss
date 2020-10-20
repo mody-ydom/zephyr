@@ -1,0 +1,31 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-cards {
+    .row {
+        @include change-gutter(20px);
+        @include min-large-screen {
+            @include change-gutter(76px);
+        }
+    }
+    
+    .card {
+        .image-wrapper {
+            margin-bottom: size(15);
+            @include min-small-screen {
+                margin-bottom: size(27);
+            }
+        }
+        
+        .paragraphs-1 {
+            opacity: 0.85;
+        }
+    }
+    
+    .paragraph {
+        color: $zephyr-gray;
+        font-size: size(12);
+        line-height: size(22);
+        margin: 0 auto;
+    }
+}
