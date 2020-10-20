@@ -21,6 +21,7 @@ export default (container = document) => {
         swiper = new Swiper('.about-us-content', {
           slidesPerView: 1,
           spaceBetween: 20,
+          grabCursor: true,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
