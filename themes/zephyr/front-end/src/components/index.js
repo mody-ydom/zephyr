@@ -10,3 +10,4 @@ export component_about_us from './component-about-us';
 export component_our_journey from './component-our-journey';
 export component_home_swiper from './component-home-swiper';
 export component_case_studies from './component-case-studies';
+export component_logo from './component-logo';
