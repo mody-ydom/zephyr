@@ -1,0 +1,147 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-our-process {
+    min-height: size(500);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    
+    .content {
+        .headline-5 {
+            color: $zephyr-gray;
+            justify-content: center;
+        }
+        
+        .headline-1 {
+            color: $zephyr-gray;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: size(320);
+            @include min-x-small-screen {
+                max-width: size(500);
+            }
+            @include min-small-screen {
+                line-height: size(60);
+                max-width: 100%;
+            }
+            @include min-medium-screen {
+                font-size: size(45);
+                letter-spacing: size(0.5);
+                max-width: size(900);
+                margin: size(23) auto 0;
+            }
+        }
+    }
+    
+    .shape {
+        position: absolute;
+        z-index: -1;
+        
+        &.aqua {
+            max-width: size(118);
+            min-height: size(118);
+            right: 10%;
+            top: size(-160);
+            @include x-large-screen {
+                max-width: size(90);
+                min-height: size(90);
+                top: size(-43);
+                circle {
+                    fill: #6be3a8;
+                }
+            }
+    
+        }
+        
+        &.orange {
+            max-width: size(90);
+            min-height: size(90);
+            left: 0;
+            transform: translateX(-50%);
+            bottom: size(-29);
+            @include x-large-screen {
+                left: unset;
+                right: size(64);
+                transform: translateX(0);
+                z-index: 3;
+                bottom: size(50);
+            }
+            
+        }
+        
+        &.pill {
+            max-width: size(81);
+            min-height: size(60);
+            right: -1;
+            top: 50%;
+            transform: translateY(-50%);
+            @include x-large-screen {
+                top: size(170);
+                transform: translateY(0);
+                z-index: 4;
+            }
+    
+        }
+        
+        &.big-aqua {
+            max-width: size(181);
+            min-height: size(181);
+            right: size(-10);
+            bottom: size(-90);
+            
+            @include x-large-screen {
+                max-width: size(195);
+                min-height: size(195);
+                right: unset;
+                left: size(53);
+                top: 50%;
+                transform: translateY(-50%);
+                circle {
+                    fill: #C7E4D8;
+                }
+            }
+            
+        }
+        
+        &.hand {
+            max-width: size(250);
+            min-height: size(215);
+            left: 0;
+            top: size(-90);
+            
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            
+            @include x-large-screen {
+                max-width: size(505);
+                min-height: size(215);
+                top: size(-100);
+            }
+            
+        }
+        
+        &.lines {
+            max-width: size(180);
+            min-height: size(180);
+            right: size(10);
+            bottom: size(-70);
+            
+            img {
+                width: 100%;
+                height: 100%;
+            }
+    
+            @include x-large-screen {
+                max-width: size(200);
+                min-height: size(200);
+                top: size(200);
+                right: size(-50);
+            }
+    
+        }
+    }
+}
