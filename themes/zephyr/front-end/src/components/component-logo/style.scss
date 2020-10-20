@@ -1,0 +1,32 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-logo {
+    .headline-1 {
+        max-width: size(320);
+        margin: 0 auto size(45);
+        color: $zephyr-gray;
+        @include min-medium-screen {
+            max-width: 100%;
+            font-size: size(45);
+            letter-spacing: size(0.54);
+            line-height: size(60);
+            margin: 0 auto size(38);
+        }
+    }
+    
+    .image-wrapper {
+        margin-bottom: size(30);
+        @include x-large-screen {
+            margin-bottom: size(50);
+        }
+        
+        img {
+            width: 100%;
+            @include min-small-screen {
+                width: auto;
+            }
+        }
+    }
+    
+}
