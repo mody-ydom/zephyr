@@ -137,7 +137,7 @@ section.component-about-us {
             }
             .image {
                 .paragraph-1 {
-                    @include min-medium-screen {
+                    @include x-large-screen {
                         @include paddingX(size(12),size(44));
                     }
                 }
@@ -150,7 +150,7 @@ section.component-about-us {
                     @include change-gutter(62px);
                 }
             }
-            .row-image {
+            .row-images {
                 margin-bottom: size(24);
                 @include min-medium-screen {
                     margin-bottom: 0;
@@ -165,7 +165,7 @@ section.component-about-us {
                 &.image-2{
                     .paragraph-1{
                         display: none;
-                        @include min-medium-screen{
+                        @include min-small-screen{
                             display: block;
                         }
                     }
@@ -173,6 +173,12 @@ section.component-about-us {
             }
             .image-4{
                 margin-top: size(49);
+                .image-wrapper{
+                    padding-top: 60.97%;
+                    @include min-medium-screen{
+                        padding-top: 48.97%;
+                    }
+                }
                 @include min-medium-screen{
                     margin-top: size(87);
                 }
