@@ -1,11 +1,11 @@
 import './index.html';
-import Swiper, {Pagination} from 'swiper';
+import Swiper, {Pagination,Navigation} from 'swiper';
 import 'swiper/swiper.scss';
 
 export default (container = document) => {
   let ourJourney = container.querySelector('.component-our-journey');
   if (!ourJourney) return;
-  Swiper.use([Pagination]);
+  Swiper.use([Pagination,Navigation]);
   let swiper2 = Swiper;
   let init = false;
   
@@ -18,14 +18,19 @@ export default (container = document) => {
       if (!init) {
         init = true;
         swiper2 = new Swiper('.our-journey-content', {
-          slidesPerView: 2,
+          slidesPerView: 1,
           spaceBetween: 50,
+          grabCursor: true,
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
           },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
           breakpoints: {
-            576:{
+            767:{
               slidesPerView:2,
               spaceBetween: 40,
             }

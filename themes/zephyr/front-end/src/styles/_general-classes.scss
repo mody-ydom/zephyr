@@ -142,44 +142,11 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     height: auto !important;
 }
 
-.swiper-button-prev, .swiper-button-next {
-    width: fit-content !important;
-    height: fit-content !important;
-    transition: 400ms ease;
-    top: 50% !important;
-    transform: translateY(-50%);
-    margin-top: 0 !important;
-    
-    &:after {
-        content: '' !important;
-    }
-    
-    svg {
-        width: size(40);
-        height: size(64);
-    }
-    
-    &.swiper-button-next {
-        left: 0 !important;
-    }
-    
-    &.swiper-button-prev {
-        right: 0 !important;
-        
-        &.rotated {
-            svg {
-                transform: rotate(180deg);
-            }
-        }
-    }
-    
-}
-
-.swiper-pagination{
+.swiper-pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    .swiper-pagination-bullet{
+    .swiper-pagination-bullet {
         position: relative;
         width: size(20);
         height: size(20);
@@ -189,7 +156,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
         flex-grow: 0;
         flex-shrink: 0;
         margin: 0 size(5);
-        &:before{
+        
+        &:before {
             content: '';
             position: absolute;
             top: 50%;
@@ -203,9 +171,10 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
             opacity: 0;
         }
         
-        &.swiper-pagination-bullet-active{
+        &.swiper-pagination-bullet-active {
             border: 1px solid #88e8b9;
-            &:before{
+            
+            &:before {
                 opacity: 1;
             }
         }
@@ -343,7 +312,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     }
 }
 
-.small-headline{
+.small-headline {
     font-family: $Sailec;
     color: $zephyr-gray;
     font-size: size(15);
