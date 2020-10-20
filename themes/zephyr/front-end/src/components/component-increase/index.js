@@ -1,5 +1,4 @@
 import './index.html';
-import {gsap} from 'gsap';
 import Swiper, { Pagination} from 'swiper';
 
 export default (container = document) => {
