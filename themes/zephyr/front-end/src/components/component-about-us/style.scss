@@ -116,7 +116,6 @@ section.component-about-us {
                     top: 0;
                 }
             }
-            
             .image-1 {
                 margin-bottom: size(80);
                 @include min-medium-screen{
@@ -128,8 +127,11 @@ section.component-about-us {
             }
             .same-image{
                 .image-wrapper {
-                    padding-top: 48.97%;
                     margin-bottom: size(22);
+                    padding-top: 62.97%;
+                    @include min-medium-screen{
+                        padding-top: 48.97%;
+                    }
                     @include min-medium-screen {
                         margin-bottom: size(28);
                     }
@@ -173,12 +175,6 @@ section.component-about-us {
             }
             .image-4{
                 margin-top: size(49);
-                .image-wrapper{
-                    padding-top: 60.97%;
-                    @include min-medium-screen{
-                        padding-top: 48.97%;
-                    }
-                }
                 @include min-medium-screen{
                     margin-top: size(87);
                 }
