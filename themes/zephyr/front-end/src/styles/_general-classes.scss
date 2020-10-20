@@ -142,12 +142,35 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 
 .swiper-wrapper {
     height: auto !important;
+    @include x-large-screen{
+        width: auto;
+    }
+}
+.row-swiper{
+    @include max-large-screen{
+        margin: 0;
+        > .col-xl-4{
+            padding: 0;
+        }
+    }
 }
 
 .swiper-pagination {
     display: flex;
     justify-content: center;
     align-items: center;
+    &.small-pagination {
+        .swiper-pagination-bullet{
+            width: size(8.26);
+            height: size(8.26);
+    
+            &:before {
+                width: 32%;
+                height: 32%;
+            }
+        }
+    }
+    
     .swiper-pagination-bullet {
         position: relative;
         width: size(20);

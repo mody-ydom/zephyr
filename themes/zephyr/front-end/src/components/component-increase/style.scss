@@ -8,19 +8,7 @@ section.component-increase {
     }
     .increase-container {
         //max-width: size(1024);
-        .row{
-            @include max-large-screen{
-                margin: 0;
-                > .col-xl-4{
-                    padding: 0;
-                }
-            }
-        }
-        .swiper-wrapper{
-            @include x-large-screen{
-                width: auto;
-            }
-        }
+        
         .increase-content {
             .headline-4 {
                 font-size: size(45);
