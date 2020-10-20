@@ -27,19 +27,6 @@ section.component-our-journey {
             }
         }
         .our-journey-content{
-            .row{
-                @include max-large-screen{
-                    margin: 0;
-                    > .col-xl-4{
-                        padding: 0;
-                    }
-                }
-            }
-            .swiper-wrapper{
-                @include x-large-screen{
-                    width: auto;
-                }
-            }
             .swiper-slide{
                 &:nth-last-child(-n+4){
                     display: none;

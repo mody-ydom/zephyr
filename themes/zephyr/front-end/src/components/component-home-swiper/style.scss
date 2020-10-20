@@ -207,16 +207,6 @@ section.component-home-swiper {
             @include x-large-screen {
                 margin-top: size(62);
             }
-            
-            .swiper-pagination-bullet {
-                width: size(8.26);
-                height: size(8.26);
-                
-                &:before {
-                    width: 32%;
-                    height: 32%;
-                }
-            }
         }
     }
 }

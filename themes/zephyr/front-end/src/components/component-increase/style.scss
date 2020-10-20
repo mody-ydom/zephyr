@@ -1,0 +1,36 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-increase {
+    @include marginY(size(171),size(130));
+    @include x-large-screen{
+        @include marginY(size(180),size(164));
+    }
+    .increase-container {
+        //max-width: size(1024);
+        
+        .increase-content {
+            .headline-4 {
+                font-size: size(45);
+                line-height: size(66);
+                letter-spacing: size(0.44);
+            }
+            .paragraph-1{
+                font-family: $Sailec;
+                font-size: size(16);
+                letter-spacing: 0.2px;
+                max-width: size(270);
+                @include marginX(auto);
+            }
+        }
+        .swiper-pagination{
+            margin-top: size(15);
+            @include x-large-screen{
+                margin-top: 0;
+            }
+            .swiper-pagination-bullet{
+                margin: 0 size(12);
+            }
+        }
+    }
+}
