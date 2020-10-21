@@ -622,7 +622,7 @@ add_action('init', 'add_custom_taxonomies', 10);
 
 
 /* Sub category for categories */
-function subCategories($category)
+function categoriesPosts($category)
 {
     ?>
     <ol class="guide-content">
@@ -634,7 +634,7 @@ function subCategories($category)
         $query = new WP_Query($args_posts);
         if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
             ?>
-            <li><a href="#"><?php echo the_title(); ?></a></li>
+            <li><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></li>
             <?php
             wp_reset_query();
         endwhile; endif;

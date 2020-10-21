@@ -31,7 +31,7 @@ $post_id = get_the_ID();
                                                     <span class="minus icon">-</span>
                                                 </div>
                                             </div>
-                                            <?php subCategories($category); ?>
+                                            <?php categoriesPosts($category); ?>
                                         </li>
                                         <?php
                                     }

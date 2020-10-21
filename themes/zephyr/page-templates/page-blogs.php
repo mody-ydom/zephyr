@@ -27,7 +27,7 @@ get_header();
                                                     <span class="minus icon">-</span>
                                                 </div>
                                             </div>
-                                            <?php subCategories($category); ?>
+                                            <?php categoriesPosts($category); ?>
                                         </li>
                                         <?php
                                     }
