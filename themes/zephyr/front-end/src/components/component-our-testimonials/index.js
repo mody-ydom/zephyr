@@ -10,6 +10,7 @@ export default (container = document) => {
   let swiper = new Swiper('.testimonials', {
     slidesPerView: 1,
     spaceBetween: 30,
+    grabCursor: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,

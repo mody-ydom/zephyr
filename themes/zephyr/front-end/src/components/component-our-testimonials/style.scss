@@ -64,7 +64,6 @@ section.component-our-testimonials {
     .testimonials {
         max-width: size(1016);
         @include marginX(auto);
-        cursor: pointer;
         .testimonial {
             display: flex;
             justify-content: center;
