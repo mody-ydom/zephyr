@@ -4,13 +4,14 @@
 section.component-contact-us {
     margin-bottom: size(144);
     
-    @include min-medium-screen{
+    @include min-medium-screen {
         margin-bottom: size(180);
     }
     
-    @include x-large-screen{
+    @include x-large-screen {
         margin-bottom: size(299);
     }
+    
     .contact-us-model {
         display: flex;
         flex-direction: column;
@@ -19,6 +20,7 @@ section.component-contact-us {
             flex-direction: row-reverse;
             align-items: flex-start;
             border: 1px solid $zephyr-black;
+            height: size(484);
         }
         @include x-large-screen {
             max-width: size(990);
@@ -78,6 +80,7 @@ section.component-contact-us {
                     @include x-large-screen {
                         margin-bottom: size(63);
                     }
+                    
                     &::-webkit-scrollbar {
                         width: 2px;
                         border-radius: 50px;
@@ -123,7 +126,7 @@ section.component-contact-us {
             }
             @include x-large-screen {
                 padding: size(60) size(63) size(60) size(68);
-
+                
             }
             
             .title-contact {
@@ -206,33 +209,45 @@ section.component-contact-us {
         // in-about-page
         
         &.in-about-page {
-            @include x-large-screen {
-                .data {
-                    position: relative;
-                    
-                    .arrow {
+            max-width: 100%;
+            .data {
+                position: relative;
+                flex-basis: 42%;
+                height: 100%;
+                .arrow {
+                    @include min-small-screen{
                         display: block;
                         position: absolute;
                         top: size(90);
                         right: 99%;
                     }
-                    
                 }
+            }
+            .content{
+                height: 100%;
+                flex-grow: 1;
                 .contact-info-in-about-page {
                     display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    
+                    flex-direction: column;
+                    @include x-large-screen {
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                    }
+        
                     .icon-and-info {
                         display: flex;
-                        
+                        margin-bottom: size(21);
+            
                         &:last-child {
-                            margin-top: size(38);
+                            @include x-large-screen {
+                                margin-top: size(38);
+                            }
                         }
-                        
+            
                         .info {
                             margin-left: size(18);
-                            
+                
                             .text {
                                 color: $zephyr-gray;
                                 font-family: $Sailec;
@@ -242,19 +257,24 @@ section.component-contact-us {
                                 letter-spacing: size(0.17);
                                 line-height: size(25);
                             }
-                            
+                
                             .paragraph-1 {
                                 opacity: 0.85;
                             }
                         }
-                        
+            
                         &.location {
+                            order: 1;
                             max-width: size(256);
+                            margin-bottom: 0;
+                            @include x-large-screen{
+                                order: 0;
+                            }
                         }
                     }
                 }
+    
             }
-            
         }
     }
 }
