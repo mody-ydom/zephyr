@@ -5,3 +5,4 @@ node_modules/
 helper_files/
 
 themes/zephyr/assets
+/plugins/
