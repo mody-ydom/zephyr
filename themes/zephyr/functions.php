@@ -643,8 +643,8 @@ function subCategories($category)
     <?php
 }
 
-/* Get Next Post ID */
-function nextPostId($post_id)
+/* Get Next Post Title & Link */
+function nextPost($post_id)
 {
     global $post;
     $oldGlobal = $post;
@@ -664,3 +664,16 @@ function nextPostId($post_id)
         <?php
     }
 }
+
+/* Shortcode for highlight text */
+function highlight_text($atts = array(), $content = null)
+{
+    $a = shortcode_atts(array(
+        'color' => ''
+    ), $atts);
+
+    $content = '<span style="background-color:rgba(' . $a['color'] . ',0.6)">' . $content . '</span>';
+    return $content;
+}
+
+add_shortcode('highlight', 'highlight_text');

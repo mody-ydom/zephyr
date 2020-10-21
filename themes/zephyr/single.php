@@ -66,7 +66,7 @@ $post_id = get_the_ID();
 </span></p>
                                 </div>
                                 <?php
-                                nextPostId($post_id);
+                                nextPost($post_id);
                                 ?>
                                 <div class="mobile-select iv-st-from-bottom">
                                     <svg class="arrow-select" width="11" height="7" viewBox="0 0 11 7"
