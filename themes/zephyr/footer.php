@@ -1,246 +1,97 @@
 <?php wp_footer(); ?>
 <!--footer-->
 <?php
-	$footer_address          = get_field( 'footer_address', 'options' );
-	$footer_text_hover_1     = get_field( 'footer_text_hover_1', 'options' );
-	$footer_text_hover_2     = get_field( 'footer_text_hover_2', 'options' );
-	$copywrite_text          = get_field( 'copywrite_text', 'options' );
-	$footer_banner_link      = get_field( 'footer_banner_link', 'options' );
-	$facebook_url            = get_field( 'facebook_url', 'options' );
-	$linkedin_url            = get_field( 'linkedin_url', 'options' );
-	$youtube_url             = get_field( 'youtube_url', 'options' );
-	$subscribe_to_newsletter = get_field( 'subscribe_to_newsletter', 'options' );
-	$footer_text_bg_color    = get_field( 'footer_text_bg_color', 'options' );
-	$contact_modal           = get_field( 'contact_modal', 'options' );
-	$contact_title           = $contact_modal['title'];
-	$contact_text            = $contact_modal['text'];
-	$contact_form            = $contact_modal['form'];
-	
-	$newsletter_modal       = get_field( 'newsletter_modal', 'options' );
-	$newsletter_title       = $newsletter_modal['title'];
-	$newsletter_text        = $newsletter_modal['text'];
-	$newsletter_form        = $newsletter_modal['form'];
-	$newsletter_bottom_text = $newsletter_modal['bottom_text'];
-	
-	
-	$hide_footer                   = get_field( 'hide_footer' );
-	$override_general_footer       = get_field( 'override_general_footer' );
-	$footer_override_text_hover_1  = get_field( 'footer_text_hover_1' );
-	$footer_override_text_hover_2  = get_field( 'footer_text_hover_2' );
-	$footer_override_text_bg_color = get_field( 'footer_text_bg_color' );
-	$footer_override_banner_link   = get_field( 'footer_banner_link' );
-	
-	if ( $override_general_footer ) {
-		$footer_text_hover_1  = $footer_override_text_hover_1;
-		$footer_text_hover_2  = $footer_override_text_hover_2;
-		$footer_text_bg_color = $footer_override_text_bg_color;
-		$footer_banner_link   = $footer_override_banner_link;
-	}
+$footer_logo = get_field('footer_logo', 'options');
+$copywrite_text = get_field('copywrite_text', 'options');
+$facebook_url = get_field('facebook_url', 'options');
+$linkedin_url = get_field('linkedin_url', 'options');
+$twitter_url = get_field('twitter_url', 'options');
+$subscribe_to_newsletter = get_field('subscribe_to_newsletter', 'options');
 ?>
 
 <footer>
-  <div class="container">
-	  <?php if ( ! $hide_footer ) { ?>
+    <div class="container">
         <div class="footer-content">
-          <!--    top content-->
-          <div class="row">
-            <div class="col-12 col-lg-6">
-              <a href="<?php echo $footer_banner_link; ?>">
-                <div class="text iv-st-from-left" style="background-image:<?=$footer_text_bg_color?>">
-                  <h2 class="headline-1 text-one"><?=$footer_text_hover_1?></h2>
-                  <h2 class="headline-1 text-two"><?=$footer_text_hover_2?></h2>
-                </div>
-              </a>
+            <!--        logo and copy right-->
+            <div class="logo-and-copy iv-st-from-bottom">
+                <a href="<?php echo get_home_url(); ?>">
+                    <img src="<?php echo $footer_logo['url']; ?>" alt="logo.png">
+                </a>
+                <p class="paragraph">
+                    <?php echo $copywrite_text; ?>
+                </p>
             </div>
-            <div class="col-12 col-lg-6">
-              <div class="row content">
-                <!--          info-->
-                <div class="col-12 col-md-auto">
-                  <div class="info">
-                    <div class="row flex-column">
-                      <div class="col-auto">
-                        <h3 class="headline-7 word-up"><?=$footer_address?></h3>
-                      </div>
-                    </div>
-                  </div>
+            <!--      links-->
+            <div class="links">
+                <div class="title-and-link iv-st-from-bottom  newsletter">
+                    <h3 class="headline-7"><?php echo $subscribe_to_newsletter; ?></h3>
+                    <input type="email" placeholder="Email">
+                    <a class="btn has-bg" href="#">Submit</a>
                 </div>
-                <!--         links-->
-                <div class="col-12 col-md-7 col-lg-12">
-                  <div class="links">
-                    <div class="row">
-						<?php while ( have_rows( 'footer_links', 'options' ) ) {
-							the_row();
-							$link              = get_sub_field( 'link' );
-							$run_contact_modal = get_sub_field( 'run_contact_modal' );
-							?>
-                          <div class="col-6 col-lg-12">
-                            <a <?php if ( $run_contact_modal ){ ?>id="contact"<?php } else { ?> target="<?=$link['target']?>" href="<?=$link['url']?>"<?php } ?>
-                               class="small-link iv-st-from-bottom"><?=$link['title']?></a>
-                          </div>
-						<?php } ?>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <a id="subscribe" class="headline-7 subscribe word-up"><?=$subscribe_to_newsletter?></a>
-                </div>
-              </div>
+
+                <?php while (have_rows('footer_links', 'options')):the_row(); ?>
+                    <?php if (get_row_layout() == 'footer_links_block'):
+                        $block_title = get_sub_field('block_title');
+                        ?>
+                        <div class="title-and-link iv-st-from-bottom  <?php echo strtolower($block_title); ?>">
+                            <?php if ($block_title == 'social'):
+                                ?>
+                                <h3 class="headline-7 mobile">FOLLOW</h3>
+                                <h3 class="headline-7 desktop">SOCIAL</h3>
+                                <div class="icons mobile-only">
+                                    <a class="icon" href="<?php echo $facebook_url ?>">
+                                        <svg class="tw" width="25" height="21" viewBox="0 0 25 21" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M22.4121 5.54688C23.3887 4.81445 24.2676 3.93555 24.9512 2.91016C24.0723 3.30078 23.0469 3.59375 22.0215 3.69141C23.0957 3.05664 23.877 2.08008 24.2676 0.859375C23.291 1.44531 22.168 1.88477 21.0449 2.12891C20.0684 1.10352 18.75 0.517578 17.2852 0.517578C14.4531 0.517578 12.1582 2.8125 12.1582 5.64453C12.1582 6.03516 12.207 6.42578 12.3047 6.81641C8.05664 6.57227 4.24805 4.52148 1.70898 1.44531C1.26953 2.17773 1.02539 3.05664 1.02539 4.0332C1.02539 5.79102 1.9043 7.35352 3.32031 8.28125C2.49023 8.23242 1.66016 8.03711 0.976562 7.64648V7.69531C0.976562 10.1855 2.73438 12.2363 5.07812 12.7246C4.6875 12.8223 4.19922 12.9199 3.75977 12.9199C3.41797 12.9199 3.125 12.8711 2.7832 12.8223C3.41797 14.873 5.32227 16.3379 7.56836 16.3867C5.81055 17.7539 3.61328 18.584 1.2207 18.584C0.78125 18.584 0.390625 18.5352 0 18.4863C2.24609 19.9512 4.93164 20.7812 7.86133 20.7812C17.2852 20.7812 22.4121 13.0176 22.4121 6.23047C22.4121 5.98633 22.4121 5.79102 22.4121 5.54688Z"
+                                                  fill="white"/>
+                                        </svg>
+                                    </a>
+                                    <a class="icon" href="<?php echo $linkedin_url; ?>">
+                                        <svg class="fa" width="25" height="25" viewBox="0 0 25 25" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M24.6094 12.625C24.6094 5.93555 19.1895 0.515625 12.5 0.515625C5.81055 0.515625 0.390625 5.93555 0.390625 12.625C0.390625 18.6797 4.78516 23.709 10.5957 24.5879V16.1406H7.51953V12.625H10.5957V9.98828C10.5957 6.96094 12.4023 5.25195 15.1367 5.25195C16.5039 5.25195 17.8711 5.49609 17.8711 5.49609V8.47461H16.3574C14.8438 8.47461 14.3555 9.40234 14.3555 10.3789V12.625H17.7246L17.1875 16.1406H14.3555V24.5879C20.166 23.709 24.6094 18.6797 24.6094 12.625Z"
+                                                  fill="white"/>
+                                        </svg>
+                                    </a>
+                                    <a class="icon" href="<?php echo $twitter_url; ?>">
+                                        <svg class="in" width="22" height="23" viewBox="0 0 22 23" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.3125 0.6875H1.51367C0.683594 0.6875 0 1.41992 0 2.29883V21C0 21.8789 0.683594 22.5625 1.51367 22.5625H20.3125C21.1426 22.5625 21.875 21.8789 21.875 21V2.29883C21.875 1.41992 21.1426 0.6875 20.3125 0.6875ZM6.5918 19.4375H3.36914V9.03711H6.5918V19.4375ZM4.98047 7.57227C3.90625 7.57227 3.07617 6.74219 3.07617 5.7168C3.07617 4.69141 3.90625 3.8125 4.98047 3.8125C6.00586 3.8125 6.83594 4.69141 6.83594 5.7168C6.83594 6.74219 6.00586 7.57227 4.98047 7.57227ZM18.75 19.4375H15.4785V14.3594C15.4785 13.1875 15.4785 11.625 13.8184 11.625C12.1094 11.625 11.8652 12.9434 11.8652 14.3105V19.4375H8.64258V9.03711H11.7188V10.4531H11.7676C12.207 9.62305 13.2812 8.74414 14.8438 8.74414C18.1152 8.74414 18.75 10.9414 18.75 13.7246V19.4375Z"
+                                                  fill="white"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="link desktop-only">
+                                    <a class="paragraph" href="<?php echo $facebook_url; ?>"><span
+                                                data-hover="Facebook">Facebook</span></a>
+                                    <a class="paragraph" href="<?php echo $linkedin_url; ?>"><span
+                                                data-hover="Linkedin">Linkedin</span></a>
+                                    <a class="paragraph" href="<?php echo $twitter_url; ?>"><span data-hover="Twitter">Twitter</span></a>
+                                </div>
+                            <?php else: ?>
+                                <h3 class="headline-7"><?php echo $block_title; ?></h3>
+                                <div class="link">
+                                    <?php while (have_rows('links', 'options')): the_row();
+                                        $link = get_sub_field('link');
+                                        ?>
+                                        <a class="paragraph" href="<?php echo $link['url']; ?>"><span
+                                                    data-hover="<?php echo $block_title; ?>"><?php echo $link['title']; ?></span>
+                                        </a>
+                                    <?php endwhile; ?>
+                                </div>
+
+                            <?php endif;
+                            ?>
+
+                        </div>
+                    <?php endif; ?>
+                <?php endwhile; ?>
             </div>
-          </div>
         </div>
-	  <?php } ?>
-    <!--      bottom content-->
-    <div class="bottom-content">
-      <div class="left-content">
-        <a href="<?=site_url()?>">
-          <svg height="71" class="footer-logo" viewBox="0 0 170 71" width="170" xmlns="http://www.w3.org/2000/svg">
-            <g>
-              <g>
-                <g>
-                  <path d="M32.347 34.204l1.99 12.945-4.024.549zm3.268-5.078l-6.114.837-4.294 26.721 3.84-.524.73-4.842 5.126-.7.714 4.643 4.215-.577z" fill="#0178da"/>
-                </g>
-                <g>
-                  <path d="M41.81 28.28l4.178-.572-.035 22.406 6.873-.94-.005 3.73-11.051 1.515z" fill="#0178da"/>
-                </g>
-                <g>
-                  <path d="M58.856 29.681l6.44-.846.26-3.768-10.871 1.451-.042 26.14 4.178-.572.017-10.792 5.628-.782.256-3.769-5.878.817z" fill="#0178da"/>
-                </g>
-                <g>
-                  <path d="M84.956 33.303l5.734-.785v3.73l-5.736.785-.01 7.654 7.214-.987-.006 3.73-11.397 1.568.04-26.14L92.188 21.3v3.73l-7.216.987z" fill="#2fc9d7"/>
-                </g>
-                <g>
-                  <path
-                    d="M100.952 23.838c1.481-.203 2.122.533 2.122 2.398v2.576c-.003 2.091-.953 2.893-2.511 3.106l-1.633.22.012-8.029zm6.768 21.471c-.417-.917-.45-1.842-.45-3.11l.006-4.035c.004-2.726-.68-4.611-2.764-5.184 1.865-1.114 2.743-2.988 2.743-5.677v-2.054c.007-4.033-1.85-5.757-6.18-5.165l-6.304.862-.04 26.14 4.176-.572.017-10.642 1.444-.197c1.899-.26 2.728.522 2.728 2.949l-.005 4.107c-.004 2.129.147 2.52.374 3.16z"
-                    fill="#2fc9d7"/>
-                </g>
-                <g>
-                  <path d="M110.039 18.857l4.176-.571-.04 26.14-4.178.572z" fill="#2fc9d7"/>
-                </g>
-                <g>
-                  <path
-                    d="M121.08 23.358c.003-1.866.839-2.69 2.169-2.873 1.33-.182 2.16.415 2.16 2.28l-.022 14.117c-.004 1.866-.84 2.69-2.17 2.872-1.328.182-2.16-.416-2.16-2.281zm-4.199 14.425c-.007 4.182 2.23 6.266 6.331 5.705 4.101-.56 6.346-3.257 6.353-7.44l.021-13.592c.007-4.183-2.231-6.266-6.332-5.705-4.101.56-6.346 3.257-6.352 7.44z"
-                    fill="#2fc9d7"/>
-                </g>
-                <g>
-                  <path
-                    d="M136.28 15.268l-.031 20.164c0 1.865.832 2.426 2.161 2.244 1.33-.182 2.165-.969 2.168-2.836l.032-20.165 3.95-.54-.031 19.907c-.007 4.183-2.139 6.865-6.24 7.425-4.1.561-6.223-1.536-6.217-5.72l.031-19.903z"
-                    fill="#2fc9d7"/>
-                </g>
-                <g>
-                  <path
-                    d="M153.03 12.677c4.058-.556 6.143 1.548 6.143 5.732v.823l-3.95.54v-1.089c0-1.865-.754-2.473-2.084-2.29-1.33.181-2.085.994-2.092 2.862-.01 5.375 8.154 5.266 8.142 12.736-.006 4.183-2.136 6.863-6.238 7.425-4.102.562-6.225-1.536-6.218-5.72v-1.607l3.95-.54v1.866c0 1.865.831 2.424 2.16 2.242 1.328-.182 2.165-.969 2.169-2.835.008-5.375-8.155-5.266-8.143-12.737.004-4.175 2.096-6.851 6.16-7.408z"
-                    fill="#2fc9d7"/>
-                </g>
-                <g>
-                  <path
-                    d="M70.25 30.381c-.033-1.873.688-2.703 1.975-2.907 1.287-.204 2.028.394 2.061 2.268l.02 1.088 3.815-.606-.015-.826c-.074-4.2-2.136-6.278-6.06-5.655-1.187.188-2.194.574-3.017 1.13l-.907 11.547c2.383 2.753 6.168 3.796 6.233 7.522.034 1.876-.759 2.678-2.043 2.882-1.285.205-2.102-.342-2.135-2.218l-.033-1.874-2.552.405-.424 5.395c.954 1.725 2.743 2.47 5.32 2.061 3.958-.63 5.97-3.355 5.895-7.555-.134-7.497-8.036-7.256-8.133-12.657z"
-                    fill="#2fc9d7"/>
-                </g>
-                <g>
-                  <path d="M19.022 31.393V42.58l-4.748.656V32.035l-4.176.578-.001 26.14 4.176-.58V46.973l4.748-.658v11.22l4.177-.579.001-26.14z" fill="#0178da"/>
-                </g>
-                <g>
-                  <path d="M69.651 16.919l96.328-13.22v41.643l-99.61 13.37-.244 3.11L169.41 48V.142L69.895 13.81z" fill="#0178da"/>
-                </g>
-                <g>
-                  <path d="M62.963 59.188L3.43 67.268V25.945l62.794-8.556.264-3.112L0 23.286V70.77l62.72-8.472z" fill="#0178da"/>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </a>
-        <span class="copy"><?=$copywrite_text?></span>
-      </div>
-      <div class="right-content">
-        <div class="social-links">
-          <div class="icon youtube">
-            <a href="<?=$youtube_url?>" target="_blank">
-              <svg viewBox="0 0 29.195 20.534" width="29.195" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#010f3d"
-                      d="M4.671,20.241a4.95,4.95,0,0,1-3.219-1.248,6.313,6.313,0,0,1-1.16-2.9A44.166,44.166,0,0,1,0,11.37V9.155A44.164,44.164,0,0,1,.292,4.43a6.314,6.314,0,0,1,1.16-2.9A4.177,4.177,0,0,1,4.377.3C8.463,0,14.591,0,14.591,0H14.6s6.128,0,10.214.3a4.177,4.177,0,0,1,2.925,1.237A6.318,6.318,0,0,1,28.9,4.43a44.224,44.224,0,0,1,.291,4.725V11.37a44.226,44.226,0,0,1-.291,4.725,6.318,6.318,0,0,1-1.161,2.9,4.175,4.175,0,0,1-2.925,1.237c-4.085.3-10.22.3-10.22.3S7.007,20.465,4.671,20.241Z"
-                      transform="translate(0 0)"/>
-                <path fill="#fff" d="M228.656,215.953v8.2l7.889-4.087Z" transform="translate(-217.074 -210.102)"/>
-              </svg>
-            </a>
-          </div>
-          <div class="icon facebook">
-            <a href="<?=$facebook_url?>" target="_blank">
-              <svg preserveAspectRatio="" height="20.999" viewBox="0 0 9.692 20.999" width="9.692" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#010f3d"
-                      d="M162.312,157.032h4.228V146.443h2.951l.314-3.545H166.54v-2.019c0-.836.168-1.167.977-1.167H169.8v-3.679h-2.928c-3.146,0-4.565,1.386-4.565,4.038V142.9h-2.2v3.59h2.2Z"
-                      transform="translate(-160.112 -136.033)"/>
-              </svg>
-            </a>
-          </div>
-          <div class="icon linkedin">
-            <a href="<?=$linkedin_url?>" target="_blank">
-              <svg height="21.496" viewBox="0 0 21.802 21.496" width="21.802" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#010f3d" d="M669.591,250.307a2.323,2.323,0,0,1-2.514,2.33,2.335,2.335,0,1,1,2.514-2.33Zm-4.814,19.165v-15h4.661v15Z" transform="translate(-664.654 -247.976)"/>
-                <path fill="#010f3d"
-                      d="M701.753,283.685c0-1.87-.061-3.434-.122-4.784h4.047l.215,2.085h.092a5.385,5.385,0,0,1,4.631-2.423c3.066,0,5.366,2.055,5.366,6.47V293.9h-4.661v-8.31c0-1.932-.675-3.25-2.362-3.25a2.559,2.559,0,0,0-2.392,1.748,3.355,3.355,0,0,0-.154,1.165V293.9h-4.661Z"
-                      transform="translate(-694.18 -272.401)"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <span class="copy"><?=$copywrite_text?></span>
     </div>
-  </div>
 </footer>
 
 </main><!--end of Barba-->
 </div><!--end of smooth-scroll-->
-<section class="component-modal" id="model">
-  <div class="contact-us modal" id="contact-us-model">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-model">
-          <svg height="16" viewBox="0 0 17 16" width="17" xmlns="http://www.w3.org/2000/svg">
-            <g>
-              <g>
-                <path d="M16.274 1.676L14.6 0l-6.19 6.19L2.22 0 .545 1.676l6.19 6.189-6.19 6.19L2.22 15.73l6.19-6.19 6.189 6.19 1.675-1.676-6.189-6.189z" fill="#9899a2"/>
-              </g>
-            </g>
-          </svg>
-        </div>
-        <h2 class="headline-1"><?=$contact_title?></h2>
-        <p class="headline-5"><?=$contact_text?></p>
-		  <?=do_shortcode( $contact_form )?>
-      </div>
-    </div>
-  </div>
-  <div class="newsletter modal" id="newsletter-model">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-model">
-          <svg height="16" viewBox="0 0 17 16" width="17" xmlns="http://www.w3.org/2000/svg">
-            <g>
-              <g>
-                <path d="M16.274 1.676L14.6 0l-6.19 6.19L2.22 0 .545 1.676l6.19 6.189-6.19 6.19L2.22 15.73l6.19-6.19 6.189 6.19 1.675-1.676-6.189-6.189z" fill="#9899a2"/>
-              </g>
-            </g>
-          </svg>
-        </div>
-        <h2 class="headline-1"><?=$newsletter_title?></h2>
-        <p class="headline-5"><?=$newsletter_text?></p>
-		  <?=do_shortcode( $newsletter_form )?>
-        <p class="tag"><?=$newsletter_bottom_text?></p>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="service-video-modal" id="service-video-modal">
-  <div class="close-modal">
-    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16">
-      <path fill="CurrentColor" d="M16.274 1.676L14.6 0l-6.19 6.19L2.22 0 .545 1.676l6.19 6.189-6.19 6.19L2.22 15.73l6.19-6.19 6.189 6.19 1.675-1.676-6.189-6.189z"/>
-    </svg>
-  </div>
-  <div class="modal-content">
-    <div class="aspect-ratio">
-    
-    </div>
-  </div>
-</div>
 </body>
 </html>

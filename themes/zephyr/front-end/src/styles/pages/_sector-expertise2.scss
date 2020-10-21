@@ -1,7 +1,6 @@
 
 .sector-expertise2-page-wrapper {
-    display: none;
-    section.component-hero {
+    .component-hero {
         .content {
             .headline-1 {
                 
@@ -12,10 +11,8 @@
                 }
             }
         }
-        
         .down {
             display: none;
         }
     }
-    
 }

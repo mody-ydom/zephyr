@@ -5,3 +5,10 @@ node_modules/
 helper_files/
 
 themes/zephyr/assets
+plugins/advanced-custom-fields-pro/
+
+themes/zephyr/acf-json/.DS_Store
+
+plugins/.DS_Store
+
+.DS_Store
