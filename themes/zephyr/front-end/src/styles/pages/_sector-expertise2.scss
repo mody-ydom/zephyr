@@ -1,18 +1,32 @@
-
 .sector-expertise2-page-wrapper {
     .component-hero {
         .content {
+            text-align: center;
+            padding-top: size(203);
             .headline-1 {
-                
+                max-width: size(220);
+                @include min-x-small-screen{
+                    max-width: 100%;
+                }
                 @include x-large-screen {
                     font-size: size(60);
                     line-height: size(72);
-                    @include marginY(size(30), size(0))
+                    @include marginY(size(25) ,size(26));
+                    max-width: size(788);
+                }
+            }
+            
+            .paragraph {
+                @include x-large-screen{
+                    max-width: size(910);
                 }
             }
         }
-        .down {
-            display: none;
-        }
+    }
+    .component-success-stories{
+        @include marginY(size(140));
+       @include min-medium-screen{
+           @include marginY(size(374),size(185));
+       }
     }
 }
