@@ -4,7 +4,7 @@
 section.component-growth-guide {
     @include marginY(size(200), size(108));
     @include min-medium-screen {
-        @include marginY(size(119), size(98));
+        @include marginY(size(119), size(147));
     }
     
     .growth-guide {
@@ -192,10 +192,10 @@ section.component-growth-guide {
                     text-align: right;
                     @include min-medium-screen{
                         margin-top: size(40);
+                        text-align: left;
                     }
                     @include x-large-screen{
                         margin-top: size(150);
-                        text-align: left;
                     }
                     .headline-3{
                         span{
@@ -206,7 +206,7 @@ section.component-growth-guide {
                         }
                     }
                     .headline-8 {
-                        max-width: 80%;
+                        max-width: 90%;
                         margin-left: auto;
                         margin-bottom: 0;
                         @include min-medium-screen{
