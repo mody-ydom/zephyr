@@ -642,3 +642,25 @@ function subCategories($category)
     </ol>
     <?php
 }
+
+/* Get Next Post ID */
+function nextPostId($post_id)
+{
+    global $post;
+    $oldGlobal = $post;
+    $post = get_post($post_id);
+    $next_post = get_next_post();
+    $post = $oldGlobal;
+    if ('' == $next_post)
+        return 0;
+    $next_post_id = $next_post->ID;
+
+    if (get_post_status($next_post_id)) {
+        ?>
+        <a class="next-chapter iv-st-from-bottom" href="<?php echo get_permalink($next_post_id); ?>">
+            <h3 class="headline-3">Next Chapter <span>></span></h3>
+            <h6 class="headline-8"><?php echo get_the_title($next_post_id); ?></h6>
+        </a>
+        <?php
+    }
+}

@@ -4,6 +4,7 @@ global $post;
 $category = get_the_category();
 $author_id = $post->post_author;
 $author_name = get_the_author_meta('user_nicename', $author_id);
+$post_id = get_the_ID();
 ?>
     <section class="component-growth-guide">
         <div class="container">
@@ -64,12 +65,9 @@ $author_name = get_the_author_meta('user_nicename', $author_id);
                                         <span><?php echo $author_name; ?>
 </span></p>
                                 </div>
-                                <a class="next-chapter iv-st-from-bottom" href="#">
-                                    <h3 class="headline-3">Next Chapter <span>></span></h3>
-                                    <h6 class="headline-8"><span>1.2 </span> Websites & why I am not talking
-                                        about
-                                        them here</h6>
-                                </a>
+                                <?php
+                                nextPostId($post_id);
+                                ?>
                                 <div class="mobile-select iv-st-from-bottom">
                                     <svg class="arrow-select" width="11" height="7" viewBox="0 0 11 7"
                                          fill="none"
