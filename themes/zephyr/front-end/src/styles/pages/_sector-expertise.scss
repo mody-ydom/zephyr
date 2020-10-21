@@ -2,10 +2,24 @@
 .sector-expertise-page-wrapper {
     
     section.component-hero {
-        .content{
-            .headline-1{
-                @include marginY(size(29) ,size(30));
+        .content {
+            .headline-1 {
+                @include marginY(size(29), size(30));
             }
+        }
+    }
+    
+    section.component-contact-us {
+        margin-bottom: size(120);
+    }
+    
+    
+    Section.component-success-stories {
+        @include min-small-screen {
+            @include marginY(size(100), size(80))
+        }
+        @include x-large-screen {
+            @include marginY(size(165), size(136))
         }
     }
 }
