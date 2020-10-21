@@ -9,7 +9,12 @@
 	<?php wp_head(); ?>
   <link rel="stylesheet" href="https://use.typekit.net/cca7lwo.css">
 </head>
-
+<!-- ACF Fields -->
+<?php
+$header_logo_light=get_field('header_logo_light','options');
+$header_logo_dark=get_field('header_logo_dark','options');
+?>
+<!-- END ACF -->
 <body <?php body_class(); ?> data-barba="wrapper">
   <div class="barba-overlay-transition"></div>
 	<?php wp_body_open(); ?>
@@ -33,18 +38,21 @@
                   </div>
               </div>
               <!--      logo-->
-              <a class="logo light" href="#">
-                  <img src="../../html/images/logo.png" alt="logo">
+              <a class="logo light" href="<?php echo get_home_url(); ?>">
+                  <img src="<?php echo $header_logo_light['url']; ?>" alt="logo">
               </a>
-              <a class="logo dark" href="#">
-                  <img src="../../html/images/gray-logo.png" alt="logo">
+              <a class="logo dark" href="<?php echo get_home_url(); ?>">
+                  <img src="<?php echo $header_logo_dark['url']; ?>" alt="logo">
               </a>
-              <!--    links-->
+          <!--    links-->
               <div class="links">
-                  <a class="small-link" href="#"><span data-hover="Sector Expertise">Sector Expertise</span></a>
-                  <a class="small-link" href="#"><span data-hover="About">About</span></a>
-                  <a class="small-link" href="#"><span data-hover="Growth Guide">Growth Guide</span></a>
-                  <a class="small-link" href="#"><span data-hover="Say hello">Say hello</span></a>
+                  <?php
+                  while (have_rows('header_links','options')):
+                  the_row();
+                  $link=get_sub_field('link');
+                  ?>
+                  <a class="small-link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><span data-hover="<?php echo $link['title']; ?>"><?php echo $link['title']; ?></span></a>
+                  <?php endwhile; ?>
               </div>
           </div>
       </div>
