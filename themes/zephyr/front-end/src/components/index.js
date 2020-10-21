@@ -18,3 +18,4 @@ export component_success_stories from './component-success-stories';
 export component_our_process from './component-our-process';
 export component_our_testimonials from './component-our-testimonials';
 export component_sector_expertise_image_1 from './component-sector-expertise-image-1';
+export component_sector_expertise_image_2 from './component-sector-expertise-image-2';

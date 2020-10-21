@@ -1,23 +1,18 @@
 @import "src/styles/variables";
 @import "src/styles/mixins";
 
-section.component-sector-expertise-image-1 {
+section.component-sector-expertise-image-2 {
     @include marginY(size(84), size(63));
     @include min-medium-screen {
         @include marginY(size(292), size(94));
     }
     padding-bottom: 200px;
-    
     .image-1 {
-        .image-wrapper {
+        .image-wrapper{
             position: relative;
             height: 0;
-            padding-top: 62.13%;
-            @include min-medium-screen {
-                padding-top: 50.13%;
-            }
+            padding-top: 65.92%;
             margin-bottom: size(25);
-            
             img {
                 width: 100%;
                 height: 100%;
@@ -25,7 +20,6 @@ section.component-sector-expertise-image-1 {
                 top: 0;
             }
         }
-        
         .paragraph-1 {
             @include x-large-screen {
                 padding-right: size(44);
