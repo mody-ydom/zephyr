@@ -4,10 +4,8 @@
 section.component-sector-expertise-image-1 {
     @include marginY(size(84), size(63));
     @include min-medium-screen {
-        @include marginY(size(292), size(94));
+        @include marginY(size(252), size(94));
     }
-    padding-bottom: 200px;
-    
     .image-1 {
         .image-wrapper {
             position: relative;
