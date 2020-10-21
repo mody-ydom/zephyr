@@ -150,14 +150,14 @@ section.component-contact-us {
                 @include marginY(size(15), size(32));
                 @include min-small-screen {
                     text-align: left;
-                    max-width: 230px;
+                    max-width: size(230);
                 }
                 @include min-medium-screen {
                     max-width: size(320);
                 }
                 @include x-large-screen {
                     @include marginY(size(18), size(32));
-                    max-width: size(407);
+                    max-width: size(457);
                     opacity: 0.85;
                 }
             }
