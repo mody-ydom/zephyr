@@ -150,10 +150,10 @@
             "mime_types": ""
         },
         {
-            "key": "field_5f44768638769",
+            "key": "field_5f8f8b212c571",
             "label": "Footer Links",
             "name": "footer_links",
-            "type": "repeater",
+            "type": "flexible_content",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -162,148 +162,84 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_permissions": "",
-            "acfe_repeater_stylised_button": 0,
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Link",
-            "sub_fields": [
-                {
-                    "key": "field_5f4476863876a",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "70",
-                        "class": "",
-                        "id": ""
-                    },
-                    "acfe_permissions": "",
-                    "return_format": "array"
-                },
-                {
-                    "key": "field_5f5f3facf63d0",
-                    "label": "Run Contact Modal",
-                    "name": "run_contact_modal",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "15",
-                        "class": "",
-                        "id": ""
-                    },
-                    "acfe_permissions": "",
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
+            "layouts": {
+                "layout_5f8f8b2e97b05": {
+                    "key": "layout_5f8f8b2e97b05",
+                    "name": "footer_links_block",
+                    "label": "Footer links Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5f8f8b4d2c572",
+                            "label": "Block title",
+                            "name": "block_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5f8f8b552c573",
+                            "label": "Links",
+                            "name": "links",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5f8f8b4d2c572",
+                                        "operator": "!=",
+                                        "value": "social"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5f8f8b612c574",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
-            ]
-        },
-        {
-            "key": "field_5f7a17236cc69",
-            "label": "Footer Banner Link",
-            "name": "footer_banner_link",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
             },
-            "acfe_permissions": "",
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_5f57538e9b8a9",
-            "label": "Footer Address",
-            "name": "footer_address",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "acfe_permissions": "",
-            "default_value": "642 de Courcelle St.\r\nOffice 415\r\nMontreal, Quebec\r\nH4C 3C5\r\nCanada",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_5f5753b19b8ab",
-            "label": "Footer Text Hover 1",
-            "name": "footer_text_hover_1",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "acfe_permissions": "",
-            "default_value": "And You?",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5f5753d49b8ac",
-            "label": "Footer Text Hover 2",
-            "name": "footer_text_hover_2",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "acfe_permissions": "",
-            "default_value": "What are your ambitions?",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5f5f33110329a",
-            "label": "Footer Text BG Color",
-            "name": "footer_text_bg_color",
-            "type": "text",
-            "instructions": "please generate any color from this site https:\/\/mycolor.space\/gradient, then copy the value of background-image and paste it here :)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "acfe_permissions": "",
-            "default_value": "linear-gradient(293deg, #2edfe8 16%, #0080ff 100%)",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
         },
         {
             "key": "field_5f4476b73876f",
@@ -716,5 +652,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603238109
+    "modified": 1603250283
 }
