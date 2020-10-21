@@ -5,10 +5,7 @@ section.component-hero {
     height: 100vh;
     position: relative;
     display: flex;
-    @include paddingY(size(182), size(180));
-    @include min-small-screen {
-        @include paddingY(size(250), size(212));
-    }
+   
     
     .hero-image {
         position: absolute;
@@ -31,6 +28,10 @@ section.component-hero {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @include paddingY(size(182), size(180));
+        @include min-small-screen {
+            @include paddingY(size(250), size(212));
+        }
         .headline-6 {
             color: $zephyr-white;
         }
@@ -87,11 +88,7 @@ section.component-hero {
     &.no-bg {
         background: $zephyr-white;
         z-index: 1;
-        @include paddingY(size(250), size(180));
-        @include x-large-screen {
-            @include paddingY(size(264), size(180));
-            
-        }
+       
         
         .hero-image {
             display: none;
@@ -102,7 +99,11 @@ section.component-hero {
         }
         
         .content {
-            
+            @include paddingY(size(250), size(180));
+            @include x-large-screen {
+                @include paddingY(size(264), size(180));
+        
+            }
             .headline-1 {
                 max-width: size(320);
                 margin: 0 auto;

@@ -7,6 +7,14 @@ section.component-our-process {
     align-items: center;
     position: relative;
     z-index: 3;
+    margin-top: size(250);
+    
+    @include min-small-screen {
+        margin-top: size(150);
+    }
+    @include x-large-screen {
+        margin-top: size(266);
+    }
     
     .content {
         .headline-5 {
@@ -43,7 +51,7 @@ section.component-our-process {
             max-width: size(118);
             min-height: size(118);
             right: 10%;
-            top: size(-160);
+            top: size(-140);
             @include x-large-screen {
                 max-width: size(90);
                 min-height: size(90);
@@ -52,7 +60,7 @@ section.component-our-process {
                     fill: #6be3a8;
                 }
             }
-    
+            
         }
         
         &.orange {
@@ -74,15 +82,15 @@ section.component-our-process {
         &.pill {
             max-width: size(81);
             min-height: size(60);
-            right: -1;
             top: 50%;
             transform: translateY(-50%);
+            right: 0;
             @include x-large-screen {
                 top: size(170);
                 transform: translateY(0);
                 z-index: 4;
             }
-    
+            
         }
         
         &.big-aqua {
@@ -99,7 +107,7 @@ section.component-our-process {
                 top: 50%;
                 transform: translateY(-50%);
                 circle {
-                    fill: #C7E4D8;
+                    fill: #c7e4d8;
                 }
             }
             
@@ -134,14 +142,14 @@ section.component-our-process {
                 width: 100%;
                 height: 100%;
             }
-    
+            
             @include x-large-screen {
                 max-width: size(200);
                 min-height: size(200);
                 top: size(200);
                 right: size(-50);
             }
-    
+            
         }
     }
 }

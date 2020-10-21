@@ -1,4 +1,16 @@
 
 .home-page-wrapper {
-
+    
+    section.component-contact-us {
+       background: red;
+        margin-bottom: size(144);
+        
+        @include min-medium-screen {
+            margin-bottom: size(180);
+        }
+        
+        @include x-large-screen {
+            margin-bottom: size(299);
+        }
+    }
 }
