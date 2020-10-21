@@ -2,6 +2,15 @@
 @import "src/styles/mixins";
 
 section.component-contact-us {
+    margin-bottom: size(144);
+    
+    @include min-medium-screen{
+        margin-bottom: size(180);
+    }
+    
+    @include x-large-screen{
+        margin-bottom: size(299);
+    }
     .contact-us-model {
         display: flex;
         flex-direction: column;
@@ -39,6 +48,7 @@ section.component-contact-us {
             .title-contact {
                 color: $zephyr-gray-light;
                 margin-bottom: size(50);
+                justify-content: center;
                 
             }
             

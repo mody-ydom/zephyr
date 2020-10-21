@@ -638,6 +638,13 @@ input, textarea {
         letter-spacing: size(0.44);
         line-height: size(21);
         text-align: left;
+        transition: all 400ms ease-in-out;
+        opacity: 1;
+    }
+    &:focus{
+        &::placeholder{
+            opacity: 0;
+        }
     }
 }
 

@@ -2,8 +2,6 @@
 @import "src/styles/mixins";
 
 section.component-grid-images {
-    padding-bottom: 250px;
-    
     .gide-wrapper {
         display: grid;
         grid-template-columns: 1fr;
@@ -75,10 +73,14 @@ section.component-grid-images {
             }
             
             &.card-two {
+                
                 @include min-small-screen {
-                    margin-top: size(-50);
+                    margin-top: size(-30);
                     grid-column: 2;
                     grid-row: 1/2;
+                }
+                @include min-medium-screen{
+                    margin-top: size(-50);
                 }
             }
             
@@ -94,7 +96,6 @@ section.component-grid-images {
             }
         }
     }
-    
 }
 
 

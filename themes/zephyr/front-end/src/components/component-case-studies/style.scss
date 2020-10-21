@@ -2,8 +2,15 @@
 @import "src/styles/mixins";
 
 section.component-case-studies {
-    margin-top: 100px;
-    padding-bottom: 250px;
+    margin-bottom: size(33);
+    @include min-small-screen {
+        margin-bottom: size(100);
+    }
+    
+    @include x-large-screen {
+        margin-bottom: size(120);
+    }
+    
     
     .desktop-only {
         font-family: $Canela;
@@ -35,7 +42,6 @@ section.component-case-studies {
     }
     
     .bike-image {
-        margin-bottom: size(55);
         
         .image-wrapper {
             position: relative;
@@ -50,6 +56,12 @@ section.component-case-studies {
                 object-fit: cover;
             }
             
+        }
+    }
+    
+    .content {
+        .headline-5 {
+            @include marginY(size(23), size(4));
         }
     }
     

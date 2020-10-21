@@ -2,11 +2,12 @@
 @import "src/styles/mixins";
 
 section.component-home-swiper {
-    @include marginY(size(100), size(185));
-    @include x-large-screen {
-        @include marginY(size(260), size(218));
-        
+    @include marginY(size(190), size(185));
+    
+    @include min-small-screen {
+        @include marginY(size(210), size(218));
     }
+    
     .home-swiper-container {
         .home-swiper {
             .left-side {
