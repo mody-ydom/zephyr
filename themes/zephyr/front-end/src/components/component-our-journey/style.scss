@@ -1,0 +1,118 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-our-journey {
+    @include marginY(size(130),size(92));
+    @include min-medium-screen{
+        @include marginY(size(164),size(253));
+    }
+    .our-journey{
+        padding-bottom: 100px;
+        .our-journey-title{
+            margin-bottom: size(64);
+            @include x-large-screen{
+                margin-bottom: size(107);
+            }
+            .headline-6{
+                margin-bottom: size(32);
+                @include x-large-screen{
+                    margin-bottom: size(17);
+                }
+            }
+            .headline-2{
+                text-transform: capitalize;
+                @include min-medium-screen{
+                    text-transform: none;
+                }
+            }
+        }
+        .our-journey-content{
+            .swiper-slide{
+                &:nth-last-child(-n+4){
+                    display: none;
+                    @include min-medium-screen{
+                        display: unset;
+                    }
+                }
+            }
+            .journey-box{
+                @include paddingX(size(30));
+                @include paddingY(size(30));
+                min-height: size(335);
+                @include x-large-screen{
+                    margin-bottom: size(44);
+                }
+                .headline-6{
+                    font-size: size(13);
+                    font-weight: 400;
+                    letter-spacing: size(0.5);
+                    margin-bottom: size(45);
+                }
+                .small-headline{
+                    margin-bottom: size(20);
+                }
+                .paragraph-1{
+                    max-width: size(350);
+                    @include x-large-screen{
+                        max-width: size(265);
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+                    @include marginX(auto);
+                }
+                svg{
+                    margin-bottom: size(16);
+                }
+                &.milky{
+                    background: $zephyr-milky;
+                }
+                &.orange{
+                    background: rgba(255, 155, 120, 0.8);;
+                }
+                &.green{
+                    background: rgba(107, 227, 168, 0.8);;
+                }
+            }
+            .swiper-control{
+                margin-top: size(57);
+                position: relative;
+                max-width: 90%;
+                @include marginX(auto);
+                @include paddingY(size(6));
+                display: block;
+                @media screen and (max-width: 370px) {
+                    max-width: 100%;
+                }
+                @include x-large-screen{
+                    display: none;
+                }
+                .swiper-pagination{
+                    .swiper-pagination-bullet{
+                        margin: 0 size(12);
+                    }
+                }
+                .swiper-button-next,.swiper-button-prev{
+                    position: absolute;
+                    cursor: pointer;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    svg{
+                        &:hover{
+                            path{
+                                stroke:#6be3a8;
+                            }
+                        }
+                    }
+                    &.swiper-button-prev{
+                        left: 0;
+                    }
+                    &.swiper-button-next{
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

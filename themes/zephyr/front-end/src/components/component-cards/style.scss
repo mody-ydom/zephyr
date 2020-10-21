@@ -1,0 +1,42 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-cards {
+    .row {
+        @include change-gutter(20px);
+        @include min-large-screen {
+            @include change-gutter(76px);
+        }
+    }
+    
+    .card {
+        .image-wrapper {
+            position: relative;
+            height: 0;
+            padding-top: 100.95%;
+            margin-bottom: size(15);
+            @include min-small-screen {
+                margin-bottom: size(27);
+            }
+            
+            img{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        
+        .paragraphs-1 {
+            opacity: 0.85;
+        }
+    }
+    
+    .paragraph {
+        color: $zephyr-gray;
+        font-size: size(12);
+        line-height: size(22);
+        margin: 0 auto;
+    }
+}

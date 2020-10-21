@@ -2,8 +2,8 @@
 @import "src/styles/mixins";
 
 section.component-our-team {
-    @include marginY(105px);
-    @include min-medium-screen{
+    @include marginY(size(105));
+    @include x-large-screen{
         @include marginY(size(111),size(200));
     }
     .our-team {

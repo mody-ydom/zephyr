@@ -7,7 +7,7 @@
                 @include x-large-screen {
                     font-size: size(60);
                     line-height: size(72);
-                    @include marginY(size(30) , size(0))
+                    @include marginY(size(30), size(0))
                 }
             }
         }

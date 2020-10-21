@@ -2,31 +2,57 @@
 @import "src/styles/mixins";
 
 section.component-about-us {
-    @include marginY(size(120), size(100));
+    @include marginY(size(120), size(130));
     @include min-medium-screen {
-        @include marginY(size(131), size(103));
+        @include marginY(size(131), size(163));
     }
     
     .about-us {
         .about-us-title {
             margin-bottom: size(115);
+            @include x-large-screen{
+                margin-bottom: size(115);
+            }
+            .headline-6,.headline-2{
+                margin-bottom: size(32);
+                @include x-large-screen{
+                    margin-bottom: size(22);
+                }
+            }
+            .paragraph-1{
+                max-width: size(935);
+                @include marginX(auto);
+            }
         }
         
         .about-us-content {
+            margin-bottom: size(110);
+            @include x-large-screen{
+                margin-bottom: size(98);
+            }
             .about-logo {
-                margin-bottom: size(77);
-                
+                @include x-large-screen{
+                    margin-bottom: size(87);
+                }
                 .image-wrapper {
-                    padding-bottom: size(20);
-                    border-bottom: 1px solid #979797;
-                    margin-bottom: size(17);
+                    margin-bottom: size(11);
                     display: flex;
-                    min-height: size(87);
+                    min-height: size(89);
                     align-items: center;
-                    
                     img {
                         margin: 0 auto;
                     }
+                }
+                .paragraph-1{
+                    line-break: anywhere;
+                    border-top: 1px solid #979797;
+                    padding-top: size(17);
+                }
+            }
+            .swiper-pagination{
+                margin-top: size(61);
+                @include x-large-screen{
+                    margin-top: 0;
                 }
             }
         }
@@ -43,17 +69,22 @@ section.component-about-us {
                     top: 0;
                 }
             }
-            
             .image-1 {
-                margin-bottom: size(86);
-                @include min-medium-screen {
+                margin-bottom: size(80);
+                @include min-medium-screen{
+                    margin-bottom: size(86);
+                }
+                @include x-large-screen {
                     margin-bottom: size(102);
                 }
             }
             .same-image{
                 .image-wrapper {
-                    padding-top: 48.97%;
-                    margin-bottom: size(18);
+                    margin-bottom: size(22);
+                    padding-top: 62.97%;
+                    @include min-medium-screen{
+                        padding-top: 48.97%;
+                    }
                     @include min-medium-screen {
                         margin-bottom: size(28);
                     }
@@ -61,18 +92,24 @@ section.component-about-us {
             }
             .image {
                 .paragraph-1 {
-                    @include min-medium-screen {
-                        padding-left: size(17);
+                    @include x-large-screen {
+                        @include paddingX(size(12),size(44));
                     }
                 }
             }
-            
-            .row-image {
+            .row{
+                @include min-small-screen{
+                    @include change-gutter(42px);
+                }
+                @include min-medium-screen{
+                    @include change-gutter(62px);
+                }
+            }
+            .row-images {
                 margin-bottom: size(24);
                 @include min-medium-screen {
                     margin-bottom: 0;
                 }
-                
                 .image-wrapper {
                     margin-bottom: size(22);
                     padding-top: 71.69%;
@@ -80,9 +117,17 @@ section.component-about-us {
                         margin-bottom: size(18);
                     }
                 }
+                &.image-2{
+                    .paragraph-1{
+                        display: none;
+                        @include min-small-screen{
+                            display: block;
+                        }
+                    }
+                }
             }
             .image-4{
-                margin-top: size(45);
+                margin-top: size(49);
                 @include min-medium-screen{
                     margin-top: size(87);
                 }

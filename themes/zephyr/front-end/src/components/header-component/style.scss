@@ -213,7 +213,7 @@ header {
                 background: $zephyr-white;
                 
                 .small-link {
-                    color: $zephyr-gray;
+                    color: $zephyr-gray !important;
                 }
                 
                 @include min-small-screen {

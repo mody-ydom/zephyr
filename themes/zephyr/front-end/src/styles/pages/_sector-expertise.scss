@@ -1,0 +1,11 @@
+
+.sector-expertise-page-wrapper {
+    
+    section.component-hero {
+        .content{
+            .headline-1{
+                @include marginY(size(29) ,size(30));
+            }
+        }
+    }
+}
