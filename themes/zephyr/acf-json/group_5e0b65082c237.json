@@ -334,8 +334,8 @@
         },
         {
             "key": "field_5f447604fd334",
-            "label": "Youtube Url",
-            "name": "youtube_url",
+            "label": "Twitter Url",
+            "name": "twitter_url",
             "type": "url",
             "instructions": "",
             "required": 0,
@@ -345,7 +345,6 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_permissions": "",
             "default_value": "https:\/\/www.youtube.com\/",
             "placeholder": ""
         },
@@ -652,5 +651,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603250283
+    "modified": 1603251242
 }
