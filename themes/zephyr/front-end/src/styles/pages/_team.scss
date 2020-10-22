@@ -3,6 +3,8 @@
         .content {
             .headline-1 {
                 max-width: size(220);
+                @include marginY(size(25) ,size(36));
+    
                 @include min-x-small-screen{
                     max-width: 100%;
                 }

@@ -4,7 +4,11 @@
     section.component-hero {
         .content {
             .headline-1 {
-                @include marginY(size(29), size(30));
+                @include marginY(size(18), size(30));
+    
+                @include min-medium-screen{
+                    @include marginY(size(29), size(36));
+                }
             }
         }
     }

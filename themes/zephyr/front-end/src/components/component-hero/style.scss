@@ -2,10 +2,10 @@
 @import "src/styles/mixins";
 
 section.component-hero {
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     display: flex;
-   
+    align-items: center;
     
     .hero-image {
         position: absolute;
@@ -28,10 +28,11 @@ section.component-hero {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        @include paddingY(size(182), size(180));
+        margin-bottom: size(20);
         @include min-small-screen {
-            @include paddingY(size(250), size(212));
+            margin-bottom: size(50);
         }
+        
         .headline-6 {
             color: $zephyr-white;
         }
@@ -65,10 +66,14 @@ section.component-hero {
         cursor: pointer;
         display: none;
         @include min-small-screen {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         svg {
+            transition: all 400ms ease-in-out;
+            
             .dot {
                 animation: dot 1s ease-in-out infinite alternate;
                 transform: translateY(0);
@@ -82,13 +87,24 @@ section.component-hero {
                     transform: translateY(18px);
                 }
             }
+            
+        }
+        
+        &:hover {
+            path {
+                fill: $zephyr-green;
+            }
+            
+            .arrow {
+                transform: translateY(size(10));
+            }
         }
     }
     
     &.no-bg {
         background: $zephyr-white;
         z-index: 1;
-       
+        
         
         .hero-image {
             display: none;
@@ -99,11 +115,7 @@ section.component-hero {
         }
         
         .content {
-            @include paddingY(size(250), size(180));
-            @include x-large-screen {
-                @include paddingY(size(264), size(180));
-        
-            }
+            
             .headline-1 {
                 max-width: size(320);
                 margin: 0 auto;

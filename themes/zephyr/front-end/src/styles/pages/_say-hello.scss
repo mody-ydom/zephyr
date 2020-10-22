@@ -1,9 +1,7 @@
 .say-hello-wrapper {
     section.component-hero {
         .content {
-            padding-top: size(240);
             .headline-1 {
-                
                 @include x-large-screen {
                     font-size: size(60);
                     line-height: size(72);
