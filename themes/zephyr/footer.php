@@ -13,7 +13,7 @@ $subscribe_to_newsletter = get_field('subscribe_to_newsletter', 'options');
     <div class="container">
         <div class="footer-content">
             <!--        logo and copy right-->
-            <div class="logo-and-copy iv-st-from-bottom">
+            <div class="logo-and-copy">
                 <a href="<?php echo get_home_url(); ?>">
                     <img src="<?php echo $footer_logo['url']; ?>" alt="logo.png">
                 </a>
@@ -23,7 +23,7 @@ $subscribe_to_newsletter = get_field('subscribe_to_newsletter', 'options');
             </div>
             <!--      links-->
             <div class="links">
-                <div class="title-and-link iv-st-from-bottom  newsletter">
+                <div class="title-and-link  newsletter">
                     <h3 class="headline-7"><?php echo $subscribe_to_newsletter; ?></h3>
                     <input type="email" placeholder="Email">
                     <a class="btn has-bg" href="#">Submit</a>
@@ -33,7 +33,7 @@ $subscribe_to_newsletter = get_field('subscribe_to_newsletter', 'options');
                     <?php if (get_row_layout() == 'footer_links_block'):
                         $block_title = get_sub_field('block_title');
                         ?>
-                        <div class="title-and-link iv-st-from-bottom  <?php echo strtolower($block_title); ?>">
+                        <div class="title-and-link  <?php echo strtolower($block_title); ?>">
                             <?php if ($block_title == 'social'):
                                 ?>
                                 <h3 class="headline-7 mobile">FOLLOW</h3>
