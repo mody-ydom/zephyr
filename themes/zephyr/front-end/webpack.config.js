@@ -6,7 +6,7 @@ const glob = require('glob');
 
 module.exports = function (env, argv) {
   const files = glob.sync('./src/components/**/*.js');
-  const entry = argv.mode === 'development' ? {'general': ['./src/index.js']} : {'general': ['./src/index.js', './src/components/component-header/style.scss', './src/components/component-footer/style.scss']};
+  const entry = argv.mode === 'development' ? {'general': ['./src/index.js']} : {'general': ['./src/index.js', './src/components/header-component/style.scss', './src/components/footer-component/style.scss']};
   for (const file of files) {
     const fileName = file.match(/components\/(.*)\/index\.js/);
     if (fileName) {
@@ -114,7 +114,7 @@ module.exports = function (env, argv) {
             loader: 'file-loader',
             options: {
               name: '[folder]/[name].[ext]',
-              publicPath: false && argv.mode === 'development' ? '/zephyr/wp-content/themes/zephyr/assets' : './',
+              publicPath: argv.mode === 'development' ? '/zephyr/wp-content/themes/zephyr/assets' : './',
             },
           }],
         }, {
