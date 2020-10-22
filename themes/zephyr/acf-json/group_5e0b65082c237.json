@@ -20,6 +20,31 @@
             "endpoint": 0
         },
         {
+            "key": "field_5f91c531d40cc",
+            "label": "Header Type",
+            "name": "header_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "dark": "Dark",
+                "light": "Light"
+            },
+            "default_value": "dark",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
             "key": "field_5e8655ee2ed1e",
             "label": "Header Logo (Light)",
             "name": "header_logo_light",
@@ -651,5 +676,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603251242
+    "modified": 1603388801
 }
