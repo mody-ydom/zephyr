@@ -24,7 +24,8 @@ endif;
  ****************************/
 $block_title = get_field('block_title');
 $block_subtitle = get_field('block_subtitle');
-
+$block_text = get_field('block_text');
+$button_group = get_field('button');
 ?>
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
@@ -36,10 +37,21 @@ $block_subtitle = get_field('block_subtitle');
     <div class="container">
         <div class="content iv-st-from-bottom">
             <h1 class="headline-1 center">
-                We combine cutting edge <span>digital design</span> with data- <span>driven unique insights</span> to
-                unlock emerging companies growth potential.
+                <?php echo $block_text; ?>
             </h1>
-            <a class="btn desktop-only" href="#">Have a project? Let’s connect.</a>
+            <?php if (have_rows('button')) {
+                while (have_rows('button')) {
+                    the_row();
+                    $button_text = get_sub_field('button_text');
+                    $button_link = get_sub_field('button_link');
+                }
+            }
+            ?>
+            <a class="btn desktop-only" href="<?php if ($button_link) {
+                echo $button_link['url'];
+            } else {
+                echo "#";
+            } ?>"><?php echo $button_text; ?></a>
         </div>
         <svg class="circle orange-circle" fill="none" height="90" viewBox="0 0 90 90" width="90"
              xmlns="http://www.w3.org/2000/svg">
