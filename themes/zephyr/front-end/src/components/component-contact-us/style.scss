@@ -25,7 +25,7 @@ section.component-contact-us {
             @include min-small-screen {
                 flex-basis: 50%;
                 margin-bottom: 0;
-                padding: size(50) size(20) size(140);
+                padding: size(50) size(20) size(90);
                 border-left: 1px solid $zephyr-black;
                 
             }
@@ -235,7 +235,8 @@ section.component-contact-us {
                 position: relative;
                 flex-basis: 42%;
                 height: 100%;
-                
+                padding: size(50) size(20) size(140);
+    
                 form {
                     textarea {
                         margin-bottom: size(35);
