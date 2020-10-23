@@ -6,9 +6,11 @@ header {
     z-index: 99;
     width: 100%;
     transition: background-color 400ms;
-    &.active{
+    
+    &.active {
         background: $zephyr-white;
     }
+    
     .header-content {
         display: flex;
         align-items: center;
@@ -17,69 +19,126 @@ header {
             justify-content: space-between;
         }
         
-        .menu-and-cross {
+        .menu {
             min-width: size(28);
             height: size(20);
             position: relative;
+            z-index: 99;
             
             
             @include min-small-screen {
                 display: none;
             }
             
-            .menu {
-                z-index: 2;
+            .burger-menu {
+                border: none;
+                background: transparent;
                 cursor: pointer;
-                transition: all 400ms ease-in-out;
+                min-width: size(28);
+                min-height: size(20);
+                padding: 0;
                 
-                &.active {
-                    opacity: 0;
-                    pointer-events: none;
+                &:focus {
+                    outline: none !important;
                 }
-            }
-            
-            .cross {
-                pointer-events: none;
-                opacity: 0;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                transition: all 400ms ease-in-out;
-                z-index: 11;
-                cursor: pointer;
                 
-                svg {
-                    z-index: 2;
+                span {
+                    display: block;
+                    min-width: size(28);
+                    min-height: size(2);
+                    margin-bottom: size(5);
+                    position: relative;
+                    z-index: 1;
                     
-                    line {
-                        transition: all 400ms ease-in-out;
+                    &:after, &:before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: $zephyr-white;
+                        opacity: .99;
+                        transition: background-color 600ms;
                     }
                     
+                    &:nth-of-type(even) {
+                        &:before {
+                            transform-origin: right;
+                            transform: scaleX(0) translateZ(0);
+                            transition: transform .6s cubic-bezier(.165, .84, .44, 1);
+                        }
+                        
+                        &:after {
+                            transform-origin: left;
+                            transform: scaleX(1) translateZ(0);
+                            transition: transform .6s cubic-bezier(.165, .84, .44, 1) .2s;
+                        }
+                    }
+                    
+                    &:before {
+                        transform-origin: right;
+                        transform: scaleX(1) translateZ(0);
+                        transition: transform .6s cubic-bezier(.165, .84, .44, 1) .2s;
+                    }
+                    
+                    &:after {
+                        transform-origin: left;
+                        transform: scaleX(0) translateZ(0);
+                        transition: transform .6s cubic-bezier(.165, .84, .44, 1);
+                    }
+                    
+                    
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
                 }
                 
-                
-                &.active {
-                    opacity: 1;
-                    pointer-events: visible;
-                    
-                    svg {
-                        z-index: 2;
+                &:hover {
+                    span {
                         
-                        line {
-                            transition: all 400ms ease-in-out;
-                            stroke: $zephyr-white;
+                        &:nth-of-type(even) {
+                            &:before {
+                                transform: scaleX(1) translateZ(0);
+                                transition: transform .6s cubic-bezier(.165, .84, .44, 1) .2s;
+                            }
+                            
+                            &:after {
+                                transform: scaleX(0) translateZ(0);
+                                transition: transform .6s cubic-bezier(.165, .84, .44, 1);
+                            }
+                        }
+                        
+                        &:before {
+                            transform: scaleX(0) translateZ(0);
+                            transition: transform .6s cubic-bezier(.165, .84, .44, 1);
+                        }
+                        
+                        &:after {
+                            transform: scaleX(1) translateZ(0);
+                            transition: transform .6s cubic-bezier(.165, .84, .44, 1) .2s;
                         }
                         
                     }
                 }
+                
+                &.active {
+                    span {
+                        &:after, &:before {
+                            background-color: $zephyr-white;
+                        }
+                    }
+                }
+                
             }
+            
             
         }
         
+        
         .logo {
             margin: 0 auto;
-            z-index: 11;
+            z-index: 99;
             @include min-small-screen {
                 margin: 0;
             }
@@ -102,6 +161,7 @@ header {
             transition: all 400ms ease-in-out;
             padding-top: size(131);
             z-index: 10;
+            
             .small-link {
                 color: $zephyr-gray-light;
                 overflow: hidden;
@@ -130,19 +190,20 @@ header {
                         
                     }
                 }
-                @include min-medium-screen{
+                
+                @include min-medium-screen {
                     font-size: size(14);
                     &:not(:last-child) {
                         margin-right: size(40);
                     }
                 }
                 @include x-large-screen {
-                        &:not(:last-child) {
-                            margin-right: size(62) !important;
+                    &:not(:last-child) {
+                        margin-right: size(62) !important;
                     }
                 }
-    
-    
+                
+                
             }
             
             
@@ -172,27 +233,20 @@ header {
         
         
         &.dark {
-            .menu-and-cross {
-                .menu {
-                    svg {
-                        line {
-                            stroke: $zephyr-gray;
-                        }
+            .burger-menu{
+                span{
+                    &:after, &:before{
+                        background: $zephyr-gray;
                     }
                 }
-                
-                .cross {
-                    &.active {
-                        svg {
-                            line {
-                                transition: all 400ms ease-in-out;
-                                stroke: $zephyr-gray;
-                            }
+                &.active {
+                    span {
+                        &:after, &:before {
+                            background-color: $zephyr-gray;
                         }
                     }
                 }
             }
-            
             .logo {
                 &.dark {
                     display: block;
@@ -228,4 +282,5 @@ header {
             }
         }
     }
+    
 }

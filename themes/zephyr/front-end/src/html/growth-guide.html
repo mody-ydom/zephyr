@@ -9,31 +9,24 @@
   <link href="./main.css" rel="stylesheet">
 </head>
 <body data-barba="wrapper">
+  
   <header class="header-growth-guide">
     <div class="container">
       <div class="header-content dark">
         <!--      burger menu and cross-->
-        <div class="menu-and-cross">
-          <div class="menu">
-            <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="28" y1="0.75" x2="-6.79088e-08" y2="0.749997" stroke="#fefefd" stroke-width="1.5"/>
-              <line x1="28" y1="9.75" x2="-6.7828e-08" y2="9.75" stroke="#fefefd" stroke-width="1.5"/>
-              <line x1="28" y1="18.75" x2="-6.7828e-08" y2="18.75" stroke="#fefefd" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <div class="cross">
-            <svg  width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="1.46967" y1="19.1474" x2="19.1473" y2="1.46974" stroke="#fefefd" stroke-width="1.5"/>
-              <line x1="2.53033" y1="1.46967" x2="20.208" y2="19.1473" stroke="#fefefd" stroke-width="1.5"/>
-            </svg>
-          </div>
+        <div class="menu">
+          <button class="burger-menu" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
         <!--      logo-->
         <a class="logo light" href="#">
-          <img src="./images/logo.png" alt="logo">
+          <img src="../html/images/logo.png" alt="logo">
         </a>
         <a class="logo dark" href="#">
-          <img src="./images/gray-logo.png" alt="logo">
+          <img src="../html/images/gray-logo.png" alt="logo">
         </a>
         <!--    links-->
         <div class="links">
@@ -45,7 +38,7 @@
       </div>
     </div>
   </header>
- 
+  
   <div class="smooth-scroller" smooth-scroll-container>
     
     <main data-barba="container" data-barba-namespace="home">
