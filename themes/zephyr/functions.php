@@ -192,6 +192,24 @@ function register_acf_block_types()
         ]
     ));
 
+    acf_register_block_type(array(
+        'name' => 'component-case-studies',
+        'title' => __('Component Case Studies'),
+        'render_template' => 'template-parts/blocks/component-case-studies/index.php',
+        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/case-studies/style.css',
+        'category' => 'zephyr-home',
+        'icon' => 'admin-appearance',
+        'mode' => 'preview',
+        'example' => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [
+                    'is_screenshot' => true,
+                ],
+            ]
+        ]
+    ));
+
 
 }
 
