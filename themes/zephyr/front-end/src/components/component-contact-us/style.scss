@@ -10,7 +10,7 @@ section.component-contact-us {
             flex-direction: row-reverse;
             align-items: flex-start;
             border: 1px solid $zephyr-black;
-            height: size(484);
+            min-height: size(484);
         }
         @include x-large-screen {
             max-width: size(990);
@@ -25,8 +25,9 @@ section.component-contact-us {
             @include min-small-screen {
                 flex-basis: 50%;
                 margin-bottom: 0;
-                padding: size(50) size(20);
+                padding: size(50) size(20) size(140);
                 border-left: 1px solid $zephyr-black;
+                
             }
             @include min-medium-screen {
                 flex-basis: 45%;
@@ -155,7 +156,8 @@ section.component-contact-us {
             .contact-info {
                 max-width: size(202);
                 margin: 0 auto;
-                
+                display: flex;
+                flex-direction: column;
                 @include min-small-screen {
                     text-align: left;
                     margin: 0;
@@ -168,44 +170,83 @@ section.component-contact-us {
                 .icon-and-info {
                     display: flex;
                     align-items: center;
-                    
-                    &:not(:last-child) {
-                        margin-bottom: size(21);
-                        @include x-large-screen {
-                            margin-bottom: size(24);
-                        }
+                    cursor: pointer;
+                    margin-bottom: size(21);
+                    @include min-small-screen{
+                        margin-bottom: size(30);
+                    }
+                    @include x-large-screen {
+                        margin-bottom: size(24);
                     }
                     
-                    .paragraph-1 {
-                        margin-left: size(36);
-                        @include min-small-screen {
-                            line-height: size(21);
-                            margin-left: size(21);
+                    svg {
+                        transition: all 400ms ease-in-out;
+                        flex-shrink: 0;
+                    }
+                    
+                    .info {
+                        .paragraph-1 {
+                            transition: all 400ms ease-in-out;
+                            margin-left: size(36);
+                            @include min-small-screen {
+                                line-height: size(21);
+                                margin-left: size(21);
+                            }
+                            @include x-large-screen {
+                                opacity: 0.85;
+                            }
                         }
-                        @include x-large-screen {
-                            opacity: 0.85;
+                        
+                        .text {
+                            display: none;
                         }
                         
                     }
                     
-                    svg {
-                        flex-shrink: 0;
+                    &.location{
+                        order: 1;
+                        margin-bottom: 0;
                     }
+                    
+                    &:hover {
+                        .paragraph-1 {
+                            color: $zephyr-green;
+                        }
+                        
+                        @include min-small-screen {
+                            .desktop-only {
+                                path {
+                                    stroke: $zephyr-green;
+                                }
+                            }
+                        }
+                    }
+                    
                 }
                 
             }
         }
         
         // in-about-page
-        
         &.in-about-page {
             max-width: 100%;
+            
             .data {
                 position: relative;
                 flex-basis: 42%;
                 height: 100%;
+                
+                form {
+                    textarea {
+                        margin-bottom: size(35);
+                        @include x-large-screen {
+                            margin-bottom: size(45);
+                        }
+                    }
+                }
+                
                 .arrow {
-                    @include min-small-screen{
+                    @include min-small-screen {
                         display: block;
                         position: absolute;
                         top: size(90);
@@ -213,31 +254,57 @@ section.component-contact-us {
                     }
                 }
             }
-            .content{
+            
+            .content {
                 height: 100%;
                 flex-grow: 1;
-                .contact-info-in-about-page {
-                    display: flex;
-                    flex-direction: column;
+                
+                .title-contact {
+                    @include x-large-screen {
+                        font-size: size(32);
+                        line-height: size(48);
+                        letter-spacing: size(0.47);
+                        max-width: size(500);
+                    }
+                }
+                
+                > .paragraph-1 {
+                    margin-bottom: size(40);
+                }
+                
+                .contact-info {
+                    @include min-medium-screen {
+                        max-width: 100%;
+                    }
                     @include x-large-screen {
                         flex-direction: row;
                         flex-wrap: wrap;
                         justify-content: space-between;
                     }
-        
+                    
                     .icon-and-info {
                         display: flex;
-                        margin-bottom: size(21);
-            
-                        &:last-child {
-                            @include x-large-screen {
-                                margin-top: size(38);
+                        align-items: center;
+                        margin-bottom: size(30);
+                        @include min-small-screen {
+                            align-items: start;
+                        }
+                        @include x-large-screen {
+                            margin-bottom: 0;
+                            svg {
+                                width: size(25);
+                                height: size(35);
+                            }
+                            
+                            &:last-child {
+                                margin-top: size(50);
                             }
                         }
-            
+                        
+                        
                         .info {
                             margin-left: size(18);
-                
+                            
                             .text {
                                 color: $zephyr-gray;
                                 font-family: $Sailec;
@@ -246,24 +313,34 @@ section.component-contact-us {
                                 font-style: normal;
                                 letter-spacing: size(0.17);
                                 line-height: size(25);
+                                margin-bottom: size(8);
+                                transition: all 400ms ease-in-out;
+                                @include min-small-screen {
+                                    display: block;
+                                }
                             }
-                
+                            
                             .paragraph-1 {
                                 opacity: 0.85;
+                                margin-left: 0;
                             }
                         }
-            
+                        
                         &.location {
-                            order: 1;
                             max-width: size(256);
-                            margin-bottom: 0;
-                            @include x-large-screen{
+                            @include x-large-screen {
                                 order: 0;
+                            }
+                        }
+                        
+                        &:hover {
+                            .text {
+                                color: $zephyr-green;
                             }
                         }
                     }
                 }
-    
+                
             }
         }
     }

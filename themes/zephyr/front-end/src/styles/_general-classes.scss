@@ -706,6 +706,7 @@ input, textarea {
 }
 
 svg {
+    transition: all 400ms ease-in-out;
     path {
         transition: all 400ms ease-in-out;
     }
