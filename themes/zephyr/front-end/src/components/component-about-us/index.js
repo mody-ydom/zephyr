@@ -7,7 +7,7 @@ export default (container = document) => {
   if (!aboutUs) return;
   Swiper.use([Pagination]);
   
-  let swiper = Swiper;
+  let swiper;
   let init = false;
   
   function swiperMode() {

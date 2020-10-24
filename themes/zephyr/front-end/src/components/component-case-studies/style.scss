@@ -41,10 +41,26 @@ section.component-case-studies {
         
     }
     
-    .image-content{
-    
-    
+    .image-wrapper {
+        position: relative;
+        height: 0;
+        padding-top: 50.13%;
+        img{
+            position: absolute;
+            top:0;
+            height: 100%;
+            left: 0;
+            &.mac{
+                width: 62%;
+                height: auto;
+                right: 0;
+                left: auto;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
     }
+    
     .content {
         .headline-5 {
             @include marginY(size(23), size(4));
