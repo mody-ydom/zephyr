@@ -28,61 +28,45 @@ $text = get_field('text');
 ?>
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
+
 <div class="container">
     <div class="testimonials-wrapper">
         <div class="circle-shape-1 iv-st-from-bottom">
-            <img alt="testimonial-shape-1" src="./../../html/images/testimonial-shape-1.png">
+            <img alt="testimonial-shape-1"
+                 src="<?php echo get_template_directory_uri() ?>/assets/images/testimonial-shape-1.png">
         </div>
         <div class="circle-shape-2 iv-st-from-bottom">
-            <img alt="testimonial-shape-2" src="./../../html/images/testimonial-shape-2.png">
+            <img alt="testimonial-shape-2"
+                 src="<?php echo get_template_directory_uri() ?>/assets/images/testimonial-shape-2.png">
         </div>
         <div class="testimonials swiper-container">
             <div class="swiper-wrapper">
-                <div class="testimonial swiper-slide">
-                    <div class="testimonials-description">
-                        <p class="des-p real-line-up">‘Zephyr have played a fundamental role in the success of Fully
-                            Charged to date. My team are in constant interaction with the zephyr team discussing ongoing
-                            marketing
-                            campaigns, optimising our ecommerce store and much more’
-                        </p>
-                    </div>
-                    <div class="image-content center">
-                        <img class="iv-st-from-bottom" alt="testimonial-image"
-                             src="./../../html/images/testimonial-image.png">
-                        <h4 class="name word-up">Ben Jaconelli</h4>
-                        <h5 class="job-title word-up">CEO of Fully Charged</h5>
-                    </div>
-                </div>
-                <div class="testimonial swiper-slide">
-                    <div class="testimonials-description">
-                        <p class="des-p real-line-up">‘Zephyr have played a fundamental role in the success of Fully
-                            Charged to date. My team are in constant interaction with the zephyr team discussing ongoing
-                            marketing
-                            campaigns, optimising our ecommerce store and much more’
-                        </p>
-                    </div>
-                    <div class="image-content center">
-                        <img class="iv-st-from-bottom" alt="testimonial-image"
-                             src="./../../html/images/testimonial-image.png">
-                        <h4 class="name word-up">Ben Jaconelli</h4>
-                        <h5 class="job-title word-up">CEO of Fully Charged</h5>
-                    </div>
-                </div>
-                <div class="testimonial swiper-slide">
-                    <div class="testimonials-description">
-                        <p class="des-p real-line-up">‘Zephyr have played a fundamental role in the success of Fully
-                            Charged to date. My team are in constant interaction with the zephyr team discussing ongoing
-                            marketing
-                            campaigns, optimising our ecommerce store and much more’
-                        </p>
-                    </div>
-                    <div class="image-content center">
-                        <img class="iv-st-from-bottom" alt="testimonial-image"
-                             src="./../../html/images/testimonial-image.png">
-                        <h4 class="name word-up">Ben Jaconelli</h4>
-                        <h5 class="job-title word-up">CEO of Fully Charged</h5>
-                    </div>
-                </div>
+                <?php if (have_rows('testimonial_card')) {
+                    while (have_rows('testimonial_card')) {
+                        the_row();
+                        $text = get_sub_field('text');
+                        $client_name = get_sub_field('client_name');
+                        $client_image = get_sub_field('client_image');
+                        $client_job = get_sub_field('client_job');
+                        ?>
+                        <div class="testimonial swiper-slide">
+                            <div class="testimonials-description">
+                                <p class="des-p real-line-up">
+                                    <?php echo $text; ?>
+                                </p>
+                            </div>
+                            <div class="image-content center">
+                                <?php if ($client_image) { ?>
+                                    <img class="iv-st-from-bottom" alt="<?php echo $client_image['alt']; ?>"
+                                         src="<?php echo $client_image['url']; ?>">
+                                <?php } ?>
+                                <h4 class="name word-up"><?php echo $client_name; ?></h4>
+                                <?php if ($client_job) { ?><h5
+                                        class="job-title word-up"><?php echo $client_job; ?></h5> <?php } ?>
+                            </div>
+                        </div>
+                    <?php }
+                } ?>
             </div>
             <div class="swiper-pagination small-pagination"></div>
         </div>
