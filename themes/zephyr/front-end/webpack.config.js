@@ -114,7 +114,7 @@ module.exports = function (env, argv) {
             loader: 'file-loader',
             options: {
               name: '[folder]/[name].[ext]',
-              publicPath: argv.mode === 'development' ? '/zephyr/wp-content/themes/zephyr/assets' : './',
+              publicPath: argv.mode !== 'development' ? '/zephyr/wp-content/themes/zephyr/assets' : './',
             },
           }],
         }, {

@@ -5,7 +5,7 @@ export default (container = document) => {
   const increaseComponent = container.querySelector('.component-increase');
   if(!increaseComponent)return ;
   Swiper.use([Pagination]);
-  let swiper3 = Swiper;
+  let swiper;
   let init = false;
   
   function swiperMode() {
@@ -16,7 +16,7 @@ export default (container = document) => {
     if(mobile.matches) {
       if (!init) {
         init = true;
-        swiper3 = new Swiper('.increase-container', {
+        swiper = new Swiper('.increase-container', {
           slidesPerView: 1,
           spaceBetween: 0,
           grabCursor: true,
@@ -34,7 +34,7 @@ export default (container = document) => {
     }
     // Disable (for desktop)
     else if(desktop.matches) {
-      swiper3.destroy();
+      swiper?.destroy();
       init = false;
     }
   }

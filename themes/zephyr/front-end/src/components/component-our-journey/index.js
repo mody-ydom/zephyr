@@ -6,18 +6,18 @@ export default (container = document) => {
   let ourJourney = container.querySelector('.component-our-journey');
   if (!ourJourney) return;
   Swiper.use([Pagination,Navigation]);
-  let swiper2 = Swiper;
+  let swiper;
   let init = false;
   
   function swiperMode() {
-    let mobile = window.matchMedia('(min-width: 0px) and (max-width: 1024px)');
+    let mobile = window.matchMedia('(max-width: 1023.98px)');
     let desktop = window.matchMedia('(min-width: 1024px)');
     
     // Enable (for mobile)
     if(mobile.matches) {
       if (!init) {
         init = true;
-        swiper2 = new Swiper('.our-journey-content', {
+        swiper = new Swiper('.our-journey-content', {
           slidesPerView: 1,
           spaceBetween: 50,
           grabCursor: true,
@@ -40,7 +40,7 @@ export default (container = document) => {
     }
     // Disable (for desktop)
     else if(desktop.matches) {
-      swiper2.destroy();
+      swiper?.destroy();
       init = false;
     }
   }

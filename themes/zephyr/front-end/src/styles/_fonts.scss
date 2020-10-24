@@ -2,14 +2,14 @@
 
 @font-face {
     font-family: $Sailec;
-    src: url('fonts/sailecRegular.woff') format('woff');
+    src: url('./fonts/sailecRegular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: $Sailec;
-    src: url('fonts/sailecMedium.woff') format('woff');
+    src: url('./fonts/sailecMedium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
