@@ -49,10 +49,28 @@ section.component-success-stories {
                 height: 100%;
                 top: 0;
                 left: 0;
+                &.iphone-frame{
+                    width: 61.3%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    @include x-large-screen{
+                        height: auto;
+                    }
+                    @include max-large-screen{
+                        top: 0 !important;
+                    }
+                }
+                &.logo{
+                    width: 59%;
+                    height: auto;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+                }
             }
             
             &.image-wrapper-1 {
-                padding-top: 105.5%;
+                padding-top: 100.70%;
             }
             
             &.image-wrapper-2 {
