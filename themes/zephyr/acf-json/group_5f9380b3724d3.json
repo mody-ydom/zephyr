@@ -1,6 +1,6 @@
 {
     "key": "group_5f9380b3724d3",
-    "title": "component-grid-images (copy)",
+    "title": "component-grid-logos",
     "fields": [
         {
             "key": "field_5f9380b376455",
@@ -104,5 +104,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603507533
+    "modified": 1603509275
 }

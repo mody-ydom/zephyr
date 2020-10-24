@@ -246,7 +246,23 @@ function register_acf_block_types()
         ]
     ));
 
-
+    acf_register_block_type(array(
+        'name' => 'component-our-process',
+        'title' => __('Component Our Process'),
+        'render_template' => 'template-parts/blocks/component-our-process/index.php',
+        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-our-process/style.css',
+        'category' => 'zephyr-home',
+        'icon' => 'admin-appearance',
+        'mode' => 'preview',
+        'example' => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [
+                    'is_screenshot' => true,
+                ],
+            ]
+        ]
+    ));
 }
 
 // Check if function exists and hook into setup.
