@@ -3,104 +3,145 @@
 
 section.component-our-team {
     @include marginY(size(105));
-    @include x-large-screen{
-        @include marginY(size(111),size(200));
+    @include x-large-screen {
+        @include marginY(size(111), size(200));
     }
+    
     .our-team {
         .our-team-title {
             margin-bottom: size(64);
-            @include min-medium-screen{
+            @include min-medium-screen {
                 margin-bottom: size(94);
             }
-            .headline-6{
+            
+            .headline-6 {
                 margin-bottom: size(20);
                 display: none;
-                @include min-medium-screen{
+                @include min-medium-screen {
                     display: block;
                 }
             }
         }
         
         .our-team-content {
-            .row{
+            .row {
                 @include change-gutter(35px);
-                @include min-medium-screen{
+                @include min-medium-screen {
                     @include change-gutter(65px);
                 }
             }
-            .team-parent{
-                &:nth-last-child(-n+4){
+            
+            .team-parent {
+                &:nth-last-child(-n+4) {
                     display: none;
-                    @include min-medium-screen{
+                    @include min-medium-screen {
                         display: unset;
                     }
                 }
+                
                 .team-person {
                     margin-bottom: size(30);
-                    @include min-medium-screen{
+                    max-width: 100%;
+                    @include min-x-small-screen {
+                        max-width: 80%;
+                        @include marginX(auto);
+                    }
+                    @include min-small-screen {
+                        max-width: 70%;
+                    }
+                    @include min-medium-screen {
                         margin-bottom: size(36);
                         max-width: size(232);
+                        @include marginY(0);
                     }
-                    @include x-large-screen{
+                    @include x-large-screen {
                         margin-bottom: size(62);
                     }
+                    
                     .image-wrapper {
                         position: relative;
                         margin-bottom: size(21);
                         padding-top: 107%;
                         height: 0;
-                        @include min-medium-screen{
+                        @include min-medium-screen {
                             margin-bottom: size(27);
                         }
+                        
                         img {
                             position: absolute;
                             top: 0;
                             height: 100%;
                             transition: transform 400ms;
                             width: 100%;
-                            @include min-medium-screen{
+                            @include min-medium-screen {
                                 margin-left: size(20);
                             }
+                            
                             &:hover {
                                 transform: translate(-10px, -10px) scale(1.1);
                             }
                         }
-            
+                        
                         &.milky-circle {
-                            background: url('./../../html/images/milky-circle.png') no-repeat left 58%;
-                        }
-            
-                        &.oval {
-                            background: url('./../../html/images/oval.png') no-repeat top left;
-                            background-size: contain;
-                            @include min-medium-screen{
+                            background-image: url('./../../html/images/rectangle.png'), url('./../../html/images/milky-circle.png');
+                            background-position: right 56%, 6% 43%;
+                            background-repeat: no-repeat;
+                            background-size: 67px 67px;
+                            @include min-medium-screen {
+                                background: url('./../../html/images/milky-circle.png') no-repeat left 58%;
                                 background-size: auto;
                             }
                         }
-            
+                        
+                        &.oval {
+                            background: url('./../../html/images/oval.png') no-repeat 90% 30%;
+                            background-size: 115px 112px;
+                            @include min-medium-screen {
+                                background-size: auto;
+                                background-position: top left;
+                            }
+                        }
+                        
+                        &.rectangle {
+                            background: url('./../../html/images/rectangle.png') right 60% no-repeat;
+                        }
+                        
                         &.red-circle {
                             background: url('./../../html/images/red-circle.png') no-repeat right 67%;
+                            background-size: 63px 63px;
+                            @include min-medium-screen {
+                                background-size: auto;
+                            }
                         }
-            
+                        
                         &.green-circle {
-                            background: url('./../../html/images/green-circle.png') no-repeat 20% 35%;
+                            background: url('./../../html/images/green-circle.png') no-repeat 56% 45%;
+                            background-size: 63px 63px;
+                            @include min-medium-screen {
+                                background-position: 20% 35%;
+                                background-size: auto;
+                            }
                         }
-            
+                        
                         &.big-green-circle {
                             background: url('./../../html/images/big-green-cricle.png') no-repeat right 40%;
+                            background-size: 80px 80px;
+                            @include min-medium-screen {
+                                background-size: auto;
+                            }
                         }
                     }
-        
+                    
                     .name, .title-job {
                         color: $zephyr-gray;
                     }
-        
+                    
                     .name {
                         font-family: $Canela;
                         font-size: size(18);
                         font-weight: 300;
                         letter-spacing: size(0.28);
-                        @include min-medium-screen{
+                        @include min-medium-screen {
                             font-size: size(23);
                             margin-bottom: size(7);
                         }
@@ -109,7 +150,7 @@ section.component-our-team {
                             margin-bottom: size(12);
                         }
                     }
-        
+                    
                     .title-job {
                         color: #252525;
                         font-family: $Sailec;
@@ -117,7 +158,7 @@ section.component-our-team {
                         font-weight: 400;
                         letter-spacing: size(0.08);
                         line-height: size(25);
-                        @include min-medium-screen{
+                        @include min-medium-screen {
                             font-size: size(13);
                         }
                         @include x-large-screen {
@@ -126,11 +167,12 @@ section.component-our-team {
                     }
                 }
             }
-            .load-more{
+            
+            .load-more {
                 display: flex;
                 @include marginX(auto);
                 margin-top: size(30);
-                @include min-medium-screen{
+                @include min-medium-screen {
                     display: none;
                 }
             }
