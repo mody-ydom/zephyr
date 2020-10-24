@@ -5,7 +5,9 @@ export default (container = document) => {
   const guideComponent = container.querySelector('.component-growth-guide');
   if (!guideComponent) return;
   const guideTitle = document.querySelectorAll('.guide-container .title');
-
+  const searchInput = document.querySelector('.input-search');
+  const suggestBox = document.querySelector('.suggest-box');
+  const suggestBoxElements = document.querySelectorAll('.suggest-box li');
   
   guideTitle.forEach((title) => {
     title.addEventListener('click', (e) => {
@@ -34,4 +36,20 @@ export default (container = document) => {
       }
     });
   });
+  
+  searchInput.addEventListener('focus',(e)=>{
+    suggestBox.classList.add('active');
+  });
+  
+  suggestBoxElements.forEach((elm)=>{
+    elm.addEventListener('click',function (){
+      suggestBox.classList.remove('active');
+      searchInput.value = elm.textContent;
+    });
+  });
+  
+  // searchInput.addEventListener('blur',(e)=>{
+  //   suggestBox.classList.remove('active');
+  // });
+  
 };

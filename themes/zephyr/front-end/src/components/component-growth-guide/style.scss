@@ -8,17 +8,182 @@ section.component-growth-guide {
     }
     
     .growth-guide {
-        .growth-guide-title {
-            margin-bottom: size(300);
-            @include min-medium-screen{
-                margin-bottom: size(69);
+        .wysiwyg-block {
+            h6 {
+                color: $zephyr-gray;
+                font-family: $Sailec;
+                font-size: size(14);
+                font-weight: 400;
+                letter-spacing: size(0.44);
+                line-height: size(24);
+                text-transform: uppercase;
             }
-            .headline-6{
+            
+            h1 {
+                color: $zephyr-gray;
+                font-family: $Canela;
+                font-size: size(27);
+                font-weight: 300;
+                font-style: normal;
+                letter-spacing: size(0.58);
+                line-height: size(37.8);
+                @include min-medium-screen {
+                    font-size: size(37);
+                    line-height: size(47.8);
+                }
+                @include x-large-screen {
+                    font-size: size(45);
+                    letter-spacing: size(0.44);
+                    line-height: size(66);
+                }
+            }
+            
+            h2 {
+                color: $zephyr-gray;
+                font-family: $Freight;
+                font-size: size(24);
+                font-weight: 500;
+                font-style: normal;
+                letter-spacing: size(0.2);
+                line-height: size(26);
+                @include x-large-screen {
+                    font-size: size(32);
+                }
+            }
+            
+            h3 {
+                color: #808080;
+                font-family: $Freight;
+                font-size: size(18);
+                font-weight: 400;
+                font-style: italic;
+                line-height: normal;
+                letter-spacing: size(0.16);
+                @include x-large-screen {
+                    font-size: size(24);
+                    line-height: size(66);
+                }
+                
+                span {
+                    font-size: size(12);
+                    font-family: $Sailec;
+                    letter-spacing: size(0.09);
+                    margin-right: size(10);
+                }
+            }
+            
+            h4{
+                color: $zephyr-gray;
+                font-family: $Freight;
+                font-size: size(24);
+                font-weight: 500;
+                font-style: normal;
+                letter-spacing: size(0.2);
+                line-height: size(26);
+                @include x-large-screen {
+                    font-size: size(32);
+                }
+                span {
+                    margin-left: size(30);
+                    @include min-medium-screen {
+                        margin-left: 0;
+                    }
+                }
+            }
+            
+            h5{
+                color: #808080;
+                font-family: $Freight;
+                font-size: size(18);
+                font-weight: 400;
+                font-style: italic;
+                line-height: normal;
+                letter-spacing: size(0.16);
+                @include x-large-screen {
+                    font-size: size(24);
+                    line-height: size(66);
+                }
+            }
+            
+            p {
+                color: $zephyr-gray;
+                font-family: $Freight;
+                font-size: size(14);
+                font-weight: 400;
+                letter-spacing: size(0.5);
+                line-height: size(24);
+                @include x-large-screen {
+                    line-height: size(24);
+                    font-size: size(15);
+                }
+            }
+            
+            img{
+                top: 0;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            select{
+                color: $zephyr-gray;
+                font-family: $Freight;
+                font-size: size(15);
+                font-weight: 600;
+                letter-spacing: size(0.27);
+                line-height: size(24);
+                text-transform: uppercase;
+            }
+    
+            ul {
+                list-style: none;
+                @include min-medium-screen {
+                    padding-left: size(5);
+                }
+        
+                li {
+                    color: $zephyr-gray;
+                    font-family: $Freight;
+                    font-size: size(15);
+                    font-weight: 500;
+                    line-height: size(24);
+                    font-style: italic;
+                    opacity: 0.85;
+                    position: relative;
+                    padding-left: size(12);
+                    letter-spacing: size(0.5);
+            
+                    &:not(:last-child) {
+                        margin-bottom: size(5);
+                        @include min-medium-screen {
+                            margin-bottom: size(11);
+                        }
+                    }
+            
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: size(6);
+                        height: size(6);
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background: #454545;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        
+        .growth-guide-title {
+            margin-bottom: size(69);
+            
+            h6 {
                 margin-bottom: size(18);
             }
-            .headline-2 {
+            
+            h1 {
                 text-transform: capitalize;
-                @include min-medium-screen{
+                @include min-medium-screen {
                     margin: 0 auto;
                     max-width: 77%;
                     text-transform: none;
@@ -29,82 +194,55 @@ section.component-growth-guide {
         .growth-guide-content {
             max-width: size(990);
             margin: 0 auto;
-            .row{
+            
+            .row {
                 @include change-gutter(50px);
-                @include x-large-screen{
+                @include x-large-screen {
                     @include change-gutter(100px)
                 }
             }
+            
             .left-content {
-                max-width: size(336);
+                max-width: 100%;
                 border: 1px solid #c6c6c6;
                 @include paddingY(size(44), size(27));
-                display: none;
-                @include min-medium-screen{
-                    display: block;
-                }
+                margin-bottom: size(40);
                 .guide-container {
                     @include paddingX(size(42), size(22));
                     padding-bottom: size(24);
                     
                 }
+                @include min-small-screen{
+                    margin-bottom: size(100);
+                }
+                @include min-medium-screen{
+                    margin-bottom: 0;
+                    max-width: size(336);
+                }
                 
             }
             
             .right-content {
-                @include x-large-screen{
+                @include x-large-screen {
                     padding-top: size(38);
                 }
-                .headline-8 {
-                    color: #808080;
-                    @include marginY(size(15),size(73));
-                    @include min-medium-screen{
+                
+                h3 {
+                    @include marginY(size(15), size(73));
+                    @include min-medium-screen {
                         margin-bottom: size(30);
                     }
-                    @include x-large-screen{
+                    @include x-large-screen {
                         margin-top: 0;
                         margin-bottom: size(21);
-                    }
-                    span {
-                        font-size: size(12);
-                        font-family: $Sailec;
-                        letter-spacing: size(0.09);
-                        margin-right: size(10);
                     }
                 }
                 
                 ul {
-                    list-style: none;
-                    @include min-medium-screen{
+                    @include min-medium-screen {
                         padding-left: size(5);
                     }
                     margin-bottom: size(43);
-                    
-                    li {
-                        font-style: italic;
-                        position: relative;
-                        padding-left: size(12);
-                        letter-spacing: size(0.5);
-                        font-family: $Freight;
-                        text-transform: none;
-                        &:not(:last-child){
-                            margin-bottom: size(5);
-                            @include min-medium-screen{
-                                margin-bottom: size(11);
-                            }
-                        }
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            width: size(6);
-                            height: size(6);
-                            left: 0;
-                            top: 50%;
-                            transform: translateY(-50%);
-                            background: #454545;
-                            border-radius: 50%;
-                        }
-                    }
                 }
                 
                 .image-wrapper {
@@ -114,23 +252,22 @@ section.component-growth-guide {
                     
                     img {
                         position: absolute;
-                        top: 0;
-                        height: 100%;
-                        object-fit: cover;
                     }
                 }
                 
                 .paragraphs-1 {
                     margin-bottom: size(38);
-                    @include min-medium-screen{
+                    @include min-medium-screen {
                         margin-bottom: size(28);
                     }
-                    .paragraph-1 {
-                        &:not(:last-child){
-                            @include min-medium-screen{
+                    
+                    p {
+                        &:not(:last-child) {
+                            @include min-medium-screen {
                                 margin-bottom: size(19);
                             }
                         }
+                        
                         span {
                             padding: size(4);
                             background-color: rgba(107, 227, 168, 0.6);
@@ -140,9 +277,10 @@ section.component-growth-guide {
                 
                 .paragraphs-2 {
                     margin-top: size(50);
-                    .paragraph-1{
-                        &:not(:last-child){
-                            @include min-medium-screen{
+                    
+                    p{
+                        &:not(:last-child) {
+                            @include min-medium-screen {
                                 margin-bottom: size(19);
                             }
                         }
@@ -155,30 +293,33 @@ section.component-growth-guide {
                     flex-direction: column;
                     @include marginX(auto);
                     margin-top: size(62);
-                    @include min-medium-screen{
+                    @include min-medium-screen {
                         margin-top: size(50);
                         flex-direction: row;
                         justify-content: space-between;
                         @include marginX(0);
                     }
-                    img{
+                    
+                    img {
                         margin-bottom: size(12);
-                        @include min-medium-screen{
+                        @include min-medium-screen {
                             margin-bottom: 0;
                         }
                     }
-                    .paragraph-1 {
+                    
+                    p {
                         text-align: center;
-                        @include min-medium-screen{
+                        @include min-medium-screen {
                             text-align: left;
                         }
+                        
                         span {
                             font-family: $Sailec;
                             font-weight: 500;
                             letter-spacing: size(0.17);
                             display: block;
                             margin-top: size(7);
-                            @include min-medium-screen{
+                            @include min-medium-screen {
                                 display: inline;
                                 margin-top: 0;
                             }
@@ -190,55 +331,62 @@ section.component-growth-guide {
                     display: block;
                     margin-top: size(87);
                     text-align: right;
-                    @include min-medium-screen{
+                    @include min-medium-screen {
                         margin-top: size(40);
                         text-align: left;
                     }
-                    @include x-large-screen{
+                    @include x-large-screen {
                         margin-top: size(150);
                     }
-                    .headline-3{
-                        span{
+                    
+                    h4 {
+                        margin-bottom: size(20);
+                        span {
                             margin-left: size(30);
-                            @include min-medium-screen{
+                            @include min-medium-screen {
                                 margin-left: 0;
                             }
                         }
+                        @include x-large-screen{
+                            margin-bottom: 0;
+                        }
                     }
-                    .headline-8 {
+                    
+                    h5 {
                         max-width: 90%;
                         margin-left: auto;
-                        margin-bottom: 0;
-                        @include min-medium-screen{
+                        @include min-medium-screen {
                             max-width: 100%;
                             margin-left: 0;
                         }
                     }
                 }
                 
-                .mobile-select{
+                .mobile-select {
                     position: relative;
                     display: block;
                     margin-top: size(74);
-                    @include min-medium-screen{
+                    @include min-medium-screen {
                         display: none;
                     }
-                    .arrow-select{
+                    
+                    .arrow-select {
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
                         right: size(15);
                     }
-                    select{
+                    
+                    select {
                         background: $zephyr-white;
-                        border: 1px solid #C6C6C6;
+                        border: 1px solid #c6c6c6;
                         @include paddingY(size(8));
-                        @include paddingX(size(10),size(30));
+                        @include paddingX(size(10), size(30));
                         letter-spacing: size(0.27);
                         font-family: $Freight;
                         width: 100%;
                         text-transform: none;
-                        appearance:none;
+                        appearance: none;
                     }
                 }
                 
