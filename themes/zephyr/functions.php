@@ -196,7 +196,25 @@ function register_acf_block_types()
         'name' => 'component-case-studies',
         'title' => __('Component Case Studies'),
         'render_template' => 'template-parts/blocks/component-case-studies/index.php',
-        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/case-studies/style.css',
+        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-case-studies/style.css',
+        'category' => 'zephyr-home',
+        'icon' => 'admin-appearance',
+        'mode' => 'preview',
+        'example' => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [
+                    'is_screenshot' => true,
+                ],
+            ]
+        ]
+    ));
+
+    acf_register_block_type(array(
+        'name' => 'component-grid-images',
+        'title' => __('Component Grid Images'),
+        'render_template' => 'template-parts/blocks/component-grid-images/index.php',
+        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-grid-images/style.css',
         'category' => 'zephyr-home',
         'icon' => 'admin-appearance',
         'mode' => 'preview',
@@ -694,3 +712,23 @@ function highlight_text($atts = array(), $content = null)
 }
 
 add_shortcode('highlight', 'highlight_text');
+
+function gridNumber($number)
+{
+    switch ($number) {
+        case 1 :
+            return 'card-one';
+            break;
+        case 2:
+            return 'card-two';
+            break;
+        case 3:
+            return 'card-three';
+            break;
+        case 4:
+            return 'card-four';
+            break;
+    }
+
+
+}
