@@ -56,3 +56,4 @@ $header_type = get_field('header_type', 'options');
     <main <?= $header_type || is_404() ? 'colored' : '' ?> data-barba="container" data-barba-namespace="home">
         <!-- overlay dark menu -->
         <div class="wrapper-page-transition"></div>
+        <div class="home-page-wrapper">

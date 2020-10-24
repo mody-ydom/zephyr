@@ -8,7 +8,8 @@ $linkedin_url = get_field('linkedin_url', 'options');
 $twitter_url = get_field('twitter_url', 'options');
 $subscribe_to_newsletter = get_field('subscribe_to_newsletter', 'options');
 ?>
-
+</div>
+</main>
 <footer>
     <div class="container">
         <div class="footer-content">
