@@ -68,7 +68,6 @@ export default (container = document) => {
       burgerMenu.classList.remove('active');
       menu.classList.remove('active');
       burgerTl.reverse();
-      console.log('sssss');
     });
   }
   

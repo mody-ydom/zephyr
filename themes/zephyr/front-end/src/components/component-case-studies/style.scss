@@ -41,24 +41,10 @@ section.component-case-studies {
         
     }
     
-    .bike-image {
-        
-        .image-wrapper {
-            position: relative;
-            padding-top: 50.3%;
-            
-            img {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                object-fit: cover;
-            }
-            
-        }
-    }
+    .image-content{
     
+    
+    }
     .content {
         .headline-5 {
             @include marginY(size(23), size(4));
