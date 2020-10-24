@@ -228,6 +228,24 @@ function register_acf_block_types()
         ]
     ));
 
+    acf_register_block_type(array(
+        'name' => 'component-logo',
+        'title' => __('Component Logo'),
+        'render_template' => 'template-parts/blocks/component-logo/index.php',
+        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-logo/style.css',
+        'category' => 'zephyr-home',
+        'icon' => 'admin-appearance',
+        'mode' => 'preview',
+        'example' => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [
+                    'is_screenshot' => true,
+                ],
+            ]
+        ]
+    ));
+
 
 }
 
@@ -654,6 +672,8 @@ function add_custom_taxonomies()
 
 add_action('init', 'add_custom_taxonomies', 10);
 
+
+/* Some Extra features & functions */
 
 /* Sub category for categories */
 function categoriesPosts($category)

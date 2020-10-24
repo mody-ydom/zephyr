@@ -6,7 +6,7 @@ if (!empty($block['anchor'])) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'home-page-wrapper';
+$className = 'component-case-studies';
 if (!empty($block['className'])) {
     $className .= ' ' . $block['className'];
 }
@@ -30,27 +30,25 @@ $big_title_under_image = get_field('big_title_under_image');
 ?>
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
-<section class="component-case-studies">
-    <div class="container">
-        <div class="paragraph-1 word-up desktop-only"><?php echo $small_title; ?></div>
-        <h1 class="headline-1 real-line-up">We collaborate with exciting new companies…</h1>
+<div class="container">
+    <div class="paragraph-1 word-up desktop-only"><?php echo $small_title; ?></div>
+    <h1 class="headline-1 real-line-up">We collaborate with exciting new companies…</h1>
 
-        <div class="row">
-            <div class="col-12 bike-image">
-                <?php if ($image) { ?>
-                    <div class="image-wrapper" data-reveal-direction="left">
-                        <img src="<?php echo $image['url']; ?>"
-                             alt="<?php echo $image['alt']; ?>">
-                    </div>
-                <?php } ?>
-                <div class="content">
-                    <h5 class="headline-5 word-up"><?php echo $small_title_under_image; ?></h5>
-                    <h4 class="headline-4 real-line-up"><?php echo $big_title_under_image; ?></h4>
+    <div class="row">
+        <div class="col-12 bike-image">
+            <?php if ($image) { ?>
+                <div class="image-wrapper" data-reveal-direction="left">
+                    <img src="<?php echo $image['url']; ?>"
+                         alt="<?php echo $image['alt']; ?>">
                 </div>
+            <?php } ?>
+            <div class="content">
+                <h5 class="headline-5 word-up"><?php echo $small_title_under_image; ?></h5>
+                <h4 class="headline-4 real-line-up"><?php echo $big_title_under_image; ?></h4>
             </div>
         </div>
     </div>
-</section>
+</div>
 
 </section>
 <!-- endregion Zephyr's Block -->
