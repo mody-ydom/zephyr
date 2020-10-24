@@ -11,6 +11,7 @@
 </head>
 <!-- ACF Fields -->
 <?php
+global $post;
 $header_logo_light = get_field('header_logo_light', 'options');
 $header_logo_dark = get_field('header_logo_dark', 'options');
 $header_type = get_field('header_type', 'options');
@@ -56,4 +57,4 @@ $header_type = get_field('header_type', 'options');
     <main <?= $header_type || is_404() ? 'colored' : '' ?> data-barba="container" data-barba-namespace="home">
         <!-- overlay dark menu -->
         <div class="wrapper-page-transition"></div>
-        <div class="home-page-wrapper">
+        <div class="<?php echo pageWrapper($post->post_name); ?>">

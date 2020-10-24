@@ -318,6 +318,26 @@ function register_acf_block_types()
             ]
         ]
     ));
+
+//    acf_register_block_type(array(
+//        'name' => 'component-hero',
+//        'title' => __('Component hero'),
+//        'render_template' => 'template-parts/blocks/component-hero/index.php',
+//        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-hero/style.css',
+//        'category' => 'zephyr-home',
+//        'icon' => 'admin-appearance',
+//        'mode' => 'preview',
+//        'example' => [
+//            'attributes' => [
+//                'mode' => 'preview',
+//                'data' => [
+//                    'is_screenshot' => true,
+//                ],
+//            ]
+//        ]
+//    ));
+
+
 }
 
 // Check if function exists and hook into setup.
@@ -821,5 +841,14 @@ function gridNumber($number)
             break;
     }
 
+}
 
+function pageWrapper($page)
+{
+    switch ($page) {
+        case 'home':
+            return 'home-page-wrapper';
+        case 'say-hello':
+            return 'say-hello-wrapper';
+    }
 }
