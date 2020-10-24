@@ -212,7 +212,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 }
 
 // used
-.headline-1, .wysiwyg-block h1 {
+.headline-1 {
   color: $zephyr-white;
   font-family: $Canela;
   font-size: size(27);
@@ -235,7 +235,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
   }
 }
 
-.headline-2, .wysiwyg-block h2 {
+.headline-2 {
   color: $zephyr-gray;
   font-family: $Canela;
   font-size: size(27);
@@ -254,7 +254,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
   }
 }
 
-.headline-3, .wysiwyg-block h3 {
+.headline-3 {
   color: $zephyr-gray;
   font-family: $Freight;
   font-size: size(24);
@@ -267,10 +267,9 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
   }
 }
 
-
 // used
 
-.headline-4, .wysiwyg-block h4 {
+.headline-4 {
   color: $zephyr-gray;
   font-family: $Canela;
   font-size: size(21);
@@ -284,9 +283,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
   }
 }
 
-
 // used
-.headline-5, .wysiwyg-block h5 {
+.headline-5 {
   color: $zephyr-green;
   font-family: $Sailec;
   font-size: size(14);
@@ -300,9 +298,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
   }
 }
 
-
 // used
-.headline-6, .wysiwyg-block h6 {
+.headline-6 {
   color: $zephyr-gray;
   font-family: $Sailec;
   font-size: size(14);
