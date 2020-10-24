@@ -38,6 +38,7 @@ section.component-about-us {
                     margin-bottom: size(11);
                     display: flex;
                     min-height: size(89);
+                    justify-content: center;
                     align-items: center;
                     img {
                         margin: 0 auto;
@@ -47,6 +48,10 @@ section.component-about-us {
                     line-break: anywhere;
                     border-top: 1px solid #979797;
                     padding-top: size(17);
+                    padding-right: size(20);
+                    @include x-large-screen{
+                        padding-right: 0;
+                    }
                 }
             }
             .swiper-pagination{
