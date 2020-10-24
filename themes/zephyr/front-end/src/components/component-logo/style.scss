@@ -12,28 +12,37 @@ section.component-logo {
     
     .headline-1 {
         max-width: size(320);
-        margin: 0 auto size(45);
+        margin: 0 auto size(50);
         color: $zephyr-gray;
+        line-height: size(40);
         @include min-medium-screen {
             max-width: 100%;
             font-size: size(45);
             letter-spacing: size(0.54);
             line-height: size(60);
-            margin: 0 auto size(38);
+            margin: 0 auto size(40);
         }
     }
     
     .image-wrapper {
+        display: block;
         margin-bottom: size(30);
         @include x-large-screen {
             margin-bottom: size(50);
         }
         
         img {
+            transition: all 400ms ease-in-out;
             width: 100%;
             @include min-small-screen {
                 width: auto;
             }
+        }
+        
+        &:hover{
+          img{
+              transform: scale(1.1);
+          }
         }
     }
     
