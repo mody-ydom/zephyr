@@ -27,29 +27,21 @@ $grid_no = 1;
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
 <div class="container">
-    <div class="gide-wrapper">
-        <?php if (have_rows('grid_images')) {
-            while (have_rows('grid_images')) {
+    <h1 class="headline-1 word-up">…and some more established ones.</h1>
+    <div class="row justify-content-start justify-content-xl-between align-items-center">
+        <?php if (have_rows('logos')):
+            while (have_rows('logos')):
                 the_row();
-                $first_image = get_sub_field('first_image');
-                $second_image = get_sub_field('second_image');
-                $small_title = get_sub_field('small_title');
-                $big_title = get_sub_field('big_title');
+                $logo = get_sub_field('logo');
                 ?>
-                <div class="card iv-st-from-bottom  <?php echo gridNumber($grid_no); ?>">
-                    <!-- TODO: Issue with wrapper numbers here, how can client choose the best one for his image ? -->
-                    <div class="image-wrapper image-wrapper-2">
-                        <img src="<?php echo $first_image['url']; ?>" alt="<?php echo $first_image['alt']; ?>">
-                    </div>
-                    <div class="content">
-                        <h5 class="headline-5 word-up"><?php echo $small_title; ?></h5>
-                        <h4 class="headline-4 real-line-up"><?php echo $big_title; ?></h4>
+                <div class="col-6 col-md-4 col-xl-3">
+                    <div class="image-wrapper iv-st-from-bottom">
+                        <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
                     </div>
                 </div>
-                <?php
-                $grid_no++;
-            }
-        } ?>
+            <?php endwhile; endif; ?>
     </div>
-    </section>
-    <!-- endregion Zephyr's Block -->
+</div>
+
+</section>
+<!-- endregion Zephyr's Block -->
