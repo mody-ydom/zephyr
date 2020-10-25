@@ -10,5 +10,5 @@ themes/zephyr/acf-json/.DS_Store
 
 .DS_Store
 
-/plugins/
-/uploads/
+
+plugins/duplicator/
