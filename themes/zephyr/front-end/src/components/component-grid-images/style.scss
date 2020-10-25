@@ -53,6 +53,7 @@ section.component-grid-images {
                     }
                     &.iphone-frame{
                         position: absolute;
+                        height: 100%;
                         width: 61.3%;
                         left: 50%;
                         transform: translateX(-50%);
