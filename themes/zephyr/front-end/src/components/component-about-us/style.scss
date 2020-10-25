@@ -10,16 +10,18 @@ section.component-about-us {
     .about-us {
         .about-us-title {
             margin-bottom: size(115);
-            @include x-large-screen{
+            @include x-large-screen {
                 margin-bottom: size(115);
             }
-            .headline-6,.headline-2{
+            
+            .headline-6, .headline-2 {
                 margin-bottom: size(32);
-                @include x-large-screen{
+                @include x-large-screen {
                     margin-bottom: size(22);
                 }
             }
-            .paragraph-1{
+            
+            .paragraph-1 {
                 max-width: size(935);
                 @include marginX(auto);
             }
@@ -27,36 +29,41 @@ section.component-about-us {
         
         .about-us-content {
             margin-bottom: size(110);
-            @include x-large-screen{
+            @include x-large-screen {
                 margin-bottom: size(98);
             }
+            
             .about-logo {
-                @include x-large-screen{
+                @include x-large-screen {
                     margin-bottom: size(87);
                 }
+                
                 .image-wrapper {
                     margin-bottom: size(11);
                     display: flex;
                     min-height: size(89);
                     justify-content: center;
                     align-items: center;
+                    
                     img {
                         margin: 0 auto;
                     }
                 }
-                .paragraph-1{
+                
+                .paragraph-1 {
                     line-break: anywhere;
                     border-top: 1px solid #979797;
                     padding-top: size(17);
                     padding-right: size(20);
-                    @include x-large-screen{
+                    @include x-large-screen {
                         padding-right: 0;
                     }
                 }
             }
-            .swiper-pagination{
+            
+            .swiper-pagination {
                 margin-top: size(61);
-                @include x-large-screen{
+                @include x-large-screen {
                     margin-top: 0;
                 }
             }
@@ -72,22 +79,48 @@ section.component-about-us {
                     height: 100%;
                     position: absolute;
                     top: 0;
+                    &.computer{
+                        height: auto;
+                        width: 56%;
+                        right: 7%;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    &.logo {
+                        width: 71.57%;
+                        height: auto;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                    &.girls{
+                        height: 78%;
+                        width: 51%;
+                        right: 4%;
+                        bottom: 0;
+                        top: auto;
+                        @include min-medium-screen{
+                            height: auto;
+                        }
+                    }
                 }
             }
+            
             .image-1 {
                 margin-bottom: size(80);
-                @include min-medium-screen{
+                @include min-medium-screen {
                     margin-bottom: size(86);
                 }
                 @include x-large-screen {
                     margin-bottom: size(102);
                 }
             }
-            .same-image{
+            
+            .same-image {
                 .image-wrapper {
                     margin-bottom: size(22);
                     padding-top: 62.97%;
-                    @include min-medium-screen{
+                    @include min-medium-screen {
                         padding-top: 48.97%;
                     }
                     @include min-medium-screen {
@@ -95,45 +128,52 @@ section.component-about-us {
                     }
                 }
             }
+            
             .image {
                 .paragraph-1 {
                     @include x-large-screen {
-                        @include paddingX(size(12),size(44));
+                        @include paddingX(size(12), size(44));
                     }
                 }
             }
-            .row{
-                @include min-small-screen{
+            
+            .row {
+                @include min-small-screen {
                     @include change-gutter(42px);
                 }
-                @include min-medium-screen{
+                @include min-medium-screen {
                     @include change-gutter(62px);
                 }
             }
+            
             .row-images {
                 margin-bottom: size(24);
                 @include min-medium-screen {
                     margin-bottom: 0;
                 }
+                
                 .image-wrapper {
                     margin-bottom: size(22);
-                    padding-top: 71.69%;
+                    padding-top: 64.69%;
                     @include min-medium-screen {
                         margin-bottom: size(18);
+                        padding-top: 71.69%;
                     }
                 }
-                &.image-2{
-                    .paragraph-1{
+                
+                &.image-2 {
+                    .paragraph-1 {
                         display: none;
-                        @include min-small-screen{
+                        @include min-small-screen {
                             display: block;
                         }
                     }
                 }
             }
-            .image-4{
+            
+            .image-4 {
                 margin-top: size(49);
-                @include min-medium-screen{
+                @include min-medium-screen {
                     margin-top: size(87);
                 }
             }
