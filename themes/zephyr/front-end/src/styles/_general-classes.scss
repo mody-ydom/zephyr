@@ -349,7 +349,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 }
 
 // used
-.paragraph, .wysiwyg-block, .wysiwyg-block, .component-hero p {
+.paragraph, .wysiwyg-block, .wysiwyg-block{
     color: $zephyr-white;
     font-family: $Freight;
     font-size: size(14);
@@ -902,4 +902,9 @@ section.component-hero .content h6 {
 
 .hide{
     display: none;
+}
+
+section.component-our-journey .our-journey .our-journey-content .journey-box img{
+    margin-left: auto;
+    margin-right: auto;
 }
