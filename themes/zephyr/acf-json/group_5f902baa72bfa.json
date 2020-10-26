@@ -156,7 +156,7 @@
                     },
                     "default_value": "Proin vitae eros tortor. Donec hendrerit magna nunc, eget pulvinar lectus maximus rhoncus. Phasellus ex felis, vestibulum vel hendrerit non.",
                     "tabs": "all",
-                    "toolbar": "basic",
+                    "toolbar": "full",
                     "media_upload": 0,
                     "delay": 1
                 },
@@ -197,5 +197,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603284361
+    "modified": 1603709962
 }

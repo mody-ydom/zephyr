@@ -10,7 +10,7 @@ $subscribe_to_newsletter = get_field('subscribe_to_newsletter', 'options');
 ?>
 </div>
 </main>
-<footer class="<?php hideFooter($post->post_name) ?>">
+<footer>
     <div class="container">
         <div class="footer-content">
             <!--        logo and copy right-->

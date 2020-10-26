@@ -36,11 +36,12 @@ endif;
         $second_image = get_sub_field('second_image');
         $small_title = get_sub_field('small_title');
         $big_title = get_sub_field('big_title');
+        $second_image_padding_top=get_sub_field('second_image_padding_top');
         ?>
         <div class="grid-item iv-st-from-bottom col-12 col-sm-6">
             <div class="image-wrapper">
                 <img src="<?php echo $first_image['url']; ?>" alt="<?php echo $first_image['alt']; ?>">
-                <img style="top:-3.5rem" class="iphone" src="<?php echo $second_image['url']; ?>" alt="<?php echo $second_image['alt']; ?>">
+                <img style="top:<?= $second_image_padding_top; ?>%" class="iphone" src="<?php echo $second_image['url']; ?>" alt="<?php echo $second_image['alt']; ?>">
             </div>
             <div class="content">
                 <h5 class="headline-5 word-up"><?php echo $small_title; ?></h5>

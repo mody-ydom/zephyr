@@ -948,12 +948,7 @@ function pageWrapper($page)
     }
 }
 
-function hideFooter($pagename){
-    $pages=array('say-hello');
-    if(in_array($pagename,$pages)){
-        echo 'hide';
-    }
-}
+
 
 function teamMemberShapeBG($field){
     switch ($field) {
