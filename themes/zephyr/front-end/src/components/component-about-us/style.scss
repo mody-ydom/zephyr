@@ -6,8 +6,14 @@ section.component-about-us {
     @include min-medium-screen {
         @include marginY(size(131), size(163));
     }
-    
+
     .about-us {
+        .two-images-block{
+            margin-bottom: size(49);
+            @include min-medium-screen {
+                margin-top: size(87);
+            }
+        }
         .about-us-title {
             margin-bottom: size(115);
             @include x-large-screen {

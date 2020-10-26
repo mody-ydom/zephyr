@@ -76,18 +76,6 @@ $bg_image=get_field('bg_image');
             </g>
         </g>
     </svg>
-
-    <img alt="dark-circle" class="circle dark-circle"
-         src="<?php echo get_template_directory_uri(); ?>/assets/images/dark-circle.png">
-
-    <svg class="circle oval" fill="none" height="253" viewBox="0 0 258 253" width="258"
-         xmlns="http://www.w3.org/2000/svg">
-        <path clip-rule="evenodd"
-              d="M145.725 1.12358C120.277 4.83717 96.5096 16.07 74.3481 29.145C39.811 49.5244 5.57066 78.9824 0.607883 118.844C-1.604 136.61 2.40987 154.74 9.57122 171.142C32.9158 224.614 93.2636 260.098 150.906 251.797C208.547 243.497 257.218 190.344 257.984 131.983C258.878 63.7665 222.083 -10.0199 145.725 1.12358Z"
-              fill="#8aeed6"
-              fill-opacity=".6" fill-rule="evenodd"/>
-    </svg>
-</div>
 <div class="down">
     <svg width="24" height="56" viewBox="0 0 24 56" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0)">
@@ -115,5 +103,16 @@ $bg_image=get_field('bg_image');
         </g>
     </svg>
 </div>
+
+    <img alt="dark-circle" class="circle dark-circle"
+         src="<?php echo get_template_directory_uri(); ?>/assets/images/dark-circle.png">
+
+    <svg class="circle oval" fill="none" height="253" viewBox="0 0 258 253" width="258"
+         xmlns="http://www.w3.org/2000/svg">
+        <path clip-rule="evenodd"
+              d="M145.725 1.12358C120.277 4.83717 96.5096 16.07 74.3481 29.145C39.811 49.5244 5.57066 78.9824 0.607883 118.844C-1.604 136.61 2.40987 154.74 9.57122 171.142C32.9158 224.614 93.2636 260.098 150.906 251.797C208.547 243.497 257.218 190.344 257.984 131.983C258.878 63.7665 222.083 -10.0199 145.725 1.12358Z"
+              fill="#8aeed6"
+              fill-opacity=".6" fill-rule="evenodd"/>
+    </svg>
 </section>
 <!-- endregion Zephyr's Block -->

@@ -1,4 +1,5 @@
 <?php
+global $post;
 // Create id attribute allowing for custom "anchor" value.
 $id = $block['id'];
 if (!empty($block['anchor'])) {
@@ -26,7 +27,7 @@ endif;
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
 <div class="container">
-    <div class="contact-us-model">
+    <div class="contact-us-model <?php if($post->post_name=='sector-expertise') {echo 'in-about-page'; } ?>">
         <?php if (have_rows('right_side')) {
             while (have_rows('right_side')) {
                 the_row();

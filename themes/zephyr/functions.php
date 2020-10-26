@@ -401,6 +401,23 @@ function register_acf_block_types()
         ]
     ));
 
+    acf_register_block_type(array(
+        'name' => 'component-about-us',
+        'title' => __('Component About us'),
+        'render_template' => 'template-parts/blocks/component-about-us/index.php',
+        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-about-us/style.css',
+        'category' => 'zephyr-sector-expertise',
+        'icon' => 'admin-users',
+        'mode' => 'preview',
+        'example' => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [
+                    'is_screenshot' => true,
+                ],
+            ]
+        ]
+    ));
 
 
 
@@ -921,10 +938,13 @@ function pageWrapper($page)
             break;
         case 'team':
             return 'team-page-wrapper';
+            break;
         case 'sector-expertise-2':
             return 'sector-expertise2-page-wrapper';
+            break;
         case 'sector-expertise':
             return 'sector-expertise-page-wrapper';
+            break;
     }
 }
 
