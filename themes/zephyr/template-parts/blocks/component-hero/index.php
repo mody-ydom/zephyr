@@ -7,6 +7,10 @@ if (!empty($block['anchor'])) {
 
 // Create class attribute allowing for custom "className" and "align" values.
 $className = 'component-hero no-bg';
+
+if(get_field('with_background')=='yes'){
+    $className = 'component-hero';
+}
 if (!empty($block['className'])) {
     $className .= ' ' . $block['className'];
 }
@@ -26,6 +30,7 @@ $block_title = get_field('block_title');
 $block_subtitle = get_field('block_subtitle');
 $block_text = get_field('block_text');
 $button_group = get_field('button');
+$with_background=get_field('with_background');
 ?>
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
@@ -46,11 +51,13 @@ $button_group = get_field('button');
             }
         }
         ?>
+        <?php if($button_text){ ?>
         <a class="btn desktop-only" href="<?php if ($button_link) {
             echo $button_link['url'];
         } else {
             echo "#";
         } ?>"><?php echo $button_text; ?></a>
+        <?php } ?>
     </div>
     <svg class="circle orange-circle" fill="none" height="90" viewBox="0 0 90 90" width="90"
          xmlns="http://www.w3.org/2000/svg">
