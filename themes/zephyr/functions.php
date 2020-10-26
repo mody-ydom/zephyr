@@ -852,3 +852,10 @@ function pageWrapper($page)
             return 'say-hello-wrapper';
     }
 }
+
+function hideFooter($pagename){
+    $pages=array('say-hello');
+    if(in_array($pagename,$pages)){
+        echo 'hide';
+    }
+}
