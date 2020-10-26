@@ -383,6 +383,24 @@ function register_acf_block_types()
         ]
     ));
 
+    acf_register_block_type(array(
+        'name' => 'component-sector-expertise-image-2',
+        'title' => __('Component sector Expertise Image 2'),
+        'render_template' => 'template-parts/blocks/component-sector-expertise-image-2/index.php',
+        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-sector-expertise-image-2/style.css',
+        'category' => 'zephyr-sector-expertise',
+        'icon' => 'admin-users',
+        'mode' => 'preview',
+        'example' => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [
+                    'is_screenshot' => true,
+                ],
+            ]
+        ]
+    ));
+
 
 
 
