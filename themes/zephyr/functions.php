@@ -149,6 +149,11 @@ function my_plugin_block_categories($categories)
             'title' => __('Zephyr Home', 'zephyr'),
             'icon' => 'welcome-learn-more',
         ),
+        array(
+            'slug' => 'zephyr-team',
+            'title' => __('Zephyr Team', 'zephyr'),
+            'icon' => 'admin-users',
+        ),
     ));
 }
 
@@ -319,23 +324,24 @@ function register_acf_block_types()
         ]
     ));
 
-//    acf_register_block_type(array(
-//        'name' => 'component-hero',
-//        'title' => __('Component hero'),
-//        'render_template' => 'template-parts/blocks/component-hero/index.php',
-//        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-hero/style.css',
-//        'category' => 'zephyr-home',
-//        'icon' => 'admin-appearance',
-//        'mode' => 'preview',
-//        'example' => [
-//            'attributes' => [
-//                'mode' => 'preview',
-//                'data' => [
-//                    'is_screenshot' => true,
-//                ],
-//            ]
-//        ]
-//    ));
+    acf_register_block_type(array(
+        'name' => 'component-our-team',
+        'title' => __('Component Our Team'),
+        'render_template' => 'template-parts/blocks/component-our-team/index.php',
+        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-our-team/style.css',
+        'category' => 'zephyr-team',
+        'icon' => 'admin-users',
+        'mode' => 'preview',
+        'example' => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [
+                    'is_screenshot' => true,
+                ],
+            ]
+        ]
+    ));
+
 
 
 }
@@ -848,8 +854,10 @@ function pageWrapper($page)
     switch ($page) {
         case 'home':
             return 'home-page-wrapper';
+            break;
         case 'say-hello':
             return 'say-hello-wrapper';
+            break;
         case 'team';
             return 'team-page-wrapper';
     }
@@ -859,5 +867,22 @@ function hideFooter($pagename){
     $pages=array('say-hello');
     if(in_array($pagename,$pages)){
         echo 'hide';
+    }
+}
+
+function teamMemberShapeBG($field){
+    switch ($field) {
+        case 'green-circle':
+            echo 'background:url('.get_template_directory_uri().'/assets/images/green-circle.png) no-repeat 56% 45%;background-position:20% 35%';
+            break;
+        case 'oval':
+            echo 'background:url('.get_template_directory_uri().'/assets/images/oval.png) no-repeat 90% 30%;background-position:top left';
+            break;
+        case 'red-circle':
+            echo 'background:url('.get_template_directory_uri().'/assets/images/red-circle.png) no-repeat right 67%;';
+            break;
+        case 'milky-circle':
+            echo 'background:url('.get_template_directory_uri().'/assets/images/milky-circle.png) no-repeat left 58%;';
+
     }
 }
