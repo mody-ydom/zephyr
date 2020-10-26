@@ -2,13 +2,11 @@
 @import "src/styles/mixins";
 
 section.component-logo {
-    margin-top: size(150);
+    margin-top: size(32);
     @include min-small-screen {
-        margin-top: size(120);
+        margin-top: size(50);
     }
-    @include x-large-screen {
-        margin-top: size(215);
-    }
+    
     
     .headline-1 {
         max-width: size(320);

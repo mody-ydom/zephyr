@@ -5,13 +5,15 @@ section.component-success-stories {
     
     .paragraph-1 {
         font-size: size(14);
+        font-family: $Sailec;
+        letter-spacing: size(0.44);
     }
     
     .headline-1 {
         color: $zephyr-gray;
-        @include marginY(size(30), size(70));
+        @include marginY(size(30), size(72));
         @include min-small-screen {
-            @include marginY(size(13), size(60));
+            @include marginY(size(15), size(90));
             
         }
         @include min-medium-screen {
@@ -26,15 +28,10 @@ section.component-success-stories {
     }
     
     
-    .row {
-        @include change-gutter(20px);
-        @include min-large-screen {
-            @include change-gutter(76px);
-        }
-    }
     
-    .card {
-        
+    
+    .grid-item {
+        width: calc(100% / 2 - 76px);
         &:not(:last-child) {
             margin-bottom: size(43);
         }
@@ -67,14 +64,6 @@ section.component-success-stories {
                     transform: translate(-50%,-50%);
                 }
             }
-            
-            //&.image-wrapper-1 {
-            //    padding-top: 100.70%;
-            //}
-            //
-            //&.image-wrapper-2 {
-            //    padding-top: 66.34%;
-            //}
         }
         
         .content {

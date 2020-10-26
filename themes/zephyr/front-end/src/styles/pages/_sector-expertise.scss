@@ -17,13 +17,14 @@
         margin-bottom: size(120);
     }
     
+    Section.component-grid-images {
+        @include marginY(size(100) , size(64));
     
-    Section.component-success-stories {
         @include min-small-screen {
             @include marginY(size(100), size(80))
         }
         @include x-large-screen {
-            @include marginY(size(165), size(136))
+            @include marginY(size(165), size(38))
         }
     }
 }

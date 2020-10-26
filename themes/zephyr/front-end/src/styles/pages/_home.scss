@@ -12,4 +12,10 @@
             margin-bottom: size(299);
         }
     }
+    
+    section.component-grid-images {
+        .paragraph-1, .headline-1 {
+            display: none;
+        }
+    }
 }

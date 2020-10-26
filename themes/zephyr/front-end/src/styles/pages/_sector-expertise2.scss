@@ -27,10 +27,13 @@
         }
     }
     
-    .component-success-stories {
-        @include marginY(size(140));
-        @include min-medium-screen {
-            @include marginY(size(374), size(185));
+    .component-grid-images {
+        @include marginY(size(100) , size(64));
+        @include min-small-screen {
+            @include marginY(size(200), size(40));
+        }
+        @include x-large-screen {
+            @include marginY(size(350), size(40));
         }
     }
 }

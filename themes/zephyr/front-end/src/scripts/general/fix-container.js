@@ -1,5 +1,9 @@
+import {debounce} from '../functions';
+
 export default () => {
   window.addEventListener('resize', fixContainer);
+  const debouncedDispatchEvent = debounce(()=>window.dispatchEvent(new Event('container-fixed')),100);
+  
   fixContainer();
   
   function fixContainer() {
@@ -12,6 +16,8 @@ export default () => {
     else {
       document.documentElement.style.fontSize = `${10}px`;
     }
+    
+    debouncedDispatchEvent();
     
   }
 }
