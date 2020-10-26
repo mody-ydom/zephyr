@@ -154,6 +154,11 @@ function my_plugin_block_categories($categories)
             'title' => __('Zephyr Team', 'zephyr'),
             'icon' => 'admin-users',
         ),
+        array(
+            'slug' => 'zephyr-sector-expertise',
+            'title' => __('Zephyr Sector Expertise', 'zephyr'),
+            'icon' => 'welcome-learn-more',
+        ),
     ));
 }
 
@@ -330,6 +335,24 @@ function register_acf_block_types()
         'render_template' => 'template-parts/blocks/component-our-team/index.php',
         'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-our-team/style.css',
         'category' => 'zephyr-team',
+        'icon' => 'admin-users',
+        'mode' => 'preview',
+        'example' => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [
+                    'is_screenshot' => true,
+                ],
+            ]
+        ]
+    ));
+
+    acf_register_block_type(array(
+        'name' => 'component-increase',
+        'title' => __('Component Increase'),
+        'render_template' => 'template-parts/blocks/component-increase/index.php',
+        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-increase/style.css',
+        'category' => 'zephyr-sector-expertise',
         'icon' => 'admin-users',
         'mode' => 'preview',
         'example' => [
@@ -858,8 +881,10 @@ function pageWrapper($page)
         case 'say-hello':
             return 'say-hello-wrapper';
             break;
-        case 'team';
+        case 'team':
             return 'team-page-wrapper';
+        case 'sector-expertise':
+            return 'sector-expertise2-page-wrapper';
     }
 }
 

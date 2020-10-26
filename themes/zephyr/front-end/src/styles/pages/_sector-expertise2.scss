@@ -3,7 +3,7 @@
         .content {
             text-align: center;
             
-            .headline-1 {
+            .headline-1,h1 {
                 max-width: size(330);
                 @include marginY(size(30));
                 @include min-x-small-screen {
@@ -19,7 +19,7 @@
                 }
             }
             
-            .paragraph {
+            .paragraph,p {
                 @include x-large-screen {
                     max-width: size(910);
                 }
