@@ -26,9 +26,9 @@ endif;
 /****************************
  *     Custom ACF Meta      *
  ****************************/
-$block_title = get_field('block_title');
-$block_subtitle = get_field('block_subtitle');
-$block_text = get_field('block_text');
+$small_title = get_field('small_title');
+$big_title = get_field('big_title');
+$paragraph = get_field('paragraph');
 $with_background=get_field('with_background');
 $bg_image=get_field('bg_image');
 ?>
@@ -41,9 +41,8 @@ $bg_image=get_field('bg_image');
 <?php } ?>
 <div class="container">
     <div class="content">
-        <div class="word-up center">
-            <?php echo $block_text; ?>
-        </div>
+        <h6 class="headline-6 word-up center"><?php echo $small_title;  ?></h6>
+        <h1 class="headline-1 word-up center"><?php echo $big_title; ?></h1>
         <?php if (have_rows('button')) {
             while (have_rows('button')) {
                 the_row();
@@ -53,12 +52,15 @@ $bg_image=get_field('bg_image');
         }
         ?>
         <?php if($button_text){ ?>
-        <a class="btn desktop-only" href="<?php if ($button_link) {
-            echo $button_link['url'];
-        } else {
-            echo "#";
-        } ?>"><?php echo $button_text; ?></a>
+            <a class="btn desktop-only" href="<?php if ($button_link) {
+                echo $button_link['url'];
+            } else {
+                echo "#";
+            } ?>"><?php echo $button_text; ?></a>
         <?php } ?>
+        <p class="paragraph real-line-up center"><?php echo $paragraph; ?> </p>
+    </div>
+
     </div>
     <svg class="circle orange-circle" fill="none" height="90" viewBox="0 0 90 90" width="90"
          xmlns="http://www.w3.org/2000/svg">

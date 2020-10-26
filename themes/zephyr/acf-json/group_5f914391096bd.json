@@ -23,10 +23,10 @@
             "acfe_form": true
         },
         {
-            "key": "field_5f91ef24e0258",
-            "label": "Block text",
-            "name": "block_text",
-            "type": "wysiwyg",
+            "key": "field_5f966d6c04379",
+            "label": "Small title",
+            "name": "small_title",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -35,11 +35,49 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "We combine cutting edge digital design with data- <span>driven unique insights<\/span> to unlock emerging companies growth potential.",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
+            "default_value": "HEALTH & WELLNESS",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f966d780437a",
+            "label": "Big title",
+            "name": "big_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Lorem Ipsum dolor sit amut.",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f966d820437b",
+            "label": "Paragraph",
+            "name": "paragraph",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "With deep industry knowledge and expertise in the emerging health and wellness space, our team will be able to help whether you’re looking to define your proposition or create a brand that stands out from your competitors or need help connecting your product with new audiences via digital marketing, we have industry expertise to help you throughout your journey.",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_5f961bbcf41a0",
@@ -167,5 +205,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603674249
+    "modified": 1603694060
 }

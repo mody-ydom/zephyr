@@ -921,8 +921,10 @@ function pageWrapper($page)
             break;
         case 'team':
             return 'team-page-wrapper';
-        case 'sector-expertise':
+        case 'sector-expertise-2':
             return 'sector-expertise2-page-wrapper';
+        case 'sector-expertise':
+            return 'sector-expertise-page-wrapper';
     }
 }
 
