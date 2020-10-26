@@ -29,15 +29,16 @@ endif;
 $block_title = get_field('block_title');
 $block_subtitle = get_field('block_subtitle');
 $block_text = get_field('block_text');
-$button_group = get_field('button');
 $with_background=get_field('with_background');
+$bg_image=get_field('bg_image');
 ?>
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
+<?php if($bg_image){ ?>
 <div class="hero-image">
-    <!--        <img alt="hero" src="-->
-    <?php //echo get_template_directory_uri(); ?><!--/assets/images/hero.png">-->
+            <img alt="hero" src="<?php echo $bg_image['url']; ?>">
 </div>
+<?php } ?>
 <div class="container">
     <div class="content iv-st-from-bottom">
         <h1 class="headline-1 center">

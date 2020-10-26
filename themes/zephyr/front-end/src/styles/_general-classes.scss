@@ -796,3 +796,106 @@ svg {
     overflow: hidden;
     margin: 0;
 }
+
+
+section.component-hero .content h1 {
+    color: $zephyr-gray;
+    font-family: $Canela;
+    font-size: size(27);
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: size(0.58);
+    line-height: size(37.8);
+    text-align: center;
+
+    @include min-small-screen {
+        font-size: size(35);
+    }
+    @include min-medium-screen {
+        font-size: size(45);
+    }
+    @include x-large-screen {
+        font-size: size(60);
+        letter-spacing: size(0.44);
+        line-height: size(66);
+    }
+}
+
+section.component-hero .content h2 {
+    color: $zephyr-gray;
+    font-family: $Canela;
+    font-size: size(27);
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: size(0.58);
+    line-height: size(37.8);
+    @include min-medium-screen {
+        font-size: size(37);
+        line-height: size(47.8);
+    }
+    @include x-large-screen {
+        font-size: size(45);
+        letter-spacing: size(0.44);
+        line-height: size(66);
+    }
+}
+
+section.component-hero .content h3 {
+    color: $zephyr-gray;
+    font-family: $Freight;
+    font-size: size(24);
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: size(0.2);
+    line-height: size(26);
+    @include x-large-screen {
+        font-size: size(32);
+    }
+}
+
+// used
+
+section.component-hero .content h4 {
+    color: $zephyr-gray;
+    font-family: $Canela;
+    font-size: size(21);
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: size(0.33);
+    line-height: size(30);
+    @include x-large-screen {
+        font-size: size(33);
+        line-height: size(45);
+    }
+}
+
+// used
+section.component-hero .content h5 {
+    color: $zephyr-green;
+    font-family: $Sailec;
+    font-size: size(14);
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: size(0.1);
+    line-height: size(36);
+    @include min-medium-screen {
+        font-size: size(17);
+        letter-spacing: size(0.4);
+    }
+}
+
+// used
+section.component-hero .content h6 {
+    color: $zephyr-gray;
+    font-family: $Sailec;
+    font-size: size(14);
+    font-weight: 500;
+    letter-spacing: size(0.44);
+    line-height: size(24);
+    text-transform: uppercase;
+
+
+    &.normal {
+        font-weight: 400;
+    }
+}

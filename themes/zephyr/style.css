@@ -704,11 +704,11 @@ textarea {
 }
 
 @media screen and (min-width: 37.5em) {
-    
+
     .menu-toggle {
         display: none;
     }
-    
+
     .main-navigation ul {
         display: flex;
     }
@@ -941,20 +941,20 @@ textarea {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-    
+
     /*rtl:ignore*/
     float: left;
-    
+
     /*rtl:ignore*/
     margin-right: 1.5em;
     margin-bottom: 1.5em;
 }
 
 .alignright {
-    
+
     /*rtl:ignore*/
     float: right;
-    
+
     /*rtl:ignore*/
     margin-left: 1.5em;
     margin-bottom: 1.5em;

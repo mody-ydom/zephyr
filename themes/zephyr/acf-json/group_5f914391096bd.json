@@ -78,7 +78,7 @@
                     {
                         "field": "field_5f961bbcf41a0",
                         "operator": "==",
-                        "value": "1"
+                        "value": "yes"
                     }
                 ]
             ],
@@ -167,5 +167,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603673545
+    "modified": 1603674249
 }
