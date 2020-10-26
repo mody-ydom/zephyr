@@ -46,7 +46,7 @@ section.component-hero {
             }
         }
         
-        .paragraph {
+        .paragraph,p {
             @include min-medium-screen {
                 max-width: size(700);
                 margin: 0 auto;
@@ -116,7 +116,7 @@ section.component-hero {
         
         .content {
             
-            .headline-1 {
+            .headline-1, h1 {
                 max-width: size(320);
                 margin: 0 auto;
                 color: $zephyr-gray;

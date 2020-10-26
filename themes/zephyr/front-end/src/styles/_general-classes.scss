@@ -212,7 +212,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 }
 
 // used
-.headline-1 {
+.headline-1,  {
     color: $zephyr-white;
     font-family: $Canela;
     font-size: size(27);
@@ -349,7 +349,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 }
 
 // used
-.paragraph, .wysiwyg-block, .wysiwyg-block{
+.paragraph, .wysiwyg-block, .wysiwyg-block, p{
     color: $zephyr-white;
     font-family: $Freight;
     font-size: size(14);
