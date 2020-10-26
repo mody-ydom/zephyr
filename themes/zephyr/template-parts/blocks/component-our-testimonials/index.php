@@ -51,9 +51,11 @@ $text = get_field('text');
                         ?>
                         <div class="testimonial swiper-slide">
                             <div class="testimonials-description">
+                               <?php if($text){ ?>
                                 <p class="des-p real-line-up">
                                     <?php echo $text; ?>
                                 </p>
+                            <?php } ?>
                             </div>
                             <div class="image-content center">
                                 <?php if ($client_image) { ?>

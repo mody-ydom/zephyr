@@ -37,11 +37,15 @@ $mobile_description=get_field('mobile_description');
         ?>
         <div class="col-6 card">
             <div class="image-wrapper">
+                <?php if($image_1){ ?>
                 <img src="<?php echo $image_1['url']; ?>" alt="<?php echo $image_1['alt']; ?>">
-            </div>
+                <?php } ?>
+                </div>
+            <?php if($description_1){ ?>
             <p class="paragraph-1 real-line-up desktop-only">
               <?php echo $description_1; ?>
             </p>
+                <?php } ?>
         </div>
           <?php
         }
@@ -56,11 +60,15 @@ $mobile_description=get_field('mobile_description');
                 ?>
                 <div class="col-6 card">
                     <div class="image-wrapper">
+                        <?php if($image_2){ ?>
                         <img src="<?php echo $image_2['url']; ?>" alt="<?php echo $image_2['alt']; ?>">
+                    <?php }?>
                     </div>
+                    <?php if($description_2){ ?>
                     <p class="paragraph-1 real-line-up desktop-only">
                        <?php echo $description_2; ?>
                     </p>
+                    <?php } ?>
                 </div>
                 <?php
             }
@@ -68,7 +76,9 @@ $mobile_description=get_field('mobile_description');
         ?>
 
         <div class="col-12 mobile-only">
+            <?php if($mobile_description){ ?>
             <p class="paragraph real-line-up center"><?php echo $mobile_description; ?></p>
+            <?php } ?>
         </div>
     </div>
 </div>

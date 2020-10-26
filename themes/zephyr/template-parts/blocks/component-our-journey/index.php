@@ -44,12 +44,20 @@ $block_subtitle = get_field('block_subtitle');
           $background_color = get_sub_field('background_color'); ?>
           <div class="swiper-slide iv-st-from-bottom col-xl-4">
             <div class="journey-box center" style="background: <?=$background_color?$background_color:'#cce7dc'; ?>">
+                <?php if($top_title){ ?>
               <h6 class="headline-6 word-up"><?=$top_title?></h6>
+                <?php } ?>
+                <?php if($icon){ ?>
               <img class="iv-st-from-bottom" src="<?=$icon['url']?>" alt="<?=$icon['alt']?>">
+                <?php } ?>
+                <?php if($title){ ?>
               <h3 class="small-headline word-up"><?=$title?></h3>
-              <div class="paragraph-1 real-line-up">
+                <?php } ?>
+                <?php if($text){ ?>
+                <div class="paragraph-1 real-line-up">
                 <?=$text?>
               </div>
+                <?php } ?>
             </div>
           </div>
         <?php endwhile; ?>

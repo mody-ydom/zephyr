@@ -36,7 +36,9 @@ $grid_no = 1;
                 ?>
                 <div class="col-6 col-md-4 col-xl-3">
                     <div class="image-wrapper iv-st-from-bottom">
-                        <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+                       <?php if($logo){ ?>
+                           <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+                        <?php } ?>
                     </div>
                 </div>
             <?php endwhile; endif; ?>

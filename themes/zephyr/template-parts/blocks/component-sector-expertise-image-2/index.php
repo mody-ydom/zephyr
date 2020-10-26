@@ -32,9 +32,13 @@ $small_paragraph = get_field('small_paragraph');
 <div class="container">
     <div class="image-1">
         <div class="image-wrapper ">
+            <?php if($image){ ?>
             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+            <?php }?>
         </div>
+        <?php if($small_paragraph){ ?>
         <p class="paragraph-1 "><?php echo $small_paragraph; ?></p>
+        <?php } ?>
     </div>
 </div>
 

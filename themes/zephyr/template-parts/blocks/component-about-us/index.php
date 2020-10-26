@@ -31,9 +31,9 @@ $block_description=get_field('block_description');
 <div class="container">
     <div class="about-us">
         <div class="about-us-title center">
-            <h6 class="headline-6 normal word-up"><?php echo $small_title ?></h6>
-            <h2 class="headline-2 word-up"><?php echo $big_title; ?></h2>
-            <p class="paragraph-1 real-line-up"><?php echo $block_description; ?></p>
+            <?php if($small_title){ ?><h6 class="headline-6 normal word-up"><?php echo $small_title ?></h6> <?php } ?>
+           <?php if($big_title){?> <h2 class="headline-2 word-up"><?php echo $big_title; ?></h2><?php } ?>
+            <?php if($block_description){?><p class="paragraph-1 real-line-up"><?php echo $block_description; ?></p><?php } ?>
         </div>
         <div class="about-us-content swiper-container">
             <div class="swiper-wrapper row-swiper row">
@@ -47,12 +47,17 @@ $block_description=get_field('block_description');
                         ?>
                         <div class="swiper-slide col-xl-4">
                             <div class="about-logo">
+                                <?php if($image){ ?>
                                 <div class="image-wrapper iv-st-from-bottom">
-                                    <a href="<?php echo $link; ?>">
-                                        <img alt="about logo1" src="<?php echo $image['url'];  ?>">
-                                    </a>
+                                <a href="<?php echo $link; ?>">
+                                <img alt="about logo1" src="<?php echo $image['url'];  ?>">
+                                 </a>
+
                                 </div>
+                            <?php } ?>
+                                <?php if($description){ ?>
                                 <p class="paragraph-1 iv-st-from-bottom"><?php echo $description; ?></p>
+                                <?php } ?>
                             </div>
                         </div>
                         <?php
@@ -62,8 +67,8 @@ $block_description=get_field('block_description');
                 <div class="swiper-pagination"></div>
             </div>
         </div>
+        <?php if(have_rows('images_blocks')){ ?>
         <div class="about-us-images">
-            <?php if(have_rows('images_blocks')){ ?>
                 <?php while(have_rows('images_blocks')){
                     the_row();
                     if(get_row_layout()=='1_image'){
@@ -73,8 +78,7 @@ $block_description=get_field('block_description');
                         ?>
                         <div class="image-1 image same-image">
                             <div class="image-wrapper iv-st-from-bottom">
-                                <img alt="<?php echo $block_image_2['alt']; ?>" src="<?php echo $block_image_1['url']; ?>">
-                                <?php if($block_image_2){?> <img class="computer" alt="<?php echo $block_image_2['alt'] ?>" src="<?php echo $block_image_2['url']; ?>"><?php } ?>
+                                <?php if($block_image_1){?><img alt="<?php echo $block_image_1['alt']; ?>" src="<?php echo $block_image_1['url']; ?>"><?php } ?>
                             </div>
                             <p class="paragraph-1 real-line-up"><?php echo $block_description; ?></p>
                         </div>
@@ -93,9 +97,11 @@ $block_description=get_field('block_description');
                             <div class="col-12 col-sm-6">
                                 <div class="image-2 row-images image">
                                     <div class="image-wrapper iv-st-from-bottom">
-                                        <img alt="<?php echo $first_image_1['alt'] ?>" src="<?php echo $first_image_1['url']; ?>">
+                                        <?php if($first_image_1){ ?><img alt="<?php echo $first_image_1['alt'] ?>" src="<?php echo $first_image_1['url']; ?>"><?php } ?>
                                     </div>
+                                    <?php if($first_description){ ?>
                                     <p class="paragraph-1 real-line-up mt-5"><?php echo $first_description; ?></p>
+                                <?php } ?>
                                 </div>
                             </div>
                         <?php } ?>
@@ -110,10 +116,16 @@ $block_description=get_field('block_description');
                         <div class="col-12 col-sm-6">
                             <div class=" row-images image">
                                 <div class="image-wrapper iv-st-from-bottom">
+                                    <?php if($second_image_1){ ?>
                                     <img alt="<?php echo $second_image_1['alt']; ?>" src="<?php echo $second_image_1['url']; ?>">
-                                    <?php if($second_image_2){?>   <img alt="<?php echo $second_image_2['alt']; ?>" class="logo" src="<?php echo $second_image_2; ?>"> <?php } ?>
+                                    <?php } ?>
+                                    <?php if($second_image_2){?>
+                                        <img alt="<?php echo $second_image_2['alt']; ?>" class="logo" src="<?php echo $second_image_2; ?>">
+                                    <?php } ?>
                                 </div>
-                                <p class="paragraph-1 real-line-up mt-5"><?php echo $second_description; ?></p>
+                                <?php if($second_description){?>
+                                    <p class="paragraph-1 real-line-up mt-5"><?php echo $second_description; ?></p>
+                                <?php } ?>
                             </div>
                         </div>
                     <?php } ?>

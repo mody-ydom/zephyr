@@ -33,19 +33,33 @@ $small_paragraph=get_field('small_paragraph');
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
 <div class="container">
-    <?php if($small_title){?><div class="paragraph-1 word-up desktop-only"><?php echo $small_title; ?></div><?php } ?>
-    <?php if($big_title){ ?><h1 class="headline-1 real-line-up"><?php echo $big_title; ?></h1><?php } ?>
+    <?php if($small_title){?>
+        <div class="paragraph-1 word-up desktop-only"><?php echo $small_title; ?></div>
+    <?php } ?>
+    <?php if($big_title){ ?>
+        <h1 class="headline-1 real-line-up"><?php echo $big_title; ?></h1>
+    <?php } ?>
     <div class="image-wrapper">
+        <?php if($image_1){ ?>
         <img alt="<?php echo $image_1['alt']; ?>" class="cara" src="<?php echo $image_1['url']; ?>">
+        <?php } ?>
+        <?php if($image_2){ ?>
         <img alt="<?php echo $image_2['alt']; ?>" class="mac" src="<?php echo $image_2['url']; ?>">
+        <?php } ?>
     </div>
 
     <div class="content">
-        <?php if($small_paragraph){ ?><p class="paragraph-1 "><?php echo $small_paragraph; ?></p> <?php } ?>
+        <?php if($small_paragraph){ ?>
+            <p class="paragraph-1 "><?php echo $small_paragraph; ?></p>
+        <?php } ?>
 
-              <?php if($small_title_under_image){ ?>  <h5 class="headline-5 word-up"><?php echo $small_title_under_image; ?></h5><?php
+              <?php if($small_title_under_image){ ?>
+                  <h5 class="headline-5 word-up"><?php echo $small_title_under_image; ?>
+                  </h5><?php
               } ?>
-                <?php if($big_title_under_image){ ?><h4 class="headline-4 real-line-up"><?php echo $big_title_under_image; ?></h4><?php } ?>
+                <?php if($big_title_under_image){ ?>
+                    <h4 class="headline-4 real-line-up"><?php echo $big_title_under_image; ?>
+                    </h4><?php } ?>
     </div>
 
 </div>

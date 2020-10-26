@@ -46,10 +46,16 @@ $block_subtitle=get_field('block_subtitle');
                 <div class="col-6 col-md-4 col-xl-3 team-parent">
                     <div class="team-person">
                         <div class="image-wrapper" style="<?php teamMemberShapeBG($shape_in_background); ?>">
+                            <?php if($image){ ?>
                             <img class="iv-st-from-bottom" alt="<?php echo $image['alt']; ?>" src="<?php echo $image['url']; ?>">
+                            <?php } ?>
                         </div>
+                        <?php if($name){ ?>
                         <h5 class="name word-up"><?php echo $name; ?></h5>
+                            <?php } ?>
+                        <?php if($job_title){ ?>
                         <h6 class="title-job word-up"><?php echo $job_title; ?></h6>
+                            <?php } ?>
                     </div>
                 </div>
                 <?php }} ?>

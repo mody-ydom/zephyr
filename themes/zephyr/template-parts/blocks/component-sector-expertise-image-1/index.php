@@ -26,6 +26,7 @@ $title = get_field('title');
 $text = get_field('text');
 
 ?>
+<!-- This is the Same Case study component, i didn't use this one -->
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
 

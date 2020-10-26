@@ -40,12 +40,20 @@ endif;
         ?>
         <div class="grid-item iv-st-from-bottom col-12 col-sm-6">
             <div class="image-wrapper">
+                <?php if($first_image){ ?>
                 <img src="<?php echo $first_image['url']; ?>" alt="<?php echo $first_image['alt']; ?>">
+                <?php } ?>
+                <?php if($second_image){ ?>
                 <img style="top:<?= $second_image_padding_top; ?>%" class="iphone" src="<?php echo $second_image['url']; ?>" alt="<?php echo $second_image['alt']; ?>">
+                <?php } ?>
             </div>
             <div class="content">
+                <?php if($small_title){ ?>
                 <h5 class="headline-5 word-up"><?php echo $small_title; ?></h5>
+                <?php } ?>
+                <?php if($big_title){ ?>
                 <h4 class="headline-4 real-line-up"><?php echo $big_title; ?></h4>
+                <?php } ?>
             </div>
         </div>
             <?php

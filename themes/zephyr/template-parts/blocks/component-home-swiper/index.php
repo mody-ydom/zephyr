@@ -41,8 +41,12 @@ $grid_no = 1;
                                 ?>
                                 <div class="left-side iv-st-from-bottom">
                                     <div class="left-side-title">
+                                       <?php if($title){ ?>
                                         <h6 class="headline-6 normal word-up"><?php echo $title; ?></h6>
+                                    <?php } ?>
+                                        <?php if($content){ ?>
                                         <h5 class="sub-title real-line-up"><?php echo $content; ?></h5>
+                                    <?php } ?>
                                     </div>
                                     <?php if (have_rows('blocks')) {
                                         ?>
@@ -94,14 +98,18 @@ $grid_no = 1;
                                                         </svg>
                                                         <div class="category-wrapper">
                                                             <div class="category-title">
-                                                                <h3 class="small-headline word-up"><?php echo $block_title; ?></h3>
+                                                                <?php if($block_title){ ?>
+                                                            <h3 class="small-headline word-up"><?php echo $block_title; ?></h3>
+                                            <?php }?>
                                                                 <div class="icons">
                                                                     <span class="plus icon">+</span>
                                                                     <span class="minus icon">-</span>
                                                                 </div>
                                                             </div>
                                                             <div class="category-content">
+                                                                <?php if($block_text){ ?>
                                                                 <p class="paragraph-1 iv-st-from-bottom"><?php echo $block_text; ?></p>
+                                            <?php } ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -117,12 +125,15 @@ $grid_no = 1;
                                 the_row();
                                 $image = get_sub_field('image');
                                 ?>
+                                    <?php if($image){ ?>
                                 <div class="right-side">
                                     <div class="image-wrapper iv-st-from-bottom">
                                         <img alt="<?php echo $image['alt']; ?>"
                                              src="<?php echo $image['url']; ?>">
                                     </div>
                                 </div>
+                                    <?php
+                                } ?>
                             <?php }
                         } ?>
                     </div>

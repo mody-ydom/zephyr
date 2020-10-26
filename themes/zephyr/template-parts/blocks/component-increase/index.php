@@ -36,8 +36,12 @@ $grid_no = 1;
             ?>
             <div class="col-xl-4 swiper-slide">
                 <div class="increase-content center">
+              <?php if($title){?>
                     <h4 class="headline-4 word-up"><?php echo $title; ?></h4>
+                    <?php } ?>
+                    <?php if($description){ ?>
                     <p class="paragraph-1 word-up"><?php echo $description; ?></p>
+                    <?php } ?>
                 </div>
             </div>
             <?php endwhile; ?>

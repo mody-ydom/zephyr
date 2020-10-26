@@ -58,7 +58,9 @@ $bg_image=get_field('bg_image');
                 echo "#";
             } ?>"><?php echo $button_text; ?></a>
         <?php } ?>
+        <?php if($paragraph){ ?>
         <p class="paragraph real-line-up center"><?php echo $paragraph; ?> </p>
+        <?php } ?>
     </div>
 
     </div>

@@ -33,15 +33,15 @@ endif;
                 the_row();
                 $contact_form_shortcode = get_sub_field('contact_us_shortcode')
                 ?>
+                    <?php if($contact_form_shortcode){ ?>
                 <div class="data">
                     <?php echo $contact_form_shortcode; ?>
-
                     <svg class="arrow" width="25" height="40" viewBox="0 0 25 40" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0 20L25 40L25 0L0 20Z" fill="#333333"/>
                     </svg>
                 </div>
-            <?php }
+            <?php } }
         } ?>
         <?php if (have_rows('left_side')) {
             while (have_rows('left_side')) {
@@ -54,10 +54,14 @@ endif;
 
                 ?>
                 <div class="content">
+                 <?php if($title){?>
                     <h3 class="title-contact word-up"> <?php echo $title; ?> </h3>
+                    <?php } ?>
+                    <?php if($description){ ?>
                     <p class="paragraph-1 word-up small-fz center">
                         <?php echo $description; ?>
                     </p>
+                    <?php } ?>
                     <div class="contact-info">
                         <?php if ($email) { ?>
                             <div class="icon-and-info iv-st-from-bottom">
