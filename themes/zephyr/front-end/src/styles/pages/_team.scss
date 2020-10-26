@@ -1,7 +1,7 @@
 .team-page-wrapper {
     section.component-hero {
         .content {
-            .headline-1 {
+            .headline-1,h1 {
                 max-width: size(220);
                 @include marginY(size(25) ,size(36));
     
@@ -15,7 +15,7 @@
                 }
             }
             
-            .paragraph {
+            .paragraph,p {
                 @include x-large-screen{
                     max-width: size(910);
                 }

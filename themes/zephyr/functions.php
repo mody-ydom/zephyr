@@ -850,6 +850,8 @@ function pageWrapper($page)
             return 'home-page-wrapper';
         case 'say-hello':
             return 'say-hello-wrapper';
+        case 'team';
+            return 'team-page-wrapper';
     }
 }
 

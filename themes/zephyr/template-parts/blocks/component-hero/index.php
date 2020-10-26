@@ -40,10 +40,10 @@ $bg_image=get_field('bg_image');
 </div>
 <?php } ?>
 <div class="container">
-    <div class="content iv-st-from-bottom">
-        <h1 class="headline-1 center">
+    <div class="content">
+        <div class="word-up center">
             <?php echo $block_text; ?>
-        </h1>
+        </div>
         <?php if (have_rows('button')) {
             while (have_rows('button')) {
                 the_row();
