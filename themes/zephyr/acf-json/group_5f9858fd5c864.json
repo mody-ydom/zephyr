@@ -1,9 +1,9 @@
 {
-    "key": "group_5f914391096bd",
-    "title": "component-hero-general",
+    "key": "group_5f9858fd5c864",
+    "title": "component-hero-home",
     "fields": [
         {
-            "key": "field_5f9143910e323",
+            "key": "field_5f9858fd6bbaf",
             "label": "Block Content",
             "name": "",
             "type": "tab",
@@ -23,7 +23,7 @@
             "acfe_form": true
         },
         {
-            "key": "field_5f966d6c04379",
+            "key": "field_5f9858fd6bf4e",
             "label": "Small title",
             "name": "small_title",
             "type": "text",
@@ -42,7 +42,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5f966d780437a",
+            "key": "field_5f9858fd6c33e",
             "label": "Big title",
             "name": "big_title",
             "type": "text",
@@ -61,7 +61,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5f966d820437b",
+            "key": "field_5f9858fd6c733",
             "label": "Paragraph",
             "name": "paragraph",
             "type": "wysiwyg",
@@ -80,31 +80,7 @@
             "delay": 0
         },
         {
-            "key": "field_5f9143910e337",
-            "label": "Background Image",
-            "name": "background_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5f9857cb8ffa2",
+            "key": "field_5f9858fd6cfb8",
             "label": "Button",
             "name": "button",
             "type": "link",
@@ -124,7 +100,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/component-hero-general"
+                "value": "acf\/component-hero-home"
             }
         ]
     ],
@@ -136,5 +112,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603819897
+    "modified": 1603819790
 }

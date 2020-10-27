@@ -13,7 +13,7 @@ section.component-hero {
         height: 100%;
         top: 0;
         left: 0;
-        z-index: -1;
+        z-index: 0;
         
         img {
             width: 100%;
@@ -47,6 +47,7 @@ section.component-hero {
         }
         
         .paragraph,p {
+            color: $zephyr-white;
             @include min-medium-screen {
                 max-width: size(700);
                 margin: 0 auto;
@@ -101,6 +102,14 @@ section.component-hero {
         }
     }
     
+    
+    .btn {
+        margin-top: 50px;
+        color: $zephyr-white;
+        border: 1px solid #fff;
+    }
+    
+    
     &.no-bg {
         background: $zephyr-white;
         z-index: 1;
@@ -115,7 +124,7 @@ section.component-hero {
         }
         
         .content {
-            
+          
             .headline-1, h1 {
                 max-width: size(320);
                 margin: 0 auto;
@@ -124,17 +133,15 @@ section.component-hero {
                     max-width: size(450);
                     line-height: size(60);
                     margin-bottom: size(20);
-                    
                 }
                 @include min-medium-screen {
                     max-width: size(650);
                     font-size: size(35);
-                    margin-bottom: size(40);
+                    margin-bottom: size(20);
                 }
                 @include x-large-screen {
                     max-width: size(850);
                     font-size: size(45);
-                    
                 }
                 
                 span {
@@ -145,6 +152,10 @@ section.component-hero {
             .btn {
                 max-width: size(250);
                 letter-spacing: size(0.2);
+            }
+    
+            .paragraph,p,.headline-6 {
+                color: $zephyr-black;
             }
         }
         
@@ -242,6 +253,12 @@ section.component-hero {
                 }
             }
             
+        }
+    
+        .btn {
+            margin-top: 50px;
+            color: $zephyr-gray;
+            border: 1px solid #4b4b4b;
         }
     }
 }

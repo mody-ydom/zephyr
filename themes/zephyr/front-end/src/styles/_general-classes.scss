@@ -349,15 +349,15 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
 }
 
 // used
-.paragraph, .wysiwyg-block, .wysiwyg-block, p{
-    color: $zephyr-white;
+.paragraph, .wysiwyg-block, .wysiwyg-block,p{
+    //color: $zephyr-white;
     font-family: $Freight;
     font-size: size(14);
     font-weight: 400;
     font-style: normal;
     letter-spacing: size(0.5);
     line-height: size(24);
-    
+
     @include x-large-screen {
         font-size: size(18);
         line-height: size(28);
