@@ -48,6 +48,7 @@ section.component-our-testimonials {
     }
     
     .circle-shape-1, .circle-shape-2 {
+        z-index: 1;
         @include min-medium-screen {
             display: none;
         }
@@ -107,6 +108,8 @@ section.component-our-testimonials {
                 img {
                     @include marginX(auto);
                     margin-bottom: size(17);
+                    border-radius: 50%;
+                    max-width: 50%;
                 }
                 
                 .name {

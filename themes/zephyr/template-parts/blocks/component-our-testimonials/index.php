@@ -31,11 +31,11 @@ $text = get_field('text');
 
 <div class="container">
     <div class="testimonials-wrapper">
-        <div class="circle-shape-1 iv-st-from-bottom">
+        <div class="circle-shape-1">
             <img alt="testimonial-shape-1"
                  src="<?php echo get_template_directory_uri() ?>/assets/images/testimonial-shape-1.png">
         </div>
-        <div class="circle-shape-2 iv-st-from-bottom">
+        <div class="circle-shape-2">
             <img alt="testimonial-shape-2"
                  src="<?php echo get_template_directory_uri() ?>/assets/images/testimonial-shape-2.png">
         </div>
@@ -52,14 +52,14 @@ $text = get_field('text');
                         <div class="testimonial swiper-slide">
                             <div class="testimonials-description">
                                <?php if($text){ ?>
-                                <p class="des-p real-line-up">
+                                <div class="des-p real-line-up">
                                     <?php echo $text; ?>
-                                </p>
+                                </div>
                             <?php } ?>
                             </div>
                             <div class="image-content center">
                                 <?php if ($client_image) { ?>
-                                    <img class="iv-st-from-bottom" alt="<?php echo $client_image['alt']; ?>"
+                                    <img alt="<?php echo $client_image['alt']; ?>"
                                          src="<?php echo $client_image['url']; ?>">
                                 <?php } ?>
                                 <h4 class="name word-up"><?php echo $client_name; ?></h4>

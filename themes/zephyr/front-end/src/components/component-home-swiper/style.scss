@@ -69,10 +69,11 @@ section.component-home-swiper {
                         margin-bottom: size(52);
                     }
                     
-                    svg {
+                    img {
                         flex-shrink: 0;
                         margin-right: size(14);
                         width: size(30);
+                        height: 100%;
                         @include min-medium-screen {
                             width: auto;
                         }

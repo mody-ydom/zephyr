@@ -142,11 +142,45 @@
 	function register_acf_block_types() {
 		//		$developing = true;
 		$developing = false;
+	  acf_register_block_type( array(
+		                           'name'            => 'component-image-gallery',
+		                           'title'           => __( 'Component Images Gallery' ),
+		                           'render_template' => 'template-parts/blocks/component-image-gallery/index.php',
+		                           'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-image-gallery/style.css',
+		                           'category'        => 'zephyr-home',
+		                           'icon'            => 'admin-appearance',
+		                           'mode'            => 'preview',
+		                           'example'         => [
+			                           'attributes' => [
+				                           'mode' => 'preview',
+				                           'data' => [
+					                           'is_screenshot' => true,
+				                           ],
+			                           ]
+		                           ]
+	                           ) );
 		acf_register_block_type( array(
-			                         'name'            => 'component-image-gallery',
-			                         'title'           => __( 'Component Images Gallery' ),
-			                         'render_template' => 'template-parts/blocks/component-image-gallery/index.php',
-			                         'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-image-gallery/style.css',
+        'name' => 'component-hero-home',
+        'title' => __('Component Hero Home'),
+        'render_template' => 'template-parts/blocks/component-hero-home/index.php',
+        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-hero-home/style.css',
+        'category' => 'zephyr-home',
+        'icon' => 'admin-appearance',
+        'mode' => 'preview',
+        'example' => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [
+                    'is_screenshot' => true,
+                ],
+            ]
+        ]
+    ));
+    acf_register_block_type(array(
+        'name' => 'component-hero-general',
+        'title' => __('Component Hero General'),
+        'render_template' => 'template-parts/blocks/component-hero-general/index.php',
+        'enqueue_style' => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-hero-general/style.css',
 			                         'category'        => 'zephyr-home',
 			                         'icon'            => 'admin-appearance',
 			                         'mode'            => 'preview',

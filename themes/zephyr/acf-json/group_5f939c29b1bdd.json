@@ -45,7 +45,7 @@
             "key": "field_5f939c866541f",
             "label": "Text",
             "name": "text",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -56,9 +56,9 @@
             },
             "default_value": "By combining creative thinking and technical insight, we deliver digital marketing that grows your business and delights your users.",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -78,5 +78,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603509400
+    "modified": 1603905137
 }

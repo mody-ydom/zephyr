@@ -1,15 +1,17 @@
 import './index.html';
 import {gsap} from 'gsap';
-import Swiper,{Pagination} from 'swiper';
+import Swiper,{Pagination,EffectFade} from 'swiper';
 import 'swiper/swiper.scss';
+import 'swiper/components/effect-fade/effect-fade.scss';
 export default (container = document) => {
   let homeSwiper = container.querySelector('.component-home-swiper');
   if (!homeSwiper) return;
   const homeSwiperTitle = container.querySelectorAll('.home-swiper .category-title')
-  Swiper.use([Pagination]);
+  Swiper.use([Pagination,EffectFade]);
   let swiper = new Swiper('.home-swiper-container', {
     slidesPerView: 1,
     spaceBetween: 30,
+    effect:'fade',
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
