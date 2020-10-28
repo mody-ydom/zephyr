@@ -6,7 +6,10 @@ const glob = require('glob');
 
 module.exports = function (env, argv) {
   const files = glob.sync('./src/components/**/*.js');
-  const entry = argv.mode === 'development' ? {'general': ['./src/index.js']} : {'general': ['./src/index.js', './src/components/header-component/style.scss', './src/components/footer-component/style.scss']};
+  const entry = argv.mode === 'development' ? {'general': ['./src/index.js']} : {
+    'general': ['./src/index.js', './src/components/header-component/style.scss', './src/components/footer-component/style.scss'],
+    'admin': './src/styles/_admin.scss',
+  };
   for (const file of files) {
     const fileName = file.match(/components\/(.*)\/index\.js/);
     if (fileName) {
@@ -20,7 +23,7 @@ module.exports = function (env, argv) {
     entry,
     output: {
       filename: (pathData) => {
-        return pathData.chunk.name === 'general' ? 'main.js' : 'trash-compiled-files/[name].js';
+        return pathData.chunk.name === 'general' ? (env.isAdmin ? 'admin.js' : 'main.js') : 'trash-compiled-files/[name].js';
       },
       path: path.resolve(__dirname, '../assets/'),
       publicPath: './',
@@ -149,10 +152,11 @@ module.exports = function (env, argv) {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        moduleFilename: ({name}) => name === 'general' ? 'main.css' : '../template-parts/blocks/[name]/style.css',
+        moduleFilename: ({name}) => name === 'general' ? 'main.css' : name === 'admin' ? 'admin.css' : '../template-parts/blocks/[name]/style.css',
       }),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+        'NODE_ENV_ADMIN': env && !!env.isAdmin,
       }),
     ],
     devtool: argv.mode === 'production' ? 'cheap-module-source-map' : 'eval-cheap-module-source-map',

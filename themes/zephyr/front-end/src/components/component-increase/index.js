@@ -9,7 +9,7 @@ export default (container = document) => {
   let init = false;
   
   function swiperMode() {
-    let mobile = window.matchMedia('(min-width: 0px) and (max-width: 1024px)');
+    let mobile = window.matchMedia('(max-width: 1023.98px)');
     let desktop = window.matchMedia('(min-width: 1024px)');
     
     // Enable (for mobile)

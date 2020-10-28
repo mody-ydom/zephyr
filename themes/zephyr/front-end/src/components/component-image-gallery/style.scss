@@ -1,0 +1,114 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+section.component-image-gallery {
+    .images-grid {
+        display: grid;
+        grid-column-gap: 15px;
+        grid-row-gap: 43px;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 20px;
+        @include min-small-screen {
+            grid-template-columns: 1fr 1fr;
+            grid-row-gap: 53px;
+            grid-column-gap: 76px;
+        }
+    }
+    
+    .grid-item {
+        width: 100%;
+        
+        &.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        transition: grid-row-end 400ms;
+    }
+    
+    .image-item-container {
+        width: 100%;
+    }
+    
+    .image-wrapper {
+        position: relative;
+        padding-top: size(57);
+        
+        &.pt-0 {
+            padding-top: 0;
+        }
+        
+        &.full-width {
+            padding-top: 50.13%;
+            height: 0;
+            overflow: visible;
+            
+            img.bg {
+                position: absolute;
+            }
+            
+            img.left {
+                height: auto;
+                left: 0;
+                top: 50%;
+                bottom: unset;
+                transform: translateY(-50%);
+            }
+        }
+        
+        overflow: hidden;
+        
+        img {
+            position: absolute;
+            
+            &.bg {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            
+            &.right {
+                width: 62%;
+                right: 0;
+                height: auto;
+                left: auto;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 2;
+            }
+            
+            &.left {
+                width: 62%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                height: auto;
+            }
+        }
+    }
+    
+    .content {
+        .small-title {
+            @include marginY(size(23), size(4));
+        }
+        
+        .large-title {
+            @include marginY(size(4));
+        }
+        
+        .description {
+            @include marginY(size(23));
+            @include min-small-screen {
+                max-width: 92.26%;
+                padding-right: size(11);
+            }
+        }
+        
+        .large-title + .description {
+            margin-top: 0;
+        }
+    }
+}
