@@ -38,14 +38,14 @@
             "collapsed": "",
             "min": 0,
             "max": 0,
-            "layout": "table",
+            "layout": "block",
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_5f93c70d7c07d",
-                    "label": "Left Side",
-                    "name": "left_side",
-                    "type": "group",
+                    "key": "field_5f99ab25e1b68",
+                    "label": "Background Color",
+                    "name": "background_color",
+                    "type": "extended-color-picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -54,136 +54,15 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5f93af26cbfd0",
-                            "label": "Title",
-                            "name": "title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "step 1 digital strategy",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5f93af5ecbfd1",
-                            "label": "Content",
-                            "name": "content",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "We immerse ourselves in our client’s worlds in order to seize opportunities.",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5f93af8ccbfd2",
-                            "label": "Blocks",
-                            "name": "blocks",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 0,
-                            "layout": "table",
-                            "button_label": "",
-                            "sub_fields": [
-                                {
-                                    "key": "field_5f93af9dcbfd3",
-                                    "label": "Image",
-                                    "name": "image",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "preview_size": "medium",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": ""
-                                },
-                                {
-                                    "key": "field_5f93afa4cbfd4",
-                                    "label": "Block title",
-                                    "name": "block_title",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "Go to Market Strategy",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_5f93afb5cbfd5",
-                                    "label": "Block Text",
-                                    "name": "block_text",
-                                    "type": "textarea",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla.",
-                                    "placeholder": "",
-                                    "maxlength": "",
-                                    "rows": "",
-                                    "new_lines": ""
-                                }
-                            ]
-                        }
-                    ]
+                    "default_value": "#FF9B78",
+                    "color_palette": "#FF9B78, #6BE3A8, #C7E4D8",
+                    "hide_palette": 0
                 },
                 {
-                    "key": "field_5f93c6f57c07b",
-                    "label": "Right side",
-                    "name": "right_side",
-                    "type": "group",
+                    "key": "field_5f93c7017c07c",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -192,10 +71,76 @@
                         "class": "",
                         "id": ""
                     },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5f93af26cbfd0",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "step 1 digital strategy",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5f93af5ecbfd1",
+                    "label": "Content",
+                    "name": "content",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "We immerse ourselves in our client’s worlds in order to seize opportunities.",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5f93af8ccbfd2",
+                    "label": "Blocks",
+                    "name": "blocks",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
                     "layout": "block",
+                    "button_label": "",
                     "sub_fields": [
                         {
-                            "key": "field_5f93c7017c07c",
+                            "key": "field_5f93af9dcbfd3",
                             "label": "Image",
                             "name": "image",
                             "type": "image",
@@ -217,6 +162,44 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_5f93afa4cbfd4",
+                            "label": "Block title",
+                            "name": "block_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Go to Market Strategy",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5f93afb5cbfd5",
+                            "label": "Block Text",
+                            "name": "block_text",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla.",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
                         }
                     ]
                 }
@@ -240,5 +223,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603520420
+    "modified": 1603906648
 }
