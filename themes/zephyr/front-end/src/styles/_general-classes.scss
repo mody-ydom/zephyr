@@ -472,6 +472,8 @@ ol {
 
 
 .wysiwyg-block {
+    margin-top: size(100);
+    
     h6 {
         color: $zephyr-gray;
         font-family: $Sailec;
@@ -1134,11 +1136,12 @@ section.component-our-journey .our-journey .our-journey-content .journey-box img
     transform: translateX(-50%);
 }
 
-.wpcf7-response-output.wpcf7-mail-sent-ok {
-    color: #4F8A10;
-    background-color: #DFF2BF;
+
+.wpcf7 form.sent .wpcf7-response-output {
     border: 0;
     padding: 10px;
+    color: #4F8A10;
+    background-color: #DFF2BF;
 }
 
 .loop-page-wrapper{
