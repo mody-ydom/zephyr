@@ -39,7 +39,7 @@ $button = get_field('button');
       <div class="paragraph real-line-up center"><?=$paragraph;?> </div>
     <?php } ?>
     <?php if ($button['title']) { ?>
-      <a class="btn" href="<?=$button['url'];?>"><?=$button['title'];?></a>
+      <a class="btn iv-st-from-bottom" href="<?=$button['url'];?>"><?=$button['title'];?></a>
     <?php } ?>
   </div>
 </div>

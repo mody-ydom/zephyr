@@ -73,13 +73,13 @@
       <div class="content">
 		  <?php
 			  if ( $small_title ) { ?>
-                <h5 class="small-title headline-5"><?=$small_title?></h5>
+                <h5 class="small-title word-up headline-5"><?=$small_title?></h5>
 			  <?php }
 			  if ( $large_title ) { ?>
-                <h4 class="large-title headline-4"><?=$large_title?></h4>
+                <h4 class="large-title word-up headline-4"><?=$large_title?></h4>
 			  <?php }
 			  if ( $description ) { ?>
-                <p class="description paragraph-1"><?=$description?></p>
+                <p class="description real-line-up paragraph-1"><?=$description?></p>
 			  <?php } ?>
       </div>
     </div>

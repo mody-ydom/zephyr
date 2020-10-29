@@ -27,7 +27,7 @@ $text_block = get_field('text_block');
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
 <div class="container">
-  <div class="wysiwyg-block">
+  <div class="wysiwyg-block real-line-up">
     <?=$text_block?>
   </div>
 </div>
