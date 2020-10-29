@@ -19,13 +19,13 @@ section.component-contact-us {
         
         .data {
             background: $zephyr-gray;
-            padding: size(54) size(27) size(35);
+            padding: size(54) size(27) size(50);
             width: 100%;
             margin-bottom: size(60);
             @include min-small-screen {
                 flex-basis: 50%;
                 margin-bottom: 0;
-                padding: size(50) size(20) size(90);
+                padding: size(50) size(20) size(50);
                 border-left: 1px solid $zephyr-black;
                 
             }
@@ -50,6 +50,7 @@ section.component-contact-us {
                 display: flex;
                 flex-direction: column;
                 margin: auto;
+                position: relative;
                 
                 @include x-large-screen {
                     max-width: size(310);
@@ -60,7 +61,7 @@ section.component-contact-us {
                     min-height: size(42);
                     @include paddingX(size(16));
                     border: 1px solid #c7c7c7;
-                    margin-bottom: size(15);
+                    margin-bottom: size(24);
                 }
                 
                 textarea {
@@ -68,10 +69,7 @@ section.component-contact-us {
                     resize: none;
                     margin-bottom: size(34);
                     padding-top: size(10);
-                    @include x-large-screen {
-                        margin-bottom: size(63);
-                    }
-                    
+                 
                     &::-webkit-scrollbar {
                         width: 2px;
                         border-radius: 50px;
@@ -98,6 +96,7 @@ section.component-contact-us {
                     border: 1px solid #4b4b4b;
                     min-width: size(189);
                 }
+                cursor: pointer;
             }
             
             .arrow {
@@ -188,6 +187,7 @@ section.component-contact-us {
                         .paragraph-1 {
                             transition: all 400ms ease-in-out;
                             margin-left: size(36);
+                            display: inline-block;
                             @include min-small-screen {
                                 line-height: size(21);
                                 margin-left: size(21);
@@ -235,7 +235,21 @@ section.component-contact-us {
                 position: relative;
                 flex-basis: 42%;
                 height: 100%;
-                padding: size(50) size(20) size(140);
+                padding: size(50) size(20) size(50);
+                @include min-small-screen {
+                    flex-basis: 50%;
+                    margin-bottom: 0;
+                    padding: size(50) size(20) size(50);
+                    border-left: 1px solid $zephyr-black;
+        
+                }
+                @include min-medium-screen {
+                    flex-basis: 45%;
+                }
+                @include x-large-screen {
+                    padding: size(61) size(58) size(61) size(41);
+                    flex-basis: 41%;
+                }
     
                 form {
                     textarea {
@@ -324,6 +338,7 @@ section.component-contact-us {
                             .paragraph-1 {
                                 opacity: 0.85;
                                 margin-left: 0;
+                                display: inline-block;
                             }
                         }
                         

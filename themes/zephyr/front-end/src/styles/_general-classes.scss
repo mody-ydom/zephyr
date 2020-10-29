@@ -908,3 +908,40 @@ section.component-our-journey .our-journey .our-journey-content .journey-box img
     margin-left: auto;
     margin-right: auto;
 }
+
+.wpcf7-not-valid-tip {
+    font-size: 10px;
+    color: #D8000C;
+    background-color: #FFBABA;
+    border: 0;
+    position: absolute !important;
+    bottom: 100%;
+    max-width: 500px;
+    box-shadow: none;
+    width: fit-content;
+    padding: 4px 12px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+.wpcf7-form-control-wrap{
+    display: inline-block;
+}
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output {
+    position: absolute;
+    top: 98%;
+    width: fit-content;
+    color: #D8000C;
+    background-color: #FFBABA;
+    border: 0;
+    padding: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.wpcf7-response-output.wpcf7-mail-sent-ok {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    border: 0;
+    padding: 10px;
+}
