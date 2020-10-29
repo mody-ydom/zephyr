@@ -23,44 +23,6 @@
             "acfe_form": true
         },
         {
-            "key": "field_5f902bc50bda4",
-            "label": "Block Title",
-            "name": "block_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "OUR JOURNEY",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5f902be20bda5",
-            "label": "Block SubTitle",
-            "name": "block_subtitle",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "How we became the UK leading retailer",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5f902bff0bda6",
             "label": "Journey Boxes",
             "name": "journey_boxes",
@@ -197,5 +159,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603709962
+    "modified": 1603939696
 }

@@ -22,18 +22,11 @@ endif;
 /****************************
  *     Custom ACF Meta      *
  ****************************/
-$block_title = get_field('block_title');
-$block_subtitle = get_field('block_subtitle');
-
 ?>
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
 <div class="container">
   <div class="our-journey">
-    <div class="our-journey-title center">
-      <?php if($block_title){ ?><h6 class="headline-6 normal word-up"><?=$block_title?></h6><?php }?>
-      <?php if($block_subtitle){ ?><h2 class="headline-2 word-up"><?=$block_subtitle?></h2><?php }?>
-    </div>
     <div class="our-journey-content swiper-container">
       <div class="swiper-wrapper row row-swiper">
         <?php while (have_rows('journey_boxes')):the_row();
