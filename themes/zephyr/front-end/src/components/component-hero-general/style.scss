@@ -42,6 +42,7 @@ section.component-hero {
             @include marginY(size(18), size(25));
             @include min-medium-screen {
                 color: $zephyr-white;
+                max-width: 70%;
                 @include marginY(size(18), size(22));
             }
         }
