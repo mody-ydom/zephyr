@@ -10,7 +10,7 @@ section a {
     width: auto;
 }
 
-[class^="iv-st"], [class*=" iv-st"] {
+[class^="iv-st"], [class*=" iv-st"],.iv-st-from-top, .iv-st-from-bottom, .iv-st-from-left, .iv-st-from-right, .word-up, .line-up, .real-line-up {
     opacity: 1 !important;
     visibility: visible !important;
 }
@@ -76,4 +76,9 @@ div.block-editor-block-preview__content {
 .wp-block-freeform.block-library-rich-text__tinymce p {
     min-height: 2vh;
     margin: 0 !important;
+}
+
+input, textarea {
+    border: 1px solid #7e8993;
+    color: #000000;
 }

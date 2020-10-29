@@ -35,7 +35,7 @@ export default function realLinesUpAnimation(container = document, selector = '.
     gsap.set(splitRealLines.lines, {yPercent: 0});
     splitRealLines.revert();
     prepareLines();
-  }, 200));
+  }, 500));
   
   
   function prepareLines() {
