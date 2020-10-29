@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "file": "trash-compiled-files/component-hero-home.js",
-    "sources": [
-        "webpack:///trash-compiled-files/component-hero-home.js"
-    ],
-    "mappings": "AAAA;;;;;;;;;AA8FA;;;;;;;;;AA2uHA;;;;;;;;;;AA66CA",
-    "sourceRoot": ""
-}
+{"version":3,"file":"trash-compiled-files/component-hero-home.js","sources":["webpack:///trash-compiled-files/component-hero-home.js"],"mappings":"AAAA;;;;;;;;;AA8FA;;;;;;;;;AA2uHA;;;;;;;;;;AA66CA","sourceRoot":""}

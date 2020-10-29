@@ -38,7 +38,9 @@
         .guide-container {
             @include paddingX(size(42), size(22));
             padding-bottom: size(24);
-            
+            ol>li h3{
+                padding-right: size(10);
+            }
         }
         @include min-small-screen{
             margin-bottom: size(100);
@@ -119,20 +121,22 @@
         
         .written-by {
             max-width: size(260);
-            justify-content: center;
+            justify-content: start;
             flex-direction: column;
             @include marginX(auto);
             margin-top: size(62);
             @include min-medium-screen {
                 margin-top: size(50);
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: start;
                 @include marginX(0);
             }
             
             img {
                 margin-bottom: size(12);
                 border-radius: 50%;
+                width: size(55);
+                height: size(55);
                 @include min-medium-screen {
                     margin-bottom: 0;
                 }
@@ -140,6 +144,7 @@
             
             p {
                 text-align: center;
+                margin-left: size(30);
                 @include min-medium-screen {
                     text-align: left;
                 }
@@ -150,6 +155,7 @@
                     letter-spacing: size(0.17);
                     display: block;
                     margin-top: size(7);
+                    margin-left: 7px;
                     @include min-medium-screen {
                         display: inline;
                         margin-top: 0;
@@ -208,5 +214,11 @@ section.component-growth-guide {
     @include marginY(size(200), size(108));
     @include min-medium-screen {
         @include marginY(size(119), size(147));
+    }
+    .wysiwyg-block{
+        margin-top: 20px;
+    }
+    .wp-block-image {
+        margin: 3.5rem 0;
     }
 }

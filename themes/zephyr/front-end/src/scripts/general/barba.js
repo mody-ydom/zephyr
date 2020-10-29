@@ -15,7 +15,7 @@ export default (reInvokableFunction) => {
       const background = '.skew-overlay-transition';
       return gsap.timeline()
         .set(background, {
-          xPercent: -110,
+          xPercent: -105,
           display: 'block',
           skewX: 10,
         })
@@ -43,7 +43,7 @@ export default (reInvokableFunction) => {
         })
         .to(background, {
           duration: 0.6,
-          xPercent: 100,
+          xPercent: 105,
           ease: 'power4.inOut',
         })
         .set(background, {
@@ -88,7 +88,6 @@ export default (reInvokableFunction) => {
     enter(data) {
       gsap.set(data.current.container, {zIndex: -1, position: 'absolute'});
       if (data.next.namespace === 'blog') {
-        console.log('333333333333');
         const background = '.skew-overlay-transition';
         gsap.timeline()
           .set(background, {
@@ -97,7 +96,7 @@ export default (reInvokableFunction) => {
           })
           .to(background, {
             duration: 0.6,
-            xPercent: 100,
+            xPercent: 105,
             ease: 'power4.inOut',
           })
           .set(background, {
@@ -136,9 +135,9 @@ export default (reInvokableFunction) => {
       .fromTo('.barba-overlay-transition', {yPercent: 0, y: 0},
         {duration: 0, y: 0, yPercent: -100});
     gsap.timeline()
-      .fromTo('.skew-overlay-transition', {xPercent: -100}, {duration: 0, xPercent: 0})
+      .fromTo('.skew-overlay-transition', {xPercent: -105}, {duration: 0, xPercent: 0})
       .fromTo('.skew-overlay-transition', {xPercent: 0, x: 0},
-        {duration: 0, x: 0, xPercent: 100});
+        {duration: 0, x: 0, xPercent: 105});
   
   }
   else {
