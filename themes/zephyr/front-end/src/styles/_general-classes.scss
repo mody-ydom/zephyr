@@ -331,7 +331,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     font-size: size(18);
     font-weight: 400;
     font-style: italic;
-    line-height: normal;
+    line-height: size(44);
     letter-spacing: size(0.16);
     @include x-large-screen {
         font-size: size(24);
@@ -416,10 +416,10 @@ ol {
                 font-size: size(13);
                 letter-spacing: size(0.22);
                 line-height: size(24);
-                font-weight: 400;
-                font-style: italic;
+                font-weight: 500;
                 cursor: pointer;
                 transition: all 400ms;
+                font-style: normal;
                 
                 &:not(:last-child) {
                     margin-bottom: size(8);
@@ -439,7 +439,7 @@ ol {
                 &:before {
                     content: counters(item, ".") " ";
                     position: absolute;
-                    right: calc(100% - 17px);
+                    right: calc(100% - 24px);
                 }
                 &:after{
                     content: '';
@@ -575,9 +575,9 @@ ol {
     }
     
     img{
-        top: 0;
-        height: 100%;
-        object-fit: cover;
+        max-width: 100%;
+        object-fit: contain;
+        height: auto;
     }
     
     select{
@@ -662,11 +662,11 @@ ol {
             }
         }
         
-        svg {
+        button {
             cursor: pointer;
             position: absolute;
             top: 50%;
-            right: size(48);
+            right: 0;
             transform: translateY(-50%);
         }
     }
@@ -761,6 +761,11 @@ ol {
             
             .guide-content {
                 margin-top: size(10);
+                height: auto;
+                
+                li.sub-list-item.active{
+                    font-style: italic;
+                }
             }
             
             .icons {
@@ -1118,4 +1123,36 @@ section.component-our-journey .our-journey .our-journey-content .journey-box img
     background-color: #DFF2BF;
     border: 0;
     padding: 10px;
+}
+
+.loop-page-wrapper{
+    margin-top: size(160);
+    .headline-2{
+        text-align: center;
+        margin-bottom: 50px;
+        text-transform: capitalize;
+        span{
+            color: $zephyr-green;
+            font-weight: bolder;
+        }
+    }
+    .right-content{
+        padding-top: 0!important;
+    }
+    .single-card{
+        margin-bottom: 50px;
+        border-bottom: 1px solid $zephyr-green;
+        padding-bottom: 50px;
+        .headline-4{
+            margin-bottom: 10px;
+        }
+    }
+    .there-is-no-results{
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        text-align: center;
+    }
 }

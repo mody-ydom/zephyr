@@ -54,6 +54,12 @@
     font-weight: 500;
     font-style: italic;
     font-display: swap;
+}@font-face {
+    font-family: $Freight;
+    src: url('./fonts/freightTextProMedium-Italic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
 }
 @font-face {
     font-family: $Freight;
