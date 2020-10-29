@@ -4,13 +4,20 @@ import {barba, animations, fixContainer, smoothScroll} from './scripts/general';
 import * as components from './components';
 import './html';
 import Scrollbar from 'smooth-scrollbar';
+import {gsap} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+
 
 const isAdmin = NODE_ENV_ADMIN;
 const reInvokableFunction = (container = document) => {
   
   const bodyScrollBar = Scrollbar.get(document.querySelector('[smooth-scroll-container]'));
+  bodyScrollBar.updatePluginOptions('dampScroll', {amount: 0});
   bodyScrollBar.scrollTo(0, 0);
   bodyScrollBar.update();
+  for (let scrollTriggerInstance of ScrollTrigger.getAll()) {
+    scrollTriggerInstance.kill();
+  }
   for (const component of Object.values(components)) {
     requestAnimationFrame(() => requestAnimationFrame(() => component(container)));
   }
@@ -23,6 +30,7 @@ function onLoad() {
   if (document.readyState === 'interactive') {
     fixContainer();
     if (!isAdmin) {
+      gsap.registerPlugin(ScrollTrigger);
       smoothScroll();
       barba(reInvokableFunction);
       reInvokableFunction();

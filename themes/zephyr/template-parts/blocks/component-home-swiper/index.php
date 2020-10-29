@@ -22,30 +22,29 @@ endif;
 /****************************
  *     Custom ACF Meta      *
  ****************************/
-$grid_no = 1;
 ?>
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
 <div class="container">
   <div class="home-swiper-container swiper-container">
     <div class="swiper-wrapper">
-      <?php if (have_rows('swiper_card')) { ?>
         <?php while (have_rows('swiper_card')) {
-          the_row();
-          $main_image = get_sub_field('image');
-          $title = get_sub_field('title');
-          $content = get_sub_field('content');
-          ?>
-          <div class="home-swiper swiper-slide d-flex">
-            
+	        the_row();
+	        $main_image       = get_sub_field( 'image' );
+	        $title            = get_sub_field( 'title' );
+	        $content          = get_sub_field( 'content' );
+	        $background_color = get_sub_field( 'background_color' );
+	        ?>
+          <div class="home-swiper swiper-slide d-flex" style="background-color: <?=$background_color?>;">
+    
             <div class="left-side iv-st-from-bottom">
               <div class="left-side-title">
-                <?php if ($title) { ?>
-                  <h6 class="headline-6 normal word-up"><?=$title; ?></h6>
-                <?php } ?>
-                <?php if ($content) { ?>
-                  <h5 class="sub-title real-line-up"><?=$content; ?></h5>
-                <?php } ?>
+		          <?php if ( $title ) { ?>
+                    <h6 class="headline-6 normal word-up"><?=$title;?></h6>
+		          <?php } ?>
+		          <?php if ( $content ) { ?>
+                    <h5 class="sub-title real-line-up"><?=$content;?></h5>
+		          <?php } ?>
               </div>
               <?php if (have_rows('blocks')) {
                 ?>
@@ -82,17 +81,16 @@ $grid_no = 1;
                 </div>
               <?php } ?>
             </div>
-            
+    
             <div class="right-side">
               <div class="image-wrapper iv-st-from-bottom">
-                <img alt="<?=$main_image['alt']; ?>"
-                     src="<?=$main_image['url']; ?>" />
+                <img alt="<?=$main_image['alt'];?>"
+                     src="<?=$main_image['url'];?>"/>
               </div>
             </div>
-          
+  
           </div>
-        <?php }
-      } ?>
+        <?php } ?>
     </div>
     <div class="swiper-pagination small-pagination"></div>
   </div>

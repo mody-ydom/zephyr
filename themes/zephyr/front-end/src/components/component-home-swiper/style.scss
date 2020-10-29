@@ -10,8 +10,9 @@ section.component-home-swiper {
     
     .home-swiper-container {
         .home-swiper {
+            height: auto;
+    
             .left-side {
-                background: $zephyr-milky;
                 @include paddingY(size(47), size(55));
                 @include paddingX(size(25));
                 @include min-medium-screen {

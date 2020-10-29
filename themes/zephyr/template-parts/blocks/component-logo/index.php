@@ -22,7 +22,6 @@ endif;
 /****************************
  *     Custom ACF Meta      *
  ****************************/
-$grid_no = 1;
 ?>
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
