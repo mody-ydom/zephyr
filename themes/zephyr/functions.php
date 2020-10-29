@@ -140,8 +140,8 @@
 	
 	add_filter( 'block_categories', 'my_plugin_block_categories' );
 	function register_acf_block_types() {
-		//		$developing = true;
-		$developing = false;
+				$developing = true;
+//		$developing = false;
 	  acf_register_block_type( array(
 		                           'name'            => 'component-image-gallery',
 		                           'title'           => __( 'Component Images Gallery' ),
@@ -362,24 +362,6 @@
 			                         'title'           => __( 'Component Increase' ),
 			                         'render_template' => 'template-parts/blocks/component-increase/index.php',
 			                         'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-increase/style.css',
-			                         'category'        => 'zephyr-sector-expertise',
-			                         'icon'            => 'admin-users',
-			                         'mode'            => 'preview',
-			                         'example'         => [
-				                         'attributes' => [
-					                         'mode' => 'preview',
-					                         'data' => [
-						                         'is_screenshot' => true,
-					                         ],
-				                         ]
-			                         ]
-		                         ) );
-		
-		acf_register_block_type( array(
-			                         'name'            => 'component-sector-expertise-image-2',
-			                         'title'           => __( 'Component sector Expertise Image 2' ),
-			                         'render_template' => 'template-parts/blocks/component-sector-expertise-image-2/index.php',
-			                         'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-sector-expertise-image-2/style.css',
 			                         'category'        => 'zephyr-sector-expertise',
 			                         'icon'            => 'admin-users',
 			                         'mode'            => 'preview',
