@@ -11,9 +11,10 @@ section.component-hero .test-blob {
     right: 8%;
     width: 25rem;
     height: 25rem;
-    background: #B9F5E6;
-    z-index:-1;-webkit-animation: morph 25s linear infinite alternate, moveX 25s ease-in-out infinite alternate-reverse, moveY 15s ease-in-out infinite alternate;
-    animation: morph 25s linear infinite alternate, moveX 25s ease-in-out infinite alternate-reverse, moveY 15s ease-in-out infinite alternate
+    background: #b9f5e6;
+    z-index: -1;
+    -webkit-animation: morph 5s linear infinite alternate, moveX 25s ease-in-out infinite alternate-reverse, moveY 15s ease-in-out infinite alternate;
+    animation: morph 5s linear infinite alternate, moveX 25s ease-in-out infinite alternate-reverse, moveY 15s ease-in-out infinite alternate
 }
 
 @media screen and (min-width: 400px) {
