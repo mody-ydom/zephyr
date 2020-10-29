@@ -13,7 +13,7 @@ if (!defined('_S_VERSION')) {
   define('_S_VERSION', '1.0.0');
 }
 
-if (!function_exists('half_serious_setup')) :
+if (!function_exists('zephyr_setup')) :
   /**
    * Sets up theme defaults and registers support for various WordPress features.
    *
@@ -21,7 +21,7 @@ if (!function_exists('half_serious_setup')) :
    * runs before the init hook. The init hook is too late for some features, such
    * as indicating support for post thumbnails.
    */
-  function half_serious_setup() {
+  function zephyr_setup() {
     /*
  * Make theme available for translation.
  * Translations can be filed in the /languages/ directory.
@@ -61,20 +61,23 @@ if (!function_exists('half_serious_setup')) :
     ));
   }
 endif;
-add_action('after_setup_theme', 'half_serious_setup');
+add_action('after_setup_theme', 'zephyr_setup');
 
 /**
  * Enqueue scripts and styles.
  */
-function half_serious_scripts() {
-  wp_enqueue_style('Zephyr', get_template_directory_uri() . '/assets/main.css', []);
-  wp_enqueue_script('Zephyr', get_template_directory_uri() . '/assets/main.js', [], null, true);
+function zephyr_scripts() {
+  if(is_singular( 'post' ) || is_page_template( 'archive.php' )){
+    wp_enqueue_style('single',get_template_directory_uri() . '/template-parts/blocks/component-growth-guide/style.css',['zephyr']);
+  }
+  wp_enqueue_style('zephyr', get_template_directory_uri() . '/assets/main.css', []);
+  wp_enqueue_script('zephyr', get_template_directory_uri() . '/assets/main.js', [], null, true);
   wp_deregister_script('autosave');
   
 }
 
-//add_action('admin_enqueue_scripts', 'half_serious_scripts');
-add_action('wp_enqueue_scripts', 'half_serious_scripts');
+//add_action('admin_enqueue_scripts', 'zephyr_scripts');
+add_action('wp_enqueue_scripts', 'zephyr_scripts');
 
 add_action('init', 'add_admin_style_to_post_page_only');
 function add_admin_style_to_post_page_only() {
@@ -767,3 +770,4 @@ function post_cards_loop() {
   </div> <?php
   
 }
+
