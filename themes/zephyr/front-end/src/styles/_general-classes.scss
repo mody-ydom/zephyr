@@ -586,7 +586,7 @@ ol {
         letter-spacing: size(0.5);
         line-height: size(24);
         @include x-large-screen {
-            line-height: size(24);
+            line-height: size(26);
             font-size: size(15);
         }
     }
