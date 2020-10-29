@@ -13,9 +13,9 @@ section.component-hero {
         right: 8%;
         width: size(250);
         height: size(250);
-        background: #B9F5E6;
+        background: #b9f5e6;
         z-index: -1;
-        animation: morph 25s linear infinite alternate, moveX 15s ease-in-out infinite alternate-reverse, moveY 10s ease-in-out infinite alternate;
+        animation: morph 5s linear infinite alternate, moveX 25s ease-in-out infinite alternate-reverse, moveY 15s ease-in-out infinite alternate;
         @include min-x-small-screen {
             right: -35%;
         }

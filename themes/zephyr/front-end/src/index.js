@@ -23,7 +23,7 @@ const reInvokableFunction = (container = document) => {
   }
   setTimeout(function () {
     animations(container);
-  }, 100);
+  }, 400);
 };
 
 function onLoad() {
