@@ -7,6 +7,59 @@ section.component-hero {
     display: flex;
     align-items: center;
     
+    .test-blob {
+        position: absolute;
+        top: 33.3rem;
+        right: 8%;
+        width: size(250);
+        height: size(250);
+        background: #B9F5E6;
+        animation: morph 25s linear infinite alternate, moveX 15s ease-in-out infinite alternate-reverse, moveY 10s ease-in-out infinite alternate;
+        @include min-x-small-screen {
+            right: -35%;
+        }
+        @include min-small-screen {
+            width: size(240);
+            height: size(240);
+            right: -21%;
+        }
+        @include min-medium-screen {
+            width: size(285);
+            height: size(285);
+            top: size(300);
+            right: 5%;
+        }
+        @include x-large-screen {
+            width: size(285);
+            height: size(285);
+            top: size(333);
+            right: 8%;
+        }
+        @keyframes morph {
+            0% {
+                border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%
+            }
+            100% {
+                border-radius: 40% 60%
+            }
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(1turn)
+            }
+        }
+        @keyframes moveX {
+            to {
+                transform: translateX(20%);
+            }
+        }
+        @keyframes moveY {
+            to {
+                transform: translateY(20%);
+            }
+        }
+    }
+    
     .hero-image {
         position: absolute;
         width: 100%;
@@ -229,6 +282,7 @@ section.component-hero {
             
             &.oval {
                 top: size(405);
+                display: none;
                 right: -47%;
                 
                 @include min-x-small-screen {
