@@ -52,6 +52,7 @@
     "scripts": {
         "start": "webpack-dev-server -d",
         "build": "webpack -p",
+        "build-admin": "webpack -p --env.isAdmin=true",
         "build-watch": "webpack -p -w",
         "build-dev-watch": "webpack -d -w",
         "update:packages": "node wipe-dependencies.js&& rm -rf node_modules && npm update --save-dev && npm update --save"
