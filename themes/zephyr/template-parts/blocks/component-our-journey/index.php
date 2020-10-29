@@ -35,19 +35,19 @@ endif;
           $title = get_sub_field('title');
           $text = get_sub_field('text');
           $background_color = get_sub_field('background_color'); ?>
-          <div class="swiper-slide iv-st-from-bottom col-xl-4">
-            <div class="journey-box center" style="background: <?=$background_color?$background_color:'#cce7dc'; ?>">
+          <div class="swiper-slide col-xl-4">
+            <div class="journey-box center iv-st-from-bottom" style="background: <?=$background_color?$background_color:'#cce7dc'; ?>">
                 <?php if($top_title){ ?>
-              <h6 class="headline-6 word-up"><?=$top_title?></h6>
+              <h6 class="headline-6"><?=$top_title?></h6>
                 <?php } ?>
                 <?php if($icon){ ?>
-              <img class="iv-st-from-bottom" src="<?=$icon['url']?>" alt="<?=$icon['alt']?>">
+              <img src="<?=$icon['url']?>" alt="<?=$icon['alt']?>">
                 <?php } ?>
                 <?php if($title){ ?>
-              <h3 class="small-headline word-up"><?=$title?></h3>
+              <h3 class="small-headline"><?=$title?></h3>
                 <?php } ?>
                 <?php if($text){ ?>
-                <div class="paragraph-1 real-line-up">
+                <div class="paragraph-1">
                 <?=$text?>
               </div>
                 <?php } ?>
