@@ -23,7 +23,28 @@ class DisableScrollPlugin extends ScrollbarPlugin {
   }
 }
 
+class DampScrollPlugin extends ScrollbarPlugin {
+  static pluginName = 'dampScroll';
+  
+  static defaultOptions = {
+    amount: 0,
+  };
+  
+  
+  transformDelta(delta, _) {
+    delta.y *= (1 - this.options.amount);
+    if (this.options.amount === 0.999) delta.y = delta.y > 0 ? 2 : -2;
+    return {...delta};
+  }
+  
+  onRender(remainMomentum) {
+    // console.log(this.options.amount);
+    if (this.options.amount >= 0.999) this.scrollbar.setMomentum(0, 0);
+  }
+}
+
 Scrollbar.use(DisableScrollPlugin);
+Scrollbar.use(DampScrollPlugin);
 
 export default () => {
   gsap.registerPlugin(ScrollTrigger);
