@@ -29,4 +29,5 @@ export default function wordsUpAnimation(container = document, selector = '.word
     batchMax: 10,
     once: true,
   });
+  gsap.set(wordsToSplit, {autoAlpha: 1});
 }

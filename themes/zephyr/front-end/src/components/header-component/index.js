@@ -5,6 +5,13 @@ import Scrollbar from 'smooth-scrollbar';
 export default (container = document) => {
   
   const header = document.querySelector('header');
+  
+  if(container.querySelector('main')?.hasAttribute('dark') || container.matches?.('[dark]') ){
+    header.querySelector('.header-content').classList.add('dark');
+  }
+  else {
+    header.querySelector('.header-content').classList.remove('dark');
+  }
   const burgerMenu = container.querySelector('#burger-menu'),
     menu = container.querySelector('.links');
   if (!burgerMenu) return;
@@ -12,7 +19,7 @@ export default (container = document) => {
   const burgerSpans = burgerMenu.querySelectorAll('span');
   const menuLinks = header.querySelectorAll('a.small-link');
   const scrollbar = Scrollbar.get(document.querySelector('[smooth-scroll-container]'));
-  
+ 
   gsap.set(burgerSpans, {transformOrigin: 'center'});
   burgerTl
     .to(burgerSpans, {yPercent: gsap.utils.wrap([266.666667, 0, -266.666667]), duration: 0.35})

@@ -8,11 +8,11 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 
 export default function realLinesUpAnimation(container = document, selector = '.real-line-up') {
-  const realLinesToSplitTemp = getElementsForAnimation(container, selector);
+  const realLinesToSplitTemp = getElementsForAnimation(container,selector);
   if (!realLinesToSplitTemp) return;
   const realLinesToSplit = [];
   for (const realLinesToSplitTempElement of realLinesToSplitTemp) {
-    realLinesToSplitTempElement.innerHTML = realLinesToSplitTempElement.innerHTML.split('<p>&nbsp;</p>').join('<br/>');
+    realLinesToSplitTempElement.innerHTML = realLinesToSplitTempElement.innerHTML.split('<p>&nbsp;</p>').join('<br/>')
     if (realLinesToSplitTempElement.children.length) {
       for (const child of realLinesToSplitTempElement.children) {
         if (child.nodeName === 'BR' || child.nodeName === 'SVG') {
@@ -42,7 +42,7 @@ export default function realLinesUpAnimation(container = document, selector = '.
     splitRealLines = new SplitText(realLinesToSplit, {
       type: 'lines',
       linesClass: 'child-line',
-      reduceWhiteSpace: false,
+      reduceWhiteSpace:false,
     });
     
     splitRealLines.lines.forEach(line => {
@@ -64,5 +64,6 @@ export default function realLinesUpAnimation(container = document, selector = '.
     });
   }
   
+  gsap.set(realLinesToSplitTemp, {autoAlpha: 1});
   
 }

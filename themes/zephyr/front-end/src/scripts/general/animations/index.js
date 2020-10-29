@@ -16,6 +16,6 @@ export default function animations(container = document) {
   inViewAnimations(container);
   setTimeout(function () {
     realLinesUpAnimation(container);
-  }, 1000);
+  }, 200);
   coreIconsAnimations(container);
 }
