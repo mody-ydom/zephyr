@@ -7,6 +7,28 @@ header {
     width: 100%;
     transition: background-color 400ms;
     
+    &.black {
+        background-color: #1f1f1f;
+        
+        .header-content {
+            
+            .links {
+                background-color: transparent !important;
+                
+                .small-link {
+                    color: $zephyr-gray-light !important;
+                }
+            }
+            
+            .logo.dark {
+                display: none !important;
+            }
+            
+            .logo.light {
+                display: block !important;
+            }
+        }
+    }
     &.active {
         background: $zephyr-white;
     }
@@ -271,14 +293,11 @@ header {
                 background: $zephyr-white;
                 
                 .small-link {
-                    color: $zephyr-gray !important;
+                    color: $zephyr-gray;
                 }
                 
                 @include min-small-screen {
                     background: none;
-                    .small-link {
-                        color: $zephyr-gray-light;
-                    }
                 }
             }
         }
