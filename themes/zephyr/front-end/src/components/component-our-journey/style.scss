@@ -26,14 +26,6 @@ section.component-our-journey {
             }
         }
         .our-journey-content{
-            .swiper-slide{
-                &:nth-last-child(-n+4){
-                    display: none;
-                    @include min-medium-screen{
-                        display: unset;
-                    }
-                }
-            }
             .journey-box{
                 @include paddingX(size(30));
                 @include paddingY(size(30));
