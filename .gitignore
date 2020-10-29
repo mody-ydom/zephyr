@@ -9,3 +9,5 @@ themes/zephyr/acf-json/.DS_Store
 .DS_Store
 
 plugins/duplicator/
+
+themes/zephyr/assets/*\.html
