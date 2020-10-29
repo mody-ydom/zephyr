@@ -217,7 +217,8 @@ section.component-hero {
             display: block;
             position: absolute;
             z-index: -1;
-            
+            transition: none !important;
+    
             &.orange-circle {
                 top: size(109);
                 left: 1%;

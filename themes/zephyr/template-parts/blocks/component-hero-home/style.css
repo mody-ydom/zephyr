@@ -283,7 +283,8 @@ section.component-hero.no-bg .content .paragraph, section.component-hero.no-bg .
 section.component-hero.no-bg .circle {
     display: block;
     position: absolute;
-    z-index: -1
+    z-index: -1;
+    transition: none !important
 }
 
 section.component-hero.no-bg .circle.orange-circle {
