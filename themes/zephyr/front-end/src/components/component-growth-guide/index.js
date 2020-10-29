@@ -37,7 +37,7 @@ export default (container = document) => {
     });
   });
   
-  searchInput?.addEventListener('focus',(e)=>{
+  searchInput?.addEventListener('focus', (e) => {
     suggestBox.classList.add('active');
   });
   

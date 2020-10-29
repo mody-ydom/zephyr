@@ -65,9 +65,9 @@
                 </div>
               </div>
             <?php } else { ?>
-              <a class="small-link" href="<?php echo $link['url']; ?>"
-                 target="<?php echo $link['target']; ?>"><span
-                  data-hover="<?php echo $link['title']; ?>"><?php echo $link['title']; ?></span></a>
+          <a class="small-link" href="<?php echo $link['url']; ?>"
+             target="<?php echo $link['target']; ?>"><span
+              data-hover="<?php echo $link['title']; ?>"><?php echo $link['title']; ?></span></a>
             <?php } ?>
           <?php } ?>
           
@@ -76,6 +76,6 @@
     </div>
   </header>
   <div class="smooth-scroller" smooth-scroll-container>
-    <main <?=$page_header_type || is_404() ? $page_header_type : ''?> data-barba="container" data-barba-namespace="home">
+    <main <?=$page_header_type || is_404() ? $page_header_type : ''?> data-barba="container" data-barba-namespace="<?=is_singular( 'post' ) || is_page_template( 'archive.php' ) ? 'blog' : 'home'?>">
       <!-- overlay dark menu -->
       <div class="<?php echo pageWrapper( $post->post_name ); ?>">

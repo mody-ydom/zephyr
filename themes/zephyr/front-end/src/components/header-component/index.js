@@ -5,6 +5,7 @@ import Scrollbar from 'smooth-scrollbar';
 export default (container = document) => {
   
   const header = document.querySelector('header');
+  const bodyScrollBar = Scrollbar.get(document.querySelector('[smooth-scroll-container]'));
   
   if(container.querySelector('main')?.hasAttribute('dark') || container.matches?.('[dark]') ){
     header.querySelector('.header-content').classList.add('dark');
@@ -48,5 +49,24 @@ export default (container = document) => {
       burgerTl.reverse();
     });
   }
+  let lastOffsetY = 0;
+  bodyScrollBar.addListener(({offset: {y}}) => {
+    const deltaY = lastOffsetY - y;
+    lastOffsetY = y;
+    const headerRect = header.getBoundingClientRect();
+    let headerTop = headerRect.top + deltaY;
+    if (headerTop < -headerRect.height)
+      headerTop = -headerRect.height;
+    if (headerTop > 0)
+      headerTop = 0;
+    header.style.top = headerTop + 'px';
+    
+    if (y > headerRect.height && !header.classList.contains('black')) {
+      header.classList.add('black');
+    }
+    if (y <= headerRect.height && header.classList.contains('black')) {
+      header.classList.remove('black');
+    }
+  });
   
 };
