@@ -210,7 +210,26 @@
 				                         ]
 			                         ]
 		                         ) );
-		
+    
+    
+    acf_register_block_type( array(
+                               'name'            => 'component-text-block',
+                               'title'           => __( 'Text Block' ),
+                               'render_template' => 'template-parts/blocks/component-text-block/index.php',
+                               'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-text-block/style.css',
+                               'category'        => 'zephyr-home',
+                               'icon'            => 'admin-appearance',
+                               'mode'            => 'preview',
+                               'example'         => [
+                                 'attributes' => [
+                                   'mode' => 'preview',
+                                   'data' => [
+                                     'is_screenshot' => true,
+                                   ],
+                                 ]
+                               ]
+                             ) );
+    
 		acf_register_block_type( array(
 			                         'name'            => 'component-hero',
 			                         'title'           => __( 'Component Hero' ),
