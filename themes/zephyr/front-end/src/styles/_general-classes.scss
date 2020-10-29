@@ -25,6 +25,7 @@
 html {
     font-size: 10px;
     width: 100%;
+    font-family: $Sailec,$Canela,'sans-serif';
 }
 
 a {
@@ -817,7 +818,7 @@ ol {
     font-weight: 400;
     font-style: normal;
     letter-spacing: size(0.28);
-    line-height: size(24);
+    line-height: size(29);
     
     @include x-large-screen {
         font-size: size(14);
@@ -978,6 +979,8 @@ svg {
 }
 
 .iv-st-from-top, .iv-st-from-bottom, .iv-st-from-left, .iv-st-from-right, .word-up, .line-up, .real-line-up {
+    opacity: 0;
+    visibility: hidden;
 }
 
 [smooth-scroll-container] {
@@ -1166,5 +1169,108 @@ section.component-our-journey .our-journey .our-journey-content .journey-box img
         justify-content: center;
         font-size: 40px;
         text-align: center;
+    }
+}
+
+header .header-content .links .has-drop-down {
+    position: relative;
+    // link and arrow
+    @include max-small-screen {
+        display: flex;
+        flex-direction: column;
+    }
+    .small-link{
+        margin-right: 0!important;
+    }
+    @include min-medium-screen {
+      margin-right: size(40);
+    }
+    @include x-large-screen {
+      margin-right: size(62) ;
+    }
+    
+    a.link-arrow {
+        display: flex;
+        align-items: center;
+        @include max-medium-screen{
+            margin-bottom: 0;
+        }
+        svg {
+            width: size(13);
+            height: auto;
+            fill: $zephyr-black;
+            margin-left: size(10);
+            transition: all 400ms ease-in-out;
+            transform-origin: center center;
+        }
+        
+    }
+    
+    // drop down menu
+    .drop-down {
+        display: flex;
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+        min-width: 100%;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 size(2) size(3) rgba(0, 0, 0, 0.1), 0 size(5) size(10) rgba(0, 0, 0, 0.2);
+        z-index: 99;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 400ms ease-in-out;
+        padding: size(10);
+        @include max-small-screen {
+            position: relative;
+            height: 0;
+            display: none;
+            top: 0;
+            left: 0;
+            transform: translateX(0);
+            background: $zephyr-gray;
+            box-shadow: none;
+            margin-bottom: 25px;
+        }
+        // text
+        .text {
+            color: $zephyr-gray;
+            white-space: nowrap;
+            transition: all 400ms ease-in-out;
+            padding: size(10) size(15);
+            font-size: size(12);
+    
+            @include max-small-screen {
+                color: #fff;
+                text-align: center;
+            }
+            
+            &:hover {
+                background: $zephyr-gray-light;
+                color: $zephyr-green;
+            }
+        }
+    }
+    
+    &:hover {
+        a.link-arrow {
+            svg {
+                transform: scale(-1);
+            }
+        }
+        
+        .drop-down {
+            opacity: 1;
+            pointer-events: visible;
+        }
+        
+        @include max-large-screen {
+            .drop-down {
+                height: auto;
+                display: flex;
+            }
+        }
     }
 }

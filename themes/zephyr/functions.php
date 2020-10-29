@@ -229,24 +229,6 @@ function register_acf_block_types() {
                           ));
   
   acf_register_block_type(array(
-                            'name'            => 'component-hero',
-                            'title'           => __('Component Hero'),
-                            'render_template' => 'template-parts/blocks/component-hero/index.php',
-                            'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-hero/style.css',
-                            'category'        => 'zephyr-home',
-                            'icon'            => 'admin-appearance',
-                            'mode'            => 'preview',
-                            'example'         => [
-                              'attributes' => [
-                                'mode' => 'preview',
-                                'data' => [
-                                  'is_screenshot' => true,
-                                ],
-                              ]
-                            ]
-                          ));
-  
-  acf_register_block_type(array(
                             'name'            => 'component-logo',
                             'title'           => __('Component Logo'),
                             'render_template' => 'template-parts/blocks/component-logo/index.php',

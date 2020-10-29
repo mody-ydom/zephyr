@@ -166,10 +166,6 @@ header {
                 color: $zephyr-gray-light;
                 overflow: hidden;
                 
-                &:not(:last-child) {
-                    margin-bottom: size(20);
-                }
-                
                 span {
                     position: relative;
                     transition: transform 0.3s ease-in-out;
@@ -191,6 +187,17 @@ header {
                     }
                 }
                 
+                &:not(:last-child) {
+                    margin-bottom: size(20);
+                }
+                
+                @include min-small-screen {
+                    font-size: size(12);
+                    &:not(:last-child) {
+                        margin-bottom: 0;
+                        margin-right: size(20);
+                    }
+                }
                 @include min-medium-screen {
                     font-size: size(14);
                     &:not(:last-child) {
@@ -199,7 +206,7 @@ header {
                 }
                 @include x-large-screen {
                     &:not(:last-child) {
-                        margin-right: size(62) !important;
+                        margin-right: size(62);
                     }
                 }
                 
@@ -219,26 +226,19 @@ header {
                 right: 0;
                 background: none;
                 padding-top: 0;
-                .small-link {
-                    font-size: size(12);
-                    
-                    &:not(:last-child) {
-                        margin-bottom: 0;
-                        margin-right: size(20);
-                    }
-                }
             }
             
         }
         
         
         &.dark {
-            .burger-menu{
-                span{
-                    &:after, &:before{
+            .burger-menu {
+                span {
+                    &:after, &:before {
                         background: $zephyr-gray;
                     }
                 }
+                
                 &.active {
                     span {
                         &:after, &:before {
@@ -247,6 +247,7 @@ header {
                     }
                 }
             }
+            
             .logo {
                 &.dark {
                     display: block;
