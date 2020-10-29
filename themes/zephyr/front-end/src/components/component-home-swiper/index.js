@@ -60,9 +60,8 @@ export default (container = document) => {
           e.parentElement.classList.remove('active');
           return e;
         }), {height: 0});
-        slidesTransitions.in[activeIndex].play(0).then(() => {
-          slidesTransitions.out[previousIndex].play(0);
-        });
+        slidesTransitions.in[activeIndex].play(0);
+        slidesTransitions.out[previousIndex].play(0);
       },
       transitionStart() {
         gsap.to(Array.from(homeSwiperTitle).map(elem => {
