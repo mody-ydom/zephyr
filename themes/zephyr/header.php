@@ -19,7 +19,6 @@
 <!-- END ACF -->
 <body <?php body_class(); ?> data-barba="wrapper">
   <div class="barba-overlay-transition"></div>
-  <div class="skew-overlay-transition"></div>
 	<?php wp_body_open(); ?>
   <header>
     <div class="container">

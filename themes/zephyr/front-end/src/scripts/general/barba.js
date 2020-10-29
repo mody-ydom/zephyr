@@ -10,8 +10,8 @@ export default (reInvokableFunction) => {
     name: 'skew-overlay-transition',
     to: {
       custom: ({current, next}) => (current.namespace === 'blog' && next.namespace === 'blog'),
-    }, leave(data) {
-      console.log('leave: skew-overlay-transition');
+    },
+    leave(data) {
       const background = '.skew-overlay-transition';
       return gsap.timeline()
         .set(background, {
@@ -24,14 +24,19 @@ export default (reInvokableFunction) => {
           xPercent: 0,
           ease: 'power4.inOut',
           skewX: 0,
-        });
+        
+        })
+        .set(data.current.container, {autoAlpha: 0});
     },
     enter(data) {
-      console.log('enter: skew-overlay-transition');
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
       const background = '.skew-overlay-transition';
-      return gsap.timeline()
+      gsap.set(data.current.container, {zIndex: -1, position: 'absolute'});
+  
+      return gsap.timeline({
+        onComplete() {
+          ScrollTrigger.refresh();
+        },
+      })
         .set(background, {
           xPercent: 0,
           display: 'block',
@@ -65,22 +70,40 @@ export default (reInvokableFunction) => {
     name: 'bottom-overlay-transition',
     to: {
       custom: ({current, next}) => {
-        console.log(current.namespace, next, (current.namespace === 'blog' && next.namespace === 'home'), (current.namespace === 'home' && next.namespace === 'blog'), (current.namespace === 'home' && next.namespace === 'home'));
-        return (current.namespace === 'blog' && next.namespace === 'home') || (current.namespace === 'home' && next.namespace === 'blog') || (current.namespace === 'home' && next.namespace === 'home');
+        return (current.namespace === 'blog' && next.namespace === 'home') ||
+          (current.namespace === 'home' && next.namespace === 'blog') ||
+          (current.namespace === 'home' && next.namespace === 'home');
       },
     },
     leave(data) {
-      console.log('leave: bottom-overlay-transition');
-      return gsap.fromTo('.barba-overlay-transition', {yPercent: 100}, {
-        duration: 0.35,
-        yPercent: 0,
-        ease: 'power2.out',
-      });
-      
+      return gsap.timeline()
+        .fromTo('.barba-overlay-transition', {yPercent: 100}, {
+          duration: 0.35,
+          yPercent: 0,
+          ease: 'power2.out',
+        })
+        .set(data.current.container, {autoAlpha: 0});
+  
     },
     enter(data) {
-      console.log('enter: bottom-overlay-transition');
       gsap.set(data.current.container, {zIndex: -1, position: 'absolute'});
+      if (data.next.namespace === 'blog') {
+        console.log('333333333333');
+        const background = '.skew-overlay-transition';
+        gsap.timeline()
+          .set(background, {
+            xPercent: 0,
+            display: 'block',
+          })
+          .to(background, {
+            duration: 0.6,
+            xPercent: 100,
+            ease: 'power4.inOut',
+          })
+          .set(background, {
+            display: 'none',
+          });
+      }
       return gsap.fromTo('.barba-overlay-transition', {yPercent: 0, y: 0}, {
         duration: 0.3,
         delay: 1,
@@ -112,7 +135,11 @@ export default (reInvokableFunction) => {
       .fromTo('.barba-overlay-transition', {yPercent: 100}, {duration: 0, yPercent: 0})
       .fromTo('.barba-overlay-transition', {yPercent: 0, y: 0},
         {duration: 0, y: 0, yPercent: -100});
-    
+    gsap.timeline()
+      .fromTo('.skew-overlay-transition', {xPercent: -100}, {duration: 0, xPercent: 0})
+      .fromTo('.skew-overlay-transition', {xPercent: 0, x: 0},
+        {duration: 0, x: 0, xPercent: 100});
+  
   }
   else {
     console.log('no barba container');
