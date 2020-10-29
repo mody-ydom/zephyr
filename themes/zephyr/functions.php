@@ -384,27 +384,101 @@ if (function_exists('acf_register_block_type')) {
 
 /*General Settings For Blocks*/
 function general_settings_for_blocks($id, $className) {
-  $padding_top = get_field('section_settings')['padding_top'];
-  $padding_bottom = get_field('section_settings')['padding_bottom'];
-  $margin_top = get_field('section_settings')['margin_top'];
-  $margin_bottom = get_field('section_settings')['margin_bottom'];
-  $background_image = get_field('section_settings')['background_image'];
-  $background_color = get_field('section_settings')['background_color'];
-  $overlay_color = get_field('section_settings')['overlay_color'];
+  $group = get_field('section_settings')['settings'];
+  $group_tablet = get_field('section_settings')['settings_tablet']['settings'];
+  $group_mobile = get_field('section_settings')['settings_mobile']['settings'];
+  
+  $padding_top_mobile = $group_mobile['padding_top'];
+  $padding_left_mobile = $group_mobile['padding_left'];
+  $padding_right_mobile = $group_mobile['padding_right'];
+  $padding_bottom_mobile = $group_mobile['padding_bottom'];
+  $margin_top_mobile = $group_mobile['margin_top'];
+  $margin_left_mobile = $group_mobile['margin_left'];
+  $margin_right_mobile = $group_mobile['margin_right'];
+  $margin_bottom_mobile = $group_mobile['margin_bottom'];
+  $background_image_mobile = $group_mobile['background_image'];
+  $background_color_mobile = $group_mobile['background_color'];
+  
+  
+  $padding_top_tablet = $group_tablet['padding_top'];
+  $padding_left_tablet = $group_tablet['padding_left'];
+  $padding_right_tablet = $group_tablet['padding_right'];
+  $padding_bottom_tablet = $group_tablet['padding_bottom'];
+  $margin_top_tablet = $group_tablet['margin_top'];
+  $margin_left_tablet = $group_tablet['margin_left'];
+  $margin_right_tablet = $group_tablet['margin_right'];
+  $margin_bottom_tablet = $group_tablet['margin_bottom'];
+  $background_image_tablet = $group_tablet['background_image'];
+  $background_color_tablet = $group_tablet['background_color'];
+  
+  
+  
+  $padding_top = $group['padding_top'];
+  $padding_left = $group['padding_left'];
+  $padding_right = $group['padding_right'];
+  $padding_bottom = $group['padding_bottom'];
+  $margin_top = $group['margin_top'];
+  $margin_left = $group['margin_left'];
+  $margin_right = $group['margin_right'];
+  $margin_bottom = $group['margin_bottom'];
+  $background_image = $group['background_image'];
+  $background_color = $group['background_color'];
+  $overlay_color = $group['overlay_color'];
   
   $style = $padding_top == 999 ? '' : 'padding-top:' . $padding_top . 'px!important;';
+  $style .= $padding_right == 999 ? '' : 'padding-right:' . $padding_right . 'px!important;';
+  $style .= $padding_left == 999 ? '' : 'padding-left:' . $padding_left . 'px!important;';
   $style .= $padding_bottom == 999 ? '' : 'padding-bottom:' . $padding_bottom . 'px!important;';
   $style .= $margin_top == 999 ? '' : 'margin-top:' . $margin_top . 'px!important;';
+  $style .= $margin_left == 999 ? '' : 'margin-left:' . $margin_left . 'px!important;';
+  $style .= $margin_right == 999 ? '' : 'margin-right:' . $margin_right . 'px!important;';
   $style .= $margin_bottom == 999 ? '' : 'margin-bottom:' . $margin_bottom . 'px!important;';
   $style .= !$background_image ? '' :
     ('background-image: url("' . $background_image['url'] . '") !important;' . 'background-position: center;' . 'background-repeat: no-repeat;' . 'background-size: cover;');
   $style .= !$background_color ? '' : 'background-color:' . $background_color . '!important;';
-  $style = $style ? "style='$style'" : '';
+  
+  
+  
+  $style_tablet = $padding_top_tablet == 999 ? '' : 'padding-top:' . $padding_top_tablet . 'px!important;';
+  $style_tablet .= $padding_right_tablet == 999 ? '' : 'padding-right:' . $padding_right_tablet . 'px!important;';
+  $style_tablet .= $padding_left_tablet == 999 ? '' : 'padding-left:' . $padding_left_tablet . 'px!important;';
+  $style_tablet .= $padding_bottom_tablet == 999 ? '' : 'padding-bottom:' . $padding_bottom_tablet . 'px!important;';
+  $style_tablet .= $margin_top_tablet == 999 ? '' : 'margin-top:' . $margin_top_tablet . 'px!important;';
+  $style_tablet .= $margin_left_tablet == 999 ? '' : 'margin-left:' . $margin_left_tablet . 'px!important;';
+  $style_tablet .= $margin_right_tablet == 999 ? '' : 'margin-right:' . $margin_right_tablet . 'px!important;';
+  $style_tablet .= $margin_bottom_tablet == 999 ? '' : 'margin-bottom:' . $margin_bottom_tablet . 'px!important;';
+  $style_tablet .= !$background_image_tablet ? '' :
+    ('background-image: url("' . $background_image_tablet['url'] . '") !important;' . 'background-position: center;' . 'background-repeat: no-repeat;' . 'background-size: cover;');
+  $style_tablet .= !$background_color_tablet ? '' : 'background-color:' . $background_color_tablet . '!important;';
+  
+  
+  $style_mobile = $padding_top_mobile == 999 ? '' : 'padding-top:' . $padding_top_mobile . 'px!important;';
+  $style_mobile .= $padding_right_mobile == 999 ? '' : 'padding-right:' . $padding_right_mobile . 'px!important;';
+  $style_mobile .= $padding_left_mobile == 999 ? '' : 'padding-left:' . $padding_left_mobile . 'px!important;';
+  $style_mobile .= $padding_bottom_mobile == 999 ? '' : 'padding-bottom:' . $padding_bottom_mobile . 'px!important;';
+  $style_mobile .= $margin_top_mobile == 999 ? '' : 'margin-top:' . $margin_top_mobile . 'px!important;';
+  $style_mobile .= $margin_left_mobile == 999 ? '' : 'margin-left:' . $margin_left_mobile . 'px!important;';
+  $style_mobile .= $margin_right_mobile == 999 ? '' : 'margin-right:' . $margin_right_mobile . 'px!important;';
+  $style_mobile .= $margin_bottom_mobile == 999 ? '' : 'margin-bottom:' . $margin_bottom_mobile . 'px!important;';
+  $style_mobile .= !$background_image_mobile ? '' :
+    ('background-image: url("' . $background_image_mobile['url'] . '") !important;' . 'background-position: center;' . 'background-repeat: no-repeat;' . 'background-size: cover;');
+  $style_mobile .= !$background_color_mobile ? '' : 'background-color:' . $background_color_mobile . '!important;';
+  
+  $style = !$style ? '' : '<style>#' . $id . '{' . $style . ';}</style>';
+  
+  
+  $style_tablet = !$style_tablet ? '' : '<style>@media(max-width: 991px){#' . $id . '{' . $style_tablet . ';}}</style>';
+  
+  
+  $style_mobile = !$style_mobile ? '' : '<style>@media(max-width: 575px){#' . $id . '{' . $style_mobile . ';}}</style>';
   
   $overlay_attr = !$overlay_color ? '' : '<style>#' . $id . ':after{content: "";background:' . $overlay_color . ';}</style>';
   
-  echo '<section ' . $style . ' id="' . esc_attr($id) . '" class="zephyr-block ' . esc_attr($className) . '">';
+  echo '<section id="' . esc_attr($id) . '" class="zephyr-block ' . esc_attr($className) . '">';
   echo $overlay_attr;
+  echo $style;
+  echo $style_tablet;
+  echo $style_mobile;
 }
 
 if (function_exists('acf_add_options_page')) {
@@ -563,14 +637,14 @@ function categoriesPosts($category, $cat_index) {
   <ol data-cat-index="<?=$cat_index?>" class="guide-content">
     <?php
     $args_posts = array(
-      'post_type' => 'post',
-      'order' => 'ASC',
-      'cat'       => $category->term_id,
+      'post_type'      => 'post',
+      'order'          => 'ASC',
+      'cat'            => $category->term_id,
       'posts_per_page' => -1
     );
     $query = new WP_Query($args_posts);
     if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
-    $post_index = $query->current_post +1;
+      $post_index = $query->current_post + 1;
       ?>
       <li data-post-index="<?=$post_index?>"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></li>
       <?php
@@ -597,7 +671,7 @@ function nextPost($post_id, $current_cat_index, $current_post_index) {
     ?>
     <a class="next-chapter iv-st-from-bottom" href="<?php echo get_permalink($next_post_id); ?>">
       <h3 class="headline-3">Next Chapter <span>></span></h3>
-      <h6 class="headline-8"><span class="sub"><?=$current_cat_index?>.<?=$current_post_index+1?></span> <?php echo get_the_title($next_post_id); ?></h6>
+      <h6 class="headline-8"><span class="sub"><?=$current_cat_index?>.<?=$current_post_index + 1?></span> <?php echo get_the_title($next_post_id); ?></h6>
     </a>
     <?php
   }
@@ -684,9 +758,9 @@ function post_cards_loop() {
         $category = get_the_category(get_the_ID());
         ?>
         <div class="single-card">
-          <a href="<?php the_permalink();?>"><h6 class="headline-4 iv-st-from-bottom"><?php the_title(); ?></h6></a>
+          <a href="<?php the_permalink(); ?>"><h6 class="headline-4 iv-st-from-bottom"><?php the_title(); ?></h6></a>
           <div class="paragraph-1 wysiwyg-block small-fz iv-st-from-bottom">
-            <?=wp_trim_words(get_the_content(),200,'...') ?>
+            <?=wp_trim_words(get_the_content(), 200, '...')?>
           </div>
         </div>
       <?php } ?>   </div>
