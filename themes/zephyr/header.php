@@ -19,6 +19,7 @@
 <!-- END ACF -->
 <body <?php body_class(); ?> data-barba="wrapper">
   <div class="barba-overlay-transition"></div>
+  <div class="skew-overlay-transition"></div>
 	<?php wp_body_open(); ?>
   <header>
     <div class="container">
@@ -44,16 +45,16 @@
 				while ( have_rows( 'header_links', 'options' ) ):
 					the_row();
 					$link = get_sub_field( 'link' );
-					?>
-                  <a class="small-link" href="<?php echo $link['url']; ?>"
-                     target="<?php echo $link['target']; ?>"><span
-                      data-hover="<?php echo $link['title']; ?>"><?php echo $link['title']; ?></span></a>
-				<?php endwhile; ?>
+			?>
+          <a class="small-link" href="<?php echo $link['url']; ?>"
+             target="<?php echo $link['target']; ?>"><span
+              data-hover="<?php echo $link['title']; ?>"><?php echo $link['title']; ?></span></a>
+		<?php endwhile; ?>
         </div>
       </div>
     </div>
   </header>
   <div class="smooth-scroller" smooth-scroll-container>
-    <main <?=$header_type || is_404() ? 'colored' : ''?> data-barba="container" data-barba-namespace="home">
+    <main <?=$header_type || is_404() ? 'colored' : ''?> data-barba="container" data-barba-namespace="<?=is_singular( 'post' ) || is_page_template( 'archive.php' ) ? 'blog' : 'home'?>">
       <!-- overlay dark menu -->
       <div class="<?php echo pageWrapper( $post->post_name ); ?>">
