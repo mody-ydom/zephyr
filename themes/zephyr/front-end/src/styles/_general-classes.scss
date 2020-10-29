@@ -201,10 +201,10 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
             transition: opacity 400ms;
             opacity: 0;
         }
-        
+    
         &.swiper-pagination-bullet-active {
             border: 1px solid #88e8b9;
-            
+        
             &:before {
                 opacity: 1;
             }
@@ -212,8 +212,19 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
     }
 }
 
+.barba-overlay-transition {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    transform: translate(0%, 100%);
+    z-index: 6;
+    background-color: #6be3a8;
+}
+
 // used
-.headline-1,  {
+.headline-1, {
     color: $zephyr-white;
     font-family: $Canela;
     font-size: size(27);
