@@ -1,10 +1,10 @@
 <?php
 global $post;
 // Create id attribute allowing for custom "anchor" value.
-$id = $block['id'];
-if (!empty($block['anchor'])) {
-  $id = $block['anchor'];
-}
+$id = 'contact-us';
+//if (!empty($block['anchor'])) {
+//  $id = $block['anchor'];
+//}
 
 // Create class attribute allowing for custom "className" and "align" values.
 $className = 'component-contact-us';
