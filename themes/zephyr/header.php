@@ -23,7 +23,7 @@
 	<?php wp_body_open(); ?>
   <header>
     <div class="container">
-      <div class="header-content dark <?=$page_header_type?$page_header_type:''; ?>">
+      <div class="header-content  <?=$page_header_type?$page_header_type:''; ?>">
         <!--burger menu and cross-->
         <div class="menu">
           <button class="burger-menu" id="burger-menu">
@@ -76,6 +76,6 @@
     </div>
   </header>
   <div class="smooth-scroller" smooth-scroll-container>
-    <main <?=$page_header_type || is_404() ? $page_header_type : ''?> data-barba="container" data-barba-namespace="<?=is_singular( 'post' ) || is_page_template( 'archive.php' ) ? 'blog' : 'home'?>">
+    <main <?=is_singular( 'post' ) || is_page_template( 'archive.php' ) ? 'dark' : ''?> <?=$page_header_type || is_404() ? $page_header_type : ''?> data-barba="container" data-barba-namespace="<?=is_singular( 'post' ) || is_page_template( 'archive.php' ) ? 'blog' : 'home'?>">
       <!-- overlay dark menu -->
       <div class="<?php echo pageWrapper( $post->post_name ); ?>">
