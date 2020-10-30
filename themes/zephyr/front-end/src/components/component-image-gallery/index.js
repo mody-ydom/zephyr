@@ -67,7 +67,7 @@ export default (container = document) => {
   
   window.addEventListener('container-fixed', () => resizeAll(sections));
   
-  const images = container.querySelectorAll('img');
+  const images = getElementsForAnimation(container, '.component-image-gallery img');
   
   for (let image of images) {
     console.log(image,image.closest('.grid-item'));
