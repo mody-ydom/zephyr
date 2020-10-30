@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "file": "trash-compiled-files/component-logo.js",
-    "sources": [
-        "webpack:///trash-compiled-files/component-logo.js"
-    ],
-    "mappings": "AAAA",
-    "sourceRoot": ""
-}
+{"version":3,"file":"trash-compiled-files/component-logo.js","sources":["webpack:///trash-compiled-files/component-logo.js"],"mappings":"AAAA","sourceRoot":""}

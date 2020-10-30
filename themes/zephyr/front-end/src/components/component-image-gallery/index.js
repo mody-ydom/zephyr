@@ -36,7 +36,7 @@ export default (container = document) => {
     }
     else {
       if (leftImage) {
-        imageWrapperTl.add(gsap.fromTo(leftImage, {yPercent:-50,xPercent:-50,y: '+=50'}, {y: '-=50', duration: 1}), 0);
+        imageWrapperTl.add(gsap.fromTo(leftImage, {yPercent:-50,xPercent:-50,x:0,y: '+=50'}, {y: '-=50', duration: 1}), 0);
       }
       else {
         imageWrapperTl.add(gsap.fromTo(background, {scale: 1.25}, {scale: 1, duration: 1}), 0);
