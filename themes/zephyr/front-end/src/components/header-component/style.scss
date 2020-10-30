@@ -14,19 +14,35 @@ header {
         .header-content {
             
             .links {
-                background-color: transparent !important;
+                //background-color: transparent !important;
                 
                 .small-link {
                     color: $zephyr-gray-light !important;
                 }
             }
-            
+    
             .logo.dark {
                 display: none !important;
             }
-            
+    
             .logo.light {
                 display: block !important;
+            }
+    
+            .burger-menu {
+                span {
+                    &:after, &:before {
+                        background: $zephyr-gray-light;
+                    }
+                }
+        
+                &.active {
+                    span {
+                        &:after, &:before {
+                            background: $zephyr-gray-light;
+                        }
+                    }
+                }
             }
         }
     }
