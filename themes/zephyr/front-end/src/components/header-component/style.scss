@@ -37,7 +37,7 @@ header {
     .header-content {
         display: flex;
         align-items: center;
-        @include paddingY(size(35));
+        @include paddingY(size(20));
         @include min-small-screen {
             justify-content: space-between;
         }

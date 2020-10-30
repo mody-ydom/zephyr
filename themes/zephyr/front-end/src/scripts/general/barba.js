@@ -17,14 +17,11 @@ export default (reInvokableFunction) => {
         .set(background, {
           xPercent: -105,
           display: 'block',
-          skewX: 10,
         })
         .to(background, {
           duration: 1,
           xPercent: 0,
           ease: 'power4.inOut',
-          skewX: 0,
-        
         })
         .set(data.current.container, {autoAlpha: 0});
     },
@@ -122,14 +119,13 @@ export default (reInvokableFunction) => {
       prevent: ({el}) => el.classList && el.classList.contains('ab-item'),
       // prefetchIgnore: true,
     });
-    barba.hooks.beforeEnter(data => reInvokableFunction(data.next.container));
+    barba.hooks.afterEnter(data => reInvokableFunction(data.next.container));
     barba.hooks.beforeLeave(() => {
       window.dispatchEvent(new Event('will-leave'));
       // for (let scrollTrigger of ScrollTrigger.getAll()) {
       //   scrollTrigger.kill();
       // }
     });
-    window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
     gsap.timeline()
       .fromTo('.barba-overlay-transition', {yPercent: 100}, {duration: 0, yPercent: 0})
       .fromTo('.barba-overlay-transition', {yPercent: 0, y: 0},
