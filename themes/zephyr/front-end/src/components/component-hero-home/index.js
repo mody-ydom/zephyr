@@ -15,8 +15,8 @@ export default (container = document) => {
       once: true,
     },
   })
-    .from(hero.querySelectorAll('.test-blob,.circle.oval'), {duration: .75, stagger: .4, autoAlpha: 0, xPercent: 75})
-    .from(hero.querySelectorAll('.circle.orange-circle'), {duration: .5, stagger: .2, autoAlpha: 0, y: 100}, '<+=.3')
-    .from(hero.querySelectorAll('.circle.aqua-circle'), {duration: .5, stagger: .2, autoAlpha: 0, y: 100}, '<+=.3')
-    .from(hero.querySelectorAll('.circle.dark-circle'), {duration: .5, stagger: .2, autoAlpha: 0, y: -100}, '<+=.3');
+    .fromTo(hero.querySelectorAll('.test-blob,.circle.oval'), {autoAlpha: 0, xPercent: 100}, {autoAlpha: 1, xPercent: 0, duration: 1, stagger: 0.4})
+    .fromTo(hero.querySelectorAll('.circle.orange-circle'), {autoAlpha: 0, y: 100}, {autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.2}, '<+=.4')
+    .fromTo(hero.querySelectorAll('.circle.aqua-circle'), {autoAlpha: 0, y: 100}, {autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.2}, '<+=.4')
+    .fromTo(hero.querySelectorAll('.circle.dark-circle'), {autoAlpha: 0, y: -100}, {autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.2}, '<+=.4');
 };
