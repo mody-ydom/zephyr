@@ -7,4 +7,7 @@ export default function gsapConfig() {
   gsap.config({
     nullTargetWarn: false,
   });
+  gsap.defaults({
+    overwrite: true
+  })
 }
