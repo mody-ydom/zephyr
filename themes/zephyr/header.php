@@ -76,6 +76,6 @@
     </div>
   </header>
   <div class="smooth-scroller" smooth-scroll-container>
-    <main <?=is_singular( 'post' ) || is_page_template( 'archive.php' ) ? 'dark' : ''?> <?=$page_header_type || is_404() ? $page_header_type : ''?> data-barba="container" data-barba-namespace="<?=is_singular( 'post' ) || is_page_template( 'archive.php' ) ? 'blog' : 'home'?>">
+    <main <?=is_singular( 'post' ) || is_tag() || is_category() || is_author() || is_search() || is_page_template( 'archive.php' ) ? 'dark' : ''?> <?=$page_header_type || is_404() ? $page_header_type : ''?> data-barba="container" data-barba-namespace="<?=is_singular( 'post' ) || is_page_template( 'archive.php' ) ? 'blog' : 'home'?>">
       <!-- overlay dark menu -->
       <div class="<?php echo pageWrapper( $post->post_name ); ?>">
