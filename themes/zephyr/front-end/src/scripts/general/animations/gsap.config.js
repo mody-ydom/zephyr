@@ -8,6 +8,6 @@ export default function gsapConfig() {
     nullTargetWarn: false,
   });
   gsap.defaults({
-    overwrite: true
+    overwrite: 'auto'
   })
 }
