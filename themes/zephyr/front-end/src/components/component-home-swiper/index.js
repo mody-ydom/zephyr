@@ -105,12 +105,13 @@ export default (container = document) => {
     onToggle(self) {
       bodyScrollBar.updatePluginOptions('dampScroll', {amount: self.isActive ? 1 : 0});
       if (self.isActive) {
-        document.querySelector('header').classList.add('freeze');
+        setTimeout(() => document.querySelector('header').classList.add('freeze'), ignoreTime);
         bodyScrollBar.setMomentum(0, 0);
         bodyScrollBar.setPosition(0, self.direction === 1 ? self.start + 1 : self.end - 1);
       }
       else {
-        document.querySelector('header').classList.remove('freeze');
+  
+        setTimeout(() => document.querySelector('header').classList.remove('freeze'), ignoreTime);
       }
       setTimeout(() => self.vars.firstScroll = !self.isActive, ignoreTime);
     },

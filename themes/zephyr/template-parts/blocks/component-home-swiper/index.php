@@ -25,10 +25,10 @@ endif;
 ?>
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
-<div class="container">
+<div class="container iv-st-from-bottom">
   <div class="home-swiper-container swiper-container">
     <div class="swiper-wrapper">
-        <?php while (have_rows('swiper_card')) {
+		<?php while (have_rows('swiper_card')) {
 	        the_row();
 	        $main_image       = get_sub_field( 'image' );
 	        $title            = get_sub_field( 'title' );
@@ -36,15 +36,15 @@ endif;
 	        $background_color = get_sub_field( 'background_color' );
 	        ?>
           <div class="home-swiper swiper-slide d-flex" style="background-color: <?=$background_color?>;">
-    
-            <div class="left-side iv-st-from-bottom">
+  
+            <div class="left-side">
               <div class="left-side-title">
 		          <?php if ( $title ) { ?>
-                    <h6 class="headline-6 normal word-up"><?=$title;?></h6>
+                    <h6 class="headline-6 normal"><?=$title;?></h6>
 		          <?php } ?>
 		          <?php if ( $content ) { ?>
-                    <h5 class="sub-title real-line-up"><?=$content;?></h5>
-		          <?php } ?>
+                <h5 class="sub-title"><?=$content;?></h5>
+	          <?php } ?>
               </div>
               <?php if (have_rows('blocks')) {
                 ?>
@@ -62,7 +62,7 @@ endif;
                         <div class="category-wrapper">
                           <div class="category-title">
                             <?php if ($block_title) { ?>
-                              <h3 class="small-headline word-up"><?=$block_title; ?></h3>
+                              <h3 class="small-headline"><?=$block_title;?></h3>
                             <?php } ?>
                             <div class="icons">
                               <span class="plus icon">+</span>
@@ -71,7 +71,7 @@ endif;
                           </div>
                           <div class="category-content">
                             <?php if ($block_text) { ?>
-                              <p class="paragraph-1 iv-st-from-bottom"><?=$block_text; ?></p>
+                              <p class="paragraph-1"><?=$block_text;?></p>
                             <?php } ?>
                           </div>
                         </div>
@@ -81,9 +81,9 @@ endif;
                 </div>
               <?php } ?>
             </div>
-    
+  
             <div class="right-side">
-              <div class="image-wrapper iv-st-from-bottom">
+              <div class="image-wrapper">
                 <img alt="<?=$main_image['alt'];?>"
                      src="<?=$main_image['url'];?>"/>
               </div>
