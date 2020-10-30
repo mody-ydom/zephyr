@@ -54,22 +54,32 @@ export default (container = document) => {
       },
       transitionEnd() {
         const {activeIndex, previousIndex} = this;
-        gsap.to(Array.from(homeSwiperTitle).map(elem => {
-          const e = elem.nextElementSibling;
-          e.classList.remove('active');
-          e.parentElement.classList.remove('active');
-          return e;
-        }), {height: 0});
+        if (window.matchMedia('(max-width:767.98px)').matches) {
+          gsap.to(Array.from(homeSwiperTitle).map(elem => {
+            const e = elem.nextElementSibling;
+            e.classList.remove('active');
+            e.parentElement.classList.remove('active');
+            return e;
+          }), {height: 0});
+        }
+        else {
+          gsap.to(Array.from(homeSwiperTitle), {height: 'auto'});
+        }
         slidesTransitions.in[activeIndex].play(0);
         slidesTransitions.out[previousIndex].play(0);
       },
       transitionStart() {
-        gsap.to(Array.from(homeSwiperTitle).map(elem => {
-          const e = elem.nextElementSibling;
-          e.classList.remove('active');
-          e.parentElement.classList.remove('active');
-          return e;
-        }), {height: 0});
+        if (window.matchMedia('(max-width:767.98px)').matches) {
+          gsap.to(Array.from(homeSwiperTitle).map(elem => {
+            const e = elem.nextElementSibling;
+            e.classList.remove('active');
+            e.parentElement.classList.remove('active');
+            return e;
+          }), {height: 0});
+        }
+        else {
+          gsap.to(Array.from(homeSwiperTitle), {height: 'auto'});
+        }
       },
     },
     
@@ -95,8 +105,12 @@ export default (container = document) => {
     onToggle(self) {
       bodyScrollBar.updatePluginOptions('dampScroll', {amount: self.isActive ? 1 : 0});
       if (self.isActive) {
+        document.querySelector('header').classList.add('freeze');
         bodyScrollBar.setMomentum(0, 0);
         bodyScrollBar.setPosition(0, self.direction === 1 ? self.start + 1 : self.end - 1);
+      }
+      else {
+        document.querySelector('header').classList.remove('freeze');
       }
       setTimeout(() => self.vars.firstScroll = !self.isActive, ignoreTime);
     },
@@ -142,36 +156,33 @@ export default (container = document) => {
   
   homeSwiperTitle.forEach((title) => {
     title.addEventListener('click', (e) => {
-      ignoreScroll = true;
-      bodyScrollBar.updatePluginOptions('dampScroll', {amount: 1});
-      let nextSib = title.nextElementSibling;
-      
-      if (nextSib.classList.contains('active')) {
-        gsap.to(nextSib, {height: 0}).then(() => setTimeout(() => {
-          bodyScrollBar.updatePluginOptions('dampScroll', {amount: pin.isActive ? 0.999 : 0});
-          ignoreScroll = false;
-        }, 300));
-        nextSib.classList.remove('active');
-        title.parentElement.classList.remove('active');
-      }
-      else {
-        gsap.to(Array.from(homeSwiperTitle).map(elem => {
-          const e = elem.nextElementSibling;
-          e.classList.remove('active');
-          e.parentElement.classList.remove('active');
-          return e;
-        }), {height: 0});
-        gsap.to(nextSib, {height: 'auto'}).then(() => setTimeout(() => {
-          bodyScrollBar.updatePluginOptions('dampScroll', {amount: pin.isActive ? 0.999 : 0});
-          ignoreScroll = false;
-        }, 300));
-        // setTimeout(function () {
-        //   scrollbar.scrollIntoView(title, {
-        //     offsetTop: 80,
-        //   });
-        // }, 400);
-        nextSib.classList.add('active');
-        title.parentElement.classList.add('active');
+      if (window.matchMedia('(max-width:767.98px)').matches) {
+        ignoreScroll = true;
+        bodyScrollBar.updatePluginOptions('dampScroll', {amount: 1});
+        let nextSib = title.nextElementSibling;
+    
+        if (nextSib.classList.contains('active')) {
+          gsap.to(nextSib, {height: 0}).then(() => setTimeout(() => {
+            bodyScrollBar.updatePluginOptions('dampScroll', {amount: pin.isActive ? 0.999 : 0});
+            ignoreScroll = false;
+          }, 300));
+          nextSib.classList.remove('active');
+          title.parentElement.classList.remove('active');
+        }
+        else {
+          gsap.to(Array.from(homeSwiperTitle).map(elem => {
+            const e = elem.nextElementSibling;
+            e.classList.remove('active');
+            e.parentElement.classList.remove('active');
+            return e;
+          }), {height: 0});
+          gsap.to(nextSib, {height: 'auto'}).then(() => setTimeout(() => {
+            bodyScrollBar.updatePluginOptions('dampScroll', {amount: pin.isActive ? 0.999 : 0});
+            ignoreScroll = false;
+          }, 300));
+          nextSib.classList.add('active');
+          title.parentElement.classList.add('active');
+        }
       }
     });
   });

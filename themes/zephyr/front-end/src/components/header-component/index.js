@@ -53,6 +53,7 @@ export default (container = document) => {
   bodyScrollBar.addListener(({offset: {y}}) => {
     const deltaY = lastOffsetY - y;
     lastOffsetY = y;
+    if (header.classList.contains('freeze')) return;
     const headerRect = header.getBoundingClientRect();
     let headerTop = headerRect.top + deltaY;
     if (headerTop < -headerRect.height)
