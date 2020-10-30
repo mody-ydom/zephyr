@@ -148,6 +148,7 @@ function register_acf_block_types() {
                             'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-image-gallery/style.css',
                             'category'        => 'zephyr-home',
                             'icon'            => 'admin-appearance',
+                            'supports' => ['anchor' => true],
                             'mode'            => 'preview',
                             'example'         => [
                               'attributes' => [
@@ -165,6 +166,7 @@ function register_acf_block_types() {
                             'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-hero-home/style.css',
                             'category'        => 'zephyr-home',
                             'icon'            => 'admin-appearance',
+                            'supports' => ['anchor' => true],
                             'mode'            => 'preview',
                             'example'         => [
                               'attributes' => [
@@ -182,6 +184,7 @@ function register_acf_block_types() {
                             'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-hero-general/style.css',
                             'category'        => 'zephyr-home',
                             'icon'            => 'admin-appearance',
+                            'supports' => ['anchor' => true],
                             'mode'            => 'preview',
                             'example'         => [
                               'attributes' => [
@@ -199,6 +202,7 @@ function register_acf_block_types() {
                             'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-our-journey/style.css',
                             'category'        => 'zephyr-home',
                             'icon'            => 'admin-appearance',
+                            'supports' => ['anchor' => true],
                             'mode'            => 'preview',
                             'example'         => [
                               'attributes' => [
@@ -218,6 +222,7 @@ function register_acf_block_types() {
                             'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-text-block/style.css',
                             'category'        => 'zephyr-home',
                             'icon'            => 'admin-appearance',
+                            'supports' => ['anchor' => true],
                             'mode'            => 'preview',
                             'example'         => [
                               'attributes' => [
@@ -236,6 +241,7 @@ function register_acf_block_types() {
                             'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-logo/style.css',
                             'category'        => 'zephyr-home',
                             'icon'            => 'admin-appearance',
+                            'supports' => ['anchor' => true],
                             'mode'            => 'preview',
                             'example'         => [
                               'attributes' => [
@@ -254,6 +260,7 @@ function register_acf_block_types() {
                             'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-our-process/style.css',
                             'category'        => 'zephyr-home',
                             'icon'            => 'admin-appearance',
+                            'supports' => ['anchor' => true],
                             'mode'            => 'preview',
                             'example'         => [
                               'attributes' => [
@@ -272,6 +279,7 @@ function register_acf_block_types() {
                             'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-home-swiper/style.css',
                             'category'        => 'zephyr-home',
                             'icon'            => 'admin-appearance',
+                            'supports' => ['anchor' => true],
                             'mode'            => 'preview',
                             'example'         => [
                               'attributes' => [
@@ -290,6 +298,7 @@ function register_acf_block_types() {
                             'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-our-testimonials/style.css',
                             'category'        => 'zephyr-home',
                             'icon'            => 'admin-appearance',
+                            'supports' => ['anchor' => true],
                             'mode'            => 'preview',
                             'example'         => [
                               'attributes' => [
@@ -309,6 +318,7 @@ function register_acf_block_types() {
                             'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-contact-us/style.css',
                             'category'        => 'zephyr-home',
                             'icon'            => 'admin-appearance',
+                            'supports' => ['anchor' => true],
                             'mode'            => 'preview',
                             'example'         => [
                               'attributes' => [
