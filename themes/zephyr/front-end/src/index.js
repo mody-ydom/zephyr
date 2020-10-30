@@ -60,4 +60,4 @@ document.onreadystatechange = function () {
   onLoad();
 };
 
-// window.addEventListener('load', () => ScrollTrigger.refresh());
+window.addEventListener('load', () => ScrollTrigger.refresh());
