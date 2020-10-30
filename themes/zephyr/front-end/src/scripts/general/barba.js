@@ -119,7 +119,7 @@ export default (reInvokableFunction) => {
       prevent: ({el}) => el.classList && el.classList.contains('ab-item'),
       // prefetchIgnore: true,
     });
-    barba.hooks.afterEnter(data => reInvokableFunction(data.next.container));
+    barba.hooks.beforeEnter(data => reInvokableFunction(data.next.container));
     barba.hooks.beforeLeave(() => {
       window.dispatchEvent(new Event('will-leave'));
       // for (let scrollTrigger of ScrollTrigger.getAll()) {
