@@ -48,6 +48,24 @@ export default (reInvokableFunction) => {
         });
     },
   };
+  const transitionblog = {
+    name: 'opacityblog-transition',
+    to: {
+      custom: ({current, next}) => (current.namespace === 'blog' && next.namespace === 'blog'),
+    },
+    leave(data) {
+      return gsap.to(data.current.container.querySelector('.right-content'), {
+        opacity: 0,
+      });
+    },
+    enter(data) {
+      gsap.set(data.current.container.querySelector('.right-content'), {zIndex: -1, position: 'absolute'});
+      window.scrollTo(0, 0);
+      return gsap.from(data.next.container.querySelector('.right-content'), {
+        opacity: 0,
+      });
+    },
+  };
   const transition2 = {
     name: 'opacity-transition',
     leave(data) {
@@ -114,7 +132,7 @@ export default (reInvokableFunction) => {
   };
   if (document.querySelector('[data-barba]')) {
     barba.init({
-      transitions: [transition2,transition1],
+      transitions: [transition2,transitionblog],
       timeout: 0,
       prevent: ({el}) => el.classList && el.classList.contains('ab-item'),
       // prefetchIgnore: true,
