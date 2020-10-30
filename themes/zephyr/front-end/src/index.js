@@ -15,7 +15,7 @@ const reInvokableFunction = (container = document) => {
   }catch (e){
     console.log(e);
   }
-  container.querySelector('.component-hero .btn').addEventListener('click',function (e){
+  container.querySelector('.component-hero .btn')?.addEventListener('click',function (e){
     e.preventDefault();
     const element = container.querySelector(this.getAttribute('href'))
     bodyScrollBar.scrollIntoView(element);
