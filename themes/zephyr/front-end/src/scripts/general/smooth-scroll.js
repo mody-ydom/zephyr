@@ -65,6 +65,6 @@ export default () => {
   });
   bodyScrollBar.addListener(ScrollTrigger.update);
   setTimeout(function () {
-    // ScrollTrigger.refresh();
+    ScrollTrigger.refresh();
   }, 0);
 }
