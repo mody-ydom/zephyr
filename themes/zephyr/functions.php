@@ -67,13 +67,11 @@ add_action('after_setup_theme', 'zephyr_setup');
  * Enqueue scripts and styles.
  */
 function zephyr_scripts() {
-  if(is_singular( 'post' ) || is_page_template( 'archive.php' )){
+//  if(is_singular( 'post' ) || is_page_template( 'archive.php' )){
     wp_enqueue_style('single',get_template_directory_uri() . '/template-parts/blocks/component-growth-guide/style.css',['zephyr']);
-  }
+//  }
   wp_enqueue_style('zephyr', get_template_directory_uri() . '/assets/main.css', []);
   wp_enqueue_script('zephyr', get_template_directory_uri() . '/assets/main.js', [], null, true);
-  wp_deregister_script('autosave');
-  
 }
 
 //add_action('admin_enqueue_scripts', 'zephyr_scripts');
