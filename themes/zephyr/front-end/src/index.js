@@ -10,6 +10,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 const isAdmin = NODE_ENV_ADMIN;
 const reInvokableFunction = (container = document) => {
+  eval(`var $ = jQuery;$( 'div.wpcf7 > form' ).each( function() { var $form = $( this ); wpcf7.initForm( $form ); if ( wpcf7.cached ) { wpcf7.refill( $form ); } });`);
   
   const bodyScrollBar = Scrollbar.get(document.querySelector('[smooth-scroll-container]'));
   bodyScrollBar.updatePluginOptions('dampScroll', {amount: 0});
