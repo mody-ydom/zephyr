@@ -13,7 +13,7 @@ const reInvokableFunction = (container = document) => {
   
   const bodyScrollBar = Scrollbar.get(document.querySelector('[smooth-scroll-container]'));
   bodyScrollBar.updatePluginOptions('dampScroll', {amount: 0});
-  bodyScrollBar.scrollTo(0, 0,500);
+  bodyScrollBar.scrollTo(0, 0, 500);
   bodyScrollBar.update();
   for (let scrollTriggerInstance of ScrollTrigger.getAll()) {
     scrollTriggerInstance.kill();
@@ -23,7 +23,7 @@ const reInvokableFunction = (container = document) => {
   }
   setTimeout(function () {
     animations(container);
-  }, 400);
+  }, 100);
 };
 
 function onLoad() {

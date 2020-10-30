@@ -12,10 +12,10 @@ export default function inViewAnimations(container = document) {
   ScrollTrigger.batch(elements1, {
     onEnter: batch => {
       gsap.set(batch, {autoAlpha: 1});
-      gsap.from(batch, {
+      gsap.fromTo(batch, {autoAlpha:0,xPercent: (_, target) => 100 * (target.classList.contains('iv-st-from-right') ? 1 : -1)},{
         duration: .7,
         autoAlpha: 0,
-        xPercent: (_, target) => 100 * (target.classList.contains('iv-st-from-right') ? 1 : -1),
+        xPercent: 0,
         ease: 'power1.out',
         stagger: .1,
         clearProps: 'transform',
@@ -23,10 +23,10 @@ export default function inViewAnimations(container = document) {
     },
     onEnterBack: batch => {
       gsap.set(batch, {autoAlpha: 1});
-      gsap.from(batch, {
+      gsap.fromTo(batch, {autoAlpha:0,xPercent: (_, target) => 100 * (target.classList.contains('iv-st-from-right') ? 1 : -1)},{
         duration: .7,
         autoAlpha: 0,
-        xPercent: (_, target) => 100 * (target.classList.contains('iv-st-from-right') ? 1 : -1),
+        xPercent: 0,
         ease: 'power1.out',
         stagger: .1,
         clearProps: 'transform',
@@ -40,10 +40,10 @@ export default function inViewAnimations(container = document) {
   ScrollTrigger.batch(elements2, {
     onEnter: batch => {
       gsap.set(batch, {autoAlpha: 1});
-      gsap.from(batch, {
+      gsap.fromTo(batch, {autoAlpha:0,yPercent: (_, target) => 50 * (target.classList.contains('iv-st-from-bottom') ? 1 : -1)},{
         duration: .7,
         autoAlpha: 0,
-        yPercent: (_, target) => 50 * (target.classList.contains('iv-st-from-bottom') ? 1 : -1),
+        yPercent: 0,
         ease: 'power1.out',
         stagger: .1,
         clearProps: 'transform',
@@ -51,10 +51,10 @@ export default function inViewAnimations(container = document) {
     },
     onEnterBack: batch => {
       gsap.set(batch, {autoAlpha: 1});
-      gsap.from(batch, {
+      gsap.fromTo(batch, {autoAlpha:0,yPercent: (_, target) => 50 * (target.classList.contains('iv-st-from-bottom') ? 1 : -1)},{
         duration: .7,
         autoAlpha: 0,
-        yPercent: (_, target) => 50 * (target.classList.contains('iv-st-from-bottom') ? 1 : -1),
+        yPercent: 0,
         ease: 'power1.out',
         stagger: .1,
         clearProps: 'transform',
@@ -68,10 +68,10 @@ export default function inViewAnimations(container = document) {
   ScrollTrigger.batch(elements3, {
     onEnter: batch => {
       gsap.set(batch, {autoAlpha: 1});
-      gsap.from(batch, {
+      gsap.fromTo(batch, {autoAlpha:0,y: 300},{
         duration: .6,
         autoAlpha: 0,
-        y: 300,
+        y: 0,
         ease: 'power2.out',
         stagger: .6,
         clearProps: 'transform',
@@ -79,10 +79,10 @@ export default function inViewAnimations(container = document) {
     },
     onEnterBack: batch => {
       gsap.set(batch, {autoAlpha: 1});
-      gsap.from(batch, {
+      gsap.fromTo(batch, {autoAlpha:0,y: 300},{
         duration: .6,
         autoAlpha: 0,
-        y: 300,
+        y: 0,
         ease: 'power2.out',
         stagger: .6,
         clearProps: 'transform',
@@ -97,10 +97,10 @@ export default function inViewAnimations(container = document) {
   ScrollTrigger.batch(elements4, {
     onEnter: batch => {
       gsap.set(batch, {autoAlpha: 1});
-      gsap.from(batch, {
+      gsap.fromTo(batch, {autoAlpha:0,yPercent: 50},{
         duration: .7,
         autoAlpha: 0,
-        yPercent: 50,
+        yPercent: 0,
         ease: 'power1.out',
         stagger: .1,
         clearProps: 'transform',
@@ -108,10 +108,10 @@ export default function inViewAnimations(container = document) {
     },
     onEnterBack: batch => {
       gsap.set(batch, {autoAlpha: 1});
-      gsap.from(batch, {
+      gsap.fromTo(batch, {autoAlpha:0,y: 50},{
         duration: .7,
         autoAlpha: 0,
-        y: 50,
+        y: 0,
         ease: 'power1.out',
         stagger: .1,
         clearProps: 'transform',
