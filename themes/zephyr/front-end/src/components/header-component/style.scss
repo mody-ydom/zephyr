@@ -205,26 +205,33 @@ header {
             
             .small-link {
                 color: $zephyr-gray-light;
-                overflow: hidden;
                 
                 span {
                     position: relative;
-                    transition: transform 0.3s ease-in-out;
                     display: block;
                     
                     &:before {
+                        background: none repeat scroll 0 0 transparent;
+                        bottom: -2px;
+                        content: "";
+                        display: block;
+                        height: 2px;
+                        left: 50%;
                         position: absolute;
-                        top: 100%;
-                        content: attr(data-hover);
-                        transform: translate3d(0, 0, 0);
+                        background: $zephyr-green;
+                        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                        width: 0;
+                        text-decoration: none;
                     }
                 }
                 
                 &:hover {
                     span {
-                        transform: translateY(-100%);
-                        color: $zephyr-green;
-                        
+                        &:before {
+                            left: 0;
+                            width: 100%;
+                        }
+    
                     }
                 }
                 
