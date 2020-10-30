@@ -67,7 +67,7 @@ export default (container = document) => {
   
   window.addEventListener('container-fixed', () => resizeAll(sections));
   
-  const images = getElementsForAnimation(container, '.component-image-gallery img');
+  const images = container.querySelectorAll('img');
   
   for (let image of images) {
     

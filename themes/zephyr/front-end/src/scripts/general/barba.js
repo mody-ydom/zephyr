@@ -48,8 +48,8 @@ export default (reInvokableFunction) => {
         });
     },
   };
-  const transitionblog = {
-    name: 'opacityblog-transition',
+  const transitionBlog = {
+    name: 'opacityBlog-transition',
     to: {
       custom: ({current, next}) => (current.namespace === 'blog' && next.namespace === 'blog'),
     },
@@ -132,13 +132,13 @@ export default (reInvokableFunction) => {
   };
   if (document.querySelector('[data-barba]')) {
     barba.init({
-      transitions: [transition2,transitionblog],
+      transitions: [transition2,transitionBlog],
       timeout: 0,
       prevent: ({el}) => el.classList && el.classList.contains('ab-item'),
       // prefetchIgnore: true,
     });
+    barba.hooks.afterEnter(()=>setTimeout(()=>ScrollTrigger.refresh(),500));
     barba.hooks.beforeEnter(data =>{reInvokableFunction(data.next.container)});
-    barba.hooks.afterEnter(()=>ScrollTrigger.refresh());
     barba.hooks.beforeEnter(data => document.body.className = data.next.container.dataset.bodyClass);
     barba.hooks.beforeLeave(() => {
       window.dispatchEvent(new Event('will-leave'));
