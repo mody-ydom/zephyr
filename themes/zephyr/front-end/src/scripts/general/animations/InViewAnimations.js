@@ -43,11 +43,11 @@ export default function inViewAnimations(container = document) {
     onEnter: batch => {
       gsap.fromTo(batch, {
         autoAlpha: 0,
-        yPercent: (_, target) => 50 * (target.classList.contains('iv-st-from-bottom') ? 1 : -1),
+        y: (_, target) => 80 * (target.classList.contains('iv-st-from-bottom') ? 1 : -1),
       },{
         duration: .7,
         autoAlpha: 1,
-        yPercent: 0,
+        y: 0,
         ease: 'power1.out',
         stagger: .1,
         clearProps: 'transform',
