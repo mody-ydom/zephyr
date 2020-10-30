@@ -25,6 +25,7 @@ const reInvokableFunction = (container = document) => {
   }
   setTimeout(function () {
     animations(container);
+    ScrollTrigger.refresh();
   }, 500);
 };
 

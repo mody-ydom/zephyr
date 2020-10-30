@@ -4,7 +4,6 @@ import wordsUpAnimation from './wordsUpAnimation';
 import linesUpAnimation from './linesUpAnimation';
 import inViewAnimations from './InViewAnimations';
 import realLinesUpAnimation from './realLinesUpAnimation';
-import coreIconsAnimations from './coreIconsAnimations';
 import gsapConfig from './gsap.config';
 
 export default function animations(container = document) {
@@ -17,5 +16,4 @@ export default function animations(container = document) {
   setTimeout(function () {
     realLinesUpAnimation(container);
   }, 200);
-  // coreIconsAnimations(container);
 }
