@@ -15,6 +15,11 @@ const reInvokableFunction = (container = document) => {
   }catch (e){
     console.log(e);
   }
+  container.querySelector('.component-hero .btn').addEventListener('click',function (e){
+    e.preventDefault();
+    const element = container.querySelector(this.getAttribute('href'))
+    bodyScrollBar.scrollIntoView(element);
+  })
   const bodyScrollBar = Scrollbar.get(document.querySelector('[smooth-scroll-container]'));
   bodyScrollBar.updatePluginOptions('dampScroll', {amount: 0});
   document.querySelector('header').classList.remove('freeze');
