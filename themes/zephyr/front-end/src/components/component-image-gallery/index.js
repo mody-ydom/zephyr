@@ -47,20 +47,39 @@ export default (container = document) => {
   function resizeAll(sections) {
     for (let section of sections) {
       const grid = section.querySelector('.images-grid');
-      
+  
       const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
       const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-      
+  
       for (let gridItem of grid.children) {
         resizeGridItem(gridItem, rowHeight, rowGap);
       }
     }
   }
   
-  function resizeGridItem(item, rowHeight, rowGap) {
+  function resizeGridItem(item, rowHeight = false, rowGap = false) {
+    rowHeight || (rowHeight = parseInt(window.getComputedStyle(item.closest('.images-grid')).getPropertyValue('grid-auto-rows')));
+    rowGap || (rowGap = parseInt(window.getComputedStyle(item.closest('.images-grid')).getPropertyValue('grid-row-gap')));
+    
     const rowSpan = Math.ceil((item.firstElementChild.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
     item.style.gridRowEnd = 'span ' + rowSpan;
   }
   
   window.addEventListener('container-fixed', () => resizeAll(sections));
+  
+  const images = getElementsForAnimation(container, '.component-image-gallery img');
+  
+  for (let image of images) {
+    
+    if (image.complete) {
+      resizeGridItem(image.closest('.grid-item'));
+      ScrollTrigger.refresh();
+    }
+    else {
+      image.addEventListener('load', () => {
+        resizeGridItem(image.closest('.grid-item'));
+        ScrollTrigger.refresh();
+      });
+    }
+  }
 };
