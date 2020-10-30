@@ -53,7 +53,10 @@ export default (container = document) => {
   bodyScrollBar.addListener(({offset: {y}}) => {
     const deltaY = lastOffsetY - y;
     lastOffsetY = y;
-    if (header.classList.contains('freeze')) return;
+    if (header.classList.contains('freeze')) {
+      header.style.top = -headerRect.height + 'px';
+      return;
+    }
     const headerRect = header.getBoundingClientRect();
     let headerTop = headerRect.top + deltaY;
     if (headerTop < -headerRect.height)
@@ -61,7 +64,7 @@ export default (container = document) => {
     if (headerTop > 0)
       headerTop = 0;
     header.style.top = headerTop + 'px';
-    
+  
     if (y > headerRect.height && !header.classList.contains('black')) {
       header.classList.add('black');
     }
