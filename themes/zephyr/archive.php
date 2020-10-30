@@ -29,7 +29,7 @@ while ($the_query->have_posts()):$the_query->the_post();
               <div class="left-content">
                 <ol class="guide-container">
                   <?php
-                  $args = array('hide_empty' => '0');
+                  $args = array('hide_empty' => '1');
                   $categories = get_categories($args);
                   $cat_index = 1;
                   $single_title = get_the_title();
@@ -125,7 +125,7 @@ while ($the_query->have_posts()):$the_query->the_post();
                   <label>
                     <select onchange="location = this.value;" class="headline-6">
                       <?php
-                      $args = array('hide_empty' => '0');
+                      $args = array('hide_empty' => '1');
                       $categories = get_categories($args);
                       foreach ($categories as $category) {
                         ?>
