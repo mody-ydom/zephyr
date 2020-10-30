@@ -23,7 +23,7 @@
 	<?php wp_body_open(); ?>
   <header>
     <div class="container">
-      <div class="header-content <?php if(is_singular( 'post' ) || is_page_template( 'archive.php' )){echo 'dark';}?> ">
+      <div class="header-content dark <?=$page_header_type?$page_header_type:''; ?>">
         <!--burger menu and cross-->
         <div class="menu">
           <button class="burger-menu" id="burger-menu">
