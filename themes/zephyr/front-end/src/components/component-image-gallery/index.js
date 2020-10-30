@@ -70,7 +70,7 @@ export default (container = document) => {
   const images = container.querySelectorAll('img');
   
   for (let image of images) {
-    
+    console.log(image,image.closest('.grid-item'));
     if (image.complete) {
       resizeGridItem(image.closest('.grid-item'));
       // ScrollTrigger.refresh();
