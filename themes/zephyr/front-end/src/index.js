@@ -32,8 +32,8 @@ function onLoad() {
     if (!isAdmin) {
       gsap.registerPlugin(ScrollTrigger);
       smoothScroll();
-      barba(reInvokableFunction);
       reInvokableFunction();
+      barba(reInvokableFunction);
     }
     if (isAdmin) {
       const getBlockList = () => window.wp.data.select('core/block-editor').getBlocks();

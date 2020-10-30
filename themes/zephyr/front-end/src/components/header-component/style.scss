@@ -12,22 +12,24 @@ header {
         background-color: #1f1f1f;
         
         .header-content {
+            @include min-small-screen {
+        
+                .links {
+                    //background-color: transparent !important;
             
-            .links {
-                //background-color: transparent !important;
-                
-                .small-link {
-                    color: $zephyr-gray-light !important;
+                    .small-link {
+                        color: $zephyr-gray-light !important;
+                    }
+                }
+                .logo.dark {
+                    display: none !important;
+                }
+        
+                .logo.light {
+                    display: block !important;
                 }
             }
     
-            .logo.dark {
-                display: none !important;
-            }
-    
-            .logo.light {
-                display: block !important;
-            }
     
             .burger-menu {
                 span {
@@ -39,7 +41,7 @@ header {
                 &.active {
                     span {
                         &:after, &:before {
-                            background: $zephyr-gray-light;
+                            background: $zephyr-gray;
                         }
                     }
                 }
@@ -294,15 +296,6 @@ header {
                 
                 &.light {
                     display: none;
-                }
-                
-                @include min-small-screen {
-                    &.dark {
-                        display: block;
-                    }
-                    &.light {
-                        display: none;
-                    }
                 }
             }
             

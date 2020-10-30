@@ -8,10 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function inViewAnimations(container = document) {
   const elements1 = getElementsForAnimation(container, '.iv-st-from-left, .iv-st-from-right');
-  gsap.set(elements1, {autoAlpha: 0});
   ScrollTrigger.batch(elements1, {
     onEnter: batch => {
-      gsap.set(batch, {autoAlpha: 1});
       gsap.fromTo(batch, {autoAlpha:0,xPercent: (_, target) => 100 * (target.classList.contains('iv-st-from-right') ? 1 : -1)},{
         duration: .7,
         autoAlpha: 0,
@@ -22,7 +20,6 @@ export default function inViewAnimations(container = document) {
       });
     },
     onEnterBack: batch => {
-      gsap.set(batch, {autoAlpha: 1});
       gsap.fromTo(batch, {autoAlpha:0,xPercent: (_, target) => 100 * (target.classList.contains('iv-st-from-right') ? 1 : -1)},{
         duration: .7,
         autoAlpha: 0,
@@ -36,11 +33,9 @@ export default function inViewAnimations(container = document) {
     once: true,
   });
   const elements2 = getElementsForAnimation(container, '.iv-st-from-top, .iv-st-from-bottom');
-  gsap.set(elements2, {autoAlpha: 0});
   ScrollTrigger.batch(elements2, {
     onEnter: batch => {
       console.log(batch);
-      gsap.set(batch, {autoAlpha: 1});
       gsap.fromTo(batch, {autoAlpha:0,yPercent: (_, target) => 50 * (target.classList.contains('iv-st-from-bottom') ? 1 : -1)},{
         duration: .7,
         autoAlpha: 0,
@@ -51,7 +46,6 @@ export default function inViewAnimations(container = document) {
       });
     },
     onEnterBack: batch => {
-      gsap.set(batch, {autoAlpha: 1});
       gsap.fromTo(batch, {autoAlpha:0,yPercent: (_, target) => 50 * (target.classList.contains('iv-st-from-bottom') ? 1 : -1)},{
         duration: .7,
         autoAlpha: 0,
