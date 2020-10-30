@@ -8,6 +8,7 @@ section.component-hero {
     align-items: center;
     
     .test-blob {
+        opacity: 0;
         position: absolute;
         top: 33.3rem;
         right: 8%;
@@ -218,6 +219,7 @@ section.component-hero {
             position: absolute;
             z-index: -1;
             transition: none !important;
+            opacity: 0;
     
             &.orange-circle {
                 top: size(109);
