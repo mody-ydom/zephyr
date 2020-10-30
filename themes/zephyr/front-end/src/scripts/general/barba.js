@@ -31,7 +31,7 @@ export default (reInvokableFunction) => {
   
       return gsap.timeline({
         onComplete() {
-          ScrollTrigger.refresh();
+          // ScrollTrigger.refresh();
         },
       })
         .set(background, {
@@ -59,7 +59,7 @@ export default (reInvokableFunction) => {
       gsap.set(data.current.container, {zIndex: -1, position: 'absolute'});
       window.scrollTo(0, 0);
       return gsap.from(data.next.container, {
-        opacity: 0, onComplete: ScrollTrigger.refresh,
+        opacity: 0,
       });
     },
   };
@@ -107,24 +107,25 @@ export default (reInvokableFunction) => {
         yPercent: -100,
         ease: 'power2.in',
         onComplete: () => {
-          ScrollTrigger.refresh();
+          // ScrollTrigger.refresh();
         },
       });
     },
   };
   if (document.querySelector('[data-barba]')) {
     barba.init({
-      transitions: [transition1, transition3],
+      transitions: [transition2,transition1],
       timeout: 0,
       prevent: ({el}) => el.classList && el.classList.contains('ab-item'),
       // prefetchIgnore: true,
     });
-    barba.hooks.beforeEnter(data => reInvokableFunction(data.next.container));
+    barba.hooks.beforeEnter(data =>{reInvokableFunction(data.next.container)});
+    barba.hooks.beforeEnter(data => document.body.className = data.next.container.dataset.bodyClass);
     barba.hooks.beforeLeave(() => {
       window.dispatchEvent(new Event('will-leave'));
-      // for (let scrollTrigger of ScrollTrigger.getAll()) {
-      //   scrollTrigger.kill();
-      // }
+      for (let scrollTrigger of ScrollTrigger.getAll()) {
+        scrollTrigger.kill();
+      }
     });
     gsap.timeline()
       .fromTo('.barba-overlay-transition', {yPercent: 100}, {duration: 0, yPercent: 0})

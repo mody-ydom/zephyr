@@ -73,12 +73,12 @@ export default (container = document) => {
     
     if (image.complete) {
       resizeGridItem(image.closest('.grid-item'));
-      ScrollTrigger.refresh();
+      // ScrollTrigger.refresh();
     }
     else {
       image.addEventListener('load', () => {
         resizeGridItem(image.closest('.grid-item'));
-        ScrollTrigger.refresh();
+        // ScrollTrigger.refresh();
       });
     }
   }

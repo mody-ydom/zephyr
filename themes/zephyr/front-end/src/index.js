@@ -23,7 +23,7 @@ const reInvokableFunction = (container = document) => {
   }
   setTimeout(function () {
     animations(container);
-  }, 100);
+  }, 500);
 };
 
 function onLoad() {
@@ -60,4 +60,4 @@ document.onreadystatechange = function () {
   onLoad();
 };
 
-window.addEventListener('load', () => ScrollTrigger.refresh());
+// window.addEventListener('load', () => ScrollTrigger.refresh());

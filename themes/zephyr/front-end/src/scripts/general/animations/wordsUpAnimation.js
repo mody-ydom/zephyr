@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 
 export default function wordsUpAnimation(container = document, selector = '.word-up') {
-  const wordsToSplit = getElementsForAnimation(container, selector);
+  const wordsToSplit = getElementsForAnimation(container,selector);
   if (!wordsToSplit) return;
   new SplitText(wordsToSplit, {
     type: 'words',
@@ -26,7 +26,7 @@ export default function wordsUpAnimation(container = document, selector = '.word
       .to(batch, {yPercent: 0, duration: 0.35, stagger: 0.05})
       .set(batch.map(e => e.parentElement), {overflow: 'visible'}, '-=.2'),
     start: 'top 80%',
-    batchMax: 10,
+    batchMax: 15,
     once: true,
   });
   gsap.set(wordsToSplit, {autoAlpha: 1});
