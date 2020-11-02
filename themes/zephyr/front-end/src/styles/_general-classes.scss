@@ -910,6 +910,8 @@ input, textarea {
     position: relative;
     transition: color 400ms;
     z-index: 5;
+    background: transparent;
+    cursor: pointer;
     
     &::before {
         content: '';
