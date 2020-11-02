@@ -26,8 +26,9 @@ $subscribe_to_newsletter = get_field('subscribe_to_newsletter', 'options');
             <div class="links">
                 <div class="title-and-link  newsletter">
                     <h3 class="headline-7"><?php echo $subscribe_to_newsletter; ?></h3>
-                    <input type="email" placeholder="Email">
-                    <a class="btn has-bg" href="#">Submit</a>
+<!--                    <input type="email" placeholder="Email">-->
+<!--                    <button type="submit" class="btn has-bg">Submit</button>-->
+                  <?=do_shortcode('[contact-form-7 id="378" title="newsletter"]')?>
                 </div>
 
                 <?php while (have_rows('footer_links', 'options')):the_row(); ?>
