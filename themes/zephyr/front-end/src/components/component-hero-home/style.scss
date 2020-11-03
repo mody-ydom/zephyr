@@ -179,20 +179,25 @@ section.component-hero {
         }
         
         .content {
-          
+            margin-bottom: 0;
+            position: relative;
+            @include min-small-screen {
+                margin-bottom: 0;
+            }
             .headline-1, h1 {
                 max-width: size(320);
                 margin: 0 auto;
                 color: $zephyr-gray;
+                margin-bottom: 0;
                 @include min-small-screen {
                     max-width: size(450);
                     line-height: size(60);
-                    margin-bottom: size(20);
+                    margin-bottom: 0;
                 }
                 @include min-medium-screen {
                     max-width: size(650);
                     font-size: size(35);
-                    margin-bottom: size(20);
+                    margin-bottom: 0;
                 }
                 @include x-large-screen {
                     max-width: size(850);
@@ -207,6 +212,8 @@ section.component-hero {
             .btn {
                 max-width: size(250);
                 letter-spacing: size(0.2);
+                position: absolute;
+                top: 100%;
             }
     
             .paragraph,p,.headline-6 {
