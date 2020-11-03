@@ -2,7 +2,7 @@
 @import "src/styles/mixins";
 
 section.component-home-swiper {
-    @include marginY(size(190), size(185));
+    @include marginY(size(190), size(190));
     
     @include min-small-screen {
         @include marginY(size(210), size(218));
@@ -13,7 +13,7 @@ section.component-home-swiper {
             height: auto;
     
             .left-side {
-                @include paddingY(size(47), size(55));
+                @include paddingY(size(47), size(47));
                 @include paddingX(size(25));
                 @include min-medium-screen {
                     @include paddingX(size(50));

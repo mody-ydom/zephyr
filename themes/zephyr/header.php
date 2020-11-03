@@ -45,8 +45,7 @@
             $link = $header_link['link'];
             if ($header_link['has_menu']) { ?>
               <div class="has-drop-down">
-                <a class="small-link link-arrow" href="<?php echo $link['url']; ?>"
-                   target="<?php echo $link['target']; ?>"><span
+                <a class="small-link link-arrow"><span
                     data-hover="<?php echo $link['title']; ?>"><?php echo $link['title']; ?></span>
   
                 <svg aria-hidden="true" class="svg-inline--fa fa-angle-down fa-w-8 fa-xs" data-icon="angle-down" data-prefix="fal" focusable="false" role="img" viewBox="0 0 256 512"

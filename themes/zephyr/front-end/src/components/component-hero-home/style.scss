@@ -12,8 +12,8 @@ section.component-hero-home {
         position: absolute;
         top: 33.3rem;
         right: 8%;
-        width: size(250);
-        height: size(250);
+        width: size(130);
+        height: size(130);
         background: #b9f5e6;
         z-index: -1;
         animation: morph 5s linear infinite alternate, moveX 25s ease-in-out infinite alternate-reverse, moveY 15s ease-in-out infinite alternate;
@@ -21,8 +21,8 @@ section.component-hero-home {
             right: -35%;
         }
         @include min-small-screen {
-            width: size(240);
-            height: size(240);
+            width: size(200);
+            height: size(200);
             right: -21%;
         }
         @include min-medium-screen {
@@ -32,8 +32,6 @@ section.component-hero-home {
             right: 5%;
         }
         @include x-large-screen {
-            width: size(285);
-            height: size(285);
             top: size(333);
             right: 8%;
         }

@@ -80,8 +80,13 @@ section.component-our-journey {
                     display: none;
                 }
                 .swiper-pagination{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                    padding: 0 30px;
                     .swiper-pagination-bullet{
-                        margin: 0 size(12);
+                        margin: size(12);
                     }
                 }
                 .swiper-button-next,.swiper-button-prev{
