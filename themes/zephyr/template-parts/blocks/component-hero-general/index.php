@@ -6,7 +6,7 @@ if (!empty($block['anchor'])) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'component-hero';
+$className = 'component-hero-general';
 
 if (!empty($block['className'])) {
   $className .= ' ' . $block['className'];

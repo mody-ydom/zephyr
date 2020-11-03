@@ -5,7 +5,7 @@ import getElementsForAnimation from '../../scripts/functions/getElementsForAnima
 
 gsap.registerPlugin(ScrollTrigger);
 export default (container = document) => {
-  const hero = container.querySelector('.component-hero.no-bg');
+  const hero = container.querySelector('.component-hero-home');
   if (!hero) return;
   
   gsap.timeline({
