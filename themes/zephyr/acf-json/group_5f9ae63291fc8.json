@@ -16,7 +16,7 @@
                 "id": ""
             },
             "choices": {
-                "dark": "dark",
+                "black": "black",
                 "white": "white"
             },
             "default_value": "white",
@@ -45,5 +45,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603987072
+    "modified": 1604411584
 }

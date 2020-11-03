@@ -21,7 +21,7 @@
 <body <?php body_class(); ?> data-barba="wrapper">
   <div class="barba-overlay-transition"></div>
 	<?php wp_body_open(); ?>
-  <header>
+  <header class="<?=$page_header_type=='white'?'white':'black'; ?>">
     <div class="container">
       <div class="header-content  <?=$page_header_type?$page_header_type:''; ?>">
         <!--burger menu and cross-->
@@ -76,6 +76,6 @@
     </div>
   </header>
   <div class="smooth-scroller" smooth-scroll-container>
-    <main <?=is_singular( 'post' ) || is_tag() || is_category() || is_author() || is_search() || is_page_template( 'archive.php' ) ? 'dark' : ''?> <?=$page_header_type || is_404() ? $page_header_type : ''?> data-barba="container" data-barba-namespace="<?=is_singular( 'post' ) || is_page_template( 'archive.php' ) ? 'blog' : 'home'?>">
+    <main data-header-class="<?=is_singular( 'post' ) || is_404() || is_tag() || is_category() || is_author() || is_search() || is_page_template( 'archive.php' ) ? 'black' : $page_header_type?>"  data-barba="container" data-barba-namespace="<?=is_singular( 'post' ) || is_page_template( 'archive.php' ) ? 'blog' : 'home'?>">
       <!-- overlay dark menu -->
       <div class="<?php echo pageWrapper( $post->post_name ); ?>">

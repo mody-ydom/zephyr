@@ -1193,8 +1193,12 @@ header .header-content .links .has-drop-down {
     .small-link{
         margin-right: 0!important;
     }
+    margin-right: 0;
+    @include min-small-screen {
+        margin-right: size(20);
+    }
     @include min-medium-screen {
-      margin-right: size(40);
+        margin-right: size(40);
     }
     @include x-large-screen {
       margin-right: size(62) ;
@@ -1234,7 +1238,7 @@ header .header-content .links .has-drop-down {
         pointer-events: none;
         transition: all 400ms ease-in-out;
         padding: size(10);
-        @include max-small-screen {
+        @include max-x-small-screen {
             position: relative;
             height: 0;
             display: none;
@@ -1243,7 +1247,6 @@ header .header-content .links .has-drop-down {
             transform: translateX(0);
             background: $zephyr-gray;
             box-shadow: none;
-            margin-bottom: 25px;
         }
         // text
         .text {
@@ -1253,14 +1256,13 @@ header .header-content .links .has-drop-down {
             padding: size(10) size(15);
             font-size: size(12);
     
-            @include max-small-screen {
+            @include max-x-small-screen {
                 color: #fff;
                 text-align: center;
             }
             
             &:hover {
-                background: $zephyr-gray-light;
-                color: $zephyr-green;
+                color: $zephyr-green!important;
             }
         }
     }

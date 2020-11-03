@@ -139,7 +139,7 @@ export default (reInvokableFunction) => {
     });
     barba.hooks.afterEnter(()=>setTimeout(()=>ScrollTrigger.refresh(),500));
     barba.hooks.beforeEnter(data =>{reInvokableFunction(data.next.container)});
-    barba.hooks.beforeEnter(data => document.body.className = data.next.container.dataset.bodyClass);
+    barba.hooks.beforeEnter(data => document.querySelector('header').className = data.next.container.dataset.headerClass);
     barba.hooks.beforeLeave(() => {
       window.dispatchEvent(new Event('will-leave'));
       for (let scrollTrigger of ScrollTrigger.getAll()) {
