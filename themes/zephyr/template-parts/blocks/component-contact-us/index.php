@@ -38,7 +38,7 @@ $address_link = get_field('address_link');
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className) ?>
 <div class="container">
-  <div class="contact-us-model <?=$form_type == 'second_option' ? 'in-about-page' : ''?>">
+  <div class="contact-us-model iv-st-from-bottom <?=$form_type == 'second_option' ? 'in-about-page' : ''?>">
     
     <?php if ($contact_form_shortcode) { ?>
       <div class="data">
@@ -52,16 +52,16 @@ $address_link = get_field('address_link');
     
     <div class="content">
       <?php if ($title) { ?>
-        <h3 class="title-contact word-up"> <?=$title?> </h3>
+        <h3 class="title-contact "> <?=$title?> </h3>
       <?php } ?>
       <?php if ($description) { ?>
-        <div class="paragraph-1 word-up small-fz center">
+        <div class="paragraph-1  small-fz center">
           <?=$description?>
         </div>
       <?php } ?>
       <div class="contact-info">
         <?php if ($email) { ?>
-          <div class="icon-and-info iv-st-from-bottom">
+          <div class="icon-and-info">
             <svg class="desktop-only" width="20" height="14" viewBox="0 0 20 14" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
               <path d="M19.0001 1H1.1001V13.3057H19.0001V1Z" stroke="#252525" stroke-width="1.08"
@@ -87,13 +87,13 @@ $address_link = get_field('address_link');
             </svg>
             <div class="info">
               <h3 class="text desktop-only"><?=$email_text?></h3>
-              <a target="_blank" class="paragraph-1 word-up small-fz"
+              <a target="_blank" class="paragraph-1  small-fz"
                  href="mailto:<?=$email?>"><?=$email?></a>
             </div>
           </div>
         <?php } ?>
         <?php if ($address) { ?>
-          <div class="icon-and-info iv-st-from-bottom location">
+          <div class="icon-and-info location">
             <svg class="desktop-only" width="20" height="23" viewBox="0 0 17 23" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
               <path
@@ -114,12 +114,12 @@ $address_link = get_field('address_link');
             </svg>
             <div class="info">
               <h3 class="text desktop-only"><?=$address_text?></h3>
-              <a target="_blank" href="<?=$address_link ? $address_link : '#'?>" class="paragraph-1 word-up small-fz"><?=$address?></a>
+              <a target="_blank" href="<?=$address_link ? $address_link : '#'?>" class="paragraph-1  small-fz"><?=$address?></a>
             </div>
           </div>
         <?php } ?>
         <?php if ($phone) { ?>
-          <div class="icon-and-info iv-st-from-bottom">
+          <div class="icon-and-info">
             <svg class="desktop-only" width="20" height="20" viewBox="0 0 20 20" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
               <path
@@ -134,7 +134,7 @@ $address_link = get_field('address_link');
             </svg>
             <div class="info">
               <h3 class="text desktop-only"><?=$phone_text?></h3>
-              <a target="_blank" class="paragraph-1 word-up small-fz" href="tel:<?=$phone?>"><?=$phone?></a>
+              <a target="_blank" class="paragraph-1  small-fz" href="tel:<?=$phone?>"><?=$phone?></a>
             </div>
           </div>
         <?php } ?>
