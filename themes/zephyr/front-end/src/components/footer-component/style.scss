@@ -47,7 +47,7 @@ footer {
         
         @include x-large-screen {
           line-height: size(24);
-          max-width: size(220);
+          max-width: unset;
           text-align: left;
         }
       }

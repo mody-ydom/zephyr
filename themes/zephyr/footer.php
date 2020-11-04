@@ -18,9 +18,9 @@ $subscribe_to_newsletter = get_field('subscribe_to_newsletter', 'options');
                 <a href="<?php echo get_home_url(); ?>">
                     <img src="<?php echo $footer_logo['url']; ?>" alt="logo.png">
                 </a>
-                <p class="paragraph">
+                <div class="paragraph">
                     <?php echo $copywrite_text; ?>
-                </p>
+                </div>
             </div>
             <!--      links-->
             <div class="links">

@@ -333,7 +333,7 @@
             "key": "field_5f4476b73876f",
             "label": "Copywrite Text",
             "name": "copywrite_text",
-            "type": "text",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -342,12 +342,11 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_permissions": "",
-            "default_value": "© HalfSerious 2020",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "default_value": "2020 © Zephyr.ai\r\nRegistered in England & Wales\r\nVAT Number 06746184",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_5f57547775346",
@@ -575,5 +574,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604486402
+    "modified": 1604490172
 }
