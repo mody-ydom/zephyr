@@ -53,7 +53,7 @@ export default () => {
   ScrollTrigger.defaults({
     scroller: scrollContainer,
   });
-  const bodyScrollBar = Scrollbar.init(scrollContainer, {damping: 0.075, plugins: {disableScroll: {direction: 'x'}}});
+  const bodyScrollBar = Scrollbar.init(scrollContainer, {damping: 1, plugins: {disableScroll: {direction: 'x'}}});
   bodyScrollBar.setPosition(0, 0);
   ScrollTrigger.scrollerProxy(scrollContainer, {
     scrollTop(value) {
