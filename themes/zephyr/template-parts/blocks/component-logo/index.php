@@ -26,7 +26,6 @@ endif;
 <!-- region Zephyr's Block -->
 <?php general_settings_for_blocks($id, $className); ?>
 <div class="container">
-  <h1 class="headline-1 word-up">…and some more established ones.</h1>
   <div class="row justify-content-start justify-content-xl-between align-items-center">
     <?php if (have_rows('logos')):
       while (have_rows('logos')):
