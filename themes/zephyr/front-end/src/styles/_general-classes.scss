@@ -243,9 +243,9 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, form {
         font-size: size(45);
     }
     @include x-large-screen {
-        font-size: size(72);
+        font-size: size(66);
         letter-spacing: size(0.44);
-        line-height: size(66);
+        line-height: size(72);
     }
 }
 
