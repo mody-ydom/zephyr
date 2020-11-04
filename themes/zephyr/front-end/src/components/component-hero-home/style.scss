@@ -266,6 +266,7 @@ section.component-hero-home {
                 min-height: size(145);
                 top: size(391);
                 left: -24%;
+                object-fit: contain;
                 @include min-x-small-screen {
                     left: -18%;
                 }

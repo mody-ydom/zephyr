@@ -1,6 +1,6 @@
 {
     "key": "group_5f984cf8bdd3d",
-    "title": "component-image-gallery",
+    "title": "component-case-studies",
     "fields": [
         {
             "key": "field_5f984cf8db2a3",
@@ -24,7 +24,7 @@
         },
         {
             "key": "field_5f984d6780379",
-            "label": "Images",
+            "label": "case studies",
             "name": "images",
             "type": "repeater",
             "instructions": "",
@@ -368,6 +368,22 @@
                     ]
                 },
                 {
+                    "key": "field_5fa28d0269715",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#",
+                    "placeholder": ""
+                },
+                {
                     "key": "field_5f984f088037e",
                     "label": "Small Title",
                     "name": "small_title",
@@ -444,5 +460,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603915318
+    "modified": 1604488513
 }

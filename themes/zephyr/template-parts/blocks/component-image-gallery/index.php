@@ -15,7 +15,7 @@
 	}
 	if ( get_field( 'is_screenshot' ) ) :
 		/* Render screenshot for example */
-		echo '<img width="100%" height="100%" src="' . get_template_directory_uri() . '/template-parts/blocks/component-image-gallery/screenshot.png" >';
+		echo '<img width="100%" height="100%" src="' . get_template_directory_uri() . '/template-parts/blocks/component-image-gallery/screenshot1.png" >';
 		
 		return;
 	endif;
@@ -40,10 +40,12 @@
 		  $small_title      = get_sub_field( 'small_title' );
 		  $large_title      = get_sub_field( 'large_title' );
 		  $description      = get_sub_field( 'description' );
+		  $link             = get_sub_field( 'link' );
 	  ?>
     <div class="grid-item <?=$full_width ? 'full-width' : 'not-full-width'?>"
     ">
     <div class="image-item-container <?=$full_width ? 'full-width' : 'not-full-width'?>">
+      <?php if($link){ ?><a href="<?=$link?>"> <?php } ?>
       <div class="image-wrapper <?=$full_width ? 'full-width' : ''?> <?=! $full_width && ! $image ? 'pt-0' : ''?>">
 		  <?php if ( $background_image ) { ?>
             <img class="bg" src="<?=$background_image['url']?>" alt="<?=$background_image['alt']?>">
@@ -70,6 +72,7 @@
               alt="<?=$image_right['image']['alt']?>">
 		  <?php } ?>
       </div>
+        <?php if($link){ ?></a> <?php } ?>
       <div class="content">
 		  <?php
 			  if ( $small_title ) { ?>

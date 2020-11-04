@@ -143,7 +143,7 @@ function register_acf_block_types() {
   		$developing = false;
   acf_register_block_type(array(
                             'name'            => 'component-image-gallery',
-                            'title'           => __('Component Images Gallery'),
+                            'title'           => __('Component Case Studies'),
                             'render_template' => 'template-parts/blocks/component-image-gallery/index.php',
                             'enqueue_style'   => $developing ? '' : get_template_directory_uri() . '/template-parts/blocks/component-image-gallery/style.css',
                             'category'        => 'zephyr-home',
