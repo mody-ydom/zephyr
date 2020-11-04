@@ -508,7 +508,7 @@
         },
         {
             "key": "field_5e7b3ae978ddd",
-            "label": "how to",
+            "label": "1- General Settings ( Header + Footer + 404 )",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -519,8 +519,41 @@
                 "class": "",
                 "id": ""
             },
-            "acfe_permissions": "",
-            "message": "in this video, I show you how to \r\n\r\n<strong>Video Link<\/strong>: <a href=\"http:\/\/somup.com\/\">click here<\/a>",
+            "message": "in this video, I show you General Settings ( Header + Footer + 404 )\r\n\r\n\r\n<strong>Video Link<\/strong>: <a href=\"https:\/\/www.loom.com\/share\/68a56f361f114b4681662a52f5363749\">click here<\/a>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5fa284cf92231",
+            "label": "2- quick overview to show you blocks & how to deal with them",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "in this video, I show you a quick overview to show you blocks & how to deal with them\r\n\r\n<strong>Video Link<\/strong>: <a href=\"https:\/\/www.loom.com\/share\/0e96b7da07f745679e2e1e3d398893a5\">click here<\/a>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5fa284ea92232",
+            "label": "3- Contact us blocks & newsletter settings",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "in this video, I show you a quick overview for Contact us blocks & newsletter settings\r\n\r\n<strong>Video Link<\/strong>: <a href=\"https:\/\/www.loom.com\/share\/317301401463461b88f28988b99074ac\">click here<\/a>",
             "new_lines": "wpautop",
             "esc_html": 0
         }
@@ -542,5 +575,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1603986948
+    "modified": 1604486402
 }
