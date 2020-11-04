@@ -35,7 +35,7 @@ endif;
 	        $content          = get_sub_field( 'content' );
 	        $background_color = get_sub_field( 'background_color' );
 	        ?>
-          <div class="home-swiper swiper-slide d-flex" style="background-color: <?=$background_color?>;">
+          <div data-swiper-autoplay="1200" class="home-swiper swiper-slide d-flex" style="background-color: <?=$background_color?>;">
   
             <div class="left-side">
               <div class="left-side-title">
@@ -93,6 +93,9 @@ endif;
         <?php } ?>
     </div>
     <div class="swiper-pagination small-pagination"></div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
 </div>
 </section>

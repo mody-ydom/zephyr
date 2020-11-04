@@ -18,7 +18,9 @@
 	$page_header_type       = get_field( 'page_header_type' );
 ?>
 <!-- END ACF -->
-<body <?php body_class(); ?> data-barba="wrapper">
+<?php $website_scroll_speed = get_field( 'scroll_roughness', 'options' ); ?>
+<body data-scroll-speed-desktop="<?=$website_scroll_speed['desktop']?>"
+      data-scroll-speed-mobile="<?=$website_scroll_speed['mobile']?>"  <?php body_class(); ?> data-barba="wrapper">
   <div class="barba-overlay-transition"></div>
 	<?php wp_body_open(); ?>
   <header class="<?=$page_header_type=='white'?'white':'black'; ?>">

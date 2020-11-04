@@ -1,12 +1,13 @@
 import './index.html';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import Swiper, {Pagination, EffectFade} from 'swiper';
+import Swiper, {Pagination, EffectFade, Navigation,Autoplay} from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/components/effect-fade/effect-fade.scss';
+import 'swiper/components/navigation/navigation.scss';
 import Scrollbar from 'smooth-scrollbar';
 
-Swiper.use([Pagination, EffectFade]);
+Swiper.use([Pagination, EffectFade, Navigation,Autoplay]);
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -20,6 +21,11 @@ export default (container = document) => {
     spaceBetween: 30,
     effect: 'fade',
     allowTouchMove: false,
+    autoplay:false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -54,6 +60,7 @@ export default (container = document) => {
       },
       transitionEnd() {
         const {activeIndex, previousIndex} = this;
+        // if(activeSlide === previousIndex)return;
         if (window.matchMedia('(max-width:767.98px)').matches) {
           gsap.to(Array.from(homeSwiperTitle).map(elem => {
             const e = elem.nextElementSibling;
@@ -84,6 +91,16 @@ export default (container = document) => {
     },
     
   });
+  
+  new ScrollTrigger.create({
+    trigger:homeSwiper,
+    start:'top 50%',
+    end:'bottom 80%',
+    onToggle(self){
+      const {isActive} = self;
+      isActive?swiper.autoplay.stop():swiper.autoplay.start();
+    }
+  })
   const dots = swiper.pagination.bullets;
   const windowHeightFactor = 0.5;
   let activeSlide = 0;
@@ -95,78 +112,14 @@ export default (container = document) => {
     const slideHeight = window.innerHeight * windowHeightFactor;
     bodyScrollBar.setPosition(0, sectionStart + slideHeight * (+index + 0.5));
   };
-  const pin = ScrollTrigger.create({
-    id: 'home-slider',
-    trigger: homeSwiper,
-    start: 'center center',
-    end: `+=${100 * (swiper.slides.length) * windowHeightFactor}%`,
-    pin: true,
-    firstScroll: true,
-    onToggle(self) {
-      bodyScrollBar.updatePluginOptions('dampScroll', {amount: self.isActive ? 1 : 0});
-      if (self.isActive) {
-        setTimeout(() => document.querySelector('header').classList.add('freeze'), ignoreTime);
-        bodyScrollBar.setMomentum(0, 0);
-        bodyScrollBar.setPosition(0, self.direction === 1 ? self.start + 1 : self.end - 1);
-      }
-      else {
-  
-        setTimeout(() => document.querySelector('header').classList.remove('freeze'), ignoreTime);
-      }
-      setTimeout(() => self.vars.firstScroll = !self.isActive, ignoreTime);
-    },
-    onUpdate(self) {
-      bodyScrollBar.setMomentum(0, 0);
-      bodyScrollBar.updatePluginOptions('dampScroll', {amount: 1});
-      setTimeout(() => bodyScrollBar.updatePluginOptions('dampScroll', {amount: self.isActive ? 0.999 : 0}), ignoreTime);
-      if (ignoreScroll) return;
-      ignoreScroll = true;
-      setTimeout(() => ignoreScroll = false, ignoreTime);
-      const currentSlide = Math.floor(self.progress * swiper.slides.length);
-      
-      if (self.vars.firstScroll) return;
-      const nextSlide = currentSlide + self.direction;
-      if (nextSlide < 0) {
-        bodyScrollBar.scrollTo(0, self.start - 1);
-        setTimeout(((activeSlide) => () => swiper.slideTo(0))(activeSlide), 200);
-        activeSlide = 0;
-      }
-      else if (nextSlide > swiper.slides.length - 1) {
-        bodyScrollBar.scrollTo(0, self.end + 1);
-        setTimeout(((activeSlide) => () => swiper.slideTo(swiper.slides.length - 1))(activeSlide), 200);
-        
-        activeSlide = swiper.slides.length - 1;
-      }
-      else {
-        slideTo(nextSlide);
-        setTimeout(((activeSlide, nextSlide) => () => swiper.slideTo(nextSlide))(activeSlide, nextSlide), 200);
-        activeSlide = nextSlide;
-      }
-    },
-  });
-  for (let i = 0; i < dots.length; i++) {
-    const dot = dots[i];
-    dot.addEventListener('click', () => {
-      ignoreScroll = true;
-      setTimeout(() => ignoreScroll = false, ignoreTime);
-      slideTo(i);
-      setTimeout(((nextSlide) => () => swiper.slideTo(nextSlide))(i), 200);
-      activeSlide = i;
-    });
-  }
   
   homeSwiperTitle.forEach((title) => {
     title.addEventListener('click', (e) => {
       if (window.matchMedia('(max-width:767.98px)').matches) {
-        ignoreScroll = true;
-        bodyScrollBar.updatePluginOptions('dampScroll', {amount: 1});
         let nextSib = title.nextElementSibling;
     
         if (nextSib.classList.contains('active')) {
-          gsap.to(nextSib, {height: 0}).then(() => setTimeout(() => {
-            bodyScrollBar.updatePluginOptions('dampScroll', {amount: pin.isActive ? 0.999 : 0});
-            ignoreScroll = false;
-          }, 300));
+          gsap.to(nextSib, {height: 0});
           nextSib.classList.remove('active');
           title.parentElement.classList.remove('active');
         }
@@ -177,10 +130,7 @@ export default (container = document) => {
             e.parentElement.classList.remove('active');
             return e;
           }), {height: 0});
-          gsap.to(nextSib, {height: 'auto'}).then(() => setTimeout(() => {
-            bodyScrollBar.updatePluginOptions('dampScroll', {amount: pin.isActive ? 0.999 : 0});
-            ignoreScroll = false;
-          }, 300));
+          gsap.to(nextSib, {height: 'auto'});
           nextSib.classList.add('active');
           title.parentElement.classList.add('active');
         }

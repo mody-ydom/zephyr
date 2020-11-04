@@ -7,8 +7,30 @@ section.component-home-swiper {
     @include min-small-screen {
         @include marginY(size(210), size(218));
     }
-    
+    .swiper-container{
+        overflow: visible!important;
+        .swiper-button-prev:after, .swiper-button-next:after{
+            font-size:size(60);
+            color: $zephyr-green;
+        }
+        .swiper-button-prev {
+            margin-left: -5%;
+            @include max-medium-screen{
+                display: none;
+            }
+        }
+        
+        .swiper-button-next {
+            margin-right: -5%;
+            @include max-medium-screen{
+                display: none;
+            }
+        }
+    }
     .home-swiper-container {
+        .swiper-wrapper{
+            overflow: hidden;
+        }
         .home-swiper {
             height: auto;
     
@@ -196,19 +218,36 @@ section.component-home-swiper {
         
         .swiper-pagination {
             position: absolute;
-            bottom: size(40);
+            bottom: size(20);
             left: 50%;
             z-index: 99;
             transform: translateX(-50%);
+            &.small-pagination{
+                .swiper-pagination-bullet{
+                    @include max-medium-screen{
+                        width: size(14) !important;
+                        height: size(14) !important;
+                        &:before{
+                            width: 60% !important;
+                            height: 60% !important;
+                        }
+                    }
+                }
+            }
             @include min-medium-screen {
                 position: relative;
                 left: 0;
                 bottom: 0;
                 transform: translate(0);
                 margin-top: size(30);
-            }
-            @include x-large-screen {
-                margin-top: size(62);
+                .swiper-pagination-bullet{
+                    width: size(20);
+                    height: size(20);
+                    &:before{
+                        width: 60%;
+                        height: 60%;
+                    }
+                }
             }
         }
     }

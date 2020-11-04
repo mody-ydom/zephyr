@@ -46,14 +46,25 @@ class DampScrollPlugin extends ScrollbarPlugin {
 Scrollbar.use(DisableScrollPlugin);
 Scrollbar.use(DampScrollPlugin);
 
+function calculateScrollSpeedFactor() {
+  if (window.matchMedia('(min-width:576px)').matches) {
+    window.scrollSpeedFactor = document.body.dataset.scrollSpeedDesktop / 100;
+  }
+  else {
+    window.scrollSpeedFactor = document.body.dataset.scrollSpeedMobile / 100;
+  }
+}
+
 export default () => {
   gsap.registerPlugin(ScrollTrigger);
+  calculateScrollSpeedFactor();
+  
   const scrollContainer = document.querySelector('[smooth-scroll-container]');
   if (!scrollContainer) return;
   ScrollTrigger.defaults({
     scroller: scrollContainer,
   });
-  const bodyScrollBar = Scrollbar.init(scrollContainer, {damping: 0.075, plugins: {disableScroll: {direction: 'x'}}});
+  const bodyScrollBar = Scrollbar.init(scrollContainer, {damping: window.scrollSpeedFactor, plugins: {disableScroll: {direction: 'x'}}});
   bodyScrollBar.setPosition(0, 0);
   ScrollTrigger.scrollerProxy(scrollContainer, {
     scrollTop(value) {

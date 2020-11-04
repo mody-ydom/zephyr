@@ -15,7 +15,7 @@ if (!empty($block['align'])) {
 }
 if (get_field('is_screenshot')) :
   /* Render screenshot for example */
-  echo '<img width="100%" height="100%" src="' . get_template_directory_uri() . '/template-parts/blocks/component-text-block/screenshot.png" >';
+  echo '<img width="100%" height="100%" src="' . get_template_directory_uri() . '/template-parts/blocks/component-text-block/screenshot1.png" >';
   return;
 endif;
 
