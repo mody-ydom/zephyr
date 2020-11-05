@@ -75,10 +75,11 @@ export default (reInvokableFunction) => {
     },
     enter(data) {
       gsap.set(data.current.container, {zIndex: -1, position: 'absolute'});
-      window.scrollTo(0, 0);
       return gsap.from(data.next.container, {
         opacity: 0,
-      });
+        onComplete: () => {
+          window.scrollTo(0, 0);
+      }});
     },
   };
   const transition3 = {
