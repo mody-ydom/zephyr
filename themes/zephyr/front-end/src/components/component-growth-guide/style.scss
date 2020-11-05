@@ -189,7 +189,7 @@
         .mobile-select {
             position: relative;
             display: block;
-            margin-top: size(74);
+            margin-bottom: size(74);
             @include min-medium-screen {
                 display: none;
             }

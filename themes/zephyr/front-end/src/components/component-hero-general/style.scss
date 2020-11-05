@@ -6,6 +6,10 @@ section.component-hero-general {
     position: relative;
     display: flex;
     align-items: center;
+    @include max-small-screen{
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
     
     .hero-image {
         position: absolute;

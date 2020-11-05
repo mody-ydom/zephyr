@@ -23,7 +23,7 @@ export default (container = document) => {
   
   gsap.set(burgerSpans, {transformOrigin: 'center'});
   burgerTl
-    .to(burgerSpans, {yPercent: gsap.utils.wrap([400, 0, -250]), duration: 0.35})
+    .to(burgerSpans, {yPercent: gsap.utils.wrap([430, 0, -250]), duration: 0.35})
     .set(burgerSpans, {autoAlpha: gsap.utils.wrap([1, 0, 1])})
     .to(burgerSpans, {rotation: gsap.utils.wrap([45, 0, -45])})
     .set(burgerSpans, {rotation: gsap.utils.wrap([45, 0, 135])});

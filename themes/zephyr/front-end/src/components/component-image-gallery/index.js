@@ -19,15 +19,15 @@ export default (container = document) => {
   const imageWrapperTl = gsap.timeline();
   const scrollTriggerBatch = new ScrollTrigger.batch(imageWrappers, {
     onEnter(batch) {
-      // gsap.fromTo(batch, {y: 300, autoAlpha: 0}, {y: 0, duration: .5, autoAlpha: 1,stagger:.3});
-      gsap.fromTo(batch, {scale: 0, autoAlpha: 0}, {scale: 1, duration: 1, autoAlpha: 1,ease:'expo.out',stagger:.3})
+      gsap.fromTo(batch, {y: 300, autoAlpha: 0}, {y: 0, duration: .5, autoAlpha: 1,stagger:.3});
+      // gsap.fromTo(batch, {scale: 0, autoAlpha: 0}, {scale: 1, duration: 1, autoAlpha: 1,ease:'expo.out',stagger:.3})
     },
     start: 'top 50%',
     once: true,
   });
-  // gsap.set(imageWrappers,{y:300,autoAlpha:0})
-  gsap.set(imageWrappers,{autoAlpha:0})
-  // ScrollTrigger.addEventListener('refreshInit', () => gsap.set(imageWrappers,{y:0,autoAlpha:0}));
+  gsap.set(imageWrappers,{y:300,autoAlpha:0})
+  // gsap.set(imageWrappers,{autoAlpha:0})
+  ScrollTrigger.addEventListener('refreshInit', () => gsap.set(imageWrappers,{y:0,autoAlpha:0}));
   for (let imageWrapper of imageWrappers) {
     
     const background = imageWrapper.querySelector('img.bg');
