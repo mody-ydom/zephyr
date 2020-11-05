@@ -38,7 +38,7 @@ export default (container = document) => {
       init = false;
     }
   }
-  
+  swiperMode();
   window.addEventListener('load',function (){
     swiperMode();
   });
