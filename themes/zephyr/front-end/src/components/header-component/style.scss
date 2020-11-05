@@ -58,44 +58,44 @@ header {
         }
       }
     }
-    
+  
     &.opened {
       .header-content {
         .links {
-          background: #ffffff !important;
-          
+          background: $zephyr-black !important;
+        
           .small-link {
-            color: $zephyr-gray !important;
+            color: #fff !important;
           }
-          
+        
           .has-drop-down .drop-down {
-            background: #ffffff !important;
-            
+            background: $zephyr-black !important;
+          
             a {
-              color: $zephyr-gray !important;
+              color: #fff !important;
             }
           }
         }
-        
+      
         .logo.dark {
-          display: block !important;
-        }
-        
-        .logo.light {
           display: none !important;
         }
-  
+      
+        .logo.light {
+          display: block !important;
+        }
+      
         .burger-menu {
           span {
             &:after, &:before {
-              background: $zephyr-black !important;
+              background: #fff !important;
             }
           }
-    
+        
           &.active {
             span {
               &:after, &:before {
-                background: $zephyr-black !important;
+                background: #fff !important;
               }
             }
           }
