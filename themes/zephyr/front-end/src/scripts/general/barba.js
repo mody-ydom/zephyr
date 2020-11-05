@@ -1,6 +1,7 @@
 import barba from '@barba/core';
 import {gsap} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import Scrollbar from 'smooth-scrollbar';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,7 +76,9 @@ export default (reInvokableFunction) => {
     },
     enter(data) {
       gsap.set(data.current.container, {zIndex: -1, position: 'absolute'});
-      window.scrollTo(0, 0);
+      const bodyScrollBar = Scrollbar.get(document.querySelector('[smooth-scroll-container]'));
+  
+      bodyScrollBar.setPosition(0, 0);
       return gsap.from(data.next.container, {
         opacity: 0,
       });
