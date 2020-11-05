@@ -69,12 +69,9 @@ export default (reInvokableFunction) => {
   const transition2 = {
     name: 'opacity-transition',
     leave(data) {
-      return()=>{
-        gsap.to(data.current.container, {
-          opacity: 0,
-        });
-        gsap.set(data.current.container, {autoAlpha: 0});
-      }
+      return gsap.to(data.current.container, {
+        opacity: 0,
+      });
     },
     enter(data) {
       gsap.set(data.current.container, {zIndex: -1, position: 'absolute'});
