@@ -46,15 +46,16 @@
     ">
     <div class="image-item-container <?=$full_width ? 'full-width' : 'not-full-width'?>">
       <?php if($link){ ?><a href="<?=$link?>"> <?php } ?>
-      <div class="image-wrapper <?=$full_width ? 'full-width' : ''?> <?=! $full_width && ! $image ? 'pt-0' : ''?>">
+      <div parallax-container class="image-wrapper <?=$full_width ? 'full-width' : ''?> <?=! $full_width && ! $image ? 'pt-0' : ''?>">
 		  <?php if ( $background_image ) { ?>
             <img class="bg" src="<?=$background_image['url']?>" alt="<?=$background_image['alt']?>">
 		  <?php } ?>
 		  <?php if ( ! $full_width && $image ) { ?>
-            <img class="left" src="<?=$image['url']?>" alt="<?=$image['alt']?>">
+            <img data-parallax-factor=".2" class="left" src="<?=$image['url']?>" alt="<?=$image['alt']?>">
 		  <?php } ?>
 		  <?php if ( $full_width && $image_left ) { ?>
             <img
+              data-parallax-factor=".2"
               style="width: <?=$image_left['width']?>%;
                 left:<?=$image_left['left_space']?>%;
 			  <?=get_vertical_style( $image_left['vertical_position'] )?>"
@@ -64,6 +65,7 @@
 		  <?php } ?>
 		  <?php if ( $full_width && $image_right ) { ?>
             <img
+              data-parallax-factor=".2"
               style="width: <?=$image_right['width']?>%;
                 right:<?=$image_right['right_space']?>%;
 			  <?=get_vertical_style( $image_right['vertical_position'] )?>"
@@ -76,13 +78,13 @@
       <div class="content">
 		  <?php
 			  if ( $small_title ) { ?>
-                <h5 class="small-title word-up headline-5"><?=$small_title?></h5>
+                <h5 class="small-title headline-5"><?=$small_title?></h5>
 			  <?php }
 			  if ( $large_title ) { ?>
-                <h4 class="large-title word-up headline-4"><?=$large_title?></h4>
+                <h4 class="large-title headline-4"><?=$large_title?></h4>
 			  <?php }
 			  if ( $description ) { ?>
-                <p class="description real-line-up paragraph-1"><?=$description?></p>
+                <p class="description paragraph-1"><?=$description?></p>
 			  <?php } ?>
       </div>
     </div>

@@ -18,11 +18,25 @@ export default function parallaxAnimation(container = document, containerSelecto
         },
       });
       for (const parallaxChild of parallaxContainer.querySelectorAll(childrenSelector)) {
-        const parallaxFactor = parallaxChild.dataset[factorData];
-        const yMovement = parallaxContainer.getBoundingClientRect().height * parallaxFactor;
-        tl.fromTo(parallaxChild, {y: yMovement}, {
-          y: -yMovement, ease: 'linear',
-        }, '<');
+        if (parallaxChild.complete) {
+          const parallaxFactor = parallaxChild.dataset[factorData];
+          const yMovement = parallaxContainer.getBoundingClientRect().height * parallaxFactor;
+          tl.fromTo(parallaxChild, {y: yMovement}, {
+            y: -yMovement, ease: 'linear',
+          }, '<');
+          ScrollTrigger.refresh();
+        }
+        else {
+          parallaxChild.addEventListener('load', () => {
+            const parallaxFactor = parallaxChild.dataset[factorData];
+            const yMovement = parallaxContainer.getBoundingClientRect().height * parallaxFactor;
+            tl.fromTo(parallaxChild, {y: yMovement}, {
+              y: -yMovement, ease: 'linear',
+            }, '<');
+            ScrollTrigger.refresh();
+          });
+        }
+       
       }
     }
   }, 500);

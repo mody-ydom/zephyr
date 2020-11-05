@@ -8,12 +8,12 @@ import gsapConfig from './gsap.config';
 
 export default function animations(container = document) {
   gsapConfig();
-  parallaxAnimation(container);
   imageRevealAnimation(container);
   wordsUpAnimation(container);
   linesUpAnimation(container);
   inViewAnimations(container);
   setTimeout(function () {
+    parallaxAnimation(container);
     realLinesUpAnimation(container);
   }, 200);
 }
