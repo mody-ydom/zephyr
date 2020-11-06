@@ -81,6 +81,7 @@ export default (reInvokableFunction) => {
       gsap.set(data.next.container, {opacity: 0});
       gsap.set(data.current.container, {zIndex: -1, position: 'absolute'});
       const bodyScrollBar = Scrollbar.get(document.querySelector('[smooth-scroll-container]'));
+      document.querySelector('header').classList.remove('freeze', 'header-sticky');
       bodyScrollBar.updatePluginOptions('dampScroll', {amount: 0});
       bodyScrollBar.update();
       bodyScrollBar.setPosition(0, 0);
