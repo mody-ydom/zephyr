@@ -85,6 +85,7 @@ export default (reInvokableFunction) => {
       });
     },
   };
+  
   const transition3 = {
     name: 'bottom-overlay-transition',
     to: {
