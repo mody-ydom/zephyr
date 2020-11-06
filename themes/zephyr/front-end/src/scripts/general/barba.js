@@ -61,7 +61,6 @@ export default (reInvokableFunction) => {
     },
     enter(data) {
       gsap.set(data.current.container.querySelector('.right-content'), {zIndex: -1, position: 'absolute'});
-      window.scrollTo(0, 0);
       return gsap.from(data.next.container.querySelector('.right-content'), {
         opacity: 0,
       });
@@ -77,11 +76,12 @@ export default (reInvokableFunction) => {
     enter(data) {
       gsap.set(data.current.container, {zIndex: -1, position: 'absolute'});
       const bodyScrollBar = Scrollbar.get(document.querySelector('[smooth-scroll-container]'));
-  
+      bodyScrollBar.updatePluginOptions('dampScroll', {amount: 0});
+      bodyScrollBar.update();
       bodyScrollBar.setPosition(0, 0);
       return gsap.from(data.next.container, {
         opacity: 0,
-        delay: 300,
+        delay: .5,
       });
     },
   };
