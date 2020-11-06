@@ -83,8 +83,9 @@ export default (reInvokableFunction) => {
       bodyScrollBar.setPosition(0, 0);
       return gsap.to(data.next.container, {
         opacity: 1,
-        delay: .5,
-        onComplete() {console.log('opacity');},
+        delay: 1,
+        onStart() {console.log('opacity start');},
+        onComplete() {console.log('opacity done');},
       });
     },
   };
