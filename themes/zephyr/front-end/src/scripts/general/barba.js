@@ -79,9 +79,11 @@ export default (reInvokableFunction) => {
       bodyScrollBar.updatePluginOptions('dampScroll', {amount: 0});
       bodyScrollBar.update();
       bodyScrollBar.setPosition(0, 0);
+      console.log('enter');
       return gsap.fromTo(data.next.container, {opacity:0},{
         opacity: 1,
         delay: .5,
+        onComplete() {console.log('opacity');},
       });
     },
   };
