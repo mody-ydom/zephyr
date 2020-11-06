@@ -33,7 +33,7 @@ const reInvokableFunction = (container = document) => {
   setTimeout(function () {
     animations(container);
     ScrollTrigger.refresh();
-  }, 500);
+  }, 1000);
 };
 
 function onLoad() {
