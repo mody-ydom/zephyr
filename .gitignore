@@ -10,6 +10,10 @@ themes/zephyr/acf-json/.DS_Store
 
 plugins/duplicator/
 
+plugins/
+
+uploads/
+
 /themes/zephyr/assets/trash-compiled-files/**/*
 
 /themes/zephyr/assets/*\.html
