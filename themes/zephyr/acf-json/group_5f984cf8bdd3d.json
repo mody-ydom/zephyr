@@ -137,10 +137,10 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5fa6c5bb65e57",
-                    "label": "Video File",
-                    "name": "video_file",
-                    "type": "file",
+                    "key": "field_5fa6c93073433",
+                    "label": "Video",
+                    "name": "video",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -157,67 +157,124 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_5fa6c7e7808f0",
-                    "label": "Video Aspect Ratio",
-                    "name": "video_aspect_ratio",
-                    "type": "number",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5fa6c52465e53",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": 70,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "min": 1,
-                    "max": 100,
-                    "step": ".5"
-                },
-                {
-                    "key": "field_5fa6c5dc65e58",
-                    "label": "Is Autoplay?",
-                    "name": "is_autoplay",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5fa6c52465e53",
-                                "operator": "==",
-                                "value": "video"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 1,
-                    "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5fa6c5bb65e57",
+                            "label": "Video File",
+                            "name": "video_file",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5fa6c52465e53",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5fa6c95173434",
+                            "label": "Video Poster Image",
+                            "name": "video_poster_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5fa6c52465e53",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5fa6c7e7808f0",
+                            "label": "Video Aspect Ratio",
+                            "name": "video_aspect_ratio",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5fa6c52465e53",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 70,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": 1,
+                            "max": 100,
+                            "step": ".5"
+                        },
+                        {
+                            "key": "field_5fa6c5dc65e58",
+                            "label": "Is Autoplay?",
+                            "name": "is_autoplay",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5fa6c52465e53",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ]
                 },
                 {
                     "key": "field_5f984ec08037c",
@@ -591,5 +648,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604765705
+    "modified": 1604766062
 }

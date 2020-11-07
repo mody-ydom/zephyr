@@ -99,4 +99,28 @@ export default (container = document) => {
       });
     }
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  for (const videoComponent of imageWrappers) {
+    const playBtn = videoComponent.querySelector('.play-video');
+    const video = videoComponent.querySelector('video');
+    if(!video) continue;
+    playBtn?.addEventListener('click', function () {
+      if (playBtn.classList.contains('clicked')) {
+        video.pause();
+        playBtn.classList.remove('clicked');
+      }
+      else {
+        video.play().then(()=>{console.log('a7a');}).catch(e=>{console.log(e);});
+        playBtn.classList.add('clicked');
+      }
+    });
+  }
 };

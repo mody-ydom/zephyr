@@ -143,8 +143,8 @@
 	
 	add_filter( 'block_categories', 'my_plugin_block_categories' );
 	function register_acf_block_types(){
-		//		$developing = true;
-		$developing = false;
+		$developing = true;
+//		$developing = false;
 		acf_register_block_type(
 			array(
 				'name'            => 'component-image-gallery',
