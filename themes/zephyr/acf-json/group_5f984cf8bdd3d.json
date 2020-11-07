@@ -80,13 +80,46 @@
                     "ui_off_text": ""
                 },
                 {
+                    "key": "field_5fa6c52465e53",
+                    "label": "Video Or Image?",
+                    "name": "video_or_image",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "video": "video",
+                        "image": "image"
+                    },
+                    "default_value": "image",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
                     "key": "field_5f984e0a8037b",
                     "label": "Background Image",
                     "name": "background_image",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5fa6c52465e53",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -104,6 +137,89 @@
                     "mime_types": ""
                 },
                 {
+                    "key": "field_5fa6c5bb65e57",
+                    "label": "Video File",
+                    "name": "video_file",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5fa6c52465e53",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5fa6c7e7808f0",
+                    "label": "Video Aspect Ratio",
+                    "name": "video_aspect_ratio",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5fa6c52465e53",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 70,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 1,
+                    "max": 100,
+                    "step": ".5"
+                },
+                {
+                    "key": "field_5fa6c5dc65e58",
+                    "label": "Is Autoplay?",
+                    "name": "is_autoplay",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5fa6c52465e53",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
                     "key": "field_5f984ec08037c",
                     "label": "Image",
                     "name": "image",
@@ -116,6 +232,11 @@
                                 "field": "field_5f984dea8037a",
                                 "operator": "!=",
                                 "value": "1"
+                            },
+                            {
+                                "field": "field_5fa6c52465e53",
+                                "operator": "==",
+                                "value": "image"
                             }
                         ]
                     ],
@@ -148,6 +269,11 @@
                                 "field": "field_5f984dea8037a",
                                 "operator": "==",
                                 "value": "1"
+                            },
+                            {
+                                "field": "field_5fa6c52465e53",
+                                "operator": "==",
+                                "value": "image"
                             }
                         ]
                     ],
@@ -264,6 +390,11 @@
                                 "field": "field_5f984dea8037a",
                                 "operator": "==",
                                 "value": "1"
+                            },
+                            {
+                                "field": "field_5fa6c52465e53",
+                                "operator": "==",
+                                "value": "image"
                             }
                         ]
                     ],
@@ -460,5 +591,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604488513
+    "modified": 1604765705
 }
