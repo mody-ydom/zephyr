@@ -21,7 +21,7 @@ const reInvokableFunction = (container = document) => {
     const element = container.querySelector(this.getAttribute('href'));
     bodyScrollBar.scrollIntoView(element);
   });
-  document.querySelector('header').classList.remove('freeze');
+  document.querySelector('header').classList.remove('freeze', 'header-sticky');
   bodyScrollBar.updatePluginOptions('dampScroll', {amount: 0});
   bodyScrollBar.update();
   for (let scrollTriggerInstance of ScrollTrigger.getAll()) {
@@ -33,7 +33,7 @@ const reInvokableFunction = (container = document) => {
   setTimeout(function () {
     animations(container);
     ScrollTrigger.refresh();
-  }, 500);
+  }, 1000);
 };
 
 function onLoad() {
