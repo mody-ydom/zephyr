@@ -41,7 +41,8 @@ $block_subtitle = get_field('block_subtitle');
             ?>
             <div class="col-6 col-md-4 col-xl-3 team-parent">
               <div class="team-person iv-st-from-bottom">
-                <div class="image-wrapper" style="<?php teamMemberShapeBG($shape_in_background); ?>">
+                <div class="image-wrapper">
+                  <span class="animated-circle <?=$shape_in_background?>"></span>
                   <?php if ($image) { ?>
                     <img alt="<?=$image['alt'];?>" src="<?=$image['url'];?>">
                   <?php } ?>

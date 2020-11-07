@@ -1288,3 +1288,29 @@ header .header-content .links .has-drop-down {
         }
     }
 }
+
+.tags-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .headline-3{
+        display: block;
+        margin-bottom: size(20);
+        width: 100%;
+    }
+    a{
+        display: inline-block;
+        margin-right: 20px;
+        background: #ececec;
+        font-size: size(18);
+        padding: size(10) size(15);
+        margin-bottom: 10px;
+        border-radius: size(20);
+        transition:all 400ms;
+        &:hover{
+            background: $zephyr-green;
+            color: white;
+        }
+    }
+}

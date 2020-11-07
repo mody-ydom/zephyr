@@ -23,7 +23,7 @@ module.exports = function (env, argv) {
     entry,
     output: {
       filename: (pathData) => {
-        return pathData.chunk.name === 'general' ? (env&&env.isAdmin ? 'admin.js' : 'main.js') : 'trash-compiled-files/[name].js';
+        return pathData.chunk.name === 'general' ? (env && env.isAdmin ? 'admin.js' : 'main.js') : 'trash-compiled-files/[name].js';
       },
       path: path.resolve(__dirname, '../assets/'),
       publicPath: './',
@@ -138,7 +138,9 @@ module.exports = function (env, argv) {
             loader: 'file-loader',
             options: {
               publicPath: function (url) {
-                return './' + url;
+                // console.log(url);
+                return argv.mode === 'production' ? '/wp-content/themes/zephyr/assets/' + url : './' + url;
+                // return '/zephyr/wp-content/themes/zephyr/assets/' + url;
               },
               name: '[path][name].[ext]',
               context: path.resolve(__dirname, './src/html'),

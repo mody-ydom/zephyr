@@ -18,16 +18,16 @@ $post_id = get_the_ID();
             <div class="col-12 col-md-auto">
               <div class="left-content">
                 <ol class="guide-container">
-					<?php
+                  <?php
                   $args = array('hide_empty' => '1');
                   $categories = get_categories($args);
                   $cat_index = 1;
                   $single_title = get_the_title();
                   foreach ($categories as $categoryloop) {
-	                  if ( $category[0]->cat_name == $categoryloop->name ) {
-		                  $current_cat_index = $cat_index;
-	                  }
-	                  ?>
+                    if ($category[0]->cat_name == $categoryloop->name) {
+                      $current_cat_index = $cat_index;
+                    }
+                    ?>
                     <li class="guide <?=$category[0]->cat_name == $categoryloop->name ? 'active' : ''?>">
                       <div class="title">
                         <h3><?php echo $categoryloop->name; ?></h3>
@@ -37,31 +37,32 @@ $post_id = get_the_ID();
                         </div>
                       </div>
                       <ol data-cat-index="<?=$cat_index?>" class="guide-content">
-		                  <?php
-			                  $args_posts = array(
-                          'post_type' => 'post',
-                          'order' => 'ASC',
-                          'cat'       => $categoryloop->term_id,
+                        <?php
+                        $args_posts = array(
+                          'post_type'      => 'post',
+                          'order'          => 'ASC',
+                          'cat'            => $categoryloop->term_id,
                           'posts_per_page' => -1
                         );
                         $query = new WP_Query($args_posts);
                         if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post();
-                          $post_index = $query->current_post +1;
-  
-                          if ($single_title == get_the_title()){
+                          $post_index = $query->current_post + 1;
+                          
+                          if ($single_title == get_the_title()) {
                             $current_post_index = $post_index;
                           }
                           ?>
-                          <li class="sub-list-item <?=$single_title == get_the_title()?'active':''?>" data-post-index="<?=$post_index?>"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></li>
+                          <li class="sub-list-item <?=$single_title == get_the_title() ? 'active' : ''?>" data-post-index="<?=$post_index?>"><a
+                              href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></li>
                           <?php
-                        
+                          
                           wp_reset_query();
                         endwhile; endif;
                         ?>
                       </ol>
-
+                    
                     </li>
-                    <?php  $cat_index++;
+                    <?php $cat_index++;
                   }
                   ?>
                 </ol>
@@ -92,7 +93,7 @@ $post_id = get_the_ID();
                       d="M5.18945 6.2168C5.45312 6.48047 5.89258 6.48047 6.15625 6.2168L10.1406 2.23242C10.4336 1.93945 10.4336 1.5 10.1406 1.23633L9.49609 0.5625C9.20312 0.298828 8.76367 0.298828 8.5 0.5625L5.6582 3.4043L2.8457 0.5625C2.58203 0.298828 2.14258 0.298828 1.84961 0.5625L1.20508 1.23633C0.912109 1.5 0.912109 1.93945 1.20508 2.23242L5.18945 6.2168Z"
                       fill="#252525"/>
                   </svg>
-    
+                  
                   <label>
                     <select onchange="location = this.value;" class="headline-6">
                       <?php
@@ -124,17 +125,31 @@ $post_id = get_the_ID();
                     </select>
                   </label>
                 </div>
-  
+                
                 <div class="skew-overlay-transition"></div>
                 <h3 class="headline-3 iv-st-from-bottom"><?=$current_cat_index?>. <?=$category[0]->cat_name;?></h3>
                 <h6 class="headline-8 iv-st-from-bottom"><span class="sub"><?=$current_cat_index?>.<?=$current_post_index?></span> <?php the_title(); ?></h6>
                 <div class="paragraph-1 wysiwyg-block small-fz iv-st-from-bottom">
-					<?php the_content(); ?>
+                  <?php the_content(); ?>
                 </div>
+                <?php
+                $posttags = get_the_tags($post_id);
+                $count = 0;
+                $sep = '';
+                if ($posttags) {
+                  echo '<div class="tags-wrapper iv-st-from-bottom"><p class="headline-3">Tags:</p> ';
+                  foreach ($posttags as $tag) { ?>
+                    <a href="<?=get_tag_link($tag->term_id) ?>">
+                      <?=$tag->name ?>
+                    </a>
+                  <?php }
+                  echo '</div>';
+                }
+                ?>
                 <div class="written-by d-flex align-items-center iv-st-from-bottom">
-                  <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>">
+                  <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php echo esc_attr(get_the_author()); ?>">
                     <img alt="<?php echo $author_name; ?>"
-                         src="<?=get_avatar_url( get_the_author_meta( 'ID' ) ) ? get_avatar_url( get_the_author_meta( 'ID' ) ) : get_template_directory_uri();?>/assets/images/se.png"/>
+                         src="<?=get_avatar_url(get_the_author_meta('ID')) ? get_avatar_url(get_the_author_meta('ID')) : get_template_directory_uri();?>/assets/images/se.png"/>
                   </a>
                   <p class="paragraph-1">Writen by
                     <span>
