@@ -130,17 +130,30 @@
 												  <?php wp_reset_query();endwhile; endif; ?>
                                   </optgroup>
 									<?php
-								}
-							?>
+				}
+			  ?>
                         </select>
                       </label>
                     </div>
                     <h3 class="headline-3 word-up"><?=$current_cat_index?>. <?=$category[0]->cat_name;?></h3>
                     <h6 class="headline-8 iv-st-from-bottom"><span class="sub"><?=$current_cat_index?>.<?=$current_post_index?></span> <?=get_the_title( $post_id )?></h6>
                     <div class="paragraph-1 wysiwyg-block small-fz iv-st-from-bottom">
-						<?=get_post_field( 'post_content', $post_id );?>
+	                    <?=get_post_field( 'post_content', $post_id );?>
                     </div>
-                    
+	                  <?php
+		                  $posttags = get_the_tags( $post_id );
+		                  $count    = 0;
+		                  $sep      = '';
+		                  if( $posttags ){
+			                  echo '<div class="tags-wrapper iv-st-from-bottom"><p class="headline-3">Tags:</p> ';
+			                  foreach( $posttags as $tag ){ ?>
+                                <a href="<?=get_tag_link( $tag->term_id )?>">
+				                    <?=$tag->name?>
+                                </a>
+			                  <?php }
+			                  echo '</div>';
+		                  }
+	                  ?>
                     <div class="written-by d-flex align-items-center iv-st-from-bottom">
                       <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>">
                         <img alt="<?php echo $author_name; ?>"
