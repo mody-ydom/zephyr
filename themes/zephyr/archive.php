@@ -95,52 +95,34 @@
                 </div>
                 <div class="col-12 col-md">
                   <div class="right-content">
-                    <div class="mobile-select iv-st-from-bottom">
-                      <svg class="arrow-select" width="11" height="7" viewBox="0 0 11 7"
-                           fill="none"
-                           xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M5.18945 6.2168C5.45312 6.48047 5.89258 6.48047 6.15625 6.2168L10.1406 2.23242C10.4336 1.93945 10.4336 1.5 10.1406 1.23633L9.49609 0.5625C9.20312 0.298828 8.76367 0.298828 8.5 0.5625L5.6582 3.4043L2.8457 0.5625C2.58203 0.298828 2.14258 0.298828 1.84961 0.5625L1.20508 1.23633C0.912109 1.5 0.912109 1.93945 1.20508 2.23242L5.18945 6.2168Z"
-                          fill="#252525"/>
-                      </svg>
-        
-                      <label>
-                        <select onchange="location = this.value;" class="headline-6">
-			                <?php
-				                $args       = array( 'hide_empty' => '1' );
-				                $categories = get_categories( $args );
-				                foreach( $categories as $category ){
-					                ?>
-                                  <optgroup label="<?php echo $category->name; ?>">
-						              <?php
-							              $args_posts = array( 'cat' => $category->term_id );
-							              $query      = new WP_Query( $args_posts );
-							              if( $query->have_posts() ):
-								              while( $query->have_posts() ):
-									              $query->the_post();
-									              $post_id_2 = get_the_ID();
-									              ?>
-                                                <option value="<?php the_permalink(); ?>" <?php if( $post_id == $post_id_2 ){
-									                echo 'selected';
-								                } ?>>
-                                                  <a href="<?php the_permalink(); ?>">
-										              <?php the_title(); ?>
-                                                  </a>
-                                                </option>
-									              <?php wp_reset_query();endwhile; endif; ?>
-                                  </optgroup>
-					                <?php
-				                }
-			                ?>
-                        </select>
-                      </label>
+		
+		              <?php
+			              $posttags = get_the_tags( $post_id );
+			              $count    = 0;
+			              $sep      = '';
+			              if( $posttags ){
+				              echo '<div class="tags-wrapper iv-st-from-bottom"><p class="headline-3">Tags:</p> ';
+				              foreach( $posttags as $tag ){ ?>
+                                <a href="<?=get_tag_link( $tag->term_id )?>">
+					                <?=$tag->name?>
+                                </a>
+				              <?php }
+				              echo '</div>';
+			              }
+		              ?>
+                    <div class="written-by d-flex align-items-center iv-st-from-bottom">
+                      <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>">
+                        <img alt="<?php echo $author_name; ?>"
+                             src="<?=get_avatar_url( get_the_author_meta( 'ID' ) ) ? get_avatar_url( get_the_author_meta( 'ID' ) ) : get_template_directory_uri();?>/assets/images/se.png"/>
+                      </a>
+                      <p class="paragraph-1">Writen by
+                        <span>
+                   <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>"><?php the_author(); ?></a>
+</span></p>
                     </div>
-                    <h3 class="headline-3 word-up"><?=$current_cat_index?>. <?=$category[0]->cat_name;?></h3>
-                    <h6 class="headline-8 iv-st-from-bottom"><span class="sub"><?=$current_cat_index?>.<?=$current_post_index?></span> <?=get_the_title( $post_id )?></h6>
-                    <div class="paragraph-1 wysiwyg-block small-fz iv-st-from-bottom">
-		                <?=get_post_field( 'post_content', $post_id );?>
-                    </div>
-    
+		              <?php
+			              nextPost( $post_id, $current_cat_index, $current_post_index );
+		              ?>
                   </div>
                 </div>
               </div>
