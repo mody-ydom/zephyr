@@ -349,13 +349,13 @@ header {
             flex-direction: column;
             align-items: center;
             background: $zephyr-gray;
-            transition: all 400ms ease-in-out;
+            transition: right 400ms, background-color 0ms 400ms;
             padding-top: size(131);
             z-index: 10;
-            
+    
             .small-link {
                 color: $zephyr-gray-light;
-                
+        
                 span {
                     position: relative;
                     display: block;
@@ -420,6 +420,7 @@ header {
             
             &.active {
                 right: 0;
+                transition: right 400ms, background-color 0ms 0ms;
             }
             
             @include min-small-screen {
