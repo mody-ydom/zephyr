@@ -25,7 +25,8 @@
 html {
     font-size: 10px;
     width: 100%;
-    font-family: $Sailec,$Canela,'sans-serif';
+    font-family: $Sailec, $Canela, 'sans-serif';
+    font-variant-ligatures: common-ligatures historical-ligatures discretionary-ligatures contextual;
 }
 
 a {
