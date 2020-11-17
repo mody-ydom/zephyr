@@ -120,16 +120,16 @@
 												  $query->the_post();
 												  $post_id_2 = get_the_ID();
 												  ?>
-                                                <option value="<?php the_permalink(); ?>" <?php if( $post_id == $post_id_2 ){
-													echo 'selected';
-												} ?>>
-                                                  <a href="<?php the_permalink(); ?>">
-													  <?php the_title(); ?>
-                                                  </a>
-                                                </option>
-												  <?php wp_reset_query();endwhile; endif; ?>
+                          <option value="<?php the_permalink(); ?>" <?php if( $post_id == $post_id_2 ){
+							  echo 'selected';
+						  } ?>>
+                            <a href="<?php the_permalink(); ?>">
+							    <?php the_title(); ?>
+                            </a>
+                          </option>
+						    <?php wp_reset_query();endwhile; endif; ?>
                                   </optgroup>
-									<?php
+					<?php
 				}
 			  ?>
                         </select>
@@ -140,20 +140,7 @@
                     <div class="paragraph-1 wysiwyg-block small-fz iv-st-from-bottom">
 	                    <?=get_post_field( 'post_content', $post_id );?>
                     </div>
-	                  <?php
-		                  $posttags = get_the_tags( $post_id );
-		                  $count    = 0;
-		                  $sep      = '';
-		                  if( $posttags ){
-			                  echo '<div class="tags-wrapper iv-st-from-bottom"><p class="headline-3">Tags:</p> ';
-			                  foreach( $posttags as $tag ){ ?>
-                                <a href="<?=get_tag_link( $tag->term_id )?>">
-				                    <?=$tag->name?>
-                                </a>
-			                  <?php }
-			                  echo '</div>';
-		                  }
-	                  ?>
+  
                     <div class="written-by d-flex align-items-center iv-st-from-bottom">
                       <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>">
                         <img alt="<?php echo $author_name; ?>"
