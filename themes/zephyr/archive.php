@@ -136,7 +136,7 @@
                       </select>
                     </label>
                   </div>
-                  <h3 class="headline-3 word-up"><?=$current_cat_index?>. </h3>
+                  <h3 class="headline-3 word-up"><?=$current_cat_index?>. <?=$category[0]->cat_name;?></h3>
                   <h6 class="headline-8 iv-st-from-bottom"><span class="sub"><?=$current_cat_index?>.<?=$current_post_index?></span> <?=get_the_title( $post_id )?></h6>
                   <div class="paragraph-1 wysiwyg-block small-fz iv-st-from-bottom">
 	                  <?=get_post_field( 'post_content', $post_id );?>
