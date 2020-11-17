@@ -10,9 +10,10 @@
 	];
 	$the_query = new WP_Query( $args );
 	while( $the_query->have_posts() ):$the_query->the_post();
-	  $post_id            = get_the_ID();
-	  $the_post           = get_post( $post_id );
-	  $category           = get_the_category( $post_id );
+	  $post_id  = get_the_ID();
+	  $the_post = get_post( $post_id );
+	  $category = get_the_category( $post_id );
+	  var_dump( $category );
 	  $author_id          = get_the_author_meta( 'ID' );
 	  $author_name        = get_the_author_meta( 'user_nickname', $author_id );
 	  $current_cat_index  = 1;
