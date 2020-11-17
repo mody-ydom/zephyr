@@ -568,7 +568,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "#",
+                    "default_value": "",
                     "placeholder": ""
                 },
                 {
@@ -648,5 +648,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604766062
+    "modified": 1604766063
 }
