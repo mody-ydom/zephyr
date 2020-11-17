@@ -4764,7 +4764,7 @@ html {
 
 @font-face {
     font-family: "Sailec";
-    src: url(/zephyr/wp-content/themes/zephyr/assets/fonts/sailecRegular.otf) format("otf");
+    src: url(/zephyr/wp-content/themes/zephyr/assets/fonts/sailecRegular.otf) format("opentype");
     font-weight: 400;
     font-style: normal;
     font-display: swap
@@ -4772,7 +4772,7 @@ html {
 
 @font-face {
     font-family: "Sailec";
-    src: url(/zephyr/wp-content/themes/zephyr/assets/fonts/sailecMedium.otf) format("otf");
+    src: url(/zephyr/wp-content/themes/zephyr/assets/fonts/sailecMedium.otf) format("opentype");
     font-weight: 500;
     font-style: normal;
     font-display: swap
@@ -4780,7 +4780,7 @@ html {
 
 @font-face {
     font-family: "Canela";
-    src: url(/zephyr/wp-content/themes/zephyr/assets/fonts/canelaLight.otf) format("otf");
+    src: url(/zephyr/wp-content/themes/zephyr/assets/fonts/canelaLight.otf) format("opentype");
     font-weight: 300;
     font-style: normal;
     font-display: swap
@@ -4788,7 +4788,7 @@ html {
 
 @font-face {
     font-family: "Canela";
-    src: url(/zephyr/wp-content/themes/zephyr/assets/fonts/canelaLightItalic.otf) format("otf");
+    src: url(/zephyr/wp-content/themes/zephyr/assets/fonts/canelaLightItalic.otf) format("opentype");
     font-weight: 300;
     font-style: italic;
     font-display: swap
