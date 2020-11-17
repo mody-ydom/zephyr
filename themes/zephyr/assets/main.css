@@ -6910,77 +6910,6 @@ header.white {
     background: transparent
 }
 
-header.white.header-sticky, header.white header.black.header-sticky {
-    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.1), 0 2px 1px -1px rgba(0, 0, 0, 0.05);
-    background-color: #ffffff
-}
-
-@media screen and (max-width: 575.98px) {
-    header.white.header-sticky .header-content .links, header.white header.black.header-sticky .header-content .links {
-        background: #ffffff
-    }
-}
-
-header.white.header-sticky .header-content .links .small-link, header.white header.black.header-sticky .header-content .links .small-link {
-    color: var(--zephyr-gray)
-}
-
-header.white.header-sticky .header-content .links .has-drop-down .drop-down, header.white header.black.header-sticky .header-content .links .has-drop-down .drop-down {
-    background: #ffffff
-}
-
-header.white.header-sticky .header-content .links .has-drop-down .drop-down a, header.white header.black.header-sticky .header-content .links .has-drop-down .drop-down a {
-    color: var(--zephyr-gray)
-}
-
-header.white.header-sticky .header-content .logo.dark, header.white header.black.header-sticky .header-content .logo.dark {
-    display: block !important
-}
-
-header.white.header-sticky .header-content .logo.light, header.white header.black.header-sticky .header-content .logo.light {
-    display: none !important
-}
-
-header.white.header-sticky .header-content .burger-menu span:after, header.white.header-sticky .header-content .burger-menu span:before, header.white header.black.header-sticky .header-content .burger-menu span:after, header.white header.black.header-sticky .header-content .burger-menu span:before {
-    background: var(--zephyr-black) !important
-}
-
-header.white.header-sticky .header-content .burger-menu.active span:after, header.white.header-sticky .header-content .burger-menu.active span:before, header.white header.black.header-sticky .header-content .burger-menu.active span:after, header.white header.black.header-sticky .header-content .burger-menu.active span:before {
-    background: var(--zephyr-black) !important
-}
-
-header.white.opened .header-content .links, header.white header.black.opened .header-content .links {
-    background: var(--zephyr-black) !important
-}
-
-header.white.opened .header-content .links .small-link, header.white header.black.opened .header-content .links .small-link {
-    color: #ffffff !important
-}
-
-header.white.opened .header-content .links .has-drop-down .drop-down, header.white header.black.opened .header-content .links .has-drop-down .drop-down {
-    background: var(--zephyr-black) !important
-}
-
-header.white.opened .header-content .links .has-drop-down .drop-down a, header.white header.black.opened .header-content .links .has-drop-down .drop-down a {
-    color: #ffffff !important
-}
-
-header.white.opened .header-content .logo.dark, header.white header.black.opened .header-content .logo.dark {
-    display: none !important
-}
-
-header.white.opened .header-content .logo.light, header.white header.black.opened .header-content .logo.light {
-    display: block !important
-}
-
-header.white.opened .header-content .burger-menu span:after, header.white.opened .header-content .burger-menu span:before, header.white header.black.opened .header-content .burger-menu span:after, header.white header.black.opened .header-content .burger-menu span:before {
-    background: #ffffff !important
-}
-
-header.white.opened .header-content .burger-menu.active span:after, header.white.opened .header-content .burger-menu.active span:before, header.white header.black.opened .header-content .burger-menu.active span:after, header.white header.black.opened .header-content .burger-menu.active span:before {
-    background: #ffffff !important
-}
-
 @media screen and (max-width: 575.98px) {
     header.white .header-content .links {
         background: #ffffff
@@ -7045,6 +6974,77 @@ header.black .header-content .burger-menu span:after, header.black .header-conte
 
 header.black .header-content .burger-menu.active span:after, header.black .header-content .burger-menu.active span:before {
     background: var(--zephyr-black) !important
+}
+
+header.header-sticky {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.1), 0 2px 1px -1px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff
+}
+
+@media screen and (max-width: 575.98px) {
+    header.header-sticky .header-content .links {
+        background: #ffffff
+    }
+}
+
+header.header-sticky .header-content .links .small-link {
+    color: var(--zephyr-gray)
+}
+
+header.header-sticky .header-content .links .has-drop-down .drop-down {
+    background: #ffffff
+}
+
+header.header-sticky .header-content .links .has-drop-down .drop-down a {
+    color: var(--zephyr-gray)
+}
+
+header.header-sticky .header-content .logo.dark {
+    display: block !important
+}
+
+header.header-sticky .header-content .logo.light {
+    display: none !important
+}
+
+header.header-sticky .header-content .burger-menu span:after, header.header-sticky .header-content .burger-menu span:before {
+    background: var(--zephyr-black) !important
+}
+
+header.header-sticky .header-content .burger-menu.active span:after, header.header-sticky .header-content .burger-menu.active span:before {
+    background: var(--zephyr-black) !important
+}
+
+header.opened .header-content .links {
+    background: var(--zephyr-black) !important
+}
+
+header.opened .header-content .links .small-link {
+    color: #ffffff !important
+}
+
+header.opened .header-content .links .has-drop-down .drop-down {
+    background: var(--zephyr-black) !important
+}
+
+header.opened .header-content .links .has-drop-down .drop-down a {
+    color: #ffffff !important
+}
+
+header.opened .header-content .logo.dark {
+    display: none !important
+}
+
+header.opened .header-content .logo.light {
+    display: block !important
+}
+
+header.opened .header-content .burger-menu span:after, header.opened .header-content .burger-menu span:before {
+    background: #ffffff !important
+}
+
+header.opened .header-content .burger-menu.active span:after, header.opened .header-content .burger-menu.active span:before {
+    background: #ffffff !important
 }
 
 header.active {

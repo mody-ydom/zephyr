@@ -10,99 +10,6 @@ header {
     &.white {
         background: transparent;
         
-        &.header-sticky, %header-sticky {
-            box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.1), 0 2px 1px -1px rgba(0, 0, 0, 0.05);
-            background-color: #ffffff;
-            
-            .header-content {
-                .links {
-                    @include max-x-small-screen {
-                        background: #ffffff;
-                    }
-                    
-                    .small-link {
-                        color: $zephyr-gray;
-                    }
-                    
-                    .has-drop-down .drop-down {
-                        background: #ffffff;
-                        
-                        a {
-                            color: $zephyr-gray;
-                        }
-                    }
-                }
-                
-                .logo.dark {
-                    display: block !important;
-                }
-                
-                .logo.light {
-                    display: none !important;
-                }
-                
-                .burger-menu {
-                    span {
-                        &:after, &:before {
-                            background: $zephyr-black !important;
-                        }
-                    }
-                    
-                    &.active {
-                        span {
-                            &:after, &:before {
-                                background: $zephyr-black !important;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-        &.opened, %opened {
-            .header-content {
-                .links {
-                    background: $zephyr-black !important;
-                    
-                    .small-link {
-                        color: #ffffff !important;
-                    }
-                    
-                    .has-drop-down .drop-down {
-                        background: $zephyr-black !important;
-                        
-                        a {
-                            color: #ffffff !important;
-                        }
-                    }
-                }
-                
-                .logo.dark {
-                    display: none !important;
-                }
-                
-                .logo.light {
-                    display: block !important;
-                }
-                
-                .burger-menu {
-                    span {
-                        &:after, &:before {
-                            background: #ffffff !important;
-                        }
-                    }
-                    
-                    &.active {
-                        span {
-                            &:after, &:before {
-                                background: #ffffff !important;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
         .header-content {
             .links {
                 @include max-x-small-screen {
@@ -180,6 +87,55 @@ header {
                         background: $zephyr-black !important;
                     }
                 }
+    
+                &.active {
+                    span {
+                        &:after, &:before {
+                            background: $zephyr-black !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    &.header-sticky {
+        box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.1), 0 2px 1px -1px rgba(0, 0, 0, 0.05);
+        background-color: #ffffff;
+        
+        .header-content {
+            .links {
+                @include max-x-small-screen {
+                    background: #ffffff;
+                }
+                
+                .small-link {
+                    color: $zephyr-gray;
+                }
+                
+                .has-drop-down .drop-down {
+                    background: #ffffff;
+                    
+                    a {
+                        color: $zephyr-gray;
+                    }
+                }
+            }
+            
+            .logo.dark {
+                display: block !important;
+            }
+            
+            .logo.light {
+                display: none !important;
+            }
+            
+            .burger-menu {
+                span {
+                    &:after, &:before {
+                        background: $zephyr-black !important;
+                    }
+                }
                 
                 &.active {
                     span {
@@ -190,13 +146,49 @@ header {
                 }
             }
         }
-        
-        &.header-sticky {
-            @extend %header-sticky;
-        }
-        
-        &.opened {
-            @extend %opened;
+    }
+    
+    &.opened {
+        .header-content {
+            .links {
+                background: $zephyr-black !important;
+                
+                .small-link {
+                    color: #ffffff !important;
+                }
+                
+                .has-drop-down .drop-down {
+                    background: $zephyr-black !important;
+                    
+                    a {
+                        color: #ffffff !important;
+                    }
+                }
+            }
+            
+            .logo.dark {
+                display: none !important;
+            }
+            
+            .logo.light {
+                display: block !important;
+            }
+            
+            .burger-menu {
+                span {
+                    &:after, &:before {
+                        background: #ffffff !important;
+                    }
+                }
+                
+                &.active {
+                    span {
+                        &:after, &:before {
+                            background: #ffffff !important;
+                        }
+                    }
+                }
+            }
         }
     }
     
