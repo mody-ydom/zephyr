@@ -107,23 +107,23 @@
                     </svg>
                     <label>
                       <select onchange="location = this.value;" class="headline-6">
-						  <?php
-							  $args       = array( 'hide_empty' => '1' );
-							  $categories = get_categories( $args );
-							  foreach( $categories as $category ){
-								  ?>
-                                <optgroup label="<?php echo $category->name; ?>">
-									<?php
-										$args_posts = array( 'cat' => $category->term_id );
-										$query      = new WP_Query( $args_posts );
-										if( $query->have_posts() ):
-											while( $query->have_posts() ):
-												$query->the_post();
-												$post_id_2 = get_the_ID();
-												?>
+		                  <?php
+			                  $args       = array( 'hide_empty' => '1' );
+			                  $categories = get_categories( $args );
+			                  foreach( $categories as $category_mobile ){
+				                  ?>
+                                <optgroup label="<?php echo $category_mobile->name; ?>">
+				                    <?php
+					                    $args_posts = array( 'cat' => $category_mobile->term_id );
+					                    $query      = new WP_Query( $args_posts );
+					                    if( $query->have_posts() ):
+						                    while( $query->have_posts() ):
+							                    $query->the_post();
+							                    $post_id_2 = get_the_ID();
+							                    ?>
                                               <option value="<?php the_permalink(); ?>" <?php if( $post_id == $post_id_2 ){
-												  echo 'selected';
-											  } ?>>
+								                  echo 'selected';
+							                  } ?>>
                                                 <a href="<?php the_permalink(); ?>">
 													<?php the_title(); ?>
                                                 </a>
