@@ -136,11 +136,8 @@
                       </select>
                     </label>
                   </div>
-                  <h3 class="headline-3 word-up"><?=$current_cat_index?>. <?=$category[0]->cat_name;?></h3>
-	
-	                <?php
-		                nextPost( $post_id, $current_cat_index, $current_post_index );
-	                ?>
+                  <h3 class="headline-3 word-up"><?=$current_cat_index?>.</h3>
+
                 </div>
               </div>
             </div>
