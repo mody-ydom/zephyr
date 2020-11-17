@@ -32,36 +32,36 @@ $images = get_field('images');
     <?php while (have_rows('images')):
     the_row(); ?>
     <?php
-    $full_width = get_sub_field('full_width');
-    $background_image = get_sub_field('background_image');
-    $image = get_sub_field('image');
-    $image_left = get_sub_field('image_left');
-    $image_right = get_sub_field('image_right');
-    $small_title = get_sub_field('small_title');
-    $large_title = get_sub_field('large_title');
-    $description = get_sub_field('description');
-    $link = get_sub_field('link');
-    $video_or_image = get_sub_field('video_or_image');
-    $video = get_sub_field('video');
-    $video_file = $video['video_file'];
-    $video_poster_image = $video['video_poster_image'];
-    $video_aspect_ratio = $video['video_aspect_ratio'];
-    $is_autoplay = $video['is_autoplay'];
+    $full_width             = get_sub_field('full_width');
+    $background_image       = get_sub_field('background_image');
+    $image                  = get_sub_field('image');
+    $image_left             = get_sub_field('image_left');
+    $image_right            = get_sub_field('image_right');
+    $small_title            = get_sub_field('small_title');
+    $large_title            = get_sub_field('large_title');
+    $description            = get_sub_field('description');
+    $link                   = get_sub_field('link');
+	    $video_or_image     = get_sub_field( 'video_or_image' );
+	    $video              = get_sub_field( 'video' );
+	    $video_file         = $video['video_file'];
+	    $video_poster_image = $video['video_poster_image'];
+	    $video_aspect_ratio = $video['video_aspect_ratio'];
+	    $is_autoplay        = $video['is_autoplay'];
     ?>
     <div class="grid-item <?=$full_width ? 'full-width' : 'not-full-width'?>"
     ">
     <div class="image-item-container <?=$full_width ? 'full-width' : 'not-full-width'?>">
-      <?php if ($link){ ?><a href="<?=$link?>"> <?php } ?>
-        <div  class="image-wrapper <?=$full_width ? 'full-width' : ''?> <?=!$full_width && !$image ? 'pt-0' : ''?>">
-          <?php if ($video_or_image === 'image') { ?>
-            <?php if ($background_image) { ?>
-              <img class="bg" src="<?=$background_image['url']?>" alt="<?=$background_image['alt']?>">
-            <?php } ?>
-            <?php if (!$full_width && $image) { ?>
-              <img data-parallax-factor=".2" class="left" src="<?=$image['url']?>" alt="<?=$image['alt']?>">
-            <?php } ?>
-            <?php if ($full_width && $image_left) { ?>
-              <img
+	    <?php if( $link && $link != '#' ){ ?><a href="<?=$link?>"> <?php } ?>
+        <div class="image-wrapper <?=$full_width ? 'full-width' : ''?> <?=! $full_width && ! $image ? 'pt-0' : ''?>">
+		    <?php if( $video_or_image === 'image' ){ ?>
+			    <?php if( $background_image ){ ?>
+                <img class="bg" src="<?=$background_image['url']?>" alt="<?=$background_image['alt']?>">
+			    <?php } ?>
+			    <?php if( ! $full_width && $image ){ ?>
+                <img data-parallax-factor=".2" class="left" src="<?=$image['url']?>" alt="<?=$image['alt']?>">
+			    <?php } ?>
+			    <?php if( $full_width && $image_left ){ ?>
+                <img
                 data-parallax-factor=".2"
                 style="width: <?=$image_left['width']?>%;
                   left:<?=$image_left['left_space']?>%;
@@ -111,22 +111,22 @@ $images = get_field('images');
                   <path class="b-hero-video play" d="M7.5,4.5,65.546,41.815,7.5,79.13Z"/>
                 </svg>
               <?php } ?>
-            
+
             </div>
-          
+
           <?php } ?>
         </div>
-        <?php if ($link){ ?></a> <?php } ?>
+		    <?php if( $link && $link != '#' ){ ?></a> <?php } ?>
       <div class="content">
-        <?php
-        if ($small_title) { ?>
-          <h5 class="small-title headline-5"><?=$small_title?></h5>
-        <?php }
-        if ($large_title) { ?>
-          <h4 class="large-title headline-4"><?=$large_title?></h4>
-        <?php }
-        if ($description) { ?>
-          <p class="description paragraph-1"><?=$description?></p>
+		  <?php
+			  if( $small_title ){ ?>
+                <h5 class="small-title headline-5"><?=$small_title?></h5>
+			  <?php }
+			  if( $large_title ){ ?>
+                <h4 class="large-title headline-4"><?=$large_title?></h4>
+			  <?php }
+			  if( $description ){ ?>
+                <p class="description paragraph-1"><?=$description?></p>
         <?php } ?>
       </div>
     </div>
