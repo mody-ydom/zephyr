@@ -82,18 +82,19 @@ $images = get_field('images');
             <?php } ?>
           <?php } ?>
           <?php if ($video_or_image === 'video') { ?>
-            
-            <div class="video-image" <?php if(!$full_width){ ?> style="padding-top: <?=100 / $video_aspect_ratio ? $video_aspect_ratio : '70'?>%;" <?php }else{ ?> style="height: 100%; width: 100%; position: absolute; top: 0; left: 0;" <?php }?>>
-              
+  
+            <div class="video-image" <?php if( ! $full_width ){ ?> style="padding-top: <?=( $video_aspect_ratio ? $video_aspect_ratio :
+	            '70' )?>%;" <?php } else{ ?> style="height: 100%; width: 100%; position: absolute; top: 0; left: 0;" <?php } ?>>
+    
               <video <?=$is_autoplay ? 'autoplay muted scroll-play-video loop' : '';?> playsinline poster="<?=$video_poster_image['url']?>" src="<?=$video_file?>"
                                                                                        title="<?=$video_poster_image['alt']?>"></video>
-              <?php if (!$is_autoplay) { ?>
-                <svg class="play-video" height="80" viewBox="0 0 65 80" width="65" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <style>
-                        .a-hero-video {
-                            fill: none;
-                            mix-blend-mode: multiply;
+	            <?php if( ! $is_autoplay ){ ?>
+                  <svg class="play-video" height="80" viewBox="0 0 65 80" width="65" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <style>
+                          .a-hero-video {
+                              fill: none;
+                              mix-blend-mode: multiply;
                             isolation: isolate;
                         }
                         
