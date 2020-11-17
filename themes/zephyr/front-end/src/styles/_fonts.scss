@@ -2,14 +2,14 @@
 
 @font-face {
     font-family: $Sailec;
-    src: url('./fonts/sailecRegular.woff') format('woff');
+    src: url('./fonts/sailecRegular.otf') format('font/otf');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: $Sailec;
-    src: url('./fonts/sailecMedium.woff') format('woff');
+    src: url('./fonts/sailecMedium.otf') format('font/otf');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -19,14 +19,14 @@
 
 @font-face {
     font-family: $Canela;
-    src: url('./fonts/canelaLight.woff') format('woff');
+    src: url('./fonts/canelaLight.otf') format('font/otf');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: $Canela;
-    src: url('./fonts/canelaLightItalic.woff') format('woff');
+    src: url('./fonts/canelaLightItalic.otf') format('font/otf');
     font-weight: 300;
     font-style: italic;
     font-display: swap;
