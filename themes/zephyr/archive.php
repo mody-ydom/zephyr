@@ -14,9 +14,9 @@
 	  $the_post           = get_post( $post_id );
 	  $category           = get_the_category( $post_id );
 	  $author_id          = get_the_author_meta( 'ID' );
-	  $author_name        = get_the_author_meta( 'user_nicename', $author_id );
-	  $current_cat_index  = 0;
-	  $current_post_index = 0;
+	  $author_name        = get_the_author_meta( 'user_nickname', $author_id );
+	  $current_cat_index  = 1;
+	  $current_post_index = 1;
 	  ?>
     <section class="component-growth-guide">
       <div class="container">
