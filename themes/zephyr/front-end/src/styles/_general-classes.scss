@@ -1216,8 +1216,11 @@ header .header-content .links .has-drop-down {
             height: auto;
             fill: $zephyr-black;
             margin-left: size(10);
-            transition: all 400ms ease-in-out;
+            transition: transform 400ms ease-in-out;
             transform-origin: center center;
+            path{
+                transform: none;
+            }
         }
         
     }

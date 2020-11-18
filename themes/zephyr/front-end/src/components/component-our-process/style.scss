@@ -18,8 +18,18 @@ section.component-our-process {
     
     .content {
         .headline-5 {
-            color: $zephyr-gray;
             justify-content: center;
+            color: #808080;
+            font-family: $Sailec;
+            font-size: size(18);
+            font-weight: 400;
+            font-style: italic;
+            line-height: normal;
+            letter-spacing: size(0.16);
+            @include x-large-screen {
+                font-size: size(24);
+                line-height: size(66);
+            }
         }
         
         .headline-1 {
