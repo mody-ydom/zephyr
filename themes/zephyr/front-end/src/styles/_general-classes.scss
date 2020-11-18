@@ -1219,7 +1219,7 @@ header .header-content .links .has-drop-down {
             transition: transform 400ms ease-in-out;
             transform-origin: center center;
             path{
-                transform: none;
+                transition: none;
             }
         }
         
