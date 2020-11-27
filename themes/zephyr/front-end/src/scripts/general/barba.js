@@ -117,7 +117,7 @@ export default (reInvokableFunction) => {
   };
   if (document.querySelector('[data-barba]')) {
     barba.init({
-      transitions: [transition2, transitionBlog],
+      transitions: [transition3, transitionBlog],
       timeout: 0,
       prevent: ({el}) => el.classList && el.classList.contains('ab-item'),
       // prefetchIgnore: true,

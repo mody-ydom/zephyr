@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "file": "main.js",
-    "sources": [
-        "webpack:///main.js"
-    ],
-    "mappings": "AAAA;;;;;;;;;AA6FA;;;;;;;;;AA4uHA;;;;;;;;;;AA46CA;;;;;;;;;;;;;;;AA8uXA;;;;;;;;;AA+yEA;;;;;;;;;AAorFA;;;;;;;;;;AA0NA;;;;;;;AAy9EA",
-    "sourceRoot": ""
-}
+{"version":3,"file":"main.js","sources":["webpack:///main.js"],"mappings":"AAAA;;;;;;;;;AA6FA;;;;;;;;;AA4uHA;;;;;;;;;;AA46CA;;;;;;;;;;;;;;;AA8uXA;;;;;;;;;AA+yEA;;;;;;;;;AAorFA;;;;;;;;;;AA0NA;;;;;;;AAy9EA","sourceRoot":""}
