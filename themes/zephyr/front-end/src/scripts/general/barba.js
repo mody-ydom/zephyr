@@ -106,7 +106,7 @@ export default (reInvokableFunction) => {
     enter(data) {
       gsap.set(data.next.container, {opacity: 1});
       gsap.set(data.current.container, {zIndex: -1, position: 'absolute'});
-      gsap.set('.barba-overlay-transition', {yPercent: 0, display: 'block'});
+      gsap.set('.barba-overlay-transition', {yPercent: 0, display: 'block', autoAlpha: 1});
       const bodyScrollBar = Scrollbar.get(document.querySelector('[smooth-scroll-container]'));
       document.querySelector('header').classList.remove('freeze', 'header-sticky');
       bodyScrollBar.updatePluginOptions('dampScroll', {amount: 0});
