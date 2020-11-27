@@ -28,13 +28,24 @@ section.component-image-gallery {
   .image-item-container {
     opacity: 0;
     width: 100%;
+  
+  
+    &:hover {
+      //.bg {
+      //  transform: scale(1.1);
+      //}
+      .image-wrapper {
+        filter: brightness(0.7);
+      }
+    }
   }
   
   .image-wrapper {
     position: relative;
     padding-top: size(57);
     overflow: hidden;
-    
+    transition: filter 600ms ease-in-out;
+  
     &.pt-0 {
       padding-top: 0;
     }
@@ -86,15 +97,6 @@ section.component-image-gallery {
         z-index: 2;
         height: auto;
       }
-    }
-    
-      transition: filter 400ms;
-    
-    &:hover {
-      //.bg {
-      //  transform: scale(1.1);
-      //}
-      filter: brightness(0.7);
     }
   }
   
