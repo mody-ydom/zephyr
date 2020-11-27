@@ -40,7 +40,7 @@ export default (container = document) => {
       init = false;
     }
   }
-  
+  swiperMode();
   /* On Load
    **************************************************************/
   window.addEventListener('load', function () {
