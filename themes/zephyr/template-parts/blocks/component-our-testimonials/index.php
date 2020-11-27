@@ -52,7 +52,7 @@ $text = get_field('text');
                         <div class="testimonial swiper-slide">
                             <div class="testimonials-description">
                                <?php if($text){ ?>
-                                <div class="des-p real-line-up">
+                                <div class="des-p iv-st-from-bottom rlu">
                                     <?php echo $text; ?>
                                 </div>
                             <?php } ?>

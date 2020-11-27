@@ -33,7 +33,7 @@ $block_description = get_field('block_description');
     <div class="about-us-title center">
       <?php if ($small_title) { ?><h6 class="headline-6 normal iv-st-from-bottom wu"><?php echo $small_title ?></h6> <?php } ?>
       <?php if ($big_title) { ?> <h2 class="headline-2 iv-st-from-bottom wu"><?php echo $big_title; ?></h2><?php } ?>
-      <?php if ($block_description) { ?><p class="paragraph-1 real-line-up"><?php echo $block_description; ?></p><?php } ?>
+      <?php if ($block_description) { ?><p class="paragraph-1 iv-st-from-bottom rlu"><?php echo $block_description; ?></p><?php } ?>
     </div>
     <div class="about-us-content swiper-container">
       <div class="swiper-wrapper row-swiper row">
@@ -81,7 +81,7 @@ $block_description = get_field('block_description');
               <?php if ($block_image_1) { ?>
                 <img alt="<?php echo $block_image_1['alt']; ?>" src="<?php echo $block_image_1['url']; ?>"><?php } ?>
             </div>
-            <p class="paragraph-1 real-line-up"><?php echo $block_description; ?></p>
+            <p class="paragraph-1 iv-st-from-bottom rlu"><?php echo $block_description; ?></p>
           </div>
           <?php
         } elseif (get_row_layout() == '2_images') {
@@ -102,7 +102,7 @@ $block_description = get_field('block_description');
                     <img alt="<?php echo $first_image_1['alt'] ?>" src="<?php echo $first_image_1['url']; ?>"><?php } ?>
                 </div>
                 <?php if ($first_description) { ?>
-                  <p class="paragraph-1 real-line-up mt-5"><?php echo $first_description; ?></p>
+                  <p class="paragraph-1 iv-st-from-bottom rlu mt-5"><?php echo $first_description; ?></p>
                 <?php } ?>
               </div>
             </div>
@@ -126,7 +126,7 @@ $block_description = get_field('block_description');
                 <?php } ?>
               </div>
               <?php if ($second_description) { ?>
-                <p class="paragraph-1 real-line-up mt-5"><?php echo $second_description; ?></p>
+                <p class="paragraph-1 iv-st-from-bottom rlu mt-5"><?php echo $second_description; ?></p>
               <?php } ?>
             </div>
           </div>

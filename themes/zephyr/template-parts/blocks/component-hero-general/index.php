@@ -41,7 +41,7 @@ $button = get_field('button');
     <?php if ($small_title) { ?><h6 class="headline-6 word-up center"><?=$small_title;?></h6><?php } ?>
     <?php if ($big_title) { ?> <h1 class="headline-1 word-up center"><?=$big_title;?></h1><?php } ?>
     <?php if ($paragraph) { ?>
-      <div class="paragraph real-line-up center"><?=$paragraph;?> </div>
+      <div class="paragraph iv-st-from-bottom rlu center"><?=$paragraph;?> </div>
     <?php } ?>
     <?php if ($button['title']) { ?>
       <a class="btn iv-st-from-bottom" href="<?=$button['url'];?>"><?=$button['title'];?></a>
