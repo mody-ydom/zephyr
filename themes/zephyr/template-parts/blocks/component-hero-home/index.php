@@ -33,8 +33,8 @@ $button = get_field('button');
 <?php general_settings_for_blocks($id, $className); ?>
 <div class="container">
   <div class="content">
-    <?php if ($small_title) { ?><h6 class="headline-6 word-up center"><?=$small_title;?></h6><?php } ?>
-    <?php if ($big_title) { ?> <h1 class="headline-1 word-up center"><?=$big_title;?></h1><?php } ?>
+    <?php if ($small_title) { ?><h6 class="headline-6 iv-st-from-bottom wu center"><?=$small_title;?></h6><?php } ?>
+    <?php if ($big_title) { ?> <h1 class="headline-1 iv-st-from-bottom wu center"><?=$big_title;?></h1><?php } ?>
     <?php if ($paragraph) { ?>
       <div class="paragraph real-line-up center"><?=$paragraph;?> </div>
     <?php } ?>

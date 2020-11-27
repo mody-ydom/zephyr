@@ -34,7 +34,7 @@ $text = get_field('text');
             <h5 class="headline-5 center iv-st-from-bottom desktop-only"><?php echo $title; ?></h5>
         <?php endif; ?>
         <?php if ($text): ?>
-            <div class="headline-1 word-up">
+            <div class="headline-1 iv-st-from-bottom wu">
                 <?php echo $text; ?>
             </div>
         <?php endif; ?>

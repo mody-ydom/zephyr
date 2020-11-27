@@ -31,8 +31,8 @@ $block_description = get_field('block_description');
 <div class="container">
   <div class="about-us">
     <div class="about-us-title center">
-      <?php if ($small_title) { ?><h6 class="headline-6 normal word-up"><?php echo $small_title ?></h6> <?php } ?>
-      <?php if ($big_title) { ?> <h2 class="headline-2 word-up"><?php echo $big_title; ?></h2><?php } ?>
+      <?php if ($small_title) { ?><h6 class="headline-6 normal iv-st-from-bottom wu"><?php echo $small_title ?></h6> <?php } ?>
+      <?php if ($big_title) { ?> <h2 class="headline-2 iv-st-from-bottom wu"><?php echo $big_title; ?></h2><?php } ?>
       <?php if ($block_description) { ?><p class="paragraph-1 real-line-up"><?php echo $block_description; ?></p><?php } ?>
     </div>
     <div class="about-us-content swiper-container">

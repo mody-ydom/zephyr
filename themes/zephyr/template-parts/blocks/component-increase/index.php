@@ -36,10 +36,10 @@ endif;
             <div class="col-xl-4 swiper-slide">
                 <div class="increase-content center">
               <?php if($title){?>
-                    <h4 class="headline-4 word-up"><?php echo $title; ?></h4>
+                    <h4 class="headline-4 iv-st-from-bottom wu"><?php echo $title; ?></h4>
                     <?php } ?>
                     <?php if($description){ ?>
-                    <p class="paragraph-1 word-up"><?php echo $description; ?></p>
+                    <p class="paragraph-1 iv-st-from-bottom wu"><?php echo $description; ?></p>
                     <?php } ?>
                 </div>
             </div>

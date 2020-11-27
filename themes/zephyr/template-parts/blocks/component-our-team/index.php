@@ -48,10 +48,10 @@ $block_subtitle = get_field('block_subtitle');
                   <?php } ?>
                 </div>
                 <?php if ($name) { ?>
-                  <h5 class="name word-up"><?=$name;?></h5>
+                  <h5 class="name iv-st-from-bottom wu"><?=$name;?></h5>
                 <?php } ?>
                 <?php if ($job_title) { ?>
-                  <h6 class="title-job word-up"><?=$job_title;?></h6>
+                  <h6 class="title-job iv-st-from-bottom wu"><?=$job_title;?></h6>
                 <?php } ?>
               </div>
             </div>

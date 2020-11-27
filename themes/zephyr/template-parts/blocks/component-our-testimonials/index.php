@@ -62,9 +62,9 @@ $text = get_field('text');
                                     <img alt="<?php echo $client_image['alt']; ?>"
                                          src="<?php echo $client_image['url']; ?>">
                                 <?php } ?>
-                                <h4 class="name word-up"><?php echo $client_name; ?></h4>
+                                <h4 class="name iv-st-from-bottom wu"><?php echo $client_name; ?></h4>
                                 <?php if ($client_job) { ?><h5
-                                        class="job-title word-up"><?php echo $client_job; ?></h5> <?php } ?>
+                                        class="job-title iv-st-from-bottom wu"><?php echo $client_job; ?></h5> <?php } ?>
                             </div>
                         </div>
                     <?php }
