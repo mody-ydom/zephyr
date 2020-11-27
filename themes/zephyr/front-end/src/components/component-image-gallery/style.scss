@@ -44,7 +44,7 @@ section.component-image-gallery {
     position: relative;
     padding-top: size(57);
     overflow: hidden;
-    transition: filter 600ms ease-in-out;
+    transition: filter 400ms ease-in-out;
   
     &.pt-0 {
       padding-top: 0;
