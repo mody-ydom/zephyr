@@ -2,11 +2,11 @@
 @import "src/styles/mixins";
 
 section.component-hero-general {
-    min-height: 100vh;
+    min-height: 85vh;
     position: relative;
     display: flex;
     align-items: center;
-    @include max-small-screen{
+    @include max-small-screen {
         padding-top: 120px;
         padding-bottom: 120px;
     }
