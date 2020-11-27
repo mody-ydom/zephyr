@@ -121,10 +121,10 @@ $images = get_field('images');
       <div class="content">
 		  <?php
 			  if( $small_title ){ ?>
-                <h5 class="small-title headline-5"><?=$small_title?></h5>
+        <?php if( $link && $link != '#' ){ ?><a href="<?=$link?>"> <?php } ?><h5 class="small-title headline-5"><?=$small_title?></h5><?php if( $link && $link != '#' ){ ?></a> <?php } ?>
 			  <?php }
 			  if( $large_title ){ ?>
-                <h4 class="large-title headline-4"><?=$large_title?></h4>
+          <?php if( $link && $link != '#' ){ ?><a href="<?=$link?>"> <?php } ?><h4 class="large-title headline-4"><?=$large_title?></h4><?php if( $link && $link != '#' ){ ?></a> <?php } ?>
 			  <?php }
 			  if( $description ){ ?>
                 <p class="description paragraph-1"><?=$description?></p>
