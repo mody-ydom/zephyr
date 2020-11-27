@@ -91,62 +91,39 @@ export default (reInvokableFunction) => {
   
   const transition3 = {
     name: 'bottom-overlay-transition',
-    to: {
-      custom: ({current, next}) => {
-        return (current.namespace === 'blog' && next.namespace === 'home') ||
-          (current.namespace === 'home' && next.namespace === 'blog') ||
-          (current.namespace === 'home' && next.namespace === 'home');
-      },
-    },
     leave(data) {
       return gsap.timeline()
-        .fromTo('.barba-overlay-transition', {yPercent: 100}, {
-          duration: 0.35,
-          yPercent: 0,
-          ease: 'power2.out',
-        })
+        .fromTo('.barba-overlay-transition', {yPercent: 100, autoAlpha: 1},
+          {
+            duration: 0.35,
+            yPercent: 0,
+            ease: 'power2.out',
+            autoAlpha: 1,
+          })
         .set(data.current.container, {autoAlpha: 0});
   
     },
     enter(data) {
+      gsap.set(data.next.container, {opacity: 1});
       gsap.set(data.current.container, {zIndex: -1, position: 'absolute'});
-      if (data.next.namespace === 'blog') {
-        const background = '.skew-overlay-transition';
-        gsap.timeline()
-          .set(background, {
-            xPercent: 0,
-            display: 'block',
-          })
-          .to(background, {
-            duration: 0.6,
-            xPercent: 105,
-            ease: 'power4.inOut',
-          })
-          .set(background, {
-            display: 'none',
-          });
-      }
-      return gsap.fromTo('.barba-overlay-transition', {yPercent: 0, y: 0}, {
-        duration: 0.3,
-        delay: 1,
-        y: 0,
-        yPercent: -100,
-        ease: 'power2.in',
-        onComplete: () => {
-          // ScrollTrigger.refresh();
-        },
-      });
+      gsap.set('.barba-overlay-transition', {yPercent: 0, display: 'block'});
+      const bodyScrollBar = Scrollbar.get(document.querySelector('[smooth-scroll-container]'));
+      document.querySelector('header').classList.remove('freeze', 'header-sticky');
+      bodyScrollBar.updatePluginOptions('dampScroll', {amount: 0});
+      bodyScrollBar.update();
+      bodyScrollBar.setPosition(0, 0);
+      return gsap.to('.barba-overlay-transition', {autoAlpha: 0, delay: 1});
     },
   };
   if (document.querySelector('[data-barba]')) {
     barba.init({
-      transitions: [transition2,transitionBlog],
+      transitions: [transition2, transitionBlog],
       timeout: 0,
       prevent: ({el}) => el.classList && el.classList.contains('ab-item'),
       // prefetchIgnore: true,
     });
-    barba.hooks.afterEnter(()=>setTimeout(()=>ScrollTrigger.refresh(),500));
-    barba.hooks.beforeEnter(data =>{reInvokableFunction(data.next.container)});
+    barba.hooks.afterEnter(() => setTimeout(() => ScrollTrigger.refresh(), 500));
+    barba.hooks.beforeEnter(data => {reInvokableFunction(data.next.container);});
     barba.hooks.beforeEnter(data => document.querySelector('header').className = data.next.container.dataset.headerClass);
     barba.hooks.beforeLeave(() => {
       window.dispatchEvent(new Event('will-leave'));
