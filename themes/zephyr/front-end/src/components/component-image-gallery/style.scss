@@ -33,6 +33,7 @@ section.component-image-gallery {
   .image-wrapper {
     position: relative;
     padding-top: size(57);
+    overflow: hidden;
     
     &.pt-0 {
       padding-top: 0;
@@ -41,7 +42,6 @@ section.component-image-gallery {
     &.full-width {
       padding-top: 50.13%;
       height: 0;
-      overflow: visible;
       
       img.bg {
         position: absolute;
@@ -55,8 +55,6 @@ section.component-image-gallery {
         transform: translateY(-50%);
       }
     }
-    
-    overflow: hidden;
     
     img {
       position: absolute;
@@ -90,14 +88,13 @@ section.component-image-gallery {
       }
     }
     
-    .bg {
-      transition: transform 400ms;
-    }
+      transition: filter 400ms;
     
     &:hover {
-      .bg {
-        transform: scale(1.1);
-      }
+      //.bg {
+      //  transform: scale(1.1);
+      //}
+      filter: brightness(0.7);
     }
   }
   
