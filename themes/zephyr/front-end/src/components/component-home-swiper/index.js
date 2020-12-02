@@ -98,7 +98,7 @@ export default (container = document) => {
     end:'bottom 80%',
     onToggle(self){
       const {isActive} = self;
-      isActive?swiper.autoplay.stop():swiper.autoplay.start();
+      isActive||window.innerWidth<992?swiper.autoplay.stop():swiper.autoplay.start();
     }
   })
   const dots = swiper.pagination.bullets;
