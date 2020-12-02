@@ -564,11 +564,11 @@ ol {
     
     h5{
         margin-bottom: size(10);
-        color: #808080;
+        color: $zephyr-black;
         font-family: $Sailec;
         font-size: size(18);
         font-weight: 400;
-        font-style: italic;
+        //font-style: italic;
         line-height: normal;
         letter-spacing: size(0.16);
         @include x-large-screen {
