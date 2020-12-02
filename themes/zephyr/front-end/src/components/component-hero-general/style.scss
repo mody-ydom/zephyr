@@ -33,6 +33,7 @@ section.component-hero-general {
         align-items: center;
         justify-content: center;
         margin-bottom: size(20);
+        position: relative;
         @include min-small-screen {
             margin-bottom: size(50);
         }
