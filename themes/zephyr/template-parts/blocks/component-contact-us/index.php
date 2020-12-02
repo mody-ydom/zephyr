@@ -45,7 +45,7 @@ $address_link = get_field('address_link');
         <?=$contact_form_shortcode?>
         <svg class="arrow" width="25" height="40" viewBox="0 0 25 40" fill="none"
              xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M0 20L25 40L25 0L0 20Z" fill="#333333"/>
+          <path fill="#252525" fill-rule="evenodd" clip-rule="evenodd" d="M0 20L25 40L25 0L0 20Z" />
         </svg>
       </div>
     <?php } ?>
