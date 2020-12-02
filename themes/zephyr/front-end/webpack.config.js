@@ -117,7 +117,7 @@ module.exports = function (env, argv) {
             loader: 'file-loader',
             options: {
               name: '[folder]/[name].[ext]',
-              publicPath: argv.mode !== 'development' ? '/zephyr/wp-content/themes/zephyr/assets' : './',
+              publicPath: argv.mode !== 'development' ? '/testing/wp-content/themes/zephyr/assets' : './',
             },
           }],
         }, {
@@ -139,8 +139,8 @@ module.exports = function (env, argv) {
             options: {
               publicPath: function (url) {
                 // console.log(url);
-                return argv.mode === 'production' ? '/zephyr/wp-content/themes/zephyr/assets/' + url : './' + url;
-                // return '/zephyr/wp-content/themes/zephyr/assets/' + url;
+                return argv.mode === 'production' ? '/testing/wp-content/themes/zephyr/assets/' + url : './' + url;
+                // return '/testing/wp-content/themes/zephyr/assets/' + url;
               },
               name: '[path][name].[ext]',
               context: path.resolve(__dirname, './src/html'),
