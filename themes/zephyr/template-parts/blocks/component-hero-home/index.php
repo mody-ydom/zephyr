@@ -39,7 +39,7 @@ $button = get_field('button');
       <div class="paragraph iv-st-from-bottom rlu center"><?=$paragraph;?> </div>
     <?php } ?>
     <?php if ($button['title']) { ?>
-      <a class="btn iv-st-from-bottom" href="<?=$button['url'];?>"><?=$button['title'];?></a>
+      <a class="btn iv-st-from-top" href="<?=$button['url'];?>"><?=$button['title'];?></a>
     <?php } ?>
   </div>
 </div>

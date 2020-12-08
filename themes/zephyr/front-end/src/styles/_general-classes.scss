@@ -895,7 +895,7 @@ input, textarea {
 .btn {
     color: $zephyr-gray;
     font-family: $Sailec;
-    font-size: size(12);
+    font-size: size(14);
     font-weight: 400;
     font-style: normal;
     letter-spacing: size(0.38);
@@ -1327,4 +1327,6 @@ header .header-content .links .has-drop-down {
 }
 .cc-banner.cc-bottom * {
     color: $zephyr-gray!important;
+    font-size: 1.4rem!important;
+    font-family: "Sailec",sans-serif!important;
 }
