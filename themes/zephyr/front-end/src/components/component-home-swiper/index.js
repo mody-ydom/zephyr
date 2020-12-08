@@ -92,15 +92,15 @@ export default (container = document) => {
     
   });
   
-  new ScrollTrigger.create({
-    trigger:homeSwiper,
-    start:'top 50%',
-    end:'bottom 80%',
-    onToggle(self){
-      const {isActive} = self;
-      isActive||window.innerWidth<992?swiper.autoplay.stop():swiper.autoplay.start();
-    }
-  })
+  // new ScrollTrigger.create({
+  //   trigger:homeSwiper,
+  //   start:'top 50%',
+  //   end:'bottom 80%',
+  //   onToggle(self){
+  //     const {isActive} = self;
+  //     isActive||window.innerWidth<992?swiper.autoplay.stop():swiper.autoplay.start();
+  //   }
+  // })
   const dots = swiper.pagination.bullets;
   const windowHeightFactor = 0.5;
   let activeSlide = 0;
