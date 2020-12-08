@@ -967,10 +967,3 @@ textarea {
     margin-right: auto;
     margin-bottom: 1.5em;
 }
-
-@media(max-width: 767.98px){
-    .cc-compliance.cc-highlight {
-        display: flex;
-        flex-direction: column!important;
-    }
-}

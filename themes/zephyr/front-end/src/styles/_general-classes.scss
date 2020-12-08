@@ -1317,3 +1317,11 @@ header .header-content .links .has-drop-down {
         }
     }
 }
+
+
+@include max-medium-screen{
+    .cc-compliance.cc-highlight {
+        display: flex;
+        flex-direction: column!important;
+    }
+}
