@@ -440,7 +440,7 @@ ol {
                 }
                 
                 &:hover {
-                    color: $zephyr-black;
+                    color: $zephyr-gray;
                     &:after{
                         width: 100%;
                     }
@@ -564,7 +564,7 @@ ol {
     
     h5{
         margin-bottom: size(10);
-        color: $zephyr-black;
+        color: $zephyr-gray;
         font-family: $Sailec;
         font-size: size(18);
         font-weight: 400;
@@ -848,7 +848,7 @@ ol {
 }
 
 .small-text {
-    color: $zephyr-black;
+    color: $zephyr-gray;
     font-size: size(14);
     font-weight: 400;
     line-height: size(24);
@@ -1324,4 +1324,7 @@ header .header-content .links .has-drop-down {
         display: flex;
         flex-direction: column!important;
     }
+}
+.cc-banner.cc-bottom * {
+    color: $zephyr-gray!important;
 }
