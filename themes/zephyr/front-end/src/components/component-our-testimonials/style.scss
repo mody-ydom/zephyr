@@ -141,7 +141,7 @@ section.component-our-testimonials {
                 }
             }
         }
-        
+    
         .swiper-pagination {
             margin-top: size(26);
             @include min-small-screen {
@@ -149,6 +149,28 @@ section.component-our-testimonials {
             }
             @include x-large-screen {
                 margin-top: size(87);
+            }
+            &.small-pagination{
+                .swiper-pagination-bullet{
+                    @include max-medium-screen{
+                        width: size(14) !important;
+                        height: size(14) !important;
+                        &:before{
+                            width: 60% !important;
+                            height: 60% !important;
+                        }
+                    }
+                }
+            }
+            @include min-medium-screen {
+                .swiper-pagination-bullet{
+                    width: size(20);
+                    height: size(20);
+                    &:before{
+                        width: 60%;
+                        height: 60%;
+                    }
+                }
             }
         }
     }

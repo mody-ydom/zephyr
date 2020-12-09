@@ -46,9 +46,12 @@ footer {
         display: block;
         
         @include x-large-screen {
-          line-height: size(24);
           max-width: unset;
           text-align: left;
+        }
+        p{
+          font-size: size(14);
+          line-height: size(24);
         }
       }
     }
@@ -109,22 +112,23 @@ footer {
             
             span {
               position: relative;
-              transition: transform 0.3s ease-in-out;
+              transition: color 0.3s ease-in-out;
               display: block;
               
-              &:before {
-                position: absolute;
-                top: 100%;
-                content: attr(data-hover);
-                transform: translate3d(0, 0, 0);
-              }
+              //&:before {
+              //  position: absolute;
+              //  top: 100%;
+              //  content: attr(data-hover);
+              //  transform: translate3d(0, 0, 0);
+              //}
             }
             
             &:hover {
-              span {
-                transform: translateY(-100%);
-                color: $zephyr-green;
-              }
+              color: $zephyr-green;
+              //span {
+              //  transform: translateY(-100%);
+              //  color: $zephyr-green;
+              //}
             }
           }
         }
