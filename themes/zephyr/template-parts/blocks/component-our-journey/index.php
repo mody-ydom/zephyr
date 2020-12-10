@@ -58,16 +58,16 @@ endif;
       </div>
       <div class="swiper-control">
         <div class="swiper-pagination"></div>
-        <div class="swiper-button-next">
-          <svg fill="none" height="24" viewBox="0 0 20 24" width="20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.249997 22.6506L19 11.8253L0.249998 0.999999" stroke="black"/>
-          </svg>
-        </div>
-        <div class="swiper-button-prev">
-          <svg fill="none" height="24" viewBox="0 0 20 24" width="20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19.75 1.34937L1 12.1747L19.75 23" stroke="black"/>
-          </svg>
-        </div>
+<!--        <div class="swiper-button-next">-->
+<!--          <svg fill="none" height="24" viewBox="0 0 20 24" width="20" xmlns="http://www.w3.org/2000/svg">-->
+<!--            <path d="M0.249997 22.6506L19 11.8253L0.249998 0.999999" stroke="black"/>-->
+<!--          </svg>-->
+<!--        </div>-->
+<!--        <div class="swiper-button-prev">-->
+<!--          <svg fill="none" height="24" viewBox="0 0 20 24" width="20" xmlns="http://www.w3.org/2000/svg">-->
+<!--            <path d="M19.75 1.34937L1 12.1747L19.75 23" stroke="black"/>-->
+<!--          </svg>-->
+<!--        </div>-->
       </div>
     </div>
   </div>
