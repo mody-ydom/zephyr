@@ -31,7 +31,7 @@ $text = get_field('text');
 <div class="container">
     <div class="content">
         <?php if ($title): ?>
-            <h5 class="headline-5 center iv-st-from-bottom desktop-only"><?php echo $title; ?></h5>
+            <h6 style="justify-content: center;font-weight: 400" class="headline-6 center iv-st-from-bottom desktop-only"><?php echo $title; ?></h6>
         <?php endif; ?>
         <?php if ($text): ?>
             <div class="headline-1 iv-st-from-bottom wu">
